@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Trading Affiliate Website Template">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#08111f"/>
+      <stop offset="0.56" stop-color="#10233a"/>
+      <stop offset="1" stop-color="#123126"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="76" y="76" width="1048" height="478" rx="28" fill="#0d1728" stroke="#6be4c4" stroke-opacity=".35"/>
+  <text x="112" y="190" fill="#f7fbff" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="800">Trading Affiliate</text>
+  <text x="112" y="258" fill="#f7fbff" font-family="Inter, Arial, sans-serif" font-size="58" font-weight="800">Website Template</text>
+  <text x="112" y="338" fill="#a8b6ca" font-family="Inter, Arial, sans-serif" font-size="29">A compliant funnel system for broker partners, IBs,</text>
+  <text x="112" y="378" fill="#a8b6ca" font-family="Inter, Arial, sans-serif" font-size="29">finance creators, and affiliate marketers.</text>
+  <rect x="112" y="438" width="360" height="58" rx="14" fill="#6be4c4"/>
+  <text x="140" y="476" fill="#07111f" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="800">NextGenWebs Template</text>
+</svg>
