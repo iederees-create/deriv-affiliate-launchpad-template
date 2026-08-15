@@ -7,20 +7,20 @@ export function Blog() {
   return (
     <>
       <Seo
-        title="Trading Affiliate Blog Template"
-        description="SEO-ready blog index for broker affiliates, introducing brokers, finance creators, and trading partner programme promoters."
+        title="Trading Guides & Strategies"
+        description="Learn how to trade Synthetic Indices, Forex, and Crypto on Deriv. Read our latest guides and strategies."
         path="/blog"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "Blog",
-          name: "Trading Affiliate Website Template Blog",
+          name: "Apex Trade Network Blog",
           url: "https://iederees-create.github.io/deriv-affiliate-launchpad-template/blog"
         }}
       />
       <section className="page-hero">
-        <p className="eyebrow">SEO blog structure</p>
-        <h1>Educational content that supports trust before conversion.</h1>
-        <p>Use the blog to answer search questions, disclose the commercial relationship, and route informed visitors to configured affiliate links.</p>
+        <p className="eyebrow">Trading Strategies & Guides</p>
+        <h1>Master the Markets with our Expert Insights.</h1>
+        <p>Read our latest guides on trading synthetic indices, managing risk, and mastering the Deriv platforms.</p>
       </section>
       <section className="section blog-grid">
         {blogPosts.map((post) => (
@@ -28,10 +28,10 @@ export function Blog() {
             <p className="post-meta"><Calendar size={15} aria-hidden="true" /> {post.date} <Clock size={15} aria-hidden="true" /> {post.readTime}</p>
             <h2>{post.title}</h2>
             <p>{post.excerpt}</p>
-            {post.slug === "building-a-trading-affiliate-website" ? (
+            {post.slug === "winning-strategies-deriv-synthetic-indices" ? (
               <Link className="text-link" to={`/blog/${post.slug}`}>Read article</Link>
             ) : (
-              <span className="muted">Demo post placeholder</span>
+              <span className="muted">Coming soon</span>
             )}
           </article>
         ))}

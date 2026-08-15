@@ -8,35 +8,35 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
-    title: "How Broker Affiliate Websites Turn Traffic Into Referrals",
-    slug: "building-a-trading-affiliate-website",
+    title: "5 Winning Strategies for Trading Deriv Synthetic Indices",
+    slug: "winning-strategies-deriv-synthetic-indices",
     excerpt:
-      "A practical guide to turning social, search, and community traffic into a disclosed, risk-aware broker affiliate funnel.",
-    date: "2026-07-15",
-    readTime: "14 min read"
+      "Master the 24/7 synthetic markets with these 5 proven strategies, designed for volatility and crash/boom indices.",
+    date: "2026-08-15",
+    readTime: "8 min read"
   },
   {
-    title: "What Introducing Brokers Need Before Sending Paid Traffic",
-    slug: "introducing-brokers-paid-traffic",
+    title: "Deriv vs Traditional Forex Brokers: Which is Better?",
+    slug: "deriv-vs-traditional-forex-brokers",
     excerpt:
-      "Before ad spend starts, IBs need tracking links, compliance copy, risk warnings, platform education, and follow-up workflows.",
-    date: "2026-07-15",
+      "An honest comparison of Deriv's platforms, leverage, and synthetics against traditional MT4/MT5 forex brokers.",
+    date: "2026-08-10",
+    readTime: "6 min read"
+  },
+  {
+    title: "How to Manage Risk When Trading Crash and Boom",
+    slug: "risk-management-crash-boom-indices",
+    excerpt:
+      "Crash and Boom indices are unique to Deriv. Learn how to protect your capital from sudden market spikes.",
+    date: "2026-08-05",
     readTime: "5 min read"
   },
   {
-    title: "Affiliate Disclosure and Trust in Trading Funnels",
-    slug: "affiliate-disclosure-trust-trading-funnels",
+    title: "A Beginner's Guide to Using Deriv MT5 (DMT5)",
+    slug: "beginners-guide-deriv-mt5",
     excerpt:
-      "Clear disclosure does not weaken conversion. It filters the audience and improves long-term credibility.",
-    date: "2026-07-15",
-    readTime: "4 min read"
-  },
-  {
-    title: "How to Build a Trading Content Funnel Without Making Fake Income Claims",
-    slug: "trading-content-funnel-no-fake-income-claims",
-    excerpt:
-      "A better trading funnel teaches, discloses, routes, and follows up without screenshots, hype, or guaranteed-profit language.",
-    date: "2026-07-15",
-    readTime: "6 min read"
+      "Step-by-step instructions on setting up your Deriv MT5 account, adding indicators, and placing your first trade.",
+    date: "2026-08-01",
+    readTime: "10 min read"
   }
 ];
