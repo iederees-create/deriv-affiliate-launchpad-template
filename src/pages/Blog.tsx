@@ -28,11 +28,7 @@ export function Blog() {
             <p className="post-meta"><Calendar size={15} aria-hidden="true" /> {post.date} <Clock size={15} aria-hidden="true" /> {post.readTime}</p>
             <h2>{post.title}</h2>
             <p>{post.excerpt}</p>
-            {post.slug === "winning-strategies-deriv-synthetic-indices" ? (
-              <Link className="text-link" to={`/blog/${post.slug}`}>Read article</Link>
-            ) : (
-              <span className="muted">Coming soon</span>
-            )}
+            <Link className="text-link" to={`/blog/${post.slug}`}>Read article</Link>
           </article>
         ))}
       </section>

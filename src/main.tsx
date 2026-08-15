@@ -9,6 +9,9 @@ import { Platforms } from "./pages/Platforms";
 import { Learn } from "./pages/Learn";
 import { Blog } from "./pages/Blog";
 import { LongArticle } from "./pages/LongArticle";
+import { ArticleDerivVsForex } from "./pages/ArticleDerivVsForex";
+import { ArticleRiskManagement } from "./pages/ArticleRiskManagement";
+import { ArticleBeginnersMT5 } from "./pages/ArticleBeginnersMT5";
 import { RiskDisclosure } from "./pages/RiskDisclosure";
 import { Contact } from "./pages/Contact";
 import "./styles.css";
@@ -25,7 +28,10 @@ const router = createBrowserRouter(
         { path: "platforms", element: <Platforms /> },
         { path: "learn", element: <Learn /> },
         { path: "blog", element: <Blog /> },
-        { path: "blog/building-a-trading-affiliate-website", element: <LongArticle /> },
+        { path: "blog/winning-strategies-deriv-synthetic-indices", element: <LongArticle /> },
+        { path: "blog/deriv-vs-traditional-forex-brokers", element: <ArticleDerivVsForex /> },
+        { path: "blog/risk-management-crash-boom-indices", element: <ArticleRiskManagement /> },
+        { path: "blog/beginners-guide-deriv-mt5", element: <ArticleBeginnersMT5 /> },
         { path: "risk-disclosure", element: <RiskDisclosure /> },
         { path: "contact", element: <Contact /> }
       ]
