@@ -1,67 +1,71 @@
-import { BookOpen, Cable, ChartNoAxesCombined, MessageSquare, Search, ShieldCheck, Users, Wand2 } from "lucide-react";
+import { BookOpen, Cable, ChartNoAxesCombined, MessageSquare, Search, ShieldCheck, Users, Wand2, Mail } from "lucide-react";
 import { CTA } from "../components/CTA";
 import { DisclosureBand, Card, SectionHeader } from "../components/Section";
 import { Seo } from "../components/Seo";
 import { affiliateConfig } from "../config/affiliateConfig";
 
 const features = [
-  ["Affiliate link manager", "Keep demo, live, partner, WhatsApp, and social links in one editable config file.", Cable],
-  ["Risk disclosure sections", "Use visible, plain-language risk and affiliate disclosures throughout the funnel.", ShieldCheck],
-  ["WhatsApp-ready lead capture", "Route warm prospects into a chat workflow without needing a backend.", MessageSquare],
-  ["SEO blog structure", "Publish educational posts that build search visibility before visitors click a partner link.", Search],
-  ["Broker programme explainer", "Explain the partner route without implying endorsement or guaranteed earnings.", BookOpen],
-  ["Rebrandable design system", "Adjust brand name, colours, links, and copy for other broker affiliate programmes.", Wand2]
+  ["24/7 Synthetic Indices", "Trade proprietary indices that simulate real-world market movements without being affected by news events.", Cable],
+  ["Flexible Leverage", "Maximize your trading potential with flexible leverage options tailored to your strategy and risk appetite.", ShieldCheck],
+  ["Fast Withdrawals", "Access your profits quickly with a variety of secure, localized, and global payment methods.", MessageSquare],
+  ["Advanced Platforms", "Trade on MT5, Deriv X, or intuitive web platforms equipped with advanced charting tools.", Search],
+  ["Free Demo Account", "Practice your strategies entirely risk-free with a $10,000 reloadable virtual balance.", BookOpen],
+  ["Trusted Globally", "Join millions of traders worldwide trading on a regulated, established, and secure broker platform.", Wand2]
 ] as const;
 
 const builtFor = [
-  "Introducing brokers",
-  "Trading educators",
-  "Finance creators",
-  "Signal communities",
-  "YouTubers/TikTok traders",
-  "Affiliate marketers"
+  "Beginner Traders",
+  "Forex Professionals",
+  "Synthetic Index Specialists",
+  "Crypto Enthusiasts",
+  "Algorithmic Traders",
+  "Swing Traders"
 ];
 
 export function Home() {
   return (
     <>
       <Seo
-        title="Trading Affiliate Website Template | Broker Partner Funnel"
-        description="A premium rebrandable affiliate marketing website template for trading affiliates, introducing brokers, finance creators, and broker partner programme promoters."
+        title={`${affiliateConfig.brandName} | Trade Forex & Synthetics`}
+        description="Master the markets with Apex Trade Network. Trade Forex, Synthetic Indices, and Crypto on an industry-leading platform."
         jsonLd={{
           "@context": "https://schema.org",
-          "@type": "CreativeWork",
-          name: affiliateConfig.productName,
-          description: "A static website template for broker affiliate funnels with editable links, disclosures, and educational content.",
-          creator: { "@type": "Organization", name: "NextGenWebs" }
+          "@type": "WebSite",
+          name: affiliateConfig.brandName,
+          description: "Trading community and resources for Deriv traders.",
         }}
       />
       <section className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">Premium broker affiliate funnel template</p>
-          <h1>Launch a broker affiliate website built to convert attention into referred traders.</h1>
+          <p className="eyebrow">Trade with an industry leader</p>
+          <h1>Master the markets. Trade Forex, Synthetics, and Crypto with Deriv.</h1>
           <p>
-            A polished, compliance-aware website system for affiliates and introducing brokers who need more than a raw link in a bio.
+            Join a global community of traders. Access 24/7 markets, advanced charting, and lightning-fast execution on a regulated trading platform.
           </p>
           <div className="cta-row">
-            <CTA href={affiliateConfig.demoAccountLink}>Start with demo affiliate link</CTA>
-            <a className="text-link" href="/deriv-affiliate-launchpad-template/how-it-works">Learn how the funnel works</a>
+            <CTA href={affiliateConfig.primaryAffiliateLink}>Open Free Account</CTA>
+            <a className="text-link" href={affiliateConfig.demoAccountLink}>Try a $10,000 Demo</a>
           </div>
         </div>
         <div className="hero-panel" aria-label="Affiliate funnel preview">
-          <div className="metric"><span>01</span><strong>Educate visitors</strong></div>
-          <div className="metric"><span>02</span><strong>Build trust</strong></div>
-          <div className="metric"><span>03</span><strong>Disclose risk</strong></div>
-          <div className="metric"><span>04</span><strong>Route through links</strong></div>
-          <div className="metric"><span>05</span><strong>Capture warm leads</strong></div>
+          <h3 style={{ margin: '0 0 16px 0', fontSize: '1.2rem' }}>Get our Free Trading Guide</h3>
+          <p style={{ fontSize: '0.9rem', marginBottom: '20px' }}>Enter your email to receive our exclusive guide: "5 Strategies for Synthetic Indices".</p>
+          <form onSubmit={(e) => { e.preventDefault(); alert("Email captured! We will integrate this with your email provider next."); }} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <div style={{ position: 'relative' }}>
+              <Mail size={18} style={{ position: 'absolute', left: '12px', top: '14px', color: 'var(--muted)' }} />
+              <input type="email" placeholder="Your best email..." required style={{ width: '100%', padding: '12px 12px 12px 40px', borderRadius: '8px', border: '1px solid var(--line)', background: 'rgba(0,0,0,0.2)', color: 'var(--text)', outline: 'none' }} />
+            </div>
+            <button type="submit" className="cta cta-primary" style={{ border: 'none', cursor: 'pointer', width: '100%' }}>Send me the guide</button>
+          </form>
+          <p style={{ fontSize: '0.75rem', color: 'var(--muted)', marginTop: '12px', textAlign: 'center' }}>No spam, unsubscribe anytime.</p>
         </div>
       </section>
       <DisclosureBand />
       <section className="section">
         <SectionHeader
-          eyebrow="System"
-          title="Built around the full affiliate journey"
-          text="The template helps visitors understand the topic, see the risks, choose a route, and contact the affiliate owner without fake income claims."
+          eyebrow="Platform Benefits"
+          title="Everything you need to succeed"
+          text="Whether you're trading Forex during the week or Synthetic Indices on the weekend, Deriv provides the tools for every strategy."
         />
         <div className="card-grid">
           {features.map(([title, text, Icon]) => <Card key={title} title={title} icon={Icon}>{text}</Card>)}
@@ -70,11 +74,11 @@ export function Home() {
       <section className="section split">
         <div>
           <SectionHeader
-            eyebrow="Built for"
-            title="Finance creators who need a credible destination"
-            text="Use it as a demo brand, then rebrand for a specific affiliate programme, audience, language, or niche."
+            eyebrow="Who is this for"
+            title="A platform built for serious traders"
+            text="From absolute beginners to seasoned professionals, Deriv offers account types and platforms suited for your exact trading style."
           />
-          <CTA href={affiliateConfig.primaryAffiliateLink}>Open primary affiliate route</CTA>
+          <CTA href={affiliateConfig.primaryAffiliateLink}>Start Trading Today</CTA>
         </div>
         <div className="audience-list">
           {builtFor.map((item) => (
@@ -85,7 +89,7 @@ export function Home() {
       <section className="section proof-strip">
         <ChartNoAxesCombined aria-hidden="true" />
         <p>
-          This template focuses on education, routing, disclosure, and follow-up. It does not promise trading profits, commissions, conversion rates, or affiliate earnings.
+          {affiliateConfig.riskDisclaimer}
         </p>
       </section>
     </>

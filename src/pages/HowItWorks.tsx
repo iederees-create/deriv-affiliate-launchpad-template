@@ -1,32 +1,31 @@
-import { ArrowDown, ExternalLink, FileWarning, GraduationCap, LayoutDashboard, MousePointerClick, Search } from "lucide-react";
+import { ArrowDown, ExternalLink, GraduationCap, LineChart, Wallet, MousePointerClick, ShieldCheck } from "lucide-react";
 import { CTA } from "../components/CTA";
 import { Card, DisclosureBand, SectionHeader } from "../components/Section";
 import { Seo } from "../components/Seo";
 import { affiliateConfig } from "../config/affiliateConfig";
 
 const steps = [
-  ["Visitor lands from social/search", "A creator, IB, or affiliate sends traffic from YouTube, TikTok, paid ads, email, SEO, or community posts.", Search],
-  ["Learns about trading platforms", "The visitor sees platform education, use cases, and plain explanations before seeing a signup route.", GraduationCap],
-  ["Sees risk disclosure", "Risk warnings and affiliate disclosures appear before conversion prompts.", FileWarning],
-  ["Chooses a demo/live route", "Buttons route to demo, live, or partner-programme links pulled from one config file.", MousePointerClick],
-  ["Clicks affiliate link", "The affiliate link is configured by the buyer and can be replaced without editing page components.", ExternalLink],
-  ["Partner tracks performance", "The affiliate owner monitors registrations, deposits, activity, and commissions in their partner dashboard.", LayoutDashboard]
+  ["Open a Free Demo", "Start with a $10,000 virtual balance to test the platforms and practice your strategies risk-free.", MousePointerClick],
+  ["Learn the Markets", "Access free educational resources and learn how to trade Forex, Crypto, and Synthetic Indices.", GraduationCap],
+  ["Fund Your Account", "When you're ready, deposit funds using a wide range of secure, localized payment methods.", Wallet],
+  ["Start Trading Live", "Execute trades with lightning-fast speed on MT5, Deriv X, or Deriv cTrader.", LineChart],
+  ["Withdraw Profits", "Enjoy fast, hassle-free withdrawals directly to your preferred payment method.", ExternalLink]
 ] as const;
 
 export function HowItWorks() {
   return (
     <>
       <Seo
-        title="How the Trading Affiliate Funnel Works"
-        description="See how a broker affiliate website turns social and search traffic into disclosed, risk-aware referral paths."
+        title={`Why Trade on Deriv? | ${affiliateConfig.brandName}`}
+        description="Learn how easy it is to start trading on Deriv. Follow our simple steps from demo to live trading."
         path="/how-it-works"
       />
       <section className="page-hero">
-        <p className="eyebrow">Editable funnel map</p>
-        <h1>How the affiliate website routes attention into tracked partner links.</h1>
-        <p>The funnel is structured to educate first, disclose risk clearly, and then present configured affiliate routes.</p>
+        <p className="eyebrow">Your Path to Trading</p>
+        <h1>How to start your trading journey today.</h1>
+        <p>Follow these simple steps to go from complete beginner to trading live on the world's most innovative platforms.</p>
       </section>
-      <section className="timeline" aria-label="Affiliate funnel steps">
+      <section className="timeline" aria-label="Trading steps">
         {steps.map(([title, text, Icon], index) => (
           <div className="timeline-item" key={title}>
             <Card title={`${index + 1}. ${title}`} icon={Icon}>{text}</Card>
@@ -36,14 +35,15 @@ export function HowItWorks() {
       </section>
       <section className="section split">
         <SectionHeader
-          eyebrow="Diagram copy"
-          title="Buyer-editable conversion logic"
-          text="Replace the demo brand, CTA labels, route descriptions, and configured links to match the partner programme you promote."
+          eyebrow="Security First"
+          title="Regulated & Secure"
+          text="Trade with confidence knowing that your funds are protected by industry-leading security protocols and global regulatory oversight."
         />
         <div className="panel">
-          <p>{affiliateConfig.disclosureText}</p>
-          <p>{affiliateConfig.riskDisclaimer}</p>
-          <CTA href={affiliateConfig.demoAccountLink}>Test demo route</CTA>
+          <ShieldCheck size={48} color="var(--primary)" style={{ marginBottom: '16px' }} />
+          <h3 style={{ margin: '0 0 10px 0' }}>Committed to your safety</h3>
+          <p style={{ marginBottom: '20px' }}>{affiliateConfig.riskDisclaimer}</p>
+          <CTA href={affiliateConfig.demoAccountLink}>Open Demo Account</CTA>
         </div>
       </section>
       <DisclosureBand />
