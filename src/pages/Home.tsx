@@ -1,10 +1,10 @@
-import { useState } from "react";
-import { BookOpen, Cable, ChartNoAxesCombined, MessageSquare, Search, ShieldCheck, Users, Wand2, Mail } from "lucide-react";
+import { BookOpen, Cable, ChartNoAxesCombined, MessageSquare, Search, ShieldCheck, Users, Wand2 } from "lucide-react";
 import { CTA } from "../components/CTA";
 import { DisclosureBand, Card, SectionHeader } from "../components/Section";
 import { Seo } from "../components/Seo";
 import { affiliateConfig } from "../config/affiliateConfig";
-import { supabase } from "../lib/supabase";
+import { TraderQuiz } from "../components/TraderQuiz";
+import { ExitIntent } from "../components/ExitIntent";
 
 const features = [
   ["24/7 Synthetic Indices", "Trade proprietary indices that simulate real-world market movements without being affected by news events.", Cable],
@@ -25,31 +25,6 @@ const builtFor = [
 ];
 
 export function Home() {
-  const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [errorMessage, setErrorMessage] = useState("");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("loading");
-    setErrorMessage("");
-
-    try {
-      const { error } = await supabase
-        .from('deriv_subscribers')
-        .insert([{ email }]);
-
-      if (error) throw error;
-      
-      setStatus("success");
-      setEmail("");
-    } catch (err: any) {
-      console.error(err);
-      setStatus("error");
-      setErrorMessage(err.message || "Failed to submit. Please try again.");
-    }
-  };
-
   return (
     <>
       <Seo
@@ -62,6 +37,7 @@ export function Home() {
           description: "Trading community and resources for Deriv traders.",
         }}
       />
+      <ExitIntent />
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">Trade with an industry leader</p>
@@ -74,41 +50,8 @@ export function Home() {
             <a className="text-link" href={affiliateConfig.demoAccountLink}>Try a $10,000 Demo</a>
           </div>
         </div>
-        <div className="hero-panel" aria-label="Affiliate funnel preview">
-          <h3 style={{ margin: '0 0 16px 0', fontSize: '1.2rem' }}>Get our Free Trading Guide</h3>
-          <p style={{ fontSize: '0.9rem', marginBottom: '20px' }}>Enter your email to receive our exclusive guide: "5 Strategies for Synthetic Indices".</p>
-          
-          {status === "success" ? (
-            <div style={{ padding: '16px', background: 'rgba(107, 228, 196, 0.1)', border: '1px solid var(--primary)', borderRadius: '8px', textAlign: 'center' }}>
-              <h4 style={{ color: 'var(--primary)', margin: '0 0 8px 0' }}>Success!</h4>
-              <p style={{ margin: 0, fontSize: '0.9rem' }}>Check your inbox for your free trading guide.</p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-              <div style={{ position: 'relative' }}>
-                <Mail size={18} style={{ position: 'absolute', left: '12px', top: '14px', color: 'var(--muted)' }} />
-                <input 
-                  type="email" 
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Your best email..." 
-                  required 
-                  disabled={status === "loading"}
-                  style={{ width: '100%', padding: '12px 12px 12px 40px', borderRadius: '8px', border: '1px solid var(--line)', background: 'rgba(0,0,0,0.2)', color: 'var(--text)', outline: 'none' }} 
-                />
-              </div>
-              {status === "error" && <p style={{ color: '#ff6b6b', fontSize: '0.8rem', margin: 0 }}>{errorMessage}</p>}
-              <button 
-                type="submit" 
-                className="cta cta-primary" 
-                disabled={status === "loading"}
-                style={{ border: 'none', cursor: status === "loading" ? 'wait' : 'pointer', width: '100%', opacity: status === "loading" ? 0.7 : 1 }}
-              >
-                {status === "loading" ? "Submitting..." : "Send me the guide"}
-              </button>
-            </form>
-          )}
-          <p style={{ fontSize: '0.75rem', color: 'var(--muted)', marginTop: '12px', textAlign: 'center' }}>No spam, unsubscribe anytime.</p>
+        <div className="hero-panel" aria-label="Affiliate funnel preview" style={{ background: 'transparent', padding: 0, border: 'none' }}>
+          <TraderQuiz />
         </div>
       </section>
       <DisclosureBand />
