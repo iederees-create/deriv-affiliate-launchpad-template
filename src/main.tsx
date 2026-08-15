@@ -14,6 +14,9 @@ import { ArticleRiskManagement } from "./pages/ArticleRiskManagement";
 import { ArticleBeginnersMT5 } from "./pages/ArticleBeginnersMT5";
 import { RiskDisclosure } from "./pages/RiskDisclosure";
 import { Contact } from "./pages/Contact";
+import { Auth } from "./pages/Auth";
+import { MembersDashboard } from "./pages/MembersDashboard";
+import { RequireAuth } from "./components/RequireAuth";
 import "./styles.css";
 
 const router = createBrowserRouter(
@@ -33,7 +36,14 @@ const router = createBrowserRouter(
         { path: "blog/risk-management-crash-boom-indices", element: <ArticleRiskManagement /> },
         { path: "blog/beginners-guide-deriv-mt5", element: <ArticleBeginnersMT5 /> },
         { path: "risk-disclosure", element: <RiskDisclosure /> },
-        { path: "contact", element: <Contact /> }
+        { path: "contact", element: <Contact /> },
+        { path: "auth", element: <Auth /> },
+        { 
+          element: <RequireAuth />,
+          children: [
+            { path: "members", element: <MembersDashboard /> }
+          ]
+        }
       ]
     }
   ],

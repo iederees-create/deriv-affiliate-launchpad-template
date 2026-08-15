@@ -70,18 +70,10 @@ export function TraderQuiz() {
 
   const submitEmail = async (e: React.FormEvent) => {
     e.preventDefault();
-    setLoading(true);
-    setError("");
-
-    try {
-      const { error: sbError } = await supabase.from('deriv_subscribers').insert([{ email }]);
-      if (sbError) throw sbError;
-      setStep(5);
-    } catch (err: any) {
-      setError(err.message || "Something went wrong.");
-    } finally {
-      setLoading(false);
-    }
+    if (!email) return;
+    
+    // Redirect to VIP sign up page instead of just inserting to DB
+    window.location.href = `/deriv-affiliate-launchpad-template/auth?email=${encodeURIComponent(email)}`;
   };
 
   return (

@@ -28,17 +28,10 @@ export function ExitIntent() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("loading");
-    setErrorMsg("");
-
-    try {
-      const { error } = await supabase.from('deriv_subscribers').insert([{ email }]);
-      if (error) throw error;
-      setStatus("success");
-    } catch (err: any) {
-      setStatus("error");
-      setErrorMsg(err.message || "Failed to submit.");
-    }
+    if (!email) return;
+    
+    // Redirect to VIP sign up page instead of just inserting to DB
+    window.location.href = `/deriv-affiliate-launchpad-template/auth?email=${encodeURIComponent(email)}`;
   };
 
   if (!show) return null;
