@@ -91,12 +91,13 @@ export function MembersDashboard() {
             
             {!hasDerivId ? (
               <>
-                <p style={{ color: 'var(--muted)', marginBottom: '24px', lineHeight: 1.6 }}>
-                  To unlock your VIP downloads, proprietary MT5 Indicators, and Automated Trading Bots, you must link your Deriv account to this dashboard. 
-                  <br/><br/>
-                  <strong>Step 1:</strong> Create a new Deriv account using our official partner link.<br/>
-                  <strong>Step 2:</strong> Paste your Deriv ID or Nickname below.
+                <p style={{ color: 'var(--muted)', marginBottom: '24px', fontSize: '0.95rem' }}>
+                  To unlock your VIP downloads, proprietary MT5 Indicators, and Automated Trading Bots, you must link your Deriv account to this dashboard.
                 </p>
+                <div style={{ marginBottom: '24px', fontSize: '0.9rem' }}>
+                  <strong>Step 1:</strong> Create a new Deriv account using our official partner link.<br/>
+                  <strong>Step 2:</strong> Paste your Deriv Email Address below.
+                </div>
 
                 <div style={{ marginBottom: '24px' }}>
                   <a href={affiliateConfig.primaryAffiliateLink} target="_blank" rel="noreferrer" className="cta cta-primary" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
@@ -108,16 +109,17 @@ export function MembersDashboard() {
                   <h4 style={{ fontSize: '0.9rem', marginBottom: '8px' }}>Already have a Deriv account?</h4>
                   <p style={{ fontSize: '0.85rem', color: 'var(--muted)', margin: 0 }}>
                     If you signed up for Deriv without our link, you can easily link your account! 
-                    Open a live chat with Deriv support and ask: <strong>"Please move my account under IB {affiliateConfig.brandName}"</strong>. Once they confirm, enter your Deriv ID below.
+                    Open a live chat with Deriv support and ask: <strong>"Please move my account under IB Apex Trade Network"</strong>.
+                    Once they confirm, enter your Deriv Email Address below.
                   </p>
                 </div>
 
                 <form onSubmit={handleSaveDerivId} style={{ display: 'flex', gap: '12px', maxWidth: '400px' }}>
                   <input 
-                    type="text" 
+                    type="email"
                     value={derivId}
                     onChange={(e) => setDerivId(e.target.value)}
-                    placeholder="Enter Deriv ID or Nickname..." 
+                    placeholder="Enter your Deriv Email Address..." 
                     required
                     style={{ flex: 1, padding: '12px', borderRadius: '8px', border: '1px solid var(--line)', background: 'var(--surface)', color: 'var(--text)', outline: 'none' }}
                   />
