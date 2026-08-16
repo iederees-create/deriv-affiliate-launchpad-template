@@ -43,11 +43,10 @@ export function MembersDashboard() {
     setMessage('');
 
     try {
-      const { error } = await supabase.from('profiles').upsert({
-        user_id: user?.id,
+      const { error } = await supabase.from('profiles').update({
         deriv_id: derivId,
         updated_at: new Date().toISOString()
-      }, { onConflict: 'user_id' });
+      }).eq('user_id', user?.id);
 
       if (error) throw error;
 
