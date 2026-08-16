@@ -77,14 +77,14 @@ export function TraderQuiz() {
 
   return (
     <div className="quiz-container" style={{
-      background: 'rgba(20, 20, 20, 0.6)',
       border: '1px solid var(--line)',
       borderRadius: '16px',
       padding: '32px',
       maxWidth: '500px',
       width: '100%',
       margin: '0 auto',
-      boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
+      background: 'var(--surface)',
+      boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
       backdropFilter: 'blur(10px)'
     }}>
       
@@ -115,7 +115,7 @@ export function TraderQuiz() {
                 onClick={() => handleAnswer(opt.value)}
                 style={{
                   padding: '16px',
-                  background: 'rgba(255,255,255,0.03)',
+                  background: 'var(--surface-2)',
                   border: '1px solid var(--line)',
                   borderRadius: '8px',
                   color: 'var(--text)',
@@ -124,8 +124,8 @@ export function TraderQuiz() {
                   textAlign: 'left',
                   fontSize: '0.95rem'
                 }}
-                onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(107, 228, 196, 0.1)'; e.currentTarget.style.borderColor = 'var(--primary)'; }}
-                onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'var(--line)'; }}
+                onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(255, 68, 79, 0.05)'; e.currentTarget.style.borderColor = 'var(--primary)'; }}
+                onMouseOut={(e) => { e.currentTarget.style.background = 'var(--surface-2)'; e.currentTarget.style.borderColor = 'var(--line)'; }}
               >
                 {opt.text}
               </button>
@@ -150,7 +150,7 @@ export function TraderQuiz() {
                   placeholder="Your best email..." 
                   required 
                   disabled={loading}
-                  style={{ width: '100%', padding: '14px 14px 14px 44px', borderRadius: '8px', border: '1px solid var(--line)', background: 'rgba(0,0,0,0.3)', color: 'var(--text)', outline: 'none', fontSize: '1rem' }} 
+                  style={{ width: '100%', padding: '14px 14px 14px 44px', borderRadius: '8px', border: '1px solid var(--line)', background: 'var(--surface-2)', color: 'var(--text)', outline: 'none', fontSize: '1rem' }} 
                 />
               </div>
               <button 
@@ -179,7 +179,7 @@ export function TraderQuiz() {
           <p style={{ color: 'var(--muted)', marginBottom: '24px', fontSize: '1rem', lineHeight: 1.5 }}>
             {getPersona().desc}
           </p>
-          <div style={{ padding: '16px', background: 'rgba(107, 228, 196, 0.1)', border: '1px solid var(--primary)', borderRadius: '8px' }}>
+          <div style={{ padding: '16px', background: 'rgba(255, 68, 79, 0.05)', border: '1px solid var(--primary)', borderRadius: '8px' }}>
             <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text)' }}>
               <strong>Check your inbox!</strong> We just sent your full strategy guide and recommended Deriv setup to <em>{email}</em>.
             </p>

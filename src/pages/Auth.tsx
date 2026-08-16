@@ -63,15 +63,21 @@ export function Auth() {
     <>
       <Seo title={`${isLogin ? 'Log In' : 'Sign Up'} | ${affiliateConfig.brandName} VIP`} description="Access the VIP Members Area for premium trading indicators and guides." />
       
-      <section className="section" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <section className="section" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
         <div style={{
-          background: 'rgba(20, 20, 20, 0.6)',
-          border: '1px solid var(--line)',
+          position: 'absolute', inset: 0,
+          background: 'rgba(255, 255, 255, 0.7)',
+          backdropFilter: 'blur(8px)',
+          zIndex: -1
+        }} />
+        <div style={{
           borderRadius: '16px',
           padding: '40px',
+          background: 'var(--surface)',
+          border: '1px solid var(--line)',
           maxWidth: '450px',
           width: '100%',
-          boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
+          boxShadow: '0 8px 32px rgba(0,0,0,0.08)',
           backdropFilter: 'blur(10px)'
         }}>
           
@@ -88,7 +94,6 @@ export function Auth() {
 
           <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
              <div style={{ position: 'relative' }}>
-                <Mail size={18} style={{ position: 'absolute', left: '16px', top: '16px', color: 'var(--muted)' }} />
                 <input 
                   type="email" 
                   value={email}
@@ -96,25 +101,25 @@ export function Auth() {
                   placeholder="Email address" 
                   required 
                   disabled={loading}
-                  style={{ width: '100%', padding: '14px 14px 14px 44px', borderRadius: '8px', border: '1px solid var(--line)', background: 'rgba(0,0,0,0.3)', color: 'var(--text)', outline: 'none', fontSize: '1rem' }} 
+                  style={{ width: '100%', padding: '14px 14px 14px 44px', borderRadius: '8px', border: '1px solid var(--line)', background: 'var(--surface-2)', color: 'var(--text)', outline: 'none', fontSize: '1rem' }} 
                 />
+                <Mail style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--muted)' }} size={20} />
               </div>
               
               <div style={{ position: 'relative' }}>
-                <Lock size={18} style={{ position: 'absolute', left: '16px', top: '16px', color: 'var(--muted)' }} />
                 <input 
                   type="password" 
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  placeholder="Password (min 6 chars)" 
-                  required 
+                  placeholder="Password" 
+                  required
                   disabled={loading}
-                  minLength={6}
-                  style={{ width: '100%', padding: '14px 14px 14px 44px', borderRadius: '8px', border: '1px solid var(--line)', background: 'rgba(0,0,0,0.3)', color: 'var(--text)', outline: 'none', fontSize: '1rem' }} 
+                  style={{ width: '100%', padding: '14px 14px 14px 44px', borderRadius: '8px', border: '1px solid var(--line)', background: 'var(--surface-2)', color: 'var(--text)', outline: 'none', fontSize: '1rem' }} 
                 />
+                <Lock style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--muted)' }} size={20} />
               </div>
 
-              {error && <p style={{ color: '#ff6b6b', fontSize: '0.85rem', margin: 0 }}>{error}</p>}
+              {error && <p style={{ color: 'var(--primary)', fontSize: '0.85rem', margin: 0 }}>{error}</p>}
               {message && <p style={{ color: 'var(--primary)', fontSize: '0.85rem', margin: 0 }}>{message}</p>}
               
               <button 

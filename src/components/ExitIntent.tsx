@@ -8,9 +8,10 @@ export function ExitIntent() {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    const handleMouseLeave = (e: MouseEvent) => {
+    const handleMouseLeave = (e: Event) => {
+      const mouseEvent = e as MouseEvent;
       // If mouse leaves top of window (indicates trying to close tab or change URL)
-      if (e.clientY <= 0 && !hasFired) {
+      if (mouseEvent.clientY <= 0 && !hasFired) {
         setShow(true);
         setHasFired(true);
       }
@@ -39,7 +40,8 @@ export function ExitIntent() {
     <div style={{
       position: 'fixed',
       top: 0, left: 0, right: 0, bottom: 0,
-      background: 'rgba(0,0,0,0.85)',
+      background: 'rgba(255,255,255,0.75)',
+      backdropFilter: 'blur(8px)',
       backdropFilter: 'blur(5px)',
       zIndex: 99999,
       display: 'flex',
@@ -48,14 +50,14 @@ export function ExitIntent() {
       padding: '20px'
     }}>
       <div style={{
-        background: '#111',
+        background: 'var(--surface)',
         border: '1px solid var(--line)',
         borderRadius: '16px',
         maxWidth: '450px',
         width: '100%',
         padding: '32px',
         position: 'relative',
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+        boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)'
       }}>
         <button 
           onClick={() => setShow(false)}
@@ -83,7 +85,7 @@ export function ExitIntent() {
                   placeholder="Where should we send it?" 
                   required 
                   disabled={loading}
-                  style={{ width: '100%', padding: '14px 14px 14px 44px', borderRadius: '8px', border: '1px solid var(--line)', background: 'rgba(0,0,0,0.3)', color: 'var(--text)', outline: 'none', fontSize: '1rem' }} 
+                  style={{ width: '100%', padding: '14px 14px 14px 44px', borderRadius: '8px', border: '1px solid var(--line)', background: 'var(--surface-2)', color: 'var(--text)', outline: 'none', fontSize: '1rem' }} 
                 />
               </div>
               <button 

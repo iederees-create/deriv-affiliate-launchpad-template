@@ -75,17 +75,17 @@ export function MembersDashboard() {
             <p style={{ color: 'var(--muted)' }}>Welcome back, {user?.email}</p>
           </header>
 
-          {/* Locked Resources Gateway */}
           <div style={{ 
-            background: hasDerivId ? 'rgba(107, 228, 196, 0.05)' : 'rgba(255, 107, 107, 0.05)', 
-            border: `1px solid ${hasDerivId ? 'var(--primary)' : 'rgba(255, 107, 107, 0.3)'}`, 
+            background: hasDerivId ? 'rgba(255, 68, 79, 0.05)' : 'var(--surface-2)', 
+            border: `1px solid ${hasDerivId ? 'var(--primary)' : 'var(--line)'}`, 
             borderRadius: '16px', 
             padding: '32px',
             position: 'relative',
-            overflow: 'hidden'
+            overflow: 'hidden',
+            boxShadow: '0 4px 12px rgba(0,0,0,0.03)'
           }}>
             <h2 style={{ fontSize: '1.5rem', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              {hasDerivId ? <CheckCircle className="text-[var(--primary)]" /> : <Lock style={{ color: '#ff6b6b' }} />} 
+              {hasDerivId ? <CheckCircle className="text-[var(--primary)]" /> : <Lock style={{ color: 'var(--primary)' }} />} 
               VIP Premium Access
             </h2>
             
@@ -104,7 +104,7 @@ export function MembersDashboard() {
                   </a>
                 </div>
 
-                <div style={{ marginBottom: '24px', padding: '16px', background: 'rgba(255,255,255,0.05)', borderRadius: '8px', border: '1px dashed var(--line)' }}>
+                <div style={{ marginBottom: '24px', padding: '16px', background: 'var(--surface)', borderRadius: '8px', border: '1px dashed var(--line)' }}>
                   <h4 style={{ fontSize: '0.9rem', marginBottom: '8px' }}>Already have a Deriv account?</h4>
                   <p style={{ fontSize: '0.85rem', color: 'var(--muted)', margin: 0 }}>
                     If you signed up for Deriv without our link, you can easily link your account! 
@@ -119,13 +119,13 @@ export function MembersDashboard() {
                     onChange={(e) => setDerivId(e.target.value)}
                     placeholder="Enter Deriv ID or Nickname..." 
                     required
-                    style={{ flex: 1, padding: '12px', borderRadius: '8px', border: '1px solid var(--line)', background: 'rgba(0,0,0,0.3)', color: 'var(--text)', outline: 'none' }}
+                    style={{ flex: 1, padding: '12px', borderRadius: '8px', border: '1px solid var(--line)', background: 'var(--surface)', color: 'var(--text)', outline: 'none' }}
                   />
                   <button type="submit" className="cta" disabled={saving} style={{ padding: '0 24px' }}>
                     {saving ? 'Linking...' : 'Unlock'}
                   </button>
                 </form>
-                {message && <p style={{ color: '#ff6b6b', fontSize: '0.85rem', marginTop: '12px' }}>{message}</p>}
+                {message && <p style={{ color: 'var(--primary)', fontSize: '0.85rem', marginTop: '12px' }}>{message}</p>}
               </>
             ) : (
               <>
@@ -133,14 +133,14 @@ export function MembersDashboard() {
                 <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
                   
                   {/* Basic Resources */}
-                  <div style={{ background: '#111', padding: '16px', borderRadius: '8px', border: '1px solid var(--line)', flex: '1 1 300px' }}>
+                  <div style={{ background: 'var(--surface)', padding: '16px', borderRadius: '8px', border: '1px solid var(--line)', flex: '1 1 300px' }}>
                     <h4 style={{ marginBottom: '8px' }}>Crash & Boom Ultimate Cheat Sheet (PDF)</h4>
                     <p style={{ fontSize: '0.85rem', color: 'var(--muted)', marginBottom: '16px' }}>Master the spikes with our exact entry criteria.</p>
                     <button className="cta" style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '8px' }}>
                       <DownloadCloud size={16} /> Download PDF
                     </button>
                   </div>
-                  <div style={{ background: '#111', padding: '16px', borderRadius: '8px', border: '1px solid var(--line)', flex: '1 1 300px' }}>
+                  <div style={{ background: 'var(--surface)', padding: '16px', borderRadius: '8px', border: '1px solid var(--line)', flex: '1 1 300px' }}>
                     <h4 style={{ marginBottom: '8px' }}>Risk Management Calculator (Excel)</h4>
                     <p style={{ fontSize: '0.85rem', color: 'var(--muted)', marginBottom: '16px' }}>Never blow an account again. Calculate exact lot sizes.</p>
                     <button className="cta" style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '8px' }}>
@@ -149,14 +149,14 @@ export function MembersDashboard() {
                   </div>
 
                   {/* Premium Resources */}
-                  <div style={{ background: '#111', padding: '16px', borderRadius: '8px', border: '1px solid var(--line)', flex: '1 1 300px' }}>
+                  <div style={{ background: 'var(--surface)', padding: '16px', borderRadius: '8px', border: '1px solid var(--line)', flex: '1 1 300px' }}>
                     <h4 style={{ marginBottom: '8px' }}>Apex Spike Detector (MT5)</h4>
                     <p style={{ fontSize: '0.85rem', color: 'var(--muted)', marginBottom: '16px' }}>Custom indicator that alerts you before massive spikes.</p>
                     <button className="cta cta-primary" style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '8px' }}>
                       <Activity size={16} /> Download .ex5
                     </button>
                   </div>
-                  <div style={{ background: '#111', padding: '16px', borderRadius: '8px', border: '1px solid var(--line)', flex: '1 1 300px' }}>
+                  <div style={{ background: 'var(--surface)', padding: '16px', borderRadius: '8px', border: '1px solid var(--line)', flex: '1 1 300px' }}>
                     <h4 style={{ marginBottom: '8px' }}>V75 Swing Bot</h4>
                     <p style={{ fontSize: '0.85rem', color: 'var(--muted)', marginBottom: '16px' }}>Automated EA for Volatility 75 index trading.</p>
                     <button className="cta cta-primary" style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '8px' }}>
