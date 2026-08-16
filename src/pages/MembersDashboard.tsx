@@ -43,11 +43,11 @@ export function MembersDashboard() {
     setMessage('');
 
     try {
-      // Update profiles table based on user id
-      const { error } = await supabase.from('profiles').update({
+      const { error } = await supabase.from('profiles').upsert({
+        id: user?.id,
         deriv_id: derivId,
         updated_at: new Date().toISOString()
-      }).eq('id', user?.id);
+      });
 
       if (error) throw error;
 
