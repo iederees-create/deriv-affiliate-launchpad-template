@@ -22,7 +22,7 @@ export function MembersDashboard() {
         const { data } = await supabase
           .from('profiles')
           .select('deriv_id')
-          .eq('id', user.id)
+          .eq('user_id', user.id)
           .single();
           
         if (data?.deriv_id) {
@@ -44,10 +44,10 @@ export function MembersDashboard() {
 
     try {
       const { error } = await supabase.from('profiles').upsert({
-        id: user?.id,
+        user_id: user?.id,
         deriv_id: derivId,
         updated_at: new Date().toISOString()
-      });
+      }, { onConflict: 'user_id' });
 
       if (error) throw error;
 
