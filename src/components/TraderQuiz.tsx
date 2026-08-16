@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { supabase } from '../lib/supabase';
 import { Target, Clock, TrendingUp, Mail, ArrowRight, ShieldCheck, Zap, Activity } from 'lucide-react';
 
 const QUIZ_QUESTIONS = [
@@ -40,7 +39,6 @@ export function TraderQuiz() {
   const [answers, setAnswers] = useState<string[]>([]);
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
 
   const handleAnswer = (val: string) => {
     const newAnswers = [...answers, val];
@@ -72,6 +70,7 @@ export function TraderQuiz() {
     e.preventDefault();
     if (!email) return;
     
+    setLoading(true);
     // Redirect to VIP sign up page instead of just inserting to DB
     window.location.href = `/deriv-affiliate-launchpad-template/auth?email=${encodeURIComponent(email)}`;
   };
@@ -154,7 +153,6 @@ export function TraderQuiz() {
                   style={{ width: '100%', padding: '14px 14px 14px 44px', borderRadius: '8px', border: '1px solid var(--line)', background: 'rgba(0,0,0,0.3)', color: 'var(--text)', outline: 'none', fontSize: '1rem' }} 
                 />
               </div>
-              {error && <p style={{ color: '#ff6b6b', fontSize: '0.85rem', margin: 0 }}>{error}</p>}
               <button 
                 type="submit" 
                 className="cta cta-primary" 

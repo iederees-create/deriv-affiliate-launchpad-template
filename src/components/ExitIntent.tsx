@@ -1,13 +1,11 @@
 import { useEffect, useState } from 'react';
-import { supabase } from '../lib/supabase';
 import { X, Mail, DownloadCloud } from 'lucide-react';
 
 export function ExitIntent() {
   const [show, setShow] = useState(false);
   const [hasFired, setHasFired] = useState(false);
   const [email, setEmail] = useState("");
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [errorMsg, setErrorMsg] = useState("");
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const handleMouseLeave = (e: MouseEvent) => {
@@ -30,6 +28,7 @@ export function ExitIntent() {
     e.preventDefault();
     if (!email) return;
     
+    setLoading(true);
     // Redirect to VIP sign up page instead of just inserting to DB
     window.location.href = `/deriv-affiliate-launchpad-template/auth?email=${encodeURIComponent(email)}`;
   };
@@ -74,12 +73,6 @@ export function ExitIntent() {
             Download our <strong>Ultimate Crash & Boom Cheat Sheet</strong> (PDF) for free before you go. Learn the exact entry and exit triggers professionals use on Deriv.
           </p>
 
-          {status === "success" ? (
-             <div style={{ padding: '16px', background: 'rgba(107, 228, 196, 0.1)', border: '1px solid var(--primary)', borderRadius: '8px' }}>
-             <h4 style={{ color: 'var(--primary)', margin: '0 0 8px 0' }}>Cheat Sheet Sent!</h4>
-             <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text)' }}>Check your inbox, we just emailed it to you.</p>
-           </div>
-          ) : (
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
               <div style={{ position: 'relative' }}>
                 <Mail size={18} style={{ position: 'absolute', left: '16px', top: '16px', color: 'var(--muted)' }} />
@@ -89,21 +82,19 @@ export function ExitIntent() {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="Where should we send it?" 
                   required 
-                  disabled={status === "loading"}
+                  disabled={loading}
                   style={{ width: '100%', padding: '14px 14px 14px 44px', borderRadius: '8px', border: '1px solid var(--line)', background: 'rgba(0,0,0,0.3)', color: 'var(--text)', outline: 'none', fontSize: '1rem' }} 
                 />
               </div>
-              {status === "error" && <p style={{ color: '#ff6b6b', fontSize: '0.85rem', margin: 0, textAlign: 'left' }}>{errorMsg}</p>}
               <button 
                 type="submit" 
                 className="cta cta-primary" 
-                disabled={status === "loading"}
-                style={{ border: 'none', cursor: status === "loading" ? 'wait' : 'pointer', width: '100%', opacity: status === "loading" ? 0.7 : 1, padding: '14px', fontSize: '1rem' }}
+                disabled={loading}
+                style={{ border: 'none', cursor: loading ? 'wait' : 'pointer', width: '100%', opacity: loading ? 0.7 : 1, padding: '14px', fontSize: '1rem' }}
               >
-                {status === "loading" ? "Sending..." : "Yes, Send Me The Cheat Sheet"}
+                {loading ? "Redirecting..." : "Yes, Send Me The Cheat Sheet"}
               </button>
             </form>
-          )}
           
           <button 
             onClick={() => setShow(false)}
