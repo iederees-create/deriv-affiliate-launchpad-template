@@ -20,13 +20,13 @@ export function MembersDashboard() {
       if (user) {
         // Fetch their profile/member record
         const { data } = await supabase
-          .from('members')
-          .select('deriv_account_id')
-          .eq('email', user.email)
+          .from('profiles')
+          .select('deriv_id')
+          .eq('id', user.id)
           .single();
           
-        if (data?.deriv_account_id) {
-          setDerivId(data.deriv_account_id);
+        if (data?.deriv_id) {
+          setDerivId(data.deriv_id);
           setHasDerivId(true);
         }
       }
@@ -43,12 +43,11 @@ export function MembersDashboard() {
     setMessage('');
 
     try {
-      // Upsert into members table based on email
-      const { error } = await supabase.from('members').upsert({
-        email: user?.email,
-        deriv_account_id: derivId,
+      // Update profiles table based on user id
+      const { error } = await supabase.from('profiles').update({
+        deriv_id: derivId,
         updated_at: new Date().toISOString()
-      }, { onConflict: 'email' });
+      }).eq('id', user?.id);
 
       if (error) throw error;
 
