@@ -75,38 +75,7 @@ export function MembersDashboard() {
             <p style={{ color: 'var(--muted)' }}>Welcome back, {user?.email}</p>
           </header>
 
-          {/* Tier 1: Free Downloads */}
-          <div style={{ 
-            background: 'rgba(255,255,255,0.03)', 
-            border: '1px solid var(--line)', 
-            borderRadius: '16px', 
-            padding: '32px',
-            marginBottom: '40px'
-          }}>
-            <h2 style={{ fontSize: '1.5rem', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <DownloadCloud className="text-[var(--primary)]" /> Free Resources
-            </h2>
-            <p style={{ color: 'var(--muted)', marginBottom: '24px' }}>Because you created a VIP account, you get instant access to our cheat sheets.</p>
-            
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <div style={{ background: '#111', padding: '16px', borderRadius: '8px', border: '1px solid var(--line)', flex: '1 1 300px' }}>
-                <h4 style={{ marginBottom: '8px' }}>Crash & Boom Ultimate Cheat Sheet (PDF)</h4>
-                <p style={{ fontSize: '0.85rem', color: 'var(--muted)', marginBottom: '16px' }}>Master the spikes with our exact entry criteria.</p>
-                <button className="cta" style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '8px' }}>
-                  <DownloadCloud size={16} /> Download PDF
-                </button>
-              </div>
-              <div style={{ background: '#111', padding: '16px', borderRadius: '8px', border: '1px solid var(--line)', flex: '1 1 300px' }}>
-                <h4 style={{ marginBottom: '8px' }}>Risk Management Calculator (Excel)</h4>
-                <p style={{ fontSize: '0.85rem', color: 'var(--muted)', marginBottom: '16px' }}>Never blow an account again. Calculate exact lot sizes.</p>
-                <button className="cta" style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '8px' }}>
-                  <DownloadCloud size={16} /> Download Tool
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Tier 2: Premium Monetization Gateway */}
+          {/* Locked Resources Gateway */}
           <div style={{ 
             background: hasDerivId ? 'rgba(107, 228, 196, 0.05)' : 'rgba(255, 107, 107, 0.05)', 
             border: `1px solid ${hasDerivId ? 'var(--primary)' : 'rgba(255, 107, 107, 0.3)'}`, 
@@ -117,16 +86,16 @@ export function MembersDashboard() {
           }}>
             <h2 style={{ fontSize: '1.5rem', marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
               {hasDerivId ? <CheckCircle className="text-[var(--primary)]" /> : <Lock style={{ color: '#ff6b6b' }} />} 
-              Premium MT5 Indicators
+              VIP Premium Access
             </h2>
             
             {!hasDerivId ? (
               <>
                 <p style={{ color: 'var(--muted)', marginBottom: '24px', lineHeight: 1.6 }}>
-                  To unlock our proprietary MT5 Indicators and Automated Trading Bots, you must link your Deriv account to this dashboard. 
+                  To unlock your VIP downloads, proprietary MT5 Indicators, and Automated Trading Bots, you must link your Deriv account to this dashboard. 
                   <br/><br/>
                   <strong>Step 1:</strong> Create a new Deriv account using our official partner link.<br/>
-                  <strong>Step 2:</strong> Paste your CR Account Number (e.g., CR123456) below.
+                  <strong>Step 2:</strong> Paste your Deriv ID or Nickname below.
                 </p>
 
                 <div style={{ marginBottom: '24px' }}>
@@ -135,12 +104,20 @@ export function MembersDashboard() {
                   </a>
                 </div>
 
+                <div style={{ marginBottom: '24px', padding: '16px', background: 'rgba(255,255,255,0.05)', borderRadius: '8px', border: '1px dashed var(--line)' }}>
+                  <h4 style={{ fontSize: '0.9rem', marginBottom: '8px' }}>Already have a Deriv account?</h4>
+                  <p style={{ fontSize: '0.85rem', color: 'var(--muted)', margin: 0 }}>
+                    If you signed up for Deriv without our link, you can easily link your account! 
+                    Open a live chat with Deriv support and ask: <strong>"Please move my account under IB {affiliateConfig.brandName}"</strong>. Once they confirm, enter your Deriv ID below.
+                  </p>
+                </div>
+
                 <form onSubmit={handleSaveDerivId} style={{ display: 'flex', gap: '12px', maxWidth: '400px' }}>
                   <input 
                     type="text" 
                     value={derivId}
                     onChange={(e) => setDerivId(e.target.value)}
-                    placeholder="Enter CR Account Number..." 
+                    placeholder="Enter Deriv ID or Nickname..." 
                     required
                     style={{ flex: 1, padding: '12px', borderRadius: '8px', border: '1px solid var(--line)', background: 'rgba(0,0,0,0.3)', color: 'var(--text)', outline: 'none' }}
                   />
@@ -154,6 +131,24 @@ export function MembersDashboard() {
               <>
                 <p style={{ color: 'var(--muted)', marginBottom: '24px' }}>Your Deriv account <strong>{derivId}</strong> is successfully linked. Enjoy your premium resources!</p>
                 <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+                  
+                  {/* Basic Resources */}
+                  <div style={{ background: '#111', padding: '16px', borderRadius: '8px', border: '1px solid var(--line)', flex: '1 1 300px' }}>
+                    <h4 style={{ marginBottom: '8px' }}>Crash & Boom Ultimate Cheat Sheet (PDF)</h4>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--muted)', marginBottom: '16px' }}>Master the spikes with our exact entry criteria.</p>
+                    <button className="cta" style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '8px' }}>
+                      <DownloadCloud size={16} /> Download PDF
+                    </button>
+                  </div>
+                  <div style={{ background: '#111', padding: '16px', borderRadius: '8px', border: '1px solid var(--line)', flex: '1 1 300px' }}>
+                    <h4 style={{ marginBottom: '8px' }}>Risk Management Calculator (Excel)</h4>
+                    <p style={{ fontSize: '0.85rem', color: 'var(--muted)', marginBottom: '16px' }}>Never blow an account again. Calculate exact lot sizes.</p>
+                    <button className="cta" style={{ width: '100%', display: 'flex', justifyContent: 'center', gap: '8px' }}>
+                      <DownloadCloud size={16} /> Download Tool
+                    </button>
+                  </div>
+
+                  {/* Premium Resources */}
                   <div style={{ background: '#111', padding: '16px', borderRadius: '8px', border: '1px solid var(--line)', flex: '1 1 300px' }}>
                     <h4 style={{ marginBottom: '8px' }}>Apex Spike Detector (MT5)</h4>
                     <p style={{ fontSize: '0.85rem', color: 'var(--muted)', marginBottom: '16px' }}>Custom indicator that alerts you before massive spikes.</p>
@@ -168,6 +163,7 @@ export function MembersDashboard() {
                       <Play size={16} /> Download Bot
                     </button>
                   </div>
+
                 </div>
               </>
             )}
