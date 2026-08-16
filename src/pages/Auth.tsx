@@ -45,7 +45,7 @@ export function Auth() {
         if (signUpError) throw signUpError;
         
         // Also add them to deriv_subscribers so the Admin Dashboard sees them immediately
-        await supabase.from('deriv_subscribers').insert([{ email }]).catch(() => {});
+        await supabase.from('deriv_subscribers').insert([{ email }]);
         
         // Note: Supabase might require email confirmation depending on settings.
         // Assuming it's turned off for instant access, or they just get logged in.
