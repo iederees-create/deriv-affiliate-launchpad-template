@@ -7,7 +7,7 @@ export function RiskDisclosure() {
   return (
     <>
       <Seo
-        title="Risk Disclosure | Trading Affiliate Website Template"
+        title="Risk Disclosure | Apex Trade Network"
         description="Clear affiliate and trading risk disclosure page for a broker affiliate website template."
         path="/risk-disclosure"
       />

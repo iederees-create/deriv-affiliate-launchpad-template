@@ -22,6 +22,7 @@ import { MembersDashboard } from "./pages/MembersDashboard";
 import { RequireAuth } from "./components/RequireAuth";
 import { RequireAdmin } from "./components/RequireAdmin";
 import { AdminDashboard } from "./pages/AdminDashboard";
+import { AuthProvider } from "./components/AuthProvider";
 import "./styles.css";
 import "./managed-strategy.css";
 
@@ -62,6 +63,6 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider><RouterProvider router={router} /></AuthProvider>
   </React.StrictMode>
 );

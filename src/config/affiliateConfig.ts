@@ -1,6 +1,6 @@
 export const affiliateConfig = {
   brandName: "Apex Trade Network",
-  productName: "Trading Affiliate Website Template",
+  productName: "Apex Trade Network",
   affiliateOwnerName: "Iederees Francis",
   primaryAffiliateLink: "https://t.deriv.link?t=VQGBGPUYGJDZ",
   demoAccountLink: "https://t.deriv.link?t=VQGBGPUYGJDZ",

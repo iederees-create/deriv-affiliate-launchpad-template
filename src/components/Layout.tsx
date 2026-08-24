@@ -36,9 +36,9 @@ export function Layout() {
         <div>
           <strong>{affiliateConfig.productName}</strong>
           <p>
-            Demo template by NextGenWebs. This is not a trading bot, not financial advice, and not an official Deriv website.
+            Independent educational and strategy-access platform. Not financial advice and not an official Deriv website.
           </p>
-          <p>This template can be adapted for other broker affiliate programmes.</p>
+
         </div>
         <div className="footer-links">
           <Link to="/risk-disclosure">Risk disclosure</Link>
