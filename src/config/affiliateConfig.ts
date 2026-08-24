@@ -6,6 +6,14 @@ export const affiliateConfig = {
   demoAccountLink: "https://t.deriv.link?t=VQGBGPUYGJDZ",
   liveAccountLink: "https://t.deriv.link?t=VQGBGPUYGJDZ",
   partnerProgrammeLink: "https://t.deriv.link?t=VQGBGPUYGJDZ",
+  managedStrategy: {
+    enabled: false,
+    providerHandle: "",
+    officialSetupGuide: "https://traders-academy.deriv.com/trading-guides/deriv-nakala-copy-trading-app-setup-guide",
+    androidApp: "https://play.google.com/store/apps/details?id=com.deriv.pelican",
+    iosApp: "https://apps.apple.com/za/app/deriv-nakala/id6742988869",
+    consentVersion: "apex-managed-strategy-v1.0-2026-08-24"
+  },
   learnBasicsLink: "/deriv-affiliate-launchpad-template/learn",
   whatsappNumber: "+27629494708",
   email: "iedereesfrancis@gmail.com",

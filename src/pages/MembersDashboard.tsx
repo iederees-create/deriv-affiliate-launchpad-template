@@ -1,6 +1,7 @@
 import { useEffect, useState, type FormEvent } from 'react';
 import { Activity, BarChart3, BookOpenCheck, CheckCircle, Clock3, DownloadCloud, ExternalLink, FileSpreadsheet, LineChart, LoaderCircle, Lock, Play, Target } from 'lucide-react';
 import { Seo } from '../components/Seo';
+import { ManagedStrategy } from '../components/ManagedStrategy';
 import { PremiumToolModal, type PremiumTool } from '../components/PremiumTools';
 import { affiliateConfig } from '../config/affiliateConfig';
 import { downloadText } from '../lib/memberTools';
@@ -34,6 +35,7 @@ export function MembersDashboard(){
     <div className={`vip-panel ${linked?'is-linked':''}`}><h2>{linked?<CheckCircle/>:<Lock/>} VIP Premium Access</h2>
     {!linked?<><p className="muted">Link your Deriv account to unlock the protected tools and downloads in this member area.</p><ol className="unlock-steps"><li>Create a Deriv account using the disclosed partner route.</li><li>Enter its email address below.</li></ol><a href={affiliateConfig.primaryAffiliateLink} target="_blank" rel="noreferrer" className="cta cta-primary">Create Deriv Account <ExternalLink size={16}/></a><form className="link-account-form" onSubmit={save}><label><span>Deriv account email</span><input type="email" value={derivId} onChange={e=>setDerivId(e.target.value)} placeholder="name@example.com" required/></label><button className="cta" disabled={saving}>{saving?<><LoaderCircle className="spin" size={16}/> Linking...</>:'Unlock'}</button></form>{message&&<p role="status">{message}</p>}</>:<>
       <div className="linked-message"><CheckCircle size={18}/> Member account linked: <strong>{mask(derivId)}</strong></div><p className="muted">The full account identifier is hidden to reduce accidental exposure in screenshots.</p>
+      <ManagedStrategy/>
       <div className="vip-resources-heading"><div><p className="eyebrow">Nine member resources</p><h3>Plan, practise and review</h3></div><p>These tools do not place trades or use fabricated live prices.</p></div>
       <div className="vip-resource-grid">
         {downloads.map(item=><article className="vip-resource-card" key={item.title}><div className="resource-meta"><span className="type-badge">{item.badge}</span></div><item.icon className="resource-icon"/><h4>{item.title}</h4><p>{item.text}</p><button className="cta cta-secondary resource-button" disabled={busy===item.title} onClick={()=>get(item)}>{busy===item.title?<><LoaderCircle className="spin" size={16}/> Preparing...</>:<><DownloadCloud size={16}/>{item.label}</>}</button></article>)}

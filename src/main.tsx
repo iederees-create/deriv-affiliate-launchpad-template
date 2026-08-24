@@ -20,7 +20,10 @@ import { Kit } from "./pages/Kit";
 import { Auth } from "./pages/Auth";
 import { MembersDashboard } from "./pages/MembersDashboard";
 import { RequireAuth } from "./components/RequireAuth";
+import { RequireAdmin } from "./components/RequireAdmin";
+import { AdminDashboard } from "./pages/AdminDashboard";
 import "./styles.css";
+import "./managed-strategy.css";
 
 const router = createBrowserRouter(
   [
@@ -47,7 +50,8 @@ const router = createBrowserRouter(
         { 
           element: <RequireAuth />,
           children: [
-            { path: "members", element: <MembersDashboard /> }
+            { path: "members", element: <MembersDashboard /> },
+            { element: <RequireAdmin />, children: [{ path: "admin/managed-strategy", element: <AdminDashboard /> }] }
           ]
         }
       ]
