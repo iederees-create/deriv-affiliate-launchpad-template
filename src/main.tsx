@@ -14,6 +14,9 @@ import { ArticleRiskManagement } from "./pages/ArticleRiskManagement";
 import { ArticleBeginnersMT5 } from "./pages/ArticleBeginnersMT5";
 import { RiskDisclosure } from "./pages/RiskDisclosure";
 import { Contact } from "./pages/Contact";
+import { Article } from "./pages/Article";
+import { Tools } from "./pages/Tools";
+import { Kit } from "./pages/Kit";
 import { Auth } from "./pages/Auth";
 import { MembersDashboard } from "./pages/MembersDashboard";
 import { RequireAuth } from "./components/RequireAuth";
@@ -30,11 +33,14 @@ const router = createBrowserRouter(
         { path: "partner-programme", element: <PartnerProgramme /> },
         { path: "platforms", element: <Platforms /> },
         { path: "learn", element: <Learn /> },
+        { path: "tools", element: <Tools /> },
+        { path: "kit", element: <Kit /> },
         { path: "blog", element: <Blog /> },
         { path: "blog/winning-strategies-deriv-synthetic-indices", element: <LongArticle /> },
         { path: "blog/deriv-vs-traditional-forex-brokers", element: <ArticleDerivVsForex /> },
         { path: "blog/risk-management-crash-boom-indices", element: <ArticleRiskManagement /> },
         { path: "blog/beginners-guide-deriv-mt5", element: <ArticleBeginnersMT5 /> },
+        { path: "blog/:slug", element: <Article /> },
         { path: "risk-disclosure", element: <RiskDisclosure /> },
         { path: "contact", element: <Contact /> },
         { path: "auth", element: <Auth /> },

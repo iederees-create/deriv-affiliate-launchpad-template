@@ -3,11 +3,11 @@ import { ShieldCheck } from "lucide-react";
 import { affiliateConfig } from "../config/affiliateConfig";
 
 const navItems = [
-  ["/how-it-works", "How it works"],
-  ["/partner-programme", "Programme"],
-  ["/platforms", "Platforms"],
+  ["/tools", "Tools"],
+  ["/kit", "Free kit"],
   ["/learn", "Learn"],
   ["/blog", "Blog"],
+  ["/platforms", "Platforms"],
   ["/members", "VIP Area"],
   ["/risk-disclosure", "Risk"],
   ["/contact", "Contact"]

@@ -57,6 +57,17 @@ export function Home() {
       <DisclosureBand />
       <section className="section">
         <SectionHeader
+          eyebrow="Free toolkit"
+          title="Calculators and PDFs before you fund anything"
+          text="Stake planner, daily stop, 14-day demo plan, and a 20-row journal. If you open a Deriv account through this site, I may earn a commission. You keep the files either way."
+        />
+        <div className="cta-row">
+          <CTA href="/deriv-affiliate-launchpad-template/tools">Use the free tools</CTA>
+          <CTA href="/deriv-affiliate-launchpad-template/kit" variant="secondary">Download the kit</CTA>
+        </div>
+      </section>
+      <section className="section">
+        <SectionHeader
           eyebrow="Platform Benefits"
           title="Everything you need to succeed"
           text="Whether you're trading Forex during the week or Synthetic Indices on the weekend, Deriv provides the tools for every strategy."

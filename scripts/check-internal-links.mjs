@@ -22,8 +22,10 @@ const requiredPaths = [
   "/partner-programme",
   "/platforms",
   "/learn",
+  "/tools",
+  "/kit",
   "/blog",
-  "/blog/building-a-trading-affiliate-website",
+  "/blog/demo-first-14-day-plan",
   "/risk-disclosure",
   "/contact"
 ];

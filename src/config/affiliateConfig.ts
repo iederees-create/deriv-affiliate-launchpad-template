@@ -1,16 +1,16 @@
 export const affiliateConfig = {
   brandName: "Apex Trade Network",
   productName: "Trading Affiliate Website Template",
-  affiliateOwnerName: "Apex Trade Network",
+  affiliateOwnerName: "Iederees Francis",
   primaryAffiliateLink: "https://t.deriv.link?t=VQGBGPUYGJDZ",
   demoAccountLink: "https://t.deriv.link?t=VQGBGPUYGJDZ",
   liveAccountLink: "https://t.deriv.link?t=VQGBGPUYGJDZ",
   partnerProgrammeLink: "https://t.deriv.link?t=VQGBGPUYGJDZ",
   learnBasicsLink: "/deriv-affiliate-launchpad-template/learn",
-  whatsappNumber: "+27000000000",
-  email: "hello@example.com",
+  whatsappNumber: "+27629494708",
+  email: "iedereesfrancis@gmail.com",
   disclosureText:
-    "Affiliate disclosure: this demo template contains placeholder affiliate links. The website owner may earn commissions when visitors register, deposit, trade, or become partners through configured links.",
+    "Affiliate disclosure: this site is independently run by Iederees Francis. I may earn a commission if you register, deposit, trade, or join a partner programme through the links on this site.",
   riskDisclaimer:
     "Trading involves risk. CFDs and other leveraged products can result in losses greater than the initial amount committed. This website is educational and promotional, not financial advice.",
   socialLinks: {
@@ -18,7 +18,7 @@ export const affiliateConfig = {
     tiktok: "https://example.com/tiktok",
     instagram: "https://example.com/instagram",
     x: "https://example.com/x",
-    linkedin: "https://example.com/linkedin"
+    linkedin: "https://www.linkedin.com/in/iederees-francis/"
   },
   themeColours: {
     background: "#08111f",
