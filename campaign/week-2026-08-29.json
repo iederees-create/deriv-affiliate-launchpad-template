@@ -1,0 +1,156 @@
+{
+  "timezone": "Africa/Johannesburg",
+  "slots": ["08:00", "12:30", "17:00"],
+  "base": "https://iederees-create.github.io/deriv-affiliate-launchpad-template",
+  "disclosure": "Affiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice.",
+  "note": "Friday 28 Aug 08:00/12:30/17:00 already passed (22:00 SAST). One live drop after deploy, then 3 posts/day Sat 29 Aug–Fri 4 Sep.",
+  "posts": [
+    {
+      "id": "sat-0800",
+      "when": "2026-08-29T08:00:00+02:00",
+      "cover": "drawdown",
+      "url": "/blog/drawdown-recovery-math",
+      "text": "A 20% hole is not a 20% climb.\n\nLose 10% and you need 11.1% back.\nLose 20% and you need 25%.\nLose 50% and you need 100%.\n\nThat is why I put a drawdown calculator on the tools page. Type the percent you are already down. If the recovery looks ugly, the answer is not a larger next stake.\n\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/blog/drawdown-recovery-math\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "sat-1230",
+      "when": "2026-08-29T12:30:00+02:00",
+      "cover": "drawdown",
+      "url": "/tools#drawdown",
+      "text": "Worked example, not a recommendation.\n\n$500 demo.\nYou are down 20% = $400 left.\nTo get back to $500 you need 25%, not 20%.\n\nPeople size the next trade from the hole. Size it from the climb instead, then decide whether the session is already over.\n\nCalculator:\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/tools#drawdown\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "sat-1700",
+      "when": "2026-08-29T17:00:00+02:00",
+      "cover": "gate",
+      "url": "/blog/sitting-out-is-a-valid-session",
+      "text": "Saturday evening is when people open a platform because the weekend feels empty.\n\nThat is not a setup.\n\nThe sit-out gate is five yes/no questions. If any answer is no, there is no trade. Sitting out is still a finished session. Journal the skip.\n\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/blog/sitting-out-is-a-valid-session\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "sun-0800",
+      "when": "2026-08-30T08:00:00+02:00",
+      "cover": "session",
+      "url": "/blog/session-clock-for-24-7-markets",
+      "text": "Volatility 75 does not close at 02:00. You still have to.\n\nI added a session clock to the tools page: pick the minutes, start it, stop when it hits zero. Forty-five minutes plus a four-trade cap is plenty. After that you are collecting moods, not a sample.\n\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/blog/session-clock-for-24-7-markets\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "sun-1230",
+      "when": "2026-08-30T12:30:00+02:00",
+      "cover": "session",
+      "url": "/tools#session",
+      "text": "If you open a synthetic index today, put a clock on it first.\n\nThe market will still be there after lunch. Your attention will not.\n\nTimer is in the browser. No login. It does not place trades. It only tells you the session you already agreed to is over.\n\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/tools#session\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "sun-1700",
+      "when": "2026-08-30T17:00:00+02:00",
+      "cover": "journal",
+      "url": "/blog/journal-20-trades-before-you-change-anything",
+      "text": "Sunday review, if you traded this weekend:\n\nCount broken rules first.\nThen wins and losses.\nThen whether the clock or the daily stop was hit.\n\nA green session with ignored stops is still a failed sample. Twenty rows exist so you can see that in writing.\n\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/blog/journal-20-trades-before-you-change-anything\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "mon-0800",
+      "when": "2026-08-31T08:00:00+02:00",
+      "cover": "streak",
+      "url": "/blog/revenge-trade-after-the-third-loser",
+      "text": "Two losers feel like noise. The third feels personal.\n\nThat is when people raise the stake, skip the journal, and stay past the clock. The extra try is how a 2% day becomes an 8% day.\n\nI wrote the boring version: write the daily stop while you are still calm.\n\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/blog/revenge-trade-after-the-third-loser\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "mon-1230",
+      "when": "2026-08-31T12:30:00+02:00",
+      "cover": "streak",
+      "url": "/tools#streak",
+      "text": "Worked example, not a recommendation.\n\n$500 account.\n1% risk.\nFive losers in a row.\nLeft: about $475.\n\nAt 3% risk the same streak is a different week. The losing-streak tool uses the same numbers as the stake planner, compounding each loss.\n\nIf the leftover looks ugly, shrink the risk percent. Do not hunt a new setup at lunch.\n\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/tools#streak\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "mon-1700",
+      "when": "2026-08-31T17:00:00+02:00",
+      "cover": "paid",
+      "url": "/blog/how-this-affiliate-desk-gets-paid",
+      "text": "Here is exactly how this desk makes money.\n\nThe calculators are free. No login.\nThe printable kit unlocks after a Deriv demo click through my partner link.\nIf you later qualify as a client, Deriv may pay me a commission.\n\nI cannot see your password. I do not hold your money. I will not tell you what to trade. A deposit is not required to read the pages.\n\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/blog/how-this-affiliate-desk-gets-paid\n\nTrading involves risk. Not financial advice."
+    },
+    {
+      "id": "tue-0800",
+      "when": "2026-09-01T08:00:00+02:00",
+      "cover": "gate",
+      "url": "/tools#gate",
+      "text": "Five questions before the next contract:\n\n1. Did I write the stake?\n2. Is daily remaining larger than that stake?\n3. Am I still inside the session I planned?\n4. Can I describe the setup in one sentence?\n5. Am I not taking this to recover the last loss?\n\nIf any answer is no, sit out. The gate is a filter, not permission to size up.\n\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/tools#gate\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "tue-1230",
+      "when": "2026-09-01T12:30:00+02:00",
+      "cover": "kit",
+      "url": "/kit",
+      "text": "The pack is still five files, on purpose:\n\n1. 14-day demo plan\n2. 20-row journal\n3. Pre-session checklist\n4. Daily loss-limit card\n5. Position-size worksheet\n\nUnlock is a Deriv demo click through my partner link. The files are planning aids, not a profit promise. You can keep them either way.\n\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/kit\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "tue-1700",
+      "when": "2026-09-01T17:00:00+02:00",
+      "cover": "expectancy",
+      "url": "/tools#expectancy",
+      "text": "Win rate without the average win and loss in R is a vanity number.\n\n8 wins and 12 losses at 1.2R vs 1R is not the same story as 8 wins that were 0.4R. The sample expectancy tool does that arithmetic. It does not tell you the next trade.\n\nUnder twenty rows, do not rewrite the setup. You do not have a sample. You have a mood.\n\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/tools#expectancy\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "wed-0800",
+      "when": "2026-09-02T08:00:00+02:00",
+      "cover": "sizing",
+      "url": "/blog/position-sizing-that-survives-a-bad-week",
+      "text": "Size the trade from the losing streak you do not want, not from the screenshot you do.\n\n0.5% to 1% per trade on a $500 demo is $2.50 to $5. It looks small. Small is the point. Exciting stakes are how accounts vanish in a bad week.\n\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/blog/position-sizing-that-survives-a-bad-week\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "wed-1230",
+      "when": "2026-09-02T12:30:00+02:00",
+      "cover": "tools",
+      "url": "/tools",
+      "text": "The desk now has eight browser tools:\n\n• stake planner\n• daily loss limiter\n• 20-trade sample\n• drawdown recovery\n• losing-streak survival\n• session clock\n• sit-out gate\n• sample expectancy\n\nThey run in the browser. No login. They do not place trades. If a result looks heroic, it is probably too large.\n\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/tools\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "wed-1700",
+      "when": "2026-09-02T17:00:00+02:00",
+      "cover": "demo",
+      "url": "/blog/demo-first-14-day-plan",
+      "text": "I am helping five people set up a 14-day Deriv demo practice routine this week.\n\nEducational setup only:\n• pick one platform\n• set a written session limit\n• configure the journal\n• find the risk information\n\nNo signals. No managed accounts. No profit promises. No requirement to deposit.\n\nMessage me DEMO PLAN on WhatsApp:\nhttps://wa.me/27629494708\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "thu-0800",
+      "when": "2026-09-03T08:00:00+02:00",
+      "cover": "v75",
+      "url": "/blog/what-deriv-platforms-actually-are",
+      "text": "MT5, Deriv Trader, Bot, and GO are not one app.\n\nIf a YouTube video shows a button you do not have, believe your account, not the video. Availability depends on country, account type, and what the broker currently offers.\n\nFor a 14-day practice plan, pick one surface and stay there. Learning four platforms in a week is a UI tour, not a process.\n\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/blog/what-deriv-platforms-actually-are\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "thu-1230",
+      "when": "2026-09-03T12:30:00+02:00",
+      "cover": "stop",
+      "url": "/tools#daily",
+      "text": "A daily stop only works if it is written before the session and obeyed after the third loser.\n\n$500 account.\n2% daily cap = $10.\nTwo full-risk losers at 1% and the day is done.\n\nType what you already lost. If remaining is smaller than the next planned stake, skip. That last sentence is the whole method.\n\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/tools#daily\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "thu-1700",
+      "when": "2026-09-03T17:00:00+02:00",
+      "cover": "paid",
+      "url": "/how-it-works",
+      "text": "How this desk works, in six steps:\n\n1. You land from a post, not a raw broker URL.\n2. You use a tool or read a plan.\n3. You see the risk and the commission.\n4. Demo is the default.\n5. The click is tracked to my partner account if you sign up.\n6. You keep the files either way.\n\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/how-it-works\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "fri-0800",
+      "when": "2026-09-04T08:00:00+02:00",
+      "cover": "demo",
+      "url": "/blog/demo-first-14-day-plan",
+      "text": "A two-week plan that keeps live money off the calendar.\n\nDays 1–3: learn the buttons.\nDays 4–10: one setup, twenty journal rows.\nDays 11–14: count broken rules first, results second.\n\nIf you cannot keep a daily stop on demo, you will not keep it live. Funding a live account is a separate decision and this plan does not require it.\n\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/blog/demo-first-14-day-plan\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "fri-1230",
+      "when": "2026-09-04T12:30:00+02:00",
+      "cover": "kit",
+      "url": "/kit",
+      "text": "If you want the PDFs without a 40-minute video:\n\nDemo plan, journal, checklist, loss-limit card, size worksheet.\n\nThe browser tools (stake, stop, drawdown, clock, sit-out gate) stay free with no login. The printables unlock after the demo route.\n\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/kit\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. Not financial advice."
+    },
+    {
+      "id": "fri-1700",
+      "when": "2026-09-04T17:00:00+02:00",
+      "cover": "tools",
+      "url": "/",
+      "text": "Recap of the desk this week:\n\n• Eight browser tools, including drawdown, streak survival, a session clock, and a sit-out gate\n• Five printable PDFs\n• Education posts that refuse fake income claims\n• A disclosed Deriv demo route if you actually want an account\n\nStart here:\nhttps://iederees-create.github.io/deriv-affiliate-launchpad-template/\n\nAffiliate disclosure: I may earn a commission if you open a Deriv account through my link. Trading involves risk. CFDs and other leveraged products can lose more than you put in. Not financial advice."
+    }
+  ]
+}

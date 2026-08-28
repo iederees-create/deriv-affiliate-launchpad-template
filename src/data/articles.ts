@@ -10,6 +10,116 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "drawdown-recovery-math",
+    title: "A 20% Hole Needs a 25% Climb",
+    description: "Why drawdown recovery is not symmetric, and why a written daily stop is cheaper than a heroic comeback.",
+    date: "2026-08-28",
+    sections: [
+      {
+        heading: "The arithmetic people skip",
+        body: [
+          "Lose 10% and you need 11.1% back. Lose 20% and you need 25%. Lose 50% and you need 100%. The hole and the climb are not the same number. That is not a motivation poster. It is the reason a daily stop exists.",
+          "The drawdown recovery tool on this site does that sum in the browser. Type the percent you are already down. If the climb looks ugly, the answer is not a larger next stake."
+        ]
+      },
+      {
+        heading: "What to do instead of doubling",
+        body: [
+          "Write the daily cap before the session. When remaining hits zero, close the platform. Review the journal tomorrow. A smaller account that still exists on Friday is more useful than a recovery plan written at 23:40.",
+          "This is not a claim that 1% risk makes you profitable. It is a claim that 4% risk after three losers is how people turn a bad morning into a ruined week."
+        ]
+      }
+    ]
+  },
+  {
+    slug: "sitting-out-is-a-valid-session",
+    title: "Sitting Out Is a Valid Session",
+    description: "The platform being open is not a reason to take a contract. A written no still counts as process.",
+    date: "2026-08-28",
+    sections: [
+      {
+        heading: "A no is a finished session",
+        body: [
+          "The pre-session checklist in the kit has a line I like: if any answer is no, I sit out. That is not a slogan. It is the only way a checklist is worth the paper.",
+          "The sit-out gate on the tools page is five checkboxes: written stake, daily remaining larger than the stake, still inside the session clock, a setup you can say in one sentence, and not taking the trade to recover the last loss. If any box is empty, there is no trade."
+        ]
+      },
+      {
+        heading: "Journal the skip",
+        body: [
+          "Write the sit-out as a row: time, market, reason. 'Would have been revenge' is a better note than a green screenshot of a trade you should not have taken.",
+          "I may earn a commission if you open a Deriv demo through the partner link. Sitting out does not change that, and it does not require a deposit."
+        ]
+      }
+    ]
+  },
+  {
+    slug: "revenge-trade-after-the-third-loser",
+    title: "The Third Loser Is Where Accounts Disappear",
+    description: "The extra try after a streak is how a 2% day becomes an 8% day.",
+    date: "2026-08-28",
+    sections: [
+      {
+        heading: "The mood arrives on schedule",
+        body: [
+          "Two losers feel like noise. The third feels personal. That is when people raise the stake, skip the journal, and stay past the session clock. The losing-streak tool shows what five full-risk losers do to a $500 account at 1%. It is not rare. It is the default bad week.",
+          "A daily stop of 2% means two full-risk losers and the day is done. The extra try is how 2% becomes 8%."
+        ]
+      },
+      {
+        heading: "Write the number while you are still calm",
+        body: [
+          "The card in the kit is a piece of paper on purpose. A number in a notes app is easy to edit after the third loser. A number already written is harder to negotiate with.",
+          "Use the daily limiter. Type what you already lost. If remaining is smaller than the next planned stake, skip. That sentence saves more accounts than any indicator I have seen posted as a screenshot."
+        ]
+      }
+    ]
+  },
+  {
+    slug: "session-clock-for-24-7-markets",
+    title: "Put a Clock on a Market That Never Closes",
+    description: "Volatility indices keep ticking at 02:00. Your session should not.",
+    date: "2026-08-28",
+    sections: [
+      {
+        heading: "The product is 24/7. You are not.",
+        body: [
+          "Synthetic indices do not have a cash close. That is useful for practice. It is also why people sit in front of 1-second ticks like it is a night shift. A salary has hours. This market does not. You have to put the clock on yourself.",
+          "The session clock on the tools page is a timer, not a strategy. Forty-five minutes plus a four-trade cap is plenty. When the clock hits zero, the next tick is not a session."
+        ]
+      },
+      {
+        heading: "Combine the clock with the cap",
+        body: [
+          "Time or trade count, whichever hits first. Then journal. Opening the platform 'just to look' after the cap is the note worth writing down.",
+          "If you still want a Deriv demo to practise that routine, use the partner link so the referral sits with me. Read the risk page first. None of this is a payout promise."
+        ]
+      }
+    ]
+  },
+  {
+    slug: "how-this-affiliate-desk-gets-paid",
+    title: "How This Desk Gets Paid, Without Hiding It",
+    description: "The calculators are free. Commission only happens if you become a Deriv client through my disclosed partner link.",
+    date: "2026-08-28",
+    sections: [
+      {
+        heading: "The model in one paragraph",
+        body: [
+          "You can use the browser tools with no login. If you want the printable kit, the unlock is a click through my Deriv partner link. If you later qualify as a client, Deriv may pay me a commission. I cannot see your password. I do not hold your money. I will not tell you what to trade.",
+          "A deposit is not required to read the education pages. Demo is the default route I send people to."
+        ]
+      },
+      {
+        heading: "Why say this in public",
+        body: [
+          "Trading audiences already assume someone is getting paid. When a page pretends otherwise, the visitor fills in a worse story. Disclosure is cheaper than that, and it filters the people who only wanted a secret income method.",
+          "If that is too boring to follow, this desk is not for you. If you want the process files anyway, they are on the kit page."
+        ]
+      }
+    ]
+  },
+  {
     slug: "demo-first-14-day-plan",
     title: "A 14-Day Demo Plan That Keeps Live Money Out of Week One",
     description: "A two-week practice plan for Deriv demo accounts with a daily stop, a trade cap, and a journal.",

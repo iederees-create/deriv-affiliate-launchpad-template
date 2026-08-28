@@ -8,6 +8,46 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "A 20% Hole Needs a 25% Climb",
+    slug: "drawdown-recovery-math",
+    excerpt:
+      "Drawdown math is not symmetric. See why a daily stop is cheaper than a heroic recovery.",
+    date: "2026-08-28",
+    readTime: "5 min read"
+  },
+  {
+    title: "Sitting Out Is a Valid Session",
+    slug: "sitting-out-is-a-valid-session",
+    excerpt:
+      "The platform being open is not a reason to trade. A written no is still a finished session.",
+    date: "2026-08-28",
+    readTime: "4 min read"
+  },
+  {
+    title: "The Third Loser Is Where Accounts Disappear",
+    slug: "revenge-trade-after-the-third-loser",
+    excerpt:
+      "Revenge sizing after a streak is how a 2% day becomes an 8% day. Write the stop before the mood arrives.",
+    date: "2026-08-28",
+    readTime: "5 min read"
+  },
+  {
+    title: "Put a Clock on a Market That Never Closes",
+    slug: "session-clock-for-24-7-markets",
+    excerpt:
+      "Synthetic indices will still be there after dinner. Your session should not.",
+    date: "2026-08-28",
+    readTime: "4 min read"
+  },
+  {
+    title: "How This Desk Gets Paid, Without Hiding It",
+    slug: "how-this-affiliate-desk-gets-paid",
+    excerpt:
+      "The tools are free. The commission is from a disclosed Deriv partner link. That is the whole model.",
+    date: "2026-08-28",
+    readTime: "5 min read"
+  },
+  {
     title: "5 Winning Strategies for Trading Deriv Synthetic Indices",
     slug: "winning-strategies-deriv-synthetic-indices",
     excerpt:

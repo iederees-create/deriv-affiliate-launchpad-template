@@ -205,6 +205,13 @@ button.cta {
   padding: 18px;
 }
 
+.starter-card { padding: clamp(24px, 4vw, 42px); }
+.starter-card h2 { margin: 8px 0 18px; font-size: clamp(1.55rem, 2.5vw, 2.25rem); line-height: 1.1; }
+.starter-list { list-style: none; padding: 0; margin: 0 0 20px; display: grid; gap: 10px; }
+.starter-list li { padding: 11px 0 11px 28px; border-bottom: 1px solid var(--line); position: relative; }
+.starter-list li::before { content: "✓"; position: absolute; left: 0; color: var(--primary); font-weight: 900; }
+.starter-card small { color: var(--muted); line-height: 1.55; display: block; }
+
 .metric {
   display: grid;
   grid-template-columns: 52px 1fr;
@@ -236,7 +243,7 @@ button.cta {
   border: 1px solid rgba(248, 208, 107, 0.34);
   border-radius: 8px;
   background: rgba(248, 208, 107, 0.09);
-  color: #fce9b0;
+  color: #5f4b00;
   line-height: 1.6;
 }
 
@@ -532,6 +539,37 @@ button.cta {
 
 .kit-card .cta {
   margin-top: 16px;
+}
+
+.gate-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.gate-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--text);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.gate-item input {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--primary);
+}
+
+.tool-card .cta-row {
+  margin-top: 8px;
+  margin-bottom: 4px;
 }
 
 @media (max-width: 900px) {
