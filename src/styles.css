@@ -201,6 +201,8 @@ button.cta {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
+.page-narrator-wrap { width:min(900px,calc(100% - 36px)); margin:28px auto -28px; }
+
 .article-narrator { display:flex; align-items:center; gap:14px; margin:24px 0; padding:16px; border:1px solid color-mix(in srgb,var(--primary) 35%,var(--line)); border-radius:12px; background:linear-gradient(135deg,color-mix(in srgb,var(--primary) 8%,var(--surface)),var(--surface-2)); }
 .narrator-icon { display:grid; flex:0 0 44px; width:44px; height:44px; place-items:center; color:var(--primary); border-radius:50%; background:color-mix(in srgb,var(--primary) 13%,transparent); }
 .narrator-copy { display:grid; flex:1; gap:3px; min-width:0; }
