@@ -3,6 +3,7 @@ import { CTA, WhatsAppCTA } from "../components/CTA";
 import { Seo } from "../components/Seo";
 import { affiliateConfig } from "../config/affiliateConfig";
 import { getArticle } from "../data/articles";
+import { ArticleNarrator } from "../components/ArticleNarrator";
 
 export function Article() {
   const { slug = "" } = useParams();
@@ -31,6 +32,7 @@ export function Article() {
           <h1>{article.title}</h1>
           <p>{article.description}</p>
         </header>
+        <ArticleNarrator title={article.title} description={article.description} sections={article.sections} />
         <div className="article-disclaimer">
           {affiliateConfig.disclosureText} {affiliateConfig.riskDisclaimer}
         </div>

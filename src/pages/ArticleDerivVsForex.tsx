@@ -1,6 +1,7 @@
 import { CTA, WhatsAppCTA } from "../components/CTA";
 import { Seo } from "../components/Seo";
 import { affiliateConfig } from "../config/affiliateConfig";
+import { ArticleNarrator } from "../components/ArticleNarrator";
 
 const sections = [
   {
@@ -68,6 +69,7 @@ export function ArticleDerivVsForex() {
             An honest comparison of Deriv's platforms, leverage, and synthetic indices against traditional MT4/MT5 forex brokers.
           </p>
         </header>
+        <ArticleNarrator title="Deriv vs Traditional Forex Brokers: Which is Better?" description="An honest comparison of Deriv's platforms, leverage, and synthetic indices against traditional MT4/MT5 forex brokers." sections={sections} />
         <div className="article-disclaimer">
           {affiliateConfig.disclosureText} {affiliateConfig.riskDisclaimer}
         </div>

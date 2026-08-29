@@ -1,6 +1,7 @@
 import { CTA, WhatsAppCTA } from "../components/CTA";
 import { Seo } from "../components/Seo";
 import { affiliateConfig } from "../config/affiliateConfig";
+import { ArticleNarrator } from "../components/ArticleNarrator";
 
 const sections = [
   {
@@ -67,6 +68,7 @@ export function LongArticle() {
             Unlike forex or stocks, Deriv's synthetic indices are available 24/7, immune to news events, and offer consistent volatility. Here are 5 ways to trade them effectively.
           </p>
         </header>
+        <ArticleNarrator title="5 Winning Strategies for Trading Deriv Synthetic Indices" description="Unlike forex or stocks, Deriv's synthetic indices are available 24/7, immune to news events, and offer consistent volatility. Here are 5 ways to trade them effectively." sections={sections} />
         <div className="article-disclaimer">
           {affiliateConfig.disclosureText} {affiliateConfig.riskDisclaimer}
         </div>

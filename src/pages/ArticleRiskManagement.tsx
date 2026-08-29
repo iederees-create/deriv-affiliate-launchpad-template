@@ -1,6 +1,7 @@
 import { CTA, WhatsAppCTA } from "../components/CTA";
 import { Seo } from "../components/Seo";
 import { affiliateConfig } from "../config/affiliateConfig";
+import { ArticleNarrator } from "../components/ArticleNarrator";
 
 const sections = [
   {
@@ -66,6 +67,7 @@ export function ArticleRiskManagement() {
             Crash and Boom indices are unique to Deriv. Learn how to protect your capital from sudden market spikes.
           </p>
         </header>
+        <ArticleNarrator title="How to Manage Risk When Trading Crash and Boom" description="Crash and Boom indices are unique to Deriv. Learn how to protect your capital from sudden market spikes." sections={sections} />
         <div className="article-disclaimer">
           {affiliateConfig.disclosureText} {affiliateConfig.riskDisclaimer}
         </div>

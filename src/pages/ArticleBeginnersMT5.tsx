@@ -1,6 +1,7 @@
 import { CTA, WhatsAppCTA } from "../components/CTA";
 import { Seo } from "../components/Seo";
 import { affiliateConfig } from "../config/affiliateConfig";
+import { ArticleNarrator } from "../components/ArticleNarrator";
 
 const sections = [
   {
@@ -66,6 +67,7 @@ export function ArticleBeginnersMT5() {
             Step-by-step instructions on setting up your Deriv MT5 account, adding indicators, and placing your first trade.
           </p>
         </header>
+        <ArticleNarrator title="A Beginner's Guide to Using Deriv MT5 (DMT5)" description="Step-by-step instructions on setting up your Deriv MT5 account, adding indicators, and placing your first trade." sections={sections} />
         <div className="article-disclaimer">
           {affiliateConfig.disclosureText} {affiliateConfig.riskDisclaimer}
         </div>
