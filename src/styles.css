@@ -666,10 +666,13 @@ button.cta {
   font-size: 1.25rem;
 }
 
-.quote-chip.is-active,
-.quote-chip:focus-visible {
+.quote-chip.is-active {
   border-color: var(--primary);
-  outline: 2px solid color-mix(in srgb, var(--primary) 35%, transparent);
+  background: color-mix(in srgb, var(--primary) 8%, var(--surface));
+}
+
+.quote-chip:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--primary) 55%, transparent);
   outline-offset: 2px;
 }
 

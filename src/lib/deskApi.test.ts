@@ -5,7 +5,9 @@ import {
   drawdownRecovery,
   journeyDay,
   loadResource,
+  localDateIso,
   sampleExpectancy,
+  siteHref,
   stakePlan,
   streakSurvival,
   todayJourneyDay,
@@ -74,6 +76,17 @@ describe("journey helpers", () => {
     expect(todayJourneyDay("2026-08-29", new Date("2026-08-29T18:00:00"))).toBe(1);
     expect(todayJourneyDay("2026-08-29", new Date("2026-09-04T09:00:00"))).toBe(7);
     expect(todayJourneyDay("2026-08-29", new Date("2026-10-01T09:00:00"))).toBe(14);
+  });
+
+  it("writes a local calendar date, not UTC", () => {
+    expect(localDateIso(new Date(2026, 7, 29, 23, 30))).toBe("2026-08-29");
+  });
+
+  it("allows site paths and https, rejects protocol-relative and http", () => {
+    expect(siteHref("/kit")).toMatch(/\/kit$/);
+    expect(siteHref("https://wa.me/1")).toBe("https://wa.me/1");
+    expect(siteHref("http://evil.example")).toBe("#");
+    expect(siteHref("//evil.example")).toBe("#");
   });
 
   it("clamps helper values", () => {

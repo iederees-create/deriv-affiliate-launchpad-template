@@ -8,6 +8,7 @@ import {
   loadJourney,
   loadMarkets,
   loadOffers,
+  localDateIso,
   siteHref,
   stakePlan,
   todayJourneyDay,
@@ -66,12 +67,10 @@ export function Desk() {
   const [riskPct, setRiskPct] = useState("1");
   const [dailyPct, setDailyPct] = useState("2");
   const [lostToday, setLostToday] = useState("0");
-  const [startIso, setStartIso] = useState("");
-  const [done, setDone] = useState<number[]>([]);
+  const [startIso, setStartIso] = useState(readStart);
+  const [done, setDone] = useState<number[]>(readDone);
 
   useEffect(() => {
-    setStartIso(readStart());
-    setDone(readDone());
     let cancelled = false;
     Promise.all([loadMarkets(), loadJourney(), loadOffers()])
       .then(([nextMarkets, nextJourney, nextOffers]) => {
@@ -79,7 +78,9 @@ export function Desk() {
         setMarkets(nextMarkets);
         setJourney(nextJourney);
         setOffers(nextOffers);
-        if (nextMarkets[0]) setSelected(nextMarkets[0].symbol);
+        if (nextMarkets[0]) {
+          setSelected((current) => (nextMarkets.some((item) => item.symbol === current) ? current : nextMarkets[0].symbol));
+        }
       })
       .catch((reason) => {
         if (!cancelled) setLoadError(reason instanceof Error ? reason.message : "The desk catalog could not load.");
@@ -92,7 +93,11 @@ export function Desk() {
   useEffect(() => {
     const stop = subscribeDerivQuotes(affiliateConfig.derivAppId, BEGINNER_SYMBOLS, {
       onTick: (tick) => {
-        setQuotes((current) => ({ ...current, [tick.symbol]: tick }));
+        setQuotes((current) => {
+          const previous = current[tick.symbol];
+          if (previous && previous.quote === tick.quote && previous.epoch === tick.epoch) return current;
+          return { ...current, [tick.symbol]: tick };
+        });
       },
       onStatus: setStatus
     });
@@ -108,7 +113,7 @@ export function Desk() {
   const liveCount = useMemo(() => Object.keys(quotes).length, [quotes]);
 
   const startJourney = () => {
-    const iso = new Date().toISOString().slice(0, 10);
+    const iso = localDateIso();
     try {
       window.localStorage.setItem(START_KEY, iso);
     } catch {
@@ -152,14 +157,13 @@ export function Desk() {
 
       {loadError ? <p className="desk-banner" role="alert">{loadError}</p> : null}
 
-      <section className="section" aria-labelledby="quotes-heading">
+      <section className="section">
         <SectionHeader
           eyebrow="Deriv public ticks"
           title="Beginner market tape"
           text="Prices refresh from Deriv’s public market data. A moving number is not a reason to click buy."
         />
-        <h2 id="quotes-heading" className="visually-hidden">Live beginner quotes</h2>
-        <ul className="quote-tape">
+        <ul className="quote-tape" role="list">
           {(markets.length ? markets : BEGINNER_SYMBOLS.map((symbol) => ({ symbol, name: symbol, market: "synthetic" as const, beginnerNote: "", id: symbol, risk: "medium" as const, session: "24/7" as const }))).map((market) => {
             const tick = quotes[market.symbol];
             return (
@@ -238,6 +242,8 @@ export function Desk() {
                 ) : null}
               </div>
             </>
+          ) : loadError ? (
+            <p className="muted">The 14-day path did not load. Refresh the page, or use the kit PDF if this catalog is offline.</p>
           ) : (
             <p className="muted">Loading the path…</p>
           )}
@@ -283,13 +289,14 @@ export function Desk() {
         <ol className="journey-list">
           {(journey?.days ?? []).map((item) => (
             <li key={item.day}>
-              <label className={item.day === dayNumber ? "journey-item is-today" : "journey-item"}>
+              <label className={item.day === dayNumber ? "journey-item is-today" : "journey-item"} aria-current={item.day === dayNumber ? "date" : undefined}>
                 <input
                   type="checkbox"
                   checked={done.includes(item.day)}
                   onChange={() => toggleDay(item.day)}
                 />
                 <span>
+                  {item.day === dayNumber ? <span className="eyebrow">Today</span> : null}
                   <strong>Day {item.day}: {item.title}</strong>
                   {item.task}
                 </span>
@@ -306,7 +313,7 @@ export function Desk() {
         </div>
         <div className="cta-row">
           <CTA href={affiliateConfig.demoAccountLink}>Open a Deriv demo</CTA>
-          <CTA href="/deriv-affiliate-launchpad-template/kit" variant="secondary">Open the kit</CTA>
+          <CTA href={siteHref("/kit")} variant="secondary">Open the kit</CTA>
         </div>
       </section>
     </>

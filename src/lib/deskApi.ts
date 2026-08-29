@@ -142,6 +142,10 @@ export function journeyDay(journey: Journey, day: number): JourneyDay | null {
   return journey.days.find((item) => item.day === day) ?? null;
 }
 
+export function localDateIso(now = new Date()): string {
+  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}-${String(now.getDate()).padStart(2, "0")}`;
+}
+
 export function todayJourneyDay(startIso: string, now = new Date()): number {
   const start = new Date(`${startIso}T00:00:00`);
   if (Number.isNaN(start.getTime())) return 1;
@@ -152,7 +156,9 @@ export function todayJourneyDay(startIso: string, now = new Date()): number {
 }
 
 export function siteHref(path: string): string {
-  if (path === "whatsapp" || path.startsWith("http://") || path.startsWith("https://")) return path;
+  if (path === "whatsapp") return path;
+  if (/^https:\/\//i.test(path)) return path;
+  if (!path.startsWith("/") || path.startsWith("//")) return "#";
   const base = import.meta.env.BASE_URL.replace(/\/$/, "");
-  return `${base}${path.startsWith("/") ? path : `/${path}`}`;
+  return `${base}${path}`;
 }
