@@ -14,7 +14,7 @@ const navItems = [
   ["/contact", "Contact"]
 ] as const;
 
-const pageNarrations: Record<string, { title: string; description: string }> = {
+const pageNarrations: Record<string, { title: string; description: string; sections?: Array<{ heading: string; body: string[] }> }> = {
   "/": {
     title: "Welcome to Apex Trade Network.",
     description: "It is lovely to have you here. Take your time, explore the free tools, try the trader quiz, or begin with a demo account. There is no rush, and please remember that trading always involves risk."
@@ -54,6 +54,32 @@ const pageNarrations: Record<string, { title: string; description: string }> = {
   "/contact": {
     title: "Hello, and welcome to the contact page.",
     description: "If something is unclear or you would simply like to ask a question, you are welcome to reach out by WhatsApp or email. Choose whichever option feels easiest for you."
+  },
+  "/auth": {
+    title: "Welcome to your private account area.",
+    description: "Sign in when you are ready, and keep your login details private. Your account gives you access to educational planning tools designed to support patience, consistency, and better trading habits.",
+    sections: [
+      { heading: "Protect your account", body: ["Use a unique password, never share verification codes, and always sign out on a shared device. No legitimate administrator should ask for your password."] },
+      { heading: "Keep expectations realistic", body: ["Educational tools can improve your process, but they cannot guarantee profits or remove financial risk. Learn on demo first and never trade money needed for essential expenses."] }
+    ]
+  },
+  "/members": {
+    title: "Welcome to your V I P learning dashboard.",
+    description: "This space is designed to help you become a more disciplined trader. Good trading is not about chasing every opportunity. It is about protecting your capital, following your process, and knowing when to stop.",
+    sections: [
+      { heading: "Plan before the chart", body: ["Write down the market, setup, maximum stake, session length, and daily loss limit before placing a trade. If you cannot explain the setup simply, pause and keep learning."] },
+      { heading: "Protect capital first", body: ["Use a small, consistent risk limit. Stop when the daily limit or trade cap is reached. Never increase a stake simply to recover the previous loss."] },
+      { heading: "Journal and review", body: ["Record the reason, result, emotion, and any broken rule after every trade. Review a meaningful sample instead of changing strategy after a few wins or losses. Process quality comes before profit screenshots."] }
+    ]
+  },
+  "/admin/managed-strategy": {
+    title: "Welcome to the managed strategy administration area.",
+    description: "Use this dashboard carefully and responsibly. Administrative access is a duty of care, never a shortcut to promising returns or encouraging unsuitable risk.",
+    sections: [
+      { heading: "Put member suitability first", body: ["Confirm that every member understands possible losses, leverage, fees, withdrawal conditions, and the difference between education and financial advice. Never use urgency or guaranteed-return language."] },
+      { heading: "Protect private information", body: ["Only access information needed for the task. Never read credentials aloud, copy sensitive data into informal messages, or expose one member to another. Follow least-access principles."] },
+      { heading: "Keep decisions accountable", body: ["Document approvals, changes, confirmations, and exceptions clearly. Use the audit trail to explain what happened and why. When information is incomplete, pause the process instead of guessing."] }
+    ]
   }
 };
 
@@ -79,7 +105,7 @@ export function Layout() {
       <main>
         {narration ? (
           <div className="page-narrator-wrap">
-            <ArticleNarrator key={pathname} title={narration.title} description={narration.description} sections={[]} />
+            <ArticleNarrator key={pathname} title={narration.title} description={narration.description} sections={narration.sections ?? []} />
           </div>
         ) : null}
         <Outlet />
