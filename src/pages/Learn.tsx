@@ -1,4 +1,5 @@
 import { BookOpenCheck, HandCoins, Handshake, Info, Scale } from "lucide-react";
+import { CTA } from "../components/CTA";
 import { Card, DisclosureBand, SectionHeader } from "../components/Section";
 import { Seo } from "../components/Seo";
 
@@ -28,6 +29,13 @@ export function Learn() {
         <div className="card-grid">
           {lessons.map(([title, text, Icon]) => <Card key={title} title={title} icon={Icon}>{text}</Card>)}
         </div>
+      </section>
+      <section className="section cta-panel">
+        <div>
+          <h2>Practice the 14-day path on the desk</h2>
+          <p>The live desk pairs those lessons with read-only quotes, a stake planner, and a day-by-day demo checklist. Education stays education. The desk does not place trades.</p>
+        </div>
+        <CTA href="/deriv-affiliate-launchpad-template/desk">Open the beginner desk</CTA>
       </section>
       <DisclosureBand />
     </>

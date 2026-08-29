@@ -1,0 +1,84 @@
+{
+  "data": {
+    "products": [
+      {
+        "id": "kit",
+        "kind": "product",
+        "title": "Beginner kit (5 PDFs)",
+        "summary": "14-day demo plan, journal, pre-session checklist, daily-stop card, position-size worksheet.",
+        "audience": "beginner",
+        "price": "Free",
+        "href": "/kit"
+      },
+      {
+        "id": "tools",
+        "kind": "product",
+        "title": "Browser calculators",
+        "summary": "Stake, daily stop, drawdown recovery, streak survival, session clock, sit-out gate, expectancy.",
+        "audience": "beginner",
+        "price": "Free",
+        "href": "/tools"
+      },
+      {
+        "id": "desk",
+        "kind": "product",
+        "title": "Live beginner desk",
+        "summary": "Read-only Deriv quotes next to the stake planner and the 14-day path. No order ticket.",
+        "audience": "beginner",
+        "price": "Free",
+        "href": "/desk"
+      },
+      {
+        "id": "journal",
+        "kind": "product",
+        "title": "VIP trade journal",
+        "summary": "Local journal with CSV import/export and sample stats. Stays in the browser unless exported.",
+        "audience": "member",
+        "price": "VIP",
+        "href": "/members"
+      }
+    ],
+    "services": [
+      {
+        "id": "demo-onboarding",
+        "kind": "service",
+        "title": "Demo onboarding walkthrough",
+        "summary": "WhatsApp walkthrough: open the demo, write the daily stop, pick one market. Not trade signals.",
+        "audience": "beginner",
+        "price": "Free",
+        "href": "whatsapp"
+      },
+      {
+        "id": "journal-review",
+        "kind": "service",
+        "title": "Weekly journal review",
+        "summary": "A process review of twenty demo rows: skips, broken stops, and whether the setup was actually followed.",
+        "audience": "beginner",
+        "price": "On request",
+        "href": "whatsapp"
+      },
+      {
+        "id": "partner-intro",
+        "kind": "service",
+        "title": "Partner programme intro",
+        "summary": "How a downline affiliate can offer this same kit and desk to their own beginners.",
+        "audience": "affiliate",
+        "price": "Free",
+        "href": "/partner-programme"
+      },
+      {
+        "id": "education-library",
+        "kind": "service",
+        "title": "Education library",
+        "summary": "Short lessons on sizing, daily stops, platforms, and why V75 is not a salary.",
+        "audience": "beginner",
+        "price": "Free",
+        "href": "/blog"
+      }
+    ]
+  },
+  "meta": {
+    "generated_at": "2026-08-29T00:00:00Z",
+    "source": "apex-desk"
+  }
+}

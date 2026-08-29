@@ -23,6 +23,7 @@ const requiredPaths = [
   "/platforms",
   "/learn",
   "/tools",
+  "/desk",
   "/kit",
   "/blog",
   "/blog/demo-first-14-day-plan",

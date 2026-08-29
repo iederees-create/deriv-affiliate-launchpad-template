@@ -6,6 +6,7 @@ export const affiliateConfig = {
   demoAccountLink: "https://t.deriv.link?t=VQGBGPUYGJDZ",
   liveAccountLink: "https://t.deriv.link?t=VQGBGPUYGJDZ",
   partnerProgrammeLink: "https://t.deriv.link?t=VQGBGPUYGJDZ",
+  derivAppId: 1089, // Replace with your app_id from https://api.deriv.com (API management). 1089 is Deriv’s public test id.
   managedStrategy: {
     enabled: false,
     providerHandle: "",

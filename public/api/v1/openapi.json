@@ -1,0 +1,62 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Apex Trade Network Desk API",
+    "version": "1.0.0",
+    "description": "Static JSON resources hosted with the GitHub Pages site. Live quotes are read-only ticks from Deriv’s public WebSocket. This API does not accept orders, deposits, or API tokens."
+  },
+  "servers": [
+    {
+      "url": "https://iederees-create.github.io/deriv-affiliate-launchpad-template/api/v1",
+      "description": "GitHub Pages"
+    }
+  ],
+  "paths": {
+    "/index.json": {
+      "get": {
+        "summary": "Discover desk resources",
+        "operationId": "getIndex",
+        "responses": { "200": { "description": "Catalog of resources" } }
+      }
+    },
+    "/markets.json": {
+      "get": {
+        "summary": "List beginner market cards",
+        "operationId": "getMarkets",
+        "responses": { "200": { "description": "Market list in a data envelope" } }
+      }
+    },
+    "/journey.json": {
+      "get": {
+        "summary": "Get the 14-day demo path",
+        "operationId": "getJourney",
+        "responses": { "200": { "description": "Journey with day tasks" } }
+      }
+    },
+    "/offers.json": {
+      "get": {
+        "summary": "List products and services",
+        "operationId": "getOffers",
+        "responses": { "200": { "description": "Products and services the desk can offer" } }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Envelope": {
+        "type": "object",
+        "required": ["data", "meta"],
+        "properties": {
+          "data": { "description": "Resource payload" },
+          "meta": {
+            "type": "object",
+            "properties": {
+              "generated_at": { "type": "string", "format": "date-time" },
+              "source": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

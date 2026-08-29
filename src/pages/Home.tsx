@@ -63,7 +63,8 @@ export function Home() {
         />
         <div className="cta-row">
           <CTA href="/deriv-affiliate-launchpad-template/tools">Use the free tools</CTA>
-          <CTA href="/deriv-affiliate-launchpad-template/kit" variant="secondary">Download the kit</CTA>
+          <CTA href="/deriv-affiliate-launchpad-template/desk" variant="secondary">Open the live desk</CTA>
+          <CTA href="/deriv-affiliate-launchpad-template/kit" variant="ghost">Download the kit</CTA>
         </div>
       </section>
       <section className="section">

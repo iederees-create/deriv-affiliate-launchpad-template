@@ -1,0 +1,24 @@
+{
+  "data": {
+    "name": "Apex Trade Network Desk API",
+    "version": "v1",
+    "base": "/api/v1",
+    "description": "Static JSON resources for the beginner desk. Live prices come from Deriv’s public WebSocket, not from this host. Nothing here places trades.",
+    "resources": [
+      { "id": "markets", "href": "./markets.json", "method": "GET", "summary": "Beginner-safe market cards and Deriv symbols." },
+      { "id": "journey", "href": "./journey.json", "method": "GET", "summary": "Fourteen-day demo-first beginner path." },
+      { "id": "offers", "href": "./offers.json", "method": "GET", "summary": "Products and services the desk can offer a new trader." },
+      { "id": "openapi", "href": "./openapi.json", "method": "GET", "summary": "OpenAPI 3 description of this catalog." }
+    ],
+    "live": {
+      "provider": "Deriv WebSocket",
+      "endpoint": "wss://ws.derivws.com/websockets/v3",
+      "auth": "none for ticks",
+      "app_id_docs": "https://api.deriv.com"
+    }
+  },
+  "meta": {
+    "generated_at": "2026-08-29T00:00:00Z",
+    "source": "apex-desk"
+  }
+}

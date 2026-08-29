@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build && mkdir -p dist/members dist/auth dist/admin/managed-strategy && cp dist/index.html dist/404.html && cp dist/index.html dist/members/index.html && cp dist/index.html dist/auth/index.html && cp dist/index.html dist/admin/managed-strategy/index.html",
+    "build": "tsc -b && vite build && mkdir -p dist/members dist/auth dist/desk dist/admin/managed-strategy && cp dist/index.html dist/404.html && cp dist/index.html dist/members/index.html && cp dist/index.html dist/auth/index.html && cp dist/index.html dist/desk/index.html && cp dist/index.html dist/admin/managed-strategy/index.html",
     "preview": "vite preview",
     "check:links": "node scripts/check-internal-links.mjs",
     "test": "vitest run"

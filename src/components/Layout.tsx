@@ -5,6 +5,7 @@ import { ArticleNarrator } from "./ArticleNarrator";
 
 const navItems = [
   ["/tools", "Tools"],
+  ["/desk", "Desk"],
   ["/kit", "Free kit"],
   ["/learn", "Learn"],
   ["/blog", "Blog"],
@@ -116,6 +117,7 @@ export function Layout() {
           <p>Independent educational and strategy-access platform. Not financial advice and not an official Deriv website.</p>
         </div>
         <div className="footer-links">
+          <Link to="/desk">Beginner desk</Link>
           <Link to="/risk-disclosure">Risk disclosure</Link>
           <Link to="/contact">Contact</Link>
           <a href={affiliateConfig.partnerProgrammeLink} target="_blank" rel="noreferrer">Partner link</a>

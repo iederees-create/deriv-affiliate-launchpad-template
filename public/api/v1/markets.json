@@ -1,0 +1,81 @@
+{
+  "data": [
+    {
+      "id": "R_10",
+      "symbol": "R_10",
+      "name": "Volatility 10 Index",
+      "market": "synthetic",
+      "risk": "medium",
+      "session": "24/7",
+      "beginnerNote": "Slower synthetic. Use this first if you want room to think between ticks."
+    },
+    {
+      "id": "R_25",
+      "symbol": "R_25",
+      "name": "Volatility 25 Index",
+      "market": "synthetic",
+      "risk": "medium",
+      "session": "24/7",
+      "beginnerNote": "A step up from V10. Same rules: one risk percent, written stop, demo only."
+    },
+    {
+      "id": "R_50",
+      "symbol": "R_50",
+      "name": "Volatility 50 Index",
+      "market": "synthetic",
+      "risk": "high",
+      "session": "24/7",
+      "beginnerNote": "Faster. If you cannot name the setup in one sentence, skip it."
+    },
+    {
+      "id": "R_75",
+      "symbol": "R_75",
+      "name": "Volatility 75 Index",
+      "market": "synthetic",
+      "risk": "high",
+      "session": "24/7",
+      "beginnerNote": "Popular and unforgiving. A quote is not a signal. Size the stake first."
+    },
+    {
+      "id": "R_100",
+      "symbol": "R_100",
+      "name": "Volatility 100 Index",
+      "market": "synthetic",
+      "risk": "very-high",
+      "session": "24/7",
+      "beginnerNote": "Leave this until a 20-trade demo sample exists on a slower index."
+    },
+    {
+      "id": "BOOM500",
+      "symbol": "BOOM500",
+      "name": "Boom 500 Index",
+      "market": "synthetic",
+      "risk": "very-high",
+      "session": "24/7",
+      "beginnerNote": "Spikes are not a method. Do not chase a boom that already printed."
+    },
+    {
+      "id": "CRASH500",
+      "symbol": "CRASH500",
+      "name": "Crash 500 Index",
+      "market": "synthetic",
+      "risk": "very-high",
+      "session": "24/7",
+      "beginnerNote": "Same warning as Boom. Journal the skip if you arrived late."
+    },
+    {
+      "id": "frxEURUSD",
+      "symbol": "frxEURUSD",
+      "name": "EUR/USD",
+      "market": "forex",
+      "risk": "medium",
+      "session": "weekday",
+      "beginnerNote": "A standard pair for learning sessions. Check London and New York hours."
+    }
+  ],
+  "meta": {
+    "generated_at": "2026-08-29T00:00:00Z",
+    "source": "apex-desk",
+    "disclaimer": "Symbols are for education and live quotes only. Not a recommendation to trade any market."
+  }
+}

@@ -41,6 +41,17 @@ export function PartnerProgramme() {
           </Card>
         </div>
       </section>
+      <section className="section">
+        <SectionHeader
+          eyebrow="What to offer a beginner"
+          title="Give downline a pack, not a second slogan"
+          text="The desk API lists the same products and services this site already runs: kit, calculators, live quotes, demo onboarding, and a 14-day path. Offer those. Do not invent income claims."
+        />
+        <div className="cta-row">
+          <CTA href="/deriv-affiliate-launchpad-template/desk">Open the beginner desk</CTA>
+          <CTA href="/deriv-affiliate-launchpad-template/api/v1/offers.json" variant="secondary">Read the offers API</CTA>
+        </div>
+      </section>
       <section className="section source-note">
         <h2>Source note for buyers</h2>
         <p>

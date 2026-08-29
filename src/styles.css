@@ -608,9 +608,120 @@ button.cta {
   .card-grid,
   .blog-grid,
   .tool-grid,
-  .kit-grid {
+  .kit-grid,
+  .offer-grid,
+  .quote-tape {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
+
+.desk-status {
+  margin-top: 18px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.desk-banner {
+  width: min(1140px, calc(100% - 36px));
+  margin: 16px auto 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(180, 35, 24, 0.28);
+  border-radius: 8px;
+  background: rgba(180, 35, 24, 0.06);
+  color: #b42318;
+}
+
+.quote-tape {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.quote-chip {
+  width: 100%;
+  min-height: 86px;
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.quote-chip span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.quote-chip strong {
+  font-size: 1.25rem;
+}
+
+.quote-chip.is-active,
+.quote-chip:focus-visible {
+  border-color: var(--primary);
+  outline: 2px solid color-mix(in srgb, var(--primary) 35%, transparent);
+  outline-offset: 2px;
+}
+
+.offer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.offer-grid .cta {
+  margin-top: 16px;
+}
+
+.journey-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.journey-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.journey-item.is-today {
+  border-color: var(--primary);
+}
+
+.journey-item span {
+  display: grid;
+  gap: 4px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.journey-item strong {
+  color: var(--text);
+}
+
+.journey-item input {
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  accent-color: var(--primary);
 }
 
 @media (max-width: 620px) {
@@ -634,7 +745,9 @@ button.cta {
   .blog-grid,
   .audience-list,
   .tool-grid,
-  .kit-grid {
+  .kit-grid,
+  .offer-grid,
+  .quote-tape {
     grid-template-columns: 1fr;
   }
 

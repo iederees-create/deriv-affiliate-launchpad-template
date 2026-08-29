@@ -1,0 +1,28 @@
+{
+  "data": {
+    "id": "demo-14",
+    "title": "14-day demo-first beginner path",
+    "account": "demo",
+    "rule": "Do not fund live until the sample and the daily stop are both real habits.",
+    "days": [
+      { "day": 1, "title": "Open the demo and write the daily stop", "task": "Create a Deriv demo through the partner link. Write account size, 1% risk, and a 2% daily stop on paper.", "resource": "/kit" },
+      { "day": 2, "title": "Pick one market", "task": "Choose one symbol from the desk. Read the spec. You do not need a second market this week.", "resource": "/desk" },
+      { "day": 3, "title": "Size before you click", "task": "Run the stake planner. If the number feels small, that is the point.", "resource": "/tools" },
+      { "day": 4, "title": "Put a clock on the session", "task": "Forty-five minutes. Four trades max. When the clock hits zero, you are done.", "resource": "/tools" },
+      { "day": 5, "title": "Use the sit-out gate", "task": "Five yes answers or no trade. Sitting out is a valid session.", "resource": "/tools" },
+      { "day": 6, "title": "Journal three demo trades", "task": "Entry, stop, result, one lesson. If you cannot fill the row, you were guessing.", "resource": "/kit" },
+      { "day": 7, "title": "Review week one", "task": "Count skips as well as trades. If you broke the daily stop, restart the week on demo.", "resource": "/kit" },
+      { "day": 8, "title": "Same setup, smaller sample", "task": "Do not change the setup. Take up to four demo trades with yesterday’s rules.", "resource": "/desk" },
+      { "day": 9, "title": "Drawdown math", "task": "Run the recovery calculator at 10% and 20%. That is why the daily stop exists.", "resource": "/tools" },
+      { "day": 10, "title": "Losing-streak drill", "task": "See what five losers at 1% leave you. If the leftover looks ugly, shrink risk, not the sample.", "resource": "/tools" },
+      { "day": 11, "title": "Platform tour, not a live deposit", "task": "Open MT5 or the web terminal on demo. Confirm you can see margin, stake, and close a trade.", "resource": "/platforms" },
+      { "day": 12, "title": "Expectancy, not vibes", "task": "Win rate without average win and loss is vanity. Fill the sample expectancy tool.", "resource": "/tools" },
+      { "day": 13, "title": "Twenty-trade checkpoint", "task": "If you are under twenty journaled demo trades, stay on demo. Do not rewrite the setup mid-sample.", "resource": "/kit" },
+      { "day": 14, "title": "Keep the files, decide later", "task": "Download the kit. Live funding is optional and separate. The files still work if you never deposit.", "resource": "/kit" }
+    ]
+  },
+  "meta": {
+    "generated_at": "2026-08-29T00:00:00Z",
+    "source": "apex-desk"
+  }
+}

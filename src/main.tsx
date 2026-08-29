@@ -16,6 +16,7 @@ import { RiskDisclosure } from "./pages/RiskDisclosure";
 import { Contact } from "./pages/Contact";
 import { Article } from "./pages/Article";
 import { Tools } from "./pages/Tools";
+import { Desk } from "./pages/Desk";
 import { Kit } from "./pages/Kit";
 import { Auth } from "./pages/Auth";
 import { MembersDashboard } from "./pages/MembersDashboard";
@@ -38,6 +39,7 @@ const router = createBrowserRouter(
         { path: "platforms", element: <Platforms /> },
         { path: "learn", element: <Learn /> },
         { path: "tools", element: <Tools /> },
+        { path: "desk", element: <Desk /> },
         { path: "kit", element: <Kit /> },
         { path: "blog", element: <Blog /> },
         { path: "blog/winning-strategies-deriv-synthetic-indices", element: <LongArticle /> },

@@ -253,12 +253,13 @@ export function Tools() {
       </section>
       <section className="section cta-panel">
         <div>
-          <h2>Want the printable versions?</h2>
-          <p>The kit has a journal, a 14-day demo plan, and a loss-limit card. Opening a Deriv demo through my partner link unlocks the downloads on this site.</p>
+          <h2>Want live quotes next to the same math?</h2>
+          <p>The beginner desk streams public Deriv prices and runs this stake and daily-stop math against the print. It still does not place trades. The kit has the printable journal and 14-day plan.</p>
         </div>
         <div className="cta-row">
-          <CTA href="/deriv-affiliate-launchpad-template/kit">Open the kit</CTA>
-          <CTA href={affiliateConfig.demoAccountLink} variant="secondary">Open a Deriv demo</CTA>
+          <CTA href="/deriv-affiliate-launchpad-template/desk">Open the live desk</CTA>
+          <CTA href="/deriv-affiliate-launchpad-template/kit" variant="secondary">Open the kit</CTA>
+          <CTA href={affiliateConfig.demoAccountLink} variant="ghost">Open a Deriv demo</CTA>
         </div>
       </section>
     </>
