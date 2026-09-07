@@ -5,6 +5,7 @@ import { Mail, Lock, ArrowRight, Shield } from 'lucide-react';
 import { Seo } from '../components/Seo';
 import { useAuth } from '../components/AuthProvider';
 import { affiliateConfig } from '../config/affiliateConfig';
+import { isAdminUser } from '../lib/admin';
 
 export function Auth() {
   const [searchParams] = useSearchParams();
@@ -21,7 +22,11 @@ export function Auth() {
   const [remember,setRemember]=useState(true);
 
   useEffect(() => {
-    if(session){navigate(destination,{replace:true});return}
+    if(session){
+      const next = destination === '/members' && isAdminUser(session.user) ? '/admin' : destination;
+      navigate(next,{replace:true});
+      return;
+    }
     // If they came from the quiz/exit intent with an email, default to Sign Up
     if (searchParams.get('email')) {
       setIsLogin(false);
@@ -38,9 +43,10 @@ export function Auth() {
 
     try {
       if (isLogin) {
-        const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
+        const { data, error: signInError } = await supabase.auth.signInWithPassword({ email, password });
         if (signInError) throw signInError;
-        navigate(destination,{replace:true});
+        const next = destination === '/members' && isAdminUser(data.user) ? '/admin' : destination;
+        navigate(next,{replace:true});
       } else {
         const { error: signUpError } = await supabase.auth.signUp({
           email,

@@ -1,9 +1,9 @@
-import { useEffect,useState } from 'react';
-import { Navigate,Outlet } from 'react-router-dom';
-import { supabase } from '../lib/supabase';
-export function RequireAdmin(){
- const [state,setState]=useState<'loading'|'allowed'|'denied'>('loading');
- useEffect(()=>{supabase.auth.getUser().then(({data:{user}})=>setState(['admin','strategy_admin'].includes(String(user?.app_metadata?.role))?'allowed':'denied'))},[]);
- if(state==='loading')return <div className="member-loading">Checking administrator access…</div>;
- return state==='allowed'?<Outlet/>:<Navigate to="/members" replace/>;
+import { Navigate, Outlet } from 'react-router-dom';
+import { useAuth } from './AuthProvider';
+import { isAdminUser } from '../lib/admin';
+
+export function RequireAdmin() {
+  const { user, loading } = useAuth();
+  if (loading) return <div className="member-loading">Checking administrator access…</div>;
+  return isAdminUser(user) ? <Outlet /> : <Navigate to="/members" replace />;
 }

@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { Activity, BarChart3, BookOpenCheck, CheckCircle, Clock3, DownloadCloud, FileSpreadsheet, LineChart, LoaderCircle, Lock, Play, Target } from 'lucide-react';
 import { Seo } from '../components/Seo';
 import { ManagedStrategy } from '../components/ManagedStrategy';
+import { StrategyLab } from '../components/StrategyLab';
 import { PremiumToolModal, type PremiumTool } from '../components/PremiumTools';
 import { affiliateConfig } from '../config/affiliateConfig';
 import { downloadText } from '../lib/memberTools';
 import { useAuth } from '../components/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { isAdminUser } from '../lib/admin';
 
 const downloads = [
   { badge:'Download', title:'Crash & Boom Demo Checklist', text:'A responsible pre-trade checklist for testing setups without exact-entry or spike-prediction claims.', icon:BookOpenCheck, label:'Download Guide', file:'apex-demo-checklist.txt', content:'APEX DEMO CHECKLIST\n\n[ ] Demo account selected\n[ ] Instrument specifications checked\n[ ] Maximum risk written down\n[ ] Stop and target planned\n[ ] No trade entered to chase a spike\n\nThere are no exact or guaranteed entries. Test on demo and record outcomes. Educational only; not financial advice.' },
@@ -27,11 +29,12 @@ const tools:{badge:string;title:string;text:string;icon:typeof Target;label:stri
 export function MembersDashboard(){
  const [active,setActive]=useState<PremiumTool|null>(null),[busy,setBusy]=useState('');
  const {user,signOut}=useAuth();const navigate=useNavigate();
+ const admin=isAdminUser(user);
  const get=(item:typeof downloads[number])=>{setBusy(item.title);setTimeout(()=>{downloadText(item.file,item.content,item.mime);setBusy('')},250)};
  const leave=async()=>{await signOut();navigate('/auth',{replace:true})};
  return <><Seo title={`VIP Dashboard | ${affiliateConfig.brandName}`} description="Protected VIP planning tools, journals and demo-practice resources."/><section className="section members-page"><div className="members-shell">
-  <header className="members-header"><div><p className="eyebrow">Apex Trade Network</p><h1>VIP Dashboard</h1></div><div className="member-menu"><span><Lock size={15}/> {user?.user_metadata?.full_name||user?.email}</span><button className="cta cta-secondary" onClick={leave}>Sign Out</button></div></header>
-  <div className="vip-panel is-linked"><h2><CheckCircle/> VIP Premium Access</h2><ManagedStrategy/>
+  <header className="members-header"><div><p className="eyebrow">Apex Trade Network</p><h1>VIP Dashboard</h1></div><div className="member-menu"><span><Lock size={15}/> {user?.user_metadata?.full_name||user?.email}</span>{admin&&<Link className="cta" to="/admin">Admin console</Link>}<button className="cta cta-secondary" onClick={leave}>Sign Out</button></div></header>
+  <div className="vip-panel is-linked"><h2><CheckCircle/> VIP Premium Access</h2><ManagedStrategy/><StrategyLab/>
    <div className="vip-resources-heading"><div><p className="eyebrow">Nine member resources</p><h3>Plan, practise and review</h3></div><p>These tools do not place trades. Public live quotes live on the beginner desk.</p></div>
    <div className="vip-resource-grid">
     {downloads.map(item=><article className="vip-resource-card" key={item.title}><div className="resource-meta"><span className="type-badge">{item.badge}</span></div><item.icon className="resource-icon"/><h4>{item.title}</h4><p>{item.text}</p><button className="cta cta-secondary resource-button" disabled={busy===item.title} onClick={()=>get(item)}>{busy===item.title?<><LoaderCircle className="spin" size={16}/> Preparing...</>:<><DownloadCloud size={16}/>{item.label}</>}</button></article>)}

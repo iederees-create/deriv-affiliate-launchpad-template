@@ -54,7 +54,10 @@ const router = createBrowserRouter(
           element: <RequireAuth />,
           children: [
             { path: "members", element: <MembersDashboard /> },
-            { element: <RequireAdmin />, children: [{ path: "admin/managed-strategy", element: <AdminDashboard /> }] }
+            { element: <RequireAdmin />, children: [
+              { path: "admin", element: <AdminDashboard /> },
+              { path: "admin/managed-strategy", element: <AdminDashboard /> }
+            ] }
           ]
         }
       ]

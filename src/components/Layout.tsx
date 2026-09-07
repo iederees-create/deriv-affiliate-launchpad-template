@@ -2,6 +2,8 @@ import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { ShieldCheck } from "lucide-react";
 import { affiliateConfig } from "../config/affiliateConfig";
 import { ArticleNarrator } from "./ArticleNarrator";
+import { useAuth } from "./AuthProvider";
+import { isAdminUser } from "../lib/admin";
 
 const navItems = [
   ["/tools", "Tools"],
@@ -73,6 +75,15 @@ const pageNarrations: Record<string, { title: string; description: string; secti
       { heading: "Journal and review", body: ["Record the reason, result, emotion, and any broken rule after every trade. Review a meaningful sample instead of changing strategy after a few wins or losses. Process quality comes before profit screenshots."] }
     ]
   },
+  "/admin": {
+    title: "Welcome to the administrator oversight console.",
+    description: "Use this dashboard carefully. You can review every member submission, start or stop the shared demo lab, and manage affiliate strategy access.",
+    sections: [
+      { heading: "Put member suitability first", body: ["Confirm that every member understands possible losses, leverage, fees, withdrawal conditions, and the difference between education and financial advice. Never use urgency or guaranteed-return language."] },
+      { heading: "Protect private information", body: ["Only access information needed for the task. Never read credentials aloud, copy sensitive data into informal messages, or expose one member to another."] },
+      { heading: "Keep decisions accountable", body: ["Document approvals, changes, confirmations, and exceptions clearly. When information is incomplete, pause the process instead of guessing."] }
+    ]
+  },
   "/admin/managed-strategy": {
     title: "Welcome to the managed strategy administration area.",
     description: "Use this dashboard carefully and responsibly. Administrative access is a duty of care, never a shortcut to promising returns or encouraging unsuitable risk.",
@@ -86,7 +97,9 @@ const pageNarrations: Record<string, { title: string; description: string; secti
 
 export function Layout() {
   const { pathname } = useLocation();
+  const { user } = useAuth();
   const narration = pageNarrations[pathname];
+  const showAdmin = isAdminUser(user);
 
   return (
     <div className="site-shell">
@@ -101,6 +114,11 @@ export function Layout() {
               {label}
             </NavLink>
           ))}
+          {showAdmin ? (
+            <NavLink to="/admin" className={({ isActive }) => (isActive ? "active" : "")}>
+              Admin
+            </NavLink>
+          ) : null}
         </nav>
       </header>
       <main>
