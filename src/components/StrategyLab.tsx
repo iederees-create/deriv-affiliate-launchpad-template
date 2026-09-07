@@ -1,7 +1,8 @@
 import { FormEvent, useEffect, useState } from 'react';
-import { Activity, FlaskConical, LoaderCircle, Radio } from 'lucide-react';
+import { Activity, FlaskConical, LoaderCircle } from 'lucide-react';
 import { useAuth } from './AuthProvider';
 import { fetchLabBoard, submitLabStrategy, LAB_API_BASE, type LabBoard, type LabKind } from '../lib/labApi';
+import { LiveResults } from './LiveResults';
 
 const SYMBOLS = ['R_10', 'R_25', 'R_50', 'R_75', 'R_100', '1HZ10V', '1HZ25V', '1HZ50V', '1HZ75V', '1HZ100V'];
 
@@ -13,7 +14,7 @@ export function StrategyLab() {
   const [kind, setKind] = useState<LabKind>('tick_rise_fall');
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [symbol, setSymbol] = useState('R_75');
+  const [symbol, setSymbol] = useState('1HZ75V');
   const [durationTicks, setDurationTicks] = useState(5);
   const [lookback, setLookback] = useState(3);
   const [stake, setStake] = useState(0.35);
@@ -74,36 +75,18 @@ export function StrategyLab() {
     }
   };
 
-  const live = board?.live && board.strategy;
-
   return (
     <section className="strategy-lab" aria-labelledby="lab-heading">
       <div className="strategy-hero">
         <div>
           <p className="eyebrow">Shared demo lab</p>
           <h2 id="lab-heading">Member Strategy Live Test</h2>
-          <p>Submit an idea, a parameterized tick strategy, or a script for review. One demo run is live at a time. Uploaded scripts are stored and never executed.</p>
+          <p>Everyone watches the same Volatility 75 (1s) demo for a week. Results update live. Uploaded scripts are stored and never executed. There is no chart in this view.</p>
         </div>
         <FlaskConical />
       </div>
 
-      <div className={`lab-live ${live ? 'is-live' : ''}`}>
-        <div>
-          <span className="status-pill">{live ? 'Live demo' : 'Waiting for a demo run'}</span>
-          {live ? (
-            <>
-              <h3>{board.strategy?.title}</h3>
-              <p>Testing <strong>{board.strategy?.memberName}</strong> on {board.strategy?.symbol}. Last tick {board.run?.lastTick ?? '—'}. Trades {board.run?.tradeCount ?? 0}. Demo PnL {Number(board.run?.realizedPnl || 0).toFixed(2)}.</p>
-            </>
-          ) : (
-            <>
-              <h3>No strategy is being live-tested right now</h3>
-              <p>Queued parameterized strategies can be started by the operator on demo only.</p>
-            </>
-          )}
-        </div>
-        <Radio />
-      </div>
+      <LiveResults board={board} />
 
       <form className="strategy-form lab-form" onSubmit={submit}>
         <label>

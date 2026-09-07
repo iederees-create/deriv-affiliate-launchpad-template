@@ -1,11 +1,12 @@
 import { FormEvent, useEffect, useState } from 'react';
-import { CheckCircle, FlaskConical, Radio, Search, ShieldAlert } from 'lucide-react';
+import { CheckCircle, FlaskConical, Search, ShieldAlert } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Seo } from '../components/Seo';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../components/AuthProvider';
 import { maskLogin, statusLabel } from '../lib/managedStrategy';
 import { fetchOperatorBoard, startOperatorRun, stopOperatorRun, type LabBoard, type LabStrategy } from '../lib/labApi';
+import { LiveResults } from '../components/LiveResults';
 
 
 type Row = {
@@ -139,29 +140,12 @@ export function AdminDashboard() {
             <FlaskConical />
           </div>
 
-          <div className={`lab-live ${live ? 'is-live' : ''}`}>
-            <div>
-              <span className="status-pill">{live ? 'Live demo' : 'Idle'}</span>
-              {live ? (
-                <>
-                  <h3>{board?.strategy?.title}</h3>
-                  <p>
-                    Testing <strong>{board?.strategy?.memberName}</strong>
-                    {board?.strategy?.memberEmail ? ` (${board.strategy.memberEmail})` : ''} on {board?.strategy?.symbol}.
-                    Last tick {board?.run?.lastTick ?? '—'}. Trades {board?.run?.tradeCount ?? 0}. Demo PnL {Number(board?.run?.realizedPnl || 0).toFixed(2)}.
-                  </p>
-                </>
-              ) : (
-                <>
-                  <h3>No strategy is being live-tested</h3>
-                  <p>Start a parameterized tick strategy from the queue below. Text notes and pasted scripts remain review-only.</p>
-                </>
-              )}
+          <LiveResults board={board} />
+          {live ? (
+            <div className="strategy-actions" style={{ margin: '12px 0 22px' }}>
+              <button className="danger-button" onClick={stopRun} disabled={busyId !== null}>Stop live demo</button>
             </div>
-            <div className="strategy-actions">
-              {live ? <button className="danger-button" onClick={stopRun} disabled={busyId !== null}>Stop live demo</button> : <Radio />}
-            </div>
-          </div>
+          ) : null}
 
           <div className="admin-records">
             {strategies.map((item) => (
