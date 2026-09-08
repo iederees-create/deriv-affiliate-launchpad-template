@@ -112,6 +112,51 @@ export async function startOperatorRun(token: string, strategyId: number): Promi
   return parse(res);
 }
 
+export type AffiliateClaim = {
+  id: number;
+  memberEmail: string;
+  derivLoginid: string;
+  derivClientId: string;
+  status: 'pending' | 'verified' | 'rejected';
+  source: string;
+  note: string;
+  createdAt: string;
+  verifiedAt: string | null;
+};
+
+export async function fetchAffiliateStatus(token: string) {
+  const res = await fetch(`${LAB_API_BASE}/api/lab/affiliate/status`, { headers: authHeaders(token) });
+  return parse(res) as Promise<{ affiliateLink: string; claim: AffiliateClaim | null; canDownload: boolean }>;
+}
+
+export async function claimAffiliate(token: string, loginId: string) {
+  const res = await fetch(`${LAB_API_BASE}/api/lab/affiliate/claim`, {
+    method: 'POST',
+    headers: authHeaders(token),
+    body: JSON.stringify({ loginId }),
+  });
+  return parse(res) as Promise<{ claim: AffiliateClaim; canDownload: boolean; affiliateLink: string }>;
+}
+
+export async function downloadStrategyPack(token: string) {
+  const res = await fetch(`${LAB_API_BASE}/api/lab/strategy-pack`, { headers: authHeaders(token) });
+  return parse(res) as Promise<{ title: string; markdown: string; symbol: string; lookback: number; durationTicks: number; stake: number }>;
+}
+
+export async function fetchAffiliateClaims(token: string) {
+  const res = await fetch(`${LAB_API_BASE}/api/lab/operator/affiliates`, { headers: authHeaders(token) });
+  return parse(res) as Promise<{ affiliates: AffiliateClaim[] }>;
+}
+
+export async function verifyAffiliateClaim(token: string, id: number, status: 'verified' | 'rejected' | 'pending', note?: string) {
+  const res = await fetch(`${LAB_API_BASE}/api/lab/operator/affiliates/verify`, {
+    method: 'POST',
+    headers: authHeaders(token),
+    body: JSON.stringify({ id, status, note }),
+  });
+  return parse(res) as Promise<{ claim: AffiliateClaim }>;
+}
+
 export async function stopOperatorRun(token: string, reason?: string): Promise<LabBoard> {
   const res = await fetch(`${LAB_API_BASE}/api/lab/operator/stop`, {
     method: 'POST',

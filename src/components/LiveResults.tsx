@@ -1,4 +1,5 @@
 import type { LabBoard } from '../lib/labApi';
+import { StrategyDownload } from './StrategyDownload';
 
 function money(value: number | null | undefined) {
   const n = Number(value);
@@ -11,67 +12,108 @@ function when(value?: string | null) {
   return Number.isNaN(date.getTime()) ? '—' : date.toLocaleString();
 }
 
+function sideLabel(contractType?: string) {
+  if (contractType === 'CALL') return 'Up';
+  if (contractType === 'PUT') return 'Down';
+  return contractType || '—';
+}
+
+function resultLabel(trade: { status: string; profit: number }) {
+  if (trade.status === 'open') return 'Still running';
+  const profit = Number(trade.profit);
+  if (!Number.isFinite(profit) || profit === 0) return 'Even';
+  return profit > 0 ? `Won ${money(profit)}` : `Lost ${money(Math.abs(profit))}`;
+}
+
+function eventCopy(event: { type: string; message: string }) {
+  if (event.type === 'run_paused') return event.message.replace('demo losses', 'losses on practice money');
+  if (event.type === 'trade_opened') {
+    const up = /CALL/.test(event.message);
+    const down = /PUT/.test(event.message);
+    if (up) return 'Tried an up move.';
+    if (down) return 'Tried a down move.';
+  }
+  if (event.type === 'trade_closed') {
+    if (event.message.includes('+')) return 'That move finished in profit on practice money.';
+    if (event.message.includes('-')) return 'That move finished as a loss on practice money.';
+  }
+  if (event.type === 'run_started') return 'The shared practice run started.';
+  if (event.type === 'run_resumed') return 'The practice run started placing trades again.';
+  return event.message;
+}
+
 export function LiveResults({ board }: { board: LabBoard | null }) {
   const live = Boolean(board?.live && board.strategy);
   const run = board?.run;
-  const trades = board?.trades || [];
-  const events = (board?.events || []).slice(0, 8);
+  const closed = (board?.trades || []).filter((trade) => trade.status === 'closed');
+  const open = (board?.trades || []).find((trade) => trade.status === 'open');
+  const rows = open ? [open, ...closed] : closed;
+  const events = (board?.events || []).filter((event) => event.type !== 'trade_opened').slice(0, 6);
+  const pnl = Number(run?.realizedPnl || 0);
 
   return (
     <div className={`lab-live ${live ? 'is-live' : ''}`}>
       <div>
-        <span className="status-pill">{live ? (board?.paused ? 'Paused (demo still live)' : 'Live demo · Volatility 75 (1s)') : 'Waiting for a demo run'}</span>
+        <span className="status-pill">
+          {live ? (board?.paused ? 'Short break · practice run still on' : 'Live practice run') : 'Waiting to start'}
+        </span>
         {live ? (
           <>
-            <h3>{board?.strategy?.title}</h3>
+            <h3>{board?.strategy?.title === 'V75 1s impulse follow' ? 'Volatility 75, 1-second practice' : board?.strategy?.title}</h3>
             <p>
-              Shared test of <strong>{board?.strategy?.memberName}</strong> on {board?.strategy?.symbol}. Demo only. No chart in this view — last tick, trades and PnL update as they happen.
+              Everyone here is watching the same practice test. It uses <strong>demo funds only</strong> — this does not spend real money.
+              When four 1-second prices go the same way and the last one is the strongest, it tries that direction for five ticks.
             </p>
-            {board?.paused && run?.pauseReason ? <p className="fine-print">{run.pauseReason} Resume {when(run.pauseUntil)}.</p> : null}
+            <p className="lab-money-note">Practice dollars, not cash. The website was already running; this extra test does not open a new paid service.</p>
+            {board?.paused ? (
+              <p className="lab-pause">
+                Taking a short break after three losses in a row. It will start placing practice trades again at {when(run?.pauseUntil)}.
+              </p>
+            ) : null}
             <div className="lab-stats">
-              <div><span>Last tick</span><strong>{run?.lastTick ?? '—'}</strong></div>
-              <div><span>Trades</span><strong>{run?.tradeCount ?? 0}</strong></div>
-              <div><span>Wins / losses</span><strong>{run?.winCount ?? 0} / {run?.lossCount ?? 0}</strong></div>
+              <div><span>Latest price</span><strong>{run?.lastTick ?? '—'}</strong></div>
+              <div><span>Finished trades</span><strong>{run?.tradeCount ?? 0}</strong></div>
+              <div><span>Won / lost</span><strong>{run?.winCount ?? 0} / {run?.lossCount ?? 0}</strong></div>
               <div><span>Win rate</span><strong>{run?.winRate ?? 0}%</strong></div>
-              <div><span>Demo PnL</span><strong>{money(run?.realizedPnl)}</strong></div>
-              <div><span>Ends</span><strong>{when(run?.scheduledEndAt)}</strong></div>
+              <div><span>Practice result</span><strong className={pnl >= 0 ? 'is-up' : 'is-down'}>{pnl >= 0 ? '+' : ''}{money(pnl)}</strong></div>
+              <div><span>Runs until</span><strong>{when(run?.scheduledEndAt)}</strong></div>
             </div>
             <div className="lab-results-grid">
               <div>
-                <h4>Recent trades</h4>
-                {trades.length ? (
+                <h4>What just happened</h4>
+                {rows.length ? (
                   <table className="lab-trades">
                     <thead>
-                      <tr><th>When</th><th>Side</th><th>Stake</th><th>Result</th></tr>
+                      <tr><th>Time</th><th>Direction</th><th>Result</th></tr>
                     </thead>
                     <tbody>
-                      {trades.map((trade) => (
+                      {rows.slice(0, 12).map((trade) => (
                         <tr key={trade.id}>
                           <td>{when(trade.closedAt || trade.openedAt)}</td>
-                          <td>{trade.contractType}</td>
-                          <td>{money(trade.stake)}</td>
-                          <td>{trade.status === 'open' ? 'Open' : money(trade.profit)}</td>
+                          <td>{sideLabel(trade.contractType)}</td>
+                          <td className={trade.status === 'open' ? '' : (Number(trade.profit) >= 0 ? 'is-up' : 'is-down')}>{resultLabel(trade)}</td>
                         </tr>
                       ))}
                     </tbody>
                   </table>
-                ) : <p className="fine-print">No trades yet. The board will fill as the demo places contracts.</p>}
+                ) : <p className="fine-print">No finished trades yet. This list fills as the practice run continues.</p>}
               </div>
               <div>
-                <h4>Live log</h4>
+                <h4>In plain words</h4>
                 <ul className="lab-log">
                   {events.map((event) => (
-                    <li key={event.id}><strong>{event.type}</strong> {event.message}</li>
+                    <li key={event.id}>{eventCopy(event)}</li>
                   ))}
-                  {!events.length && <li className="fine-print">Waiting for the first demo event.</li>}
+                  {!events.length && <li className="fine-print">Waiting for the first practice result.</li>}
                 </ul>
               </div>
             </div>
+            <StrategyDownload />
           </>
         ) : (
           <>
-            <h3>No strategy is being live-tested right now</h3>
-            <p>The shared Volatility 75 (1s) demo will appear here for every member once it is running.</p>
+            <h3>The shared practice run has not started yet</h3>
+            <p>When it is on, everyone in the members area will see the same Volatility 75 (1 second) test, using demo funds only.</p>
           </>
         )}
       </div>

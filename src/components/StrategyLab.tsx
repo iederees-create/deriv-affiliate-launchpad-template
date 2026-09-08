@@ -80,8 +80,8 @@ export function StrategyLab() {
       <div className="strategy-hero">
         <div>
           <p className="eyebrow">Shared demo lab</p>
-          <h2 id="lab-heading">Member Strategy Live Test</h2>
-          <p>Everyone watches the same Volatility 75 (1s) demo for a week. Results update live. Uploaded scripts are stored and never executed. There is no chart in this view.</p>
+          <h2 id="lab-heading">Shared practice test</h2>
+          <p>Everyone here watches the same Volatility 75 (1 second) practice run. It uses demo funds, not real money. The list below updates as trades finish. There is no chart. Member scripts are stored for review and never run.</p>
         </div>
         <FlaskConical />
       </div>

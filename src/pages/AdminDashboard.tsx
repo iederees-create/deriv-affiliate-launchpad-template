@@ -5,7 +5,7 @@ import { Seo } from '../components/Seo';
 import { supabase } from '../lib/supabase';
 import { useAuth } from '../components/AuthProvider';
 import { maskLogin, statusLabel } from '../lib/managedStrategy';
-import { fetchOperatorBoard, startOperatorRun, stopOperatorRun, type LabBoard, type LabStrategy } from '../lib/labApi';
+import { fetchOperatorBoard, startOperatorRun, stopOperatorRun, fetchAffiliateClaims, verifyAffiliateClaim, type AffiliateClaim, type LabBoard, type LabStrategy } from '../lib/labApi';
 import { LiveResults } from '../components/LiveResults';
 
 
@@ -32,6 +32,7 @@ export function AdminDashboard() {
   const [labError, setLabError] = useState('');
   const [busyId, setBusyId] = useState<number | null>(null);
   const [openScript, setOpenScript] = useState<number | null>(null);
+  const [affiliates, setAffiliates] = useState<AffiliateClaim[]>([]);
 
   const loadReviews = async () => {
     const { data, error } = await supabase.rpc('admin_list_strategy_applications', { query: search });
@@ -53,8 +54,19 @@ export function AdminDashboard() {
     loadReviews();
   }, []);
 
+  const loadAffiliates = async () => {
+    if (!session?.access_token) return;
+    try {
+      const result = await fetchAffiliateClaims(session.access_token);
+      setAffiliates(result.affiliates || []);
+    } catch (_err) {
+      setAffiliates([]);
+    }
+  };
+
   useEffect(() => {
     loadLab();
+    loadAffiliates();
     const timer = setInterval(loadLab, 5000);
     return () => clearInterval(timer);
   }, [session?.access_token]);
@@ -185,6 +197,39 @@ export function AdminDashboard() {
             {!strategies.length && <p className="fine-print">No member strategy submissions yet.</p>}
           </div>
           {labError ? <p className="tool-error" role="status">{labError}</p> : null}
+        </section>
+
+        <section className="admin-lab-panel">
+          <p className="eyebrow">Strategy pack access</p>
+          <h2>Confirm Deriv downline</h2>
+          <p>Only verified Partner Hub clients can download the written practice rules. If Deriv’s partner API cannot tag them automatically, confirm the ID in Partner Hub My Clients, then verify here.</p>
+          <div className="admin-records">
+            {affiliates.map((item) => (
+              <article key={item.id}>
+                <div className="admin-record-head">
+                  <div>
+                    <h2>{item.memberEmail || 'Member'}</h2>
+                    <p>Deriv ID {item.derivLoginid} · {item.derivClientId}</p>
+                  </div>
+                  <span className="status-pill">{item.status}</span>
+                </div>
+                <p>{item.note}</p>
+                <div className="strategy-actions">
+                  <button className="cta" type="button" onClick={async () => {
+                    if (!session?.access_token) return;
+                    await verifyAffiliateClaim(session.access_token, item.id, 'verified', 'Confirmed in Partner Hub.');
+                    loadAffiliates();
+                  }}>Verify downline</button>
+                  <button className="danger-button" type="button" onClick={async () => {
+                    if (!session?.access_token) return;
+                    await verifyAffiliateClaim(session.access_token, item.id, 'rejected', 'Not on this partner downline.');
+                    loadAffiliates();
+                  }}>Reject</button>
+                </div>
+              </article>
+            ))}
+            {!affiliates.length && <p className="fine-print">No Deriv ID claims yet.</p>}
+          </div>
         </section>
 
         <header>
