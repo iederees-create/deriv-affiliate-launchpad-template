@@ -8,6 +8,7 @@ import { isAdminUser } from "../lib/admin";
 const navItems = [
   ["/tools", "Tools"],
   ["/desk", "Desk"],
+  ["/lab", "Live test"],
   ["/kit", "Free kit"],
   ["/learn", "Learn"],
   ["/blog", "Blog"],
@@ -37,6 +38,10 @@ const pageNarrations: Record<string, { title: string; description: string; secti
   "/learn": {
     title: "Welcome to the learning hub.",
     description: "You are in the right place to learn the basics without pressure. Explore each topic at your own pace, understand the risks, and build confidence before opening or funding any account."
+  },
+  "/lab": {
+    title: "Welcome to the shared practice run.",
+    description: "Anyone can watch this Volatility 75 one-second demo. It uses practice funds, not real money. If you want your own Deriv demo, use the partner link and referral code on this page."
   },
   "/tools": {
     title: "Welcome to your free trading tools.",
@@ -138,7 +143,9 @@ export function Layout() {
           <Link to="/desk">Beginner desk</Link>
           <Link to="/risk-disclosure">Risk disclosure</Link>
           <Link to="/contact">Contact</Link>
-          <a href={affiliateConfig.partnerProgrammeLink} target="_blank" rel="noreferrer">Partner link</a>
+          <Link to="/lab">Live practice test</Link>
+          <a href={affiliateConfig.primaryAffiliateLink} target="_blank" rel="noreferrer">Open Deriv demo</a>
+          <span>Referral code {affiliateConfig.referralCode}</span>
         </div>
       </footer>
     </div>

@@ -42,6 +42,9 @@ export type LabBoard = {
     consecutiveLosses: number;
     winRate?: number;
     realizedPnl: number;
+    startingBalance?: number | null;
+    currentBalance?: number | null;
+    percentReturn?: number | null;
     lastTick: number | null;
     lastTickAt: string | null;
     isVirtual: boolean;
@@ -52,6 +55,8 @@ export type LabBoard = {
   queue: LabStrategy[];
   strategies?: LabStrategy[];
   operator?: { email: string; name: string };
+  affiliateLink?: string;
+  referralCode?: string;
 };
 
 async function parse(res: Response) {

@@ -5,6 +5,7 @@ import { Seo } from "../components/Seo";
 import { affiliateConfig } from "../config/affiliateConfig";
 import { TraderQuiz } from "../components/TraderQuiz";
 import { ExitIntent } from "../components/ExitIntent";
+import { PublicLiveBoard } from "../components/PublicLiveBoard";
 
 const features = [
   ["24/7 Synthetic Indices", "Trade proprietary indices that simulate real-world market movements without being affected by news events.", Cable],
@@ -55,6 +56,14 @@ export function Home() {
         </div>
       </section>
       <DisclosureBand />
+      <section className="section">
+        <SectionHeader
+          eyebrow="Watch without signing in"
+          title="Shared Volatility 75 practice run"
+          text={`Demo funds only. Open your own Deriv practice account with this partner link. Referral code ${affiliateConfig.referralCode}.`}
+        />
+        <PublicLiveBoard />
+      </section>
       <section className="section">
         <SectionHeader
           eyebrow="Free toolkit"

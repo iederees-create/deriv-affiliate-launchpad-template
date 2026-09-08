@@ -1,5 +1,8 @@
+import { Link } from 'react-router-dom';
 import type { LabBoard } from '../lib/labApi';
+import { affiliateConfig } from '../config/affiliateConfig';
 import { StrategyDownload } from './StrategyDownload';
+import { useAuth } from './AuthProvider';
 
 function money(value: number | null | undefined) {
   const n = Number(value);
@@ -50,6 +53,16 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
   const rows = open ? [open, ...closed] : closed;
   const events = (board?.events || []).filter((event) => event.type !== 'trade_opened').slice(0, 6);
   const pnl = Number(run?.realizedPnl || 0);
+  const startBal = Number(run?.startingBalance);
+  const liveBal = Number(run?.currentBalance);
+  const walletNow = Number.isFinite(liveBal) ? liveBal : (Number.isFinite(startBal) ? startBal + pnl : null);
+  const walletStart = Number.isFinite(startBal) ? startBal : (walletNow != null ? walletNow - pnl : null);
+  const percent = run?.percentReturn != null
+    ? run.percentReturn
+    : (walletStart && walletStart !== 0 ? Math.round((pnl / walletStart) * 10000) / 100 : null);
+  const { session } = useAuth();
+  const joinHref = board?.affiliateLink || affiliateConfig.primaryAffiliateLink;
+  const referral = board?.referralCode || affiliateConfig.referralCode;
 
   return (
     <div className={`lab-live ${live ? 'is-live' : ''}`}>
@@ -64,19 +77,31 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
               Everyone here is watching the same practice test. It uses <strong>demo funds only</strong> — this does not spend real money.
               When four 1-second prices go the same way and the last one is the strongest, it tries that direction for five ticks.
             </p>
-            <p className="lab-money-note">Practice dollars, not cash. The website was already running; this extra test does not open a new paid service.</p>
+            <p className="lab-money-note">Practice dollars, not cash. The wallet below is the Deriv demo account used for this test.</p>
             {board?.paused ? (
               <p className="lab-pause">
                 Taking a short break after three losses in a row. It will start placing practice trades again at {when(run?.pauseUntil)}.
               </p>
             ) : null}
+            <div className="lab-wallet">
+              <div><span>Practice wallet at start</span><strong>{walletStart != null ? `$${money(walletStart)}` : '—'}</strong></div>
+              <div><span>Practice wallet now</span><strong>{walletNow != null ? `$${money(walletNow)}` : '—'}</strong></div>
+              <div><span>Made this week</span><strong className={pnl >= 0 ? 'is-up' : 'is-down'}>{pnl >= 0 ? '+' : ''}${money(pnl)}</strong></div>
+              <div><span>Return</span><strong className={(percent || 0) >= 0 ? 'is-up' : 'is-down'}>{percent == null ? '—' : `${percent >= 0 ? '+' : ''}${percent}%`}</strong></div>
+            </div>
             <div className="lab-stats">
               <div><span>Latest price</span><strong>{run?.lastTick ?? '—'}</strong></div>
               <div><span>Finished trades</span><strong>{run?.tradeCount ?? 0}</strong></div>
               <div><span>Won / lost</span><strong>{run?.winCount ?? 0} / {run?.lossCount ?? 0}</strong></div>
               <div><span>Win rate</span><strong>{run?.winRate ?? 0}%</strong></div>
-              <div><span>Practice result</span><strong className={pnl >= 0 ? 'is-up' : 'is-down'}>{pnl >= 0 ? '+' : ''}{money(pnl)}</strong></div>
               <div><span>Runs until</span><strong>{when(run?.scheduledEndAt)}</strong></div>
+            </div>
+            <div className="lab-join">
+              <p>Anyone can watch this. To try the same market on your own Deriv demo, open an account through this partner link. Referral code <strong>{referral}</strong>.</p>
+              <div className="strategy-actions">
+                <a className="cta cta-primary" href={joinHref} target="_blank" rel="noreferrer">Open a free Deriv demo</a>
+                {!session ? <Link className="cta cta-secondary" to="/auth">Create a free site login</Link> : null}
+              </div>
             </div>
             <div className="lab-results-grid">
               <div>
@@ -113,7 +138,11 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
         ) : (
           <>
             <h3>The shared practice run has not started yet</h3>
-            <p>When it is on, everyone in the members area will see the same Volatility 75 (1 second) test, using demo funds only.</p>
+            <p>When it is on, anyone can watch the same Volatility 75 (1 second) test, using demo funds only.</p>
+            <div className="lab-join">
+              <a className="cta cta-primary" href={joinHref} target="_blank" rel="noreferrer">Open a free Deriv demo</a>
+              {!session ? <Link className="cta cta-secondary" to="/auth">Create a free site login</Link> : null}
+            </div>
           </>
         )}
       </div>

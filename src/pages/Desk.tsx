@@ -17,6 +17,7 @@ import {
   type OfferCatalog
 } from "../lib/deskApi";
 import { BEGINNER_SYMBOLS, subscribeDerivQuotes, type SocketStatus, type Tick } from "../lib/derivMarket";
+import { PublicLiveBoard } from "../components/PublicLiveBoard";
 
 const START_KEY = "apex-desk-journey-start";
 const DONE_KEY = "apex-desk-journey-done";
@@ -304,6 +305,15 @@ export function Desk() {
             </li>
           ))}
         </ol>
+      </section>
+
+      <section className="section">
+        <SectionHeader
+          eyebrow="Shared practice run"
+          title="Watch the Volatility 75 test live"
+          text={`No login needed to watch. Demo funds only. Partner link uses referral code ${affiliateConfig.referralCode}.`}
+        />
+        <PublicLiveBoard />
       </section>
 
       <section className="section cta-panel">
