@@ -137,7 +137,8 @@ export function Layout() {
       <footer className="site-footer">
         <div>
           <strong>{affiliateConfig.productName}</strong>
-          <p>Independent educational and strategy-access platform. Not financial advice and not an official Deriv website.</p>
+          <p>Independent desk by {affiliateConfig.affiliateOwnerName}. Not financial advice and not an official Deriv website.</p>
+          <p className="fine-print">{affiliateConfig.email} · {affiliateConfig.whatsappNumber}</p>
         </div>
         <div className="footer-links">
           <Link to="/desk">Beginner desk</Link>
@@ -146,6 +147,10 @@ export function Layout() {
           <Link to="/lab">Live practice test</Link>
           <a href={affiliateConfig.primaryAffiliateLink} target="_blank" rel="noreferrer">Open Deriv demo</a>
           <span>Referral code {affiliateConfig.referralCode}</span>
+          <a href={affiliateConfig.socialLinks.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href={affiliateConfig.socialLinks.x} target="_blank" rel="noreferrer">X</a>
+          <a href={affiliateConfig.socialLinks.instagram} target="_blank" rel="noreferrer">Instagram</a>
+          <a href={affiliateConfig.socialLinks.youtube} target="_blank" rel="noreferrer">YouTube</a>
         </div>
       </footer>
     </div>

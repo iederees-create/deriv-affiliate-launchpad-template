@@ -24,11 +24,10 @@ export const affiliateConfig = {
   riskDisclaimer:
     "Trading involves risk. CFDs and other leveraged products can result in losses greater than the initial amount committed. This website is educational and promotional, not financial advice.",
   socialLinks: {
-    youtube: "https://example.com/youtube",
-    tiktok: "https://example.com/tiktok",
-    instagram: "https://example.com/instagram",
-    x: "https://example.com/x",
-    linkedin: "https://www.linkedin.com/in/iederees-francis/"
+    youtube: "https://youtube.com/channel/uc3cd_ossaxmwdtvfvxgxwgw",
+    instagram: "https://instagram.com/nextgenerationwebdevs",
+    x: "https://x.com/nextgenwebdevs",
+    linkedin: "https://www.linkedin.com/in/iederees-francis-936717392/"
   },
   themeColours: {
     background: "#08111f",
@@ -40,3 +39,8 @@ export const affiliateConfig = {
 } as const;
 
 export type AffiliateConfig = typeof affiliateConfig;
+
+export function whatsappUrl(message: string) {
+  const number = affiliateConfig.whatsappNumber.replace(/\D/g, "");
+  return `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+}

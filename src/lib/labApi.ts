@@ -57,6 +57,17 @@ export type LabBoard = {
   operator?: { email: string; name: string };
   affiliateLink?: string;
   referralCode?: string;
+  recap?: {
+    headline: string;
+    body: string;
+    startedAt?: string | null;
+    endsAt?: string | null;
+    made: number;
+    trades: number;
+    wins: number;
+    losses: number;
+    winRate: number;
+  } | null;
 };
 
 async function parse(res: Response) {

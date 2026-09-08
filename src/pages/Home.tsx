@@ -1,111 +1,97 @@
-import { BookOpen, Cable, ChartNoAxesCombined, MessageSquare, Search, ShieldCheck, Users, Wand2 } from "lucide-react";
-import { CTA } from "../components/CTA";
+import { BookOpen, MessageCircle, ShieldCheck } from "lucide-react";
+import { CTA, WhatsAppCTA } from "../components/CTA";
 import { DisclosureBand, Card, SectionHeader } from "../components/Section";
 import { Seo } from "../components/Seo";
-import { affiliateConfig } from "../config/affiliateConfig";
-import { TraderQuiz } from "../components/TraderQuiz";
-import { ExitIntent } from "../components/ExitIntent";
+import { affiliateConfig, whatsappUrl } from "../config/affiliateConfig";
 import { PublicLiveBoard } from "../components/PublicLiveBoard";
+import { ExitIntent } from "../components/ExitIntent";
 
-const features = [
-  ["24/7 Synthetic Indices", "Trade proprietary indices that simulate real-world market movements without being affected by news events.", Cable],
-  ["Flexible Leverage", "Maximize your trading potential with flexible leverage options tailored to your strategy and risk appetite.", ShieldCheck],
-  ["Fast Withdrawals", "Access your profits quickly with a variety of secure, localized, and global payment methods.", MessageSquare],
-  ["Advanced Platforms", "Trade on MT5, Deriv X, or intuitive web platforms equipped with advanced charting tools.", Search],
-  ["Free Demo Account", "Practice your strategies entirely risk-free with a $10,000 reloadable virtual balance.", BookOpen],
-  ["Trusted Globally", "Join millions of traders worldwide trading on a regulated, established, and secure broker platform.", Wand2]
+const path = [
+  ["Watch", "Stay on this page. The board is a Deriv demo, not cash."],
+  ["Open a demo", `Use the partner link. Referral code ${affiliateConfig.referralCode}.`],
+  ["Practise 14 days", "Journal the trades. Do not skip to live money."],
+  ["Join VIP", "Sign in here if you want the written rules and planning tools."]
 ] as const;
-
-const builtFor = [
-  "Beginner Traders",
-  "Forex Professionals",
-  "Synthetic Index Specialists",
-  "Crypto Enthusiasts",
-  "Algorithmic Traders",
-  "Swing Traders"
-];
 
 export function Home() {
   return (
     <>
       <Seo
-        title={`${affiliateConfig.brandName} | Trade Forex & Synthetics`}
-        description="Master the markets with Apex Trade Network. Trade Forex, Synthetic Indices, and Crypto on an industry-leading platform."
+        title={`${affiliateConfig.brandName} | Watch a live Deriv demo`}
+        description="Watch a shared Volatility 75 practice run on Deriv demo funds. Then open your own demo through Iederees Francis’s partner link."
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: affiliateConfig.brandName,
-          description: "Trading community and resources for Deriv traders.",
+          description: "Independent Deriv partner desk run by Iederees Francis.",
         }}
       />
       <ExitIntent />
       <section className="hero">
         <div className="hero-copy">
-          <p className="eyebrow">Trade with an industry leader</p>
-          <h1>Master the markets. Trade Forex, Synthetics, and Crypto with Deriv.</h1>
+          <p className="eyebrow">Independent partner desk · Iederees Francis</p>
+          <h1>Watch a live practice run. Then open your own Deriv demo.</h1>
           <p>
-            Join a global community of traders. Access 24/7 markets, advanced charting, and lightning-fast execution on a regulated trading platform.
+            This is not the broker. I may earn a commission if you sign up through my link.
+            The test below uses demo funds only. Trading involves risk. Not financial advice.
           </p>
           <div className="cta-row">
-            <CTA href={affiliateConfig.primaryAffiliateLink}>Open Free Account</CTA>
-            <a className="text-link" href={affiliateConfig.demoAccountLink}>Try a $10,000 Demo</a>
+            <CTA href={affiliateConfig.demoAccountLink}>Open a free Deriv demo</CTA>
+            <a className="text-link" href={whatsappUrl("Hi Iederees, I watched the V75 practice run and opened a demo through your link.")}>Message me on WhatsApp</a>
           </div>
+          <p className="fine-print">Partner link {affiliateConfig.primaryAffiliateLink} · Referral code {affiliateConfig.referralCode}</p>
         </div>
-        <div className="hero-panel" aria-label="Affiliate funnel preview" style={{ background: 'transparent', padding: 0, border: 'none' }}>
-          <TraderQuiz />
+        <div className="hero-panel founder-card">
+          <p className="eyebrow">Who runs this</p>
+          <h2>{affiliateConfig.affiliateOwnerName}</h2>
+          <p>Cape Town. I built this desk so people can see a real demo before anyone asks them to deposit.</p>
+          <div className="cta-row">
+            <a className="text-link" href={affiliateConfig.socialLinks.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+            <a className="text-link" href={affiliateConfig.socialLinks.x} target="_blank" rel="noreferrer">X</a>
+            <a className="text-link" href={affiliateConfig.socialLinks.instagram} target="_blank" rel="noreferrer">Instagram</a>
+            <a className="text-link" href={affiliateConfig.socialLinks.youtube} target="_blank" rel="noreferrer">YouTube</a>
+          </div>
         </div>
       </section>
       <DisclosureBand />
       <section className="section">
         <SectionHeader
-          eyebrow="Watch without signing in"
+          eyebrow="Live now"
           title="Shared Volatility 75 practice run"
-          text={`Demo funds only. Open your own Deriv practice account with this partner link. Referral code ${affiliateConfig.referralCode}.`}
+          text="No login needed to watch. Demo wallet, trades, and this week’s result update as they happen."
         />
         <PublicLiveBoard />
       </section>
       <section className="section">
         <SectionHeader
-          eyebrow="Free toolkit"
-          title="Calculators and PDFs before you fund anything"
-          text="Stake planner, daily stop, 14-day demo plan, and a 20-row journal. If you open a Deriv account through this site, I may earn a commission. You keep the files either way."
+          eyebrow="What to do next"
+          title="Four steps. Nothing fancy."
         />
-        <div className="cta-row">
-          <CTA href="/deriv-affiliate-launchpad-template/tools">Use the free tools</CTA>
-          <CTA href="/deriv-affiliate-launchpad-template/desk" variant="secondary">Open the live desk</CTA>
-          <CTA href="/deriv-affiliate-launchpad-template/kit" variant="ghost">Download the kit</CTA>
+        <div className="card-grid">
+          {path.map(([title, text], index) => (
+            <Card key={title} title={`${index + 1}. ${title}`}>{text}</Card>
+          ))}
+        </div>
+        <div className="cta-row" style={{ marginTop: 24 }}>
+          <CTA href="/deriv-affiliate-launchpad-template/kit">Open the 14-day demo plan</CTA>
+          <CTA href="/deriv-affiliate-launchpad-template/auth" variant="secondary">Create a free site login</CTA>
         </div>
       </section>
       <section className="section">
         <SectionHeader
-          eyebrow="Platform Benefits"
-          title="Everything you need to succeed"
-          text="Whether you're trading Forex during the week or Synthetic Indices on the weekend, Deriv provides the tools for every strategy."
+          eyebrow="Free toolkit"
+          title="Calculators before you fund anything"
+          text="Stake planner, daily stop, and a journal. They do not place trades."
         />
         <div className="card-grid">
-          {features.map(([title, text, Icon]) => <Card key={title} title={title} icon={Icon}>{text}</Card>)}
+          <Card title="Tools" icon={ShieldCheck}>Plan stake and daily stop in the browser.</Card>
+          <Card title="Kit" icon={BookOpen}>Printable 14-day plan and 20-row journal.</Card>
+          <Card title="WhatsApp" icon={MessageCircle}>Tell me if you opened a demo. I cannot see Deriv signups from here.</Card>
         </div>
-      </section>
-      <section className="section split">
-        <div>
-          <SectionHeader
-            eyebrow="Who is this for"
-            title="A platform built for serious traders"
-            text="From absolute beginners to seasoned professionals, Deriv offers account types and platforms suited for your exact trading style."
-          />
-          <CTA href={affiliateConfig.primaryAffiliateLink}>Start Trading Today</CTA>
+        <div className="cta-row" style={{ marginTop: 24 }}>
+          <CTA href="/deriv-affiliate-launchpad-template/tools">Use the free tools</CTA>
+          <WhatsAppCTA label="Say you opened a demo" />
         </div>
-        <div className="audience-list">
-          {builtFor.map((item) => (
-            <div key={item}><Users size={18} aria-hidden="true" /><span>{item}</span></div>
-          ))}
-        </div>
-      </section>
-      <section className="section proof-strip">
-        <ChartNoAxesCombined aria-hidden="true" />
-        <p>
-          {affiliateConfig.riskDisclaimer}
-        </p>
       </section>
     </>
   );

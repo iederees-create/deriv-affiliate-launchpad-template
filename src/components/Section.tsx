@@ -39,7 +39,7 @@ export function Card({
 export function DisclosureBand() {
   return (
     <section className="disclosure-band" aria-label="Important disclosures">
-      <strong>Important:</strong> This demo is a website template for affiliate marketing. It is not an official Deriv website, not a trading bot, and not financial advice. Trading involves risk, and affiliate owners may earn commissions from configured links.
+      <strong>Important:</strong> Independent desk run by Iederees Francis. Not an official Deriv website. Not a trading bot. Not financial advice. Trading involves risk. I may earn a commission if you sign up through the partner link on this site.
     </section>
   );
 }

@@ -8,24 +8,24 @@ export function Contact() {
   return (
     <>
       <Seo
-        title="Contact the Affiliate Owner"
-        description="Editable WhatsApp and email contact page for a trading affiliate website template."
+        title={`Contact ${affiliateConfig.affiliateOwnerName}`}
+        description="WhatsApp or email Iederees Francis about the Apex Trade Network Deriv partner desk."
         path="/contact"
       />
       <section className="page-hero">
-        <p className="eyebrow">Lead capture</p>
-        <h1>Route warm prospects into a simple follow-up workflow.</h1>
-        <p>Update the WhatsApp number and email in the config file before publishing your rebranded website.</p>
+        <p className="eyebrow">Iederees Francis</p>
+        <h1>Ask a question. I cannot see your Deriv password.</h1>
+        <p>Best for “I opened a demo” or “is this still practice money?” I will not tell you what to trade.</p>
       </section>
       <section className="section split contact-grid">
         <div className="panel">
           <MessageCircle aria-hidden="true" />
-          <SectionHeader title="WhatsApp CTA" text="Best for creators and IBs who close questions through chat." />
-          <WhatsAppCTA />
+          <SectionHeader title="WhatsApp" text={affiliateConfig.whatsappNumber} />
+          <WhatsAppCTA label="Message on WhatsApp" />
         </div>
         <div className="panel">
           <Mail aria-hidden="true" />
-          <SectionHeader title="Email fallback" text="Use email for buyers, compliance questions, and partner enquiries." />
+          <SectionHeader title="Email" text="For slower questions." />
           <CTA href={`mailto:${affiliateConfig.email}`} variant="secondary">{affiliateConfig.email}</CTA>
         </div>
       </section>

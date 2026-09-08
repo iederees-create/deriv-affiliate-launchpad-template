@@ -72,7 +72,16 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
         </span>
         {live ? (
           <>
-            <h3>{board?.strategy?.title === 'V75 1s impulse follow' ? 'Volatility 75, 1-second practice' : board?.strategy?.title}</h3>
+            {board?.recap ? (
+              <div className="lab-recap">
+                <p className="eyebrow">This week</p>
+                <h3>{board.recap.headline}</h3>
+                <p>{board.recap.body}</p>
+              </div>
+            ) : (
+              <h3>{board?.strategy?.title === 'V75 1s impulse follow' ? 'Volatility 75, 1-second practice' : board?.strategy?.title}</h3>
+            )}
+            <p className="fine-print">Volatility 75, 1-second practice. Four same-way ticks, strongest last tick, five-tick expiry.</p>
             <p>
               Everyone here is watching the same practice test. It uses <strong>demo funds only</strong> — this does not spend real money.
               When four 1-second prices go the same way and the last one is the strongest, it tries that direction for five ticks.
