@@ -81,10 +81,10 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
             ) : (
               <h3>{board?.strategy?.title === 'V75 1s impulse follow' ? 'Volatility 75, 1-second practice' : board?.strategy?.title}</h3>
             )}
-            <p className="fine-print">Volatility 75, 1-second practice. Four same-way ticks, strongest last tick, five-tick expiry.</p>
+            <p className="fine-print">Volatility 75, 1-second practice. Fade a spike that is 1.8× the recent average tick, hold eight ticks.</p>
             <p>
               Everyone here is watching the same practice test. It uses <strong>demo funds only</strong> — this does not spend real money.
-              When four 1-second prices go the same way and the last one is the strongest, it tries that direction for five ticks.
+              If the latest 1-second jump is much larger than usual, it bets the other way for eight ticks. That is not a promise it will keep winning.
             </p>
             <p className="lab-money-note">Practice dollars, not cash. The wallet below is the Deriv demo account used for this test.</p>
             {board?.paused ? (

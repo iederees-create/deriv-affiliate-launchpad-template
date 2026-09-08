@@ -45,14 +45,18 @@ export function StrategyDownload() {
     setBusy(true);
     try {
       const pack = await downloadStrategyPack(session.access_token);
-      const blob = new Blob([pack.markdown], { type: 'text/markdown' });
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement('a');
-      link.href = url;
-      link.download = 'v75-1s-impulse-follow.md';
-      link.click();
-      URL.revokeObjectURL(url);
-      setMessage('Downloaded. Follow it on a Deriv demo. It does not place trades for you.');
+      const save = (name: string, text: string, type: string) => {
+        const blob = new Blob([text], { type });
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = name;
+        link.click();
+        URL.revokeObjectURL(url);
+      };
+      save(pack.eaFilename || 'ApexV75SpikeFade.mq5', pack.mq5, 'text/plain');
+      save(pack.installFilename || 'ApexV75SpikeFade-INSTALL.txt', pack.markdown, 'text/plain');
+      setMessage('Downloaded the MT5 Expert Advisor and the install steps. Use a Deriv MT5 demo first.');
     } catch (err) {
       setMessage(err instanceof Error ? err.message : 'Download is locked until your Deriv account is on this partner downline.');
     } finally {
@@ -62,14 +66,14 @@ export function StrategyDownload() {
 
   return (
     <div className="lab-download">
-      <h4>Want the written rules?</h4>
+      <h4>Want the MT5 Expert Advisor?</h4>
       <p>
-        The pack is only for people who opened a Deriv account through this partner link.
-        Enter the ID from Deriv account settings. If it is not on the downline yet, open the account through the link first.
+        Downline members can download the same spike-fade rule as an .mq5 file plus install steps.
+        Demo first. It can lose money. Enter the ID from Deriv account settings.
       </p>
       {canDownload ? (
         <button className="cta cta-primary" type="button" disabled={busy} onClick={download}>
-          {busy ? 'Preparing…' : 'Download the practice rules'}
+          {busy ? 'Preparing…' : 'Download MT5 EA + install steps'}
         </button>
       ) : (
         <form onSubmit={submit}>

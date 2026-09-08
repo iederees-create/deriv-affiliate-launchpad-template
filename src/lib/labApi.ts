@@ -156,7 +156,7 @@ export async function claimAffiliate(token: string, loginId: string) {
 
 export async function downloadStrategyPack(token: string) {
   const res = await fetch(`${LAB_API_BASE}/api/lab/strategy-pack`, { headers: authHeaders(token) });
-  return parse(res) as Promise<{ title: string; markdown: string; symbol: string; lookback: number; durationTicks: number; stake: number }>;
+  return parse(res) as Promise<{ title: string; markdown: string; mq5: string; eaFilename: string; installFilename: string; symbol: string; lookback: number; durationTicks: number; stake: number }>;
 }
 
 export async function fetchAffiliateClaims(token: string) {
