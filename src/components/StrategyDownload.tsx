@@ -3,7 +3,7 @@ import { useAuth } from './AuthProvider';
 import { affiliateConfig } from '../config/affiliateConfig';
 import { claimAffiliate, downloadStrategyPack, fetchAffiliateStatus, type AffiliateClaim } from '../lib/labApi';
 
-export function StrategyDownload() {
+export function StrategyDownload({ strategy }: { strategy?: { title: string; description: string } | null }) {
   const { session } = useAuth();
   const [loginId, setLoginId] = useState('');
   const [claim, setClaim] = useState<AffiliateClaim | null>(null);
@@ -54,8 +54,8 @@ export function StrategyDownload() {
         link.click();
         URL.revokeObjectURL(url);
       };
-      save(pack.eaFilename || 'ApexV75SpikeFade.mq5', pack.mq5, 'text/plain');
-      save(pack.installFilename || 'ApexV75SpikeFade-INSTALL.txt', pack.markdown, 'text/plain');
+      save(pack.eaFilename || "ApexRSIEclipseReversion.mq5", pack.mq5, 'text/plain');
+      save(pack.installFilename || "ApexRSIEclipseReversion-INSTALL.txt", pack.markdown, 'text/plain');
       setMessage('Downloaded the MT5 Expert Advisor and the install steps. Use a Deriv MT5 demo first.');
     } catch (err) {
       setMessage(err instanceof Error ? err.message : 'Download is locked until your Deriv account is on this partner downline.');
@@ -68,8 +68,8 @@ export function StrategyDownload() {
     <div className="lab-download">
       <h4>Want the MT5 Expert Advisor?</h4>
       <p>
-        Downline members can download the same spike-fade rule as an .mq5 file plus install steps.
-        Demo first. It can lose money. Enter the ID from Deriv account settings.
+        Downline members can download {strategy?.title || "the active demo strategy"} as an .mq5 file plus install steps.
+        The download reflects the active rules. Demo first; it can lose money. Enter the ID from Deriv account settings.
       </p>
       {canDownload ? (
         <button className="cta cta-primary" type="button" disabled={busy} onClick={download}>

@@ -72,20 +72,19 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
         </span>
         {live ? (
           <>
-            {board?.recap ? (
-              <div className="lab-recap">
-                <p className="eyebrow">This week</p>
-                <h3>{board.recap.headline}</h3>
-                <p>{board.recap.body}</p>
-              </div>
-            ) : (
-              <h3>{board?.strategy?.title === 'V75 1s impulse follow' ? 'Volatility 75, 1-second practice' : board?.strategy?.title}</h3>
-            )}
-            <p className="fine-print">Volatility 75, 1-second practice. Fade a spike that is 1.8× the recent average tick, hold eight ticks.</p>
-            <p>
-              Everyone here is watching the same practice test. It uses <strong>demo funds only</strong> — this does not spend real money.
-              If the latest 1-second jump is much larger than usual, it bets the other way for eight ticks. That is not a promise it will keep winning.
-            </p>
+            <div className="lab-recap">
+              <p className="eyebrow">This week · {board?.strategy?.title || "Active strategy"}</p>
+              <h3>{board?.recap?.headline || board?.strategy?.title}</h3>
+              <p>{board?.recap?.body || board?.strategy?.description}</p>
+            </div>
+            <p className="fine-print">{board?.strategy?.description || "The active strategy description is not available yet."}</p>
+            <div className="lab-stats">
+              <div><span>Market</span><strong>{board?.strategy?.symbol || "—"}</strong></div>
+              <div><span>Lookback</span><strong>{board?.strategy?.lookback ?? "—"} ticks</strong></div>
+              <div><span>Duration</span><strong>{board?.strategy?.durationTicks ?? "—"} ticks</strong></div>
+              <div><span>Effective stake</span><strong>{board?.strategy?.effectiveStake != null ? ("USD " + money(board?.strategy.effectiveStake)) : (board?.strategy?.stake != null ? ("USD " + money(board?.strategy.stake)) : "—")}</strong></div>
+            </div>
+            <p>Everyone here is watching the same practice test. It uses <strong>demo funds only</strong> — this does not spend real money. Strategy rules and parameters above come from the live run, so changes appear automatically as the board updates.</p>
             <p className="lab-money-note">Practice dollars, not cash. The wallet below is the Deriv demo account used for this test.</p>
             {board?.paused ? (
               <p className="lab-pause">
@@ -142,7 +141,7 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
                 </ul>
               </div>
             </div>
-            <StrategyDownload />
+            <StrategyDownload strategy={board?.strategy} />
           </>
         ) : (
           <>

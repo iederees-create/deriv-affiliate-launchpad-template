@@ -14,6 +14,7 @@ export type LabStrategy = {
   durationTicks: number;
   lookback: number;
   stake: number;
+  effectiveStake?: number;
   status: string;
   createdAt: string;
   executable: boolean;
