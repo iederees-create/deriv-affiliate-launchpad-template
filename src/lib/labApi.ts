@@ -181,3 +181,8 @@ export async function stopOperatorRun(token: string, reason?: string): Promise<L
   });
   return parse(res);
 }
+
+export type TelegramMembership = { eligible: boolean; affiliateStatus: string; linked: boolean; status: string; telegramUsername: string; enabled: boolean; unavailableReason: string | null };
+export async function fetchTelegramStatus(token: string) { const res = await fetch(`${LAB_API_BASE}/api/telegram/status`, { headers: authHeaders(token) }); return parse(res) as Promise<TelegramMembership>; }
+export async function createTelegramLinkToken(token: string) { const res = await fetch(`${LAB_API_BASE}/api/telegram/link-token`, { method: 'POST', headers: authHeaders(token), body: '{}' }); return parse(res) as Promise<{ deepLink: string; expiresInSeconds: number }>; }
+export async function requestTelegramGroup(token: string) { const res = await fetch(`${LAB_API_BASE}/api/telegram/join-request`, { method: 'POST', headers: authHeaders(token), body: '{}' }); return parse(res) as Promise<{ inviteLink: string; expiresAt: string }>; }
