@@ -86,11 +86,6 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
             </div>
             <p>Everyone here is watching the same practice test. It uses <strong>demo funds only</strong> — this does not spend real money. Strategy rules and parameters above come from the live run, so changes appear automatically as the board updates.</p>
             <p className="lab-money-note">Practice dollars, not cash. The wallet below is the Deriv demo account used for this test.</p>
-            {board?.paused ? (
-              <p className="lab-pause">
-                Taking a short break after three losses in a row. It will start placing practice trades again at {when(run?.pauseUntil)}.
-              </p>
-            ) : null}
             <div className="lab-wallet">
               <div><span>Practice wallet at start</span><strong>{walletStart != null ? `$${money(walletStart)}` : '—'}</strong></div>
               <div><span>Practice wallet now</span><strong>{walletNow != null ? `$${money(walletNow)}` : '—'}</strong></div>
