@@ -847,13 +847,47 @@ button.cta {
 .eclipse-open { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; padding: 14px 16px; border-radius: 14px; border: 1px dashed #e8b86d; background: rgba(232, 184, 109, 0.08); }
 .eclipse-open strong { font-size: 1.2rem; color: #f4f1ea; }
 .eclipse-open p { margin: 0; }
-.eclipse-board .lab-wallet, .eclipse-board .lab-stats, .eclipse-board .lab-recap, .eclipse-board .lab-join, .eclipse-board .lab-money-note, .eclipse-board .lab-pause { background: #152238; border-color: #2a3a55; }
-.eclipse-board .lab-wallet span, .eclipse-board .lab-stats span { color: #8fa3c0; }
-.eclipse-board .lab-wallet strong, .eclipse-board .lab-stats strong { color: #f4f1ea; font-family: "IBM Plex Mono", ui-monospace, monospace; }
-.eclipse-board .is-up { color: #4fd1c5; }
-.eclipse-board .is-down { color: #e07a5f; }
-.eclipse-board .lab-trades th, .eclipse-board .lab-trades td { border-bottom-color: #2a3a55; color: #c9d4e5; }
-.eclipse-board .cta-secondary { background: transparent; color: #f4f1ea; border-color: #2a3a55; }
+.eclipse-board .lab-wallet,
+.eclipse-board .lab-stats,
+.eclipse-board .lab-recap,
+.eclipse-board .lab-join,
+.eclipse-board .lab-money-note,
+.eclipse-board .lab-pause {
+  background: #101a2c;
+  border-color: #3d5278;
+  color: #e8eef8;
+}
+.eclipse-board .lab-wallet > div,
+.eclipse-board .lab-stats > div {
+  background: #1c2d48;
+  border: 1px solid #3d5278;
+}
+.eclipse-board .lab-wallet span,
+.eclipse-board .lab-stats span {
+  color: #d7e3f4;
+}
+.eclipse-board .lab-wallet strong,
+.eclipse-board .lab-stats strong {
+  color: #ffffff;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+}
+.eclipse-board .is-up,
+.eclipse-board .lab-wallet strong.is-up,
+.eclipse-board .lab-stats strong.is-up,
+.eclipse-board .lab-trades .is-up { color: #7af0e0; }
+.eclipse-board .is-down,
+.eclipse-board .lab-wallet strong.is-down,
+.eclipse-board .lab-stats strong.is-down,
+.eclipse-board .lab-trades .is-down { color: #ff9b7a; }
+.eclipse-board .lab-recap h3,
+.eclipse-board .lab-join p,
+.eclipse-board .lab-money-note,
+.eclipse-board .lab-pause {
+  color: #e8eef8;
+}
+.eclipse-board .lab-trades th { color: #d7e3f4; }
+.eclipse-board .lab-trades td { border-bottom-color: #3d5278; color: #f4f7fb; }
+.eclipse-board .cta-secondary { background: transparent; color: #ffffff; border-color: #3d5278; }
 .win-tape { display: flex; flex-wrap: wrap; gap: 4px; min-height: 18px; }
 .win-tape span { width: 10px; height: 18px; border-radius: 2px; background: #2a3a55; }
 .win-tape span.is-up { background: #4fd1c5; }
