@@ -12,6 +12,8 @@ export type LabStrategy = {
   kind: LabKind;
   symbol: string;
   durationTicks: number;
+  durationUnit?: string;
+  durationLabel?: string;
   lookback: number;
   stake: number;
   effectiveStake?: number;
@@ -20,6 +22,17 @@ export type LabStrategy = {
   executable: boolean;
   scriptFilename?: string;
   scriptText?: string;
+  timeframe?: string;
+  timeframes?: string[];
+  scannedSymbols?: string[];
+  rsiByMarket?: Record<string, Record<string, number | null>> | null;
+  rsiPeriod?: number;
+  rsiOversold?: number;
+  rsiOverbought?: number;
+  rsi?: number | null;
+  rsiByTimeframe?: Record<string, number | null> | null;
+  stopLossPoints?: number;
+  takeProfitPoints?: number;
 };
 
 export type LabBoard = {
@@ -51,7 +64,7 @@ export type LabBoard = {
     isVirtual: boolean;
   } | null;
   strategy: LabStrategy | null;
-  trades: Array<{ id: number; contractType: string; symbol: string; stake: number; profit: number; status: string; openedAt: string; closedAt?: string }>;
+  trades: Array<{ id: number; contractType: string; symbol: string; stake: number; profit: number; status: string; openedAt: string; closedAt?: string; timeframe?: string }>;
   events: Array<{ id: number; type: string; message: string; createdAt: string }>;
   queue: LabStrategy[];
   strategies?: LabStrategy[];

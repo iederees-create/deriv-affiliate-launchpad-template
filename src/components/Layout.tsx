@@ -40,8 +40,8 @@ const pageNarrations: Record<string, { title: string; description: string; secti
     description: "You are in the right place to learn the basics without pressure. Explore each topic at your own pace, understand the risks, and build confidence before opening or funding any account."
   },
   "/lab": {
-    title: "Welcome to the shared practice run.",
-    description: "Anyone can watch this Volatility 75 one-second demo. It uses practice funds, not real money. If you want your own Deriv demo, use the partner link and referral code on this page."
+    title: "Welcome to the RSI Eclipse desk.",
+    description: "Anyone can watch this shared Deriv demo. It scans fifteen volatility markets on six charts. Practice funds only. If you want your own demo, use the partner link and referral code on this page."
   },
   "/tools": {
     title: "Welcome to your free trading tools.",

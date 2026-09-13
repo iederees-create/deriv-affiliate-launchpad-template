@@ -18,7 +18,9 @@ export function Home() {
     <>
       <Seo
         title={`${affiliateConfig.brandName} | Watch a live Deriv demo`}
-        description="Watch a shared Volatility 75 practice run on Deriv demo funds. Then open your own demo through Iederees Francis’s partner link."
+        description="Watch Apex RSI Eclipse: a shared Deriv demo scanning 15 volatility markets on six timeframes. Practice funds only."
+        image="https://iederees-create.github.io/deriv-affiliate-launchpad-template/og-rsi-eclipse.svg"
+        imageAlt="Apex RSI Eclipse live practice desk"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "WebSite",
@@ -30,14 +32,14 @@ export function Home() {
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">Independent partner desk · Iederees Francis</p>
-          <h1>Watch a live practice run. Then open your own Deriv demo.</h1>
+          <h1>Watch RSI Eclipse live. Then open your own Deriv demo.</h1>
           <p>
             This is not the broker. I may earn a commission if you sign up through my link.
             The test below uses demo funds only. Trading involves risk. Not financial advice.
           </p>
           <div className="cta-row">
             <CTA href={affiliateConfig.demoAccountLink}>Open a free Deriv demo</CTA>
-            <a className="text-link" href={whatsappUrl("Hi Iederees, I watched the V75 practice run and opened a demo through your link.")}>Message me on WhatsApp</a>
+            <a className="text-link" href={whatsappUrl("Hi Iederees, I watched the RSI Eclipse practice desk and opened a demo through your link.")}>Message me on WhatsApp</a>
           </div>
           <p className="fine-print">Partner link {affiliateConfig.primaryAffiliateLink} · Referral code {affiliateConfig.referralCode}</p>
         </div>
@@ -57,8 +59,8 @@ export function Home() {
       <section className="section">
         <SectionHeader
           eyebrow="Live now"
-          title="Shared Volatility 75 practice run"
-          text="No login needed to watch. Demo wallet, trades, and this week’s result update as they happen."
+          title="Shared RSI Eclipse practice desk"
+          text="No login needed. Fifteen volatility markets, six charts, RSI 20/80. Demo wallet and trades update as they happen."
         />
         <PublicLiveBoard />
       </section>

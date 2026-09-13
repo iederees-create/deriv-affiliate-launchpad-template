@@ -7,6 +7,8 @@ type SeoProps = {
   description: string;
   path?: string;
   type?: "website" | "article";
+  image?: string;
+  imageAlt?: string;
   jsonLd?: Record<string, unknown>;
 };
 
@@ -22,15 +24,22 @@ function setMeta(name: string, content: string, property = false) {
   tag.content = content;
 }
 
-export function Seo({ title, description, path = "/", type = "website", jsonLd }: SeoProps) {
+export function Seo({ title, description, path = "/", type = "website", image, imageAlt, jsonLd }: SeoProps) {
   useEffect(() => {
     const canonicalUrl = `${baseUrl}${path === "/" ? "/" : path}`;
+    const ogImage = image || `${baseUrl}/og-rsi-eclipse.svg`;
     document.title = title;
     setMeta("description", description);
     setMeta("og:title", title, true);
     setMeta("og:description", description, true);
     setMeta("og:type", type, true);
     setMeta("og:url", canonicalUrl, true);
+    setMeta("og:image", ogImage, true);
+    setMeta("og:image:alt", imageAlt || title, true);
+    setMeta("twitter:card", "summary_large_image");
+    setMeta("twitter:title", title);
+    setMeta("twitter:description", description);
+    setMeta("twitter:image", ogImage);
 
     let canonical = document.head.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) {
@@ -49,7 +58,7 @@ export function Seo({ title, description, path = "/", type = "website", jsonLd }
       script.textContent = JSON.stringify(jsonLd);
       document.head.appendChild(script);
     }
-  }, [description, jsonLd, path, title, type]);
+  }, [description, image, imageAlt, jsonLd, path, title, type]);
 
   return null;
 }

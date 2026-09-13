@@ -10,6 +10,94 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "rsi-eclipse-across-volatility-charts",
+    title: "How RSI Eclipse Reads 15 Volatility Markets Without Turning Into a Signal Room",
+    description: "A public Deriv demo that scans 15 volatility indices on six timeframes. RSI 20/80, one contract, practice funds. How to read the board, why 5-minute-only was too slow, and what the numbers are not.",
+    date: "2026-09-13",
+    sections: [
+      {
+        heading: "The board is a scan, not a salary screenshot",
+        body: [
+          "The live desk on this site is a shared Deriv demo. Anyone can watch it without a login. The wallet is practice money. The trades are rise/fall options at a 0.35 stake. If someone quotes those numbers as income, they misread the page.",
+          "The current rule is called Apex RSI Eclipse. It is mean-reversion, not momentum. Wilder RSI(14) on the 5-minute, 15-minute, 30-minute, 1-hour, 4-hour and daily charts. Buy when RSI drops below 20. Sell when RSI rises above 80. The fastest ready chart on the first ready market wins. One contract at a time. Expiry follows the chart that signalled.",
+          "Watch it here: https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab . Partner link and referral code sit on that page because this is an independent partner desk, not an official Deriv website, not a signal room, and not financial advice."
+        ]
+      },
+      {
+        heading: "What you are actually looking at",
+        body: [
+          "The dark panel is a radar for stretch, not a price chart. Each row is a volatility index. Each column is a timeframe. The number in a cell is RSI, not the last tick. Teal means the last 14 bars of that chart fell hard enough to print below 20. Copper means they rose hard enough to print above 80. Grey means the desk is waiting.",
+          "The six dials above the grid belong to the highlighted market. The needle is RSI. The teal band on the left of each dial is the buy zone. The copper band on the right is the sell zone. Tap a market name to park the dials on that row.",
+          "Boom, Crash and Step are not on the grid. Those products have a different shape. This desk does not pretend one RSI rule fits them."
+        ]
+      },
+      {
+        heading: "Why 5-minute-only was too slow",
+        body: [
+          "The first honest version of this rule sat on Volatility 75 (1s) using only the 5-minute chart. RSI 20/80 on M5 is strict. That is the point. It is also why a visitor could stare at a quiet board for a long time and decide the desk was broken.",
+          "Adding 15-minute, 30-minute, 1-hour, 4-hour and daily charts does not make higher timeframes fire more often than M5. It adds extra chances when M5 is quiet. If M5 is already at 18, M5 still wins. If M5 is at 51 and the hourly chart just printed 81, the hourly chart can take the trade.",
+          "That is an OR-scan, not a confirmation stack. We do not wait for five charts to agree. Waiting for agreement is how people miss the only bar that qualified."
+        ]
+      },
+      {
+        heading: "Why fifteen markets, and why not Boom or Crash",
+        body: [
+          "The scan list is Volatility 10, 15, 25, 30, 50, 75, 90, 100, 150 and 250 on the 1-second variants, plus the standard Volatility 10, 25, 50, 75 and 100. Fifteen products. One global contract. The desk does not pyramid, does not martingale, and does not open a second ticket because another cell went teal.",
+          "Boom, Crash and Step stay off the list. Spike products and step products are a different game. A 20/80 RSI fade that is reasonable on a volatility index is not automatically reasonable on a market built around discontinuous jumps.",
+          "If two markets print a signal at the same moment, the walk order on the server decides. Volatility 10 (1s) is checked first, Volatility 100 last. That is a queue, not a ranking of quality."
+        ]
+      },
+      {
+        heading: "RSI 20/80 is a stretch meter, not a crystal ball",
+        body: [
+          "RSI(14) asks a narrow question: of the last fourteen closes, how much of the movement was up versus down. Below 20, recent bars were mostly down. Above 80, mostly up. The desk bets that an extreme stretch on a synthetic index often gives some of that move back before expiry.",
+          "It often does not. Mean reversion loses when the stretch continues. That is why the stake stays at 0.35 and why there is still only one contract. A public desk that sizes up after a loss is a tutorial in how accounts die.",
+          "The MT5 pack that downline members can download still uses a 1,000-point stop and a 25,000-point target on a CFD chart. Rise/fall options on the website cannot attach those stops. The website uses time. The EA uses price. They will not take the same trade at the same second, and they should not be compared as if they did."
+        ]
+      },
+      {
+        heading: "How to read a finished trade",
+        body: [
+          "Up means a CALL: the desk thought the market would finish higher than the entry tick when the contract expired. Down means a PUT. Won and lost are practice dollars. A typical win on this stake pays about 0.31. A loss costs 0.35. Break-even is roughly 53 percent. Anything near a coin flip is not an edge.",
+          "The tape of short bars under the wallet is the recent closed sample, in order. Teal is a win. Copper is a loss. It is there so a visitor can see streaks without opening a spreadsheet.",
+          "If the board says it is taking a short break, that is the three-loss pause. It is a rule, not a bug. Revenge trades after the third loser are how a 2 percent day becomes an 8 percent day."
+        ]
+      },
+      {
+        heading: "What the earlier public rules taught us",
+        body: [
+          "The first live rule on this desk chased four 1-second ticks in the same direction. It printed a win rate near 54 percent on more than a thousand trades and still lost money, because a win paid less than a loss cost. That is a coin with a fee. We said so in public and changed the rule.",
+          "A spike-fade version came next: fade a 1.8× average tick and hold eight ticks. Then a 1-second RSI 30/70. Both leaked. The current desk moved the question off the 1-second tape and onto closed 5-minute through daily bars, with a stricter 20/80 band.",
+          "None of that is a victory lap. It is the reason the board exists. If the arithmetic is ugly, the honest move is to change the rule, not crop the screenshot."
+        ]
+      },
+      {
+        heading: "How the scan decides, in order",
+        body: [
+          "Candles are seeded from Deriv history, then kept fresh from the live tick stream. Each market holds six buckets. When a bar closes, RSI is recomputed. If RSI has just entered the buy or sell zone on a chart that has not already been used for this bucket, that chart can fire.",
+          "The server walks markets in a fixed list, then timeframes from M5 to D1. First valid signal wins. The contract duration matches that timeframe: five minutes for M5, fifteen for M15, and so on, with a 15-minute then 5-minute fallback if the broker rejects the first duration.",
+          "If a contract is already open, every other cell can glow teal and the desk will still wait. One position is the risk rule. It is also the readability rule. A board with six open tickets is a light show, not a lesson."
+        ]
+      },
+      {
+        heading: "What this page will not claim",
+        body: [
+          "It will not say the strategy is profitable. It will not say 20/80 is magic. It will not treat a 100 percent win rate on two trades as evidence. It will not call demo dollars a salary. It will not tell you to fund a live account.",
+          "It will show the wallet, the losses, the pause, and the cells that are not signalling. Hiding the quiet cells would make the desk look busier than it is.",
+          "I may earn a commission if you open Deriv through the partner link on this site. That is the commercial relationship. It does not change the demo math."
+        ]
+      },
+      {
+        heading: "If you want to practise the same idea yourself",
+        body: [
+          "Open a Deriv demo through the partner link. Referral code 28EX72Q47LR4. Do not copy the public tickets tick-for-tick. The website board and an Expert Advisor on your MT5 will not match, and options are not CFDs.",
+          "Write a daily stop before you start. Journal twenty trades before you change the rule. If five losers in a row would wreck the account, the stake is too large. The 14-day kit on this site exists for that work.",
+          "Downline members can claim the MT5 pack after the Deriv ID is verified on this partner downline. The website remains watchable either way."
+        ]
+      }
+    ]
+  },
+  {
     slug: "drawdown-recovery-math",
     title: "A 20% Hole Needs a 25% Climb",
     description: "Why drawdown recovery is not symmetric, and why a written daily stop is cheaper than a heroic comeback.",

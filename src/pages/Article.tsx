@@ -1,6 +1,7 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import { CTA, WhatsAppCTA } from "../components/CTA";
 import { Seo } from "../components/Seo";
+import { ShareBar } from "../components/ShareBar";
 import { affiliateConfig } from "../config/affiliateConfig";
 import { getArticle } from "../data/articles";
 import { ArticleNarrator } from "../components/ArticleNarrator";
@@ -17,6 +18,8 @@ export function Article() {
         description={article.description}
         path={`/blog/${article.slug}`}
         type="article"
+        image="https://iederees-create.github.io/deriv-affiliate-launchpad-template/og-rsi-eclipse.svg"
+        imageAlt={article.title}
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "BlogPosting",
@@ -33,6 +36,12 @@ export function Article() {
           <p>{article.description}</p>
         </header>
         <ArticleNarrator title={article.title} description={article.description} sections={article.sections} />
+        <ShareBar
+          url={`https://iederees-create.github.io/deriv-affiliate-launchpad-template/blog/${article.slug}`}
+          title={article.title}
+          text={article.description}
+          label="Share this article"
+        />
         <div className="article-disclaimer">
           {affiliateConfig.disclosureText} {affiliateConfig.riskDisclaimer}
         </div>

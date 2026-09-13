@@ -8,6 +8,14 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "How RSI Eclipse Reads 15 Volatility Markets Without Turning Into a Signal Room",
+    slug: "rsi-eclipse-across-volatility-charts",
+    excerpt:
+      "The public desk now scans 15 volatility indices on 5-minute through daily charts. RSI 20/80, one contract, demo funds. Here is how to read the board.",
+    date: "2026-09-13",
+    readTime: "18 min read"
+  },
+  {
     title: "A 20% Hole Needs a 25% Climb",
     slug: "drawdown-recovery-math",
     excerpt:

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Calendar, Clock } from "lucide-react";
 import { blogPosts } from "../data/blogPosts";
 import { Seo } from "../components/Seo";
+import { ShareBar } from "../components/ShareBar";
 
 export function Blog() {
   return (
@@ -21,6 +22,14 @@ export function Blog() {
         <p className="eyebrow">Trading Strategies & Guides</p>
         <h1>Master the Markets with our Expert Insights.</h1>
         <p>Read our latest guides on trading synthetic indices, managing risk, and mastering the Deriv platforms.</p>
+        <div className="blog-share">
+          <ShareBar
+            url="https://iederees-create.github.io/deriv-affiliate-launchpad-template/blog"
+            title="Apex Trade Network blog"
+            text="Guides on synthetic indices, risk, and the public RSI Eclipse practice desk."
+            label="Share the blog"
+          />
+        </div>
       </section>
       <section className="section blog-grid">
         {blogPosts.map((post) => (
