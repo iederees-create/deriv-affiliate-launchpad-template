@@ -2,9 +2,10 @@ export const MARKET_ORDER = [
   '1HZ10V', '1HZ15V', '1HZ25V', '1HZ30V', '1HZ50V',
   '1HZ75V', '1HZ90V', '1HZ100V', '1HZ150V', '1HZ250V',
   'R_10', 'R_25', 'R_50', 'R_75', 'R_100',
+  'frxXAUUSD', 'frxXAGUSD', 'frxXPDUSD', 'frxXPTUSD',
 ] as const;
 
-export const TIMEFRAME_ORDER = ['M5', 'M15', 'M30', 'H1', 'H4', 'D1'] as const;
+export const TIMEFRAME_ORDER = ['M5', 'M10', 'M15', 'M30', 'H1', 'H2', 'H4', 'H8', 'D1'] as const;
 
 export const MARKET_LABELS: Record<string, string> = {
   '1HZ10V': 'Volatility 10 (1s)',
@@ -22,23 +23,33 @@ export const MARKET_LABELS: Record<string, string> = {
   R_50: 'Volatility 50',
   R_75: 'Volatility 75',
   R_100: 'Volatility 100',
+  frxXAUUSD: 'Gold',
+  frxXAGUSD: 'Silver',
+  frxXPDUSD: 'Palladium',
+  frxXPTUSD: 'Platinum',
 };
 
 export const TIMEFRAME_LABELS: Record<string, string> = {
   M5: '5 minute',
+  M10: '10 minute',
   M15: '15 minute',
   M30: '30 minute',
   H1: '1 hour',
+  H2: '2 hour',
   H4: '4 hour',
+  H8: '8 hour',
   D1: 'Daily',
 };
 
 export const TIMEFRAME_SHORT: Record<string, string> = {
   M5: '5m',
+  M10: '10m',
   M15: '15m',
   M30: '30m',
   H1: '1h',
+  H2: '2h',
   H4: '4h',
+  H8: '8h',
   D1: '1d',
 };
 

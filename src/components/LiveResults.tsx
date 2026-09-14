@@ -22,7 +22,7 @@ import {
 
 const SHARE_URL = 'https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab';
 const SHARE_TITLE = 'Watch Apex RSI Eclipse — a live Deriv practice desk';
-const SHARE_TEXT = '15 volatility markets, six charts, RSI 20/80. Demo funds only.';
+const SHARE_TEXT = '19 markets including gold and silver, nine charts, RSI 20/80. Demo funds only.';
 
 function money(value: number | null | undefined) {
   const n = Number(value);
@@ -167,7 +167,7 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
       <section className="eclipse-gauges" aria-label={`${marketLabel(selected)} RSI across timeframes`}>
         <div className="eclipse-gauges-copy">
           <p className="eyebrow">{marketLabel(selected)}</p>
-          <h4>Six charts, one stretch meter</h4>
+          <h4>Nine charts, one stretch meter</h4>
           <p>
             These dials belong to the highlighted row. The needle is RSI. The teal band is the buy zone.
             The copper band is the sell zone. Boom, Crash and Step are not scanned.
@@ -198,7 +198,7 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
         </div>
         <div className="scan-scroll">
           <table className="scan-grid">
-            <caption className="visually-hidden">RSI readings for each scanned volatility index across six timeframes.</caption>
+            <caption className="visually-hidden">RSI readings for each scanned market across nine timeframes.</caption>
             <thead>
               <tr>
                 <th scope="col">Market</th>

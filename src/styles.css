@@ -804,7 +804,7 @@ button.cta {
 .legend-chip.is-near-sell::before { background: #d4a190; }
 .legend-note { margin-left: auto; font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: 0.78rem; color: #8fa3c0; }
 .eclipse-gauges { display: grid; gap: 16px; }
-.eclipse-gauge-grid { display: grid; grid-template-columns: repeat(6, minmax(120px, 1fr)); gap: 10px; }
+.eclipse-gauge-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 10px; }
 .rsi-eclipse { margin: 0; padding: 10px 8px 8px; border: 1px solid #2a3a55; border-radius: 16px; background: #152238; text-align: center; }
 .rsi-eclipse.is-hot { border-color: #e8b86d; box-shadow: 0 0 0 1px rgba(232, 184, 109, 0.35); }
 .rsi-eclipse svg { width: 100%; height: auto; }
@@ -826,7 +826,7 @@ button.cta {
 .eclipse-scan-head { display: flex; justify-content: space-between; gap: 16px; align-items: end; }
 .eclipse-scan-head p:last-child { max-width: 28rem; margin: 0; font-size: 0.9rem; }
 .scan-scroll { overflow-x: auto; border: 1px solid #2a3a55; border-radius: 16px; }
-.scan-grid { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 0.78rem; }
+.scan-grid { width: 100%; min-width: 860px; border-collapse: collapse; font-size: 0.78rem; }
 .scan-grid th, .scan-grid td { padding: 8px 6px; border-bottom: 1px solid #2a3a55; text-align: center; }
 .scan-grid thead th { color: #8fa3c0; font-weight: 700; background: #152238; }
 .scan-grid tbody th { text-align: left; width: 160px; }

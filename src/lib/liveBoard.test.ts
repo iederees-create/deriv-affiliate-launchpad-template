@@ -33,8 +33,8 @@ describe('live board helpers', () => {
 
   it('picks the market whose RSI is closest to a 20/80 signal', () => {
     const symbol = hottestMarket({
-      R_10: { M5: 48, M15: 50, M30: 49, H1: 51, H4: 50, D1: 50 },
-      '1HZ75V': { M5: 18, M15: 44, M30: 50, H1: 52, H4: 48, D1: 47 },
+      R_10: { M5: 48, M10: 49, M15: 50, M30: 49, H1: 51, H2: 50, H4: 50, H8: 50, D1: 50 },
+      '1HZ75V': { M5: 18, M10: 40, M15: 44, M30: 50, H1: 52, H2: 48, H4: 48, H8: 47, D1: 47 },
     });
     expect(symbol).toBe('1HZ75V');
   });
