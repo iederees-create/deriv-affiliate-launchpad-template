@@ -9,6 +9,9 @@ export const MARKET_ORDER = [
   'frxNZDUSD', 'frxAUDCAD', 'frxAUDCHF', 'frxAUDNZD', 'frxEURNZD',
   'frxGBPCAD', 'frxGBPCHF', 'frxGBPNZD', 'frxNZDJPY', 'frxUSDMXN', 'frxUSDPLN',
   'cryBTCUSD', 'cryETHUSD',
+  'OTC_SPC', 'OTC_DJI', 'OTC_NDX',
+  'OTC_FTSE', 'OTC_GDAXI', 'OTC_FCHI', 'OTC_AEX', 'OTC_SSMI', 'OTC_SX5E',
+  'OTC_N225', 'OTC_HSI', 'OTC_AS51',
 ] as const;
 
 export const TIMEFRAME_ORDER = ['M5', 'M10', 'M15', 'M30', 'H1', 'H2', 'H4', 'H8', 'D1'] as const;
@@ -60,6 +63,18 @@ export const MARKET_LABELS: Record<string, string> = {
   frxUSDPLN: 'USD/PLN',
   cryBTCUSD: 'BTC/USD',
   cryETHUSD: 'ETH/USD',
+  OTC_SPC: 'US 500',
+  OTC_DJI: 'Wall Street 30',
+  OTC_NDX: 'US Tech 100',
+  OTC_FTSE: 'UK 100',
+  OTC_GDAXI: 'Germany 40',
+  OTC_FCHI: 'France 40',
+  OTC_AEX: 'Netherlands 25',
+  OTC_SSMI: 'Swiss 20',
+  OTC_SX5E: 'Euro 50',
+  OTC_N225: 'Japan 225',
+  OTC_HSI: 'Hong Kong 50',
+  OTC_AS51: 'Australia 200',
 };
 
 export const TIMEFRAME_LABELS: Record<string, string> = {

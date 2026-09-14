@@ -22,7 +22,7 @@ import {
 
 const SHARE_URL = 'https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab';
 const SHARE_TITLE = 'Watch Apex RSI Eclipse — a live Deriv practice desk';
-const SHARE_TEXT = 'Volatility, metals, FX pairs and BTC/ETH on nine charts. RSI 20/80. Demo funds only.';
+const SHARE_TEXT = 'Volatility, metals, FX pairs, BTC/ETH and stock indices on nine charts. RSI 20/80. Demo funds only.';
 
 function money(value: number | null | undefined) {
   const n = Number(value);

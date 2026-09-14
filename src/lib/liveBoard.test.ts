@@ -14,6 +14,7 @@ describe('live board helpers', () => {
     expect(marketLabel('R_100')).toBe('Volatility 100');
     expect(marketLabel('frxEURUSD')).toBe('EUR/USD');
     expect(marketLabel('cryBTCUSD')).toBe('BTC/USD');
+    expect(marketLabel('OTC_SPC')).toBe('US 500');
     expect(marketLabel('unknown')).toBe('unknown');
   });
 
