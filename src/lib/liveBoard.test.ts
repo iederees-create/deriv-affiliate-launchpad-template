@@ -12,6 +12,8 @@ describe('live board helpers', () => {
   it('maps broker codes to names people recognise', () => {
     expect(marketLabel('1HZ75V')).toBe('Volatility 75 (1s)');
     expect(marketLabel('R_100')).toBe('Volatility 100');
+    expect(marketLabel('frxEURUSD')).toBe('EUR/USD');
+    expect(marketLabel('cryBTCUSD')).toBe('BTC/USD');
     expect(marketLabel('unknown')).toBe('unknown');
   });
 

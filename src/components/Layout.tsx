@@ -41,7 +41,7 @@ const pageNarrations: Record<string, { title: string; description: string; secti
   },
   "/lab": {
     title: "Welcome to the RSI Eclipse desk.",
-    description: "Anyone can watch this shared Deriv demo. It scans volatility markets plus gold and silver on nine charts. Practice funds only. If you want your own demo, use the partner link and referral code on this page."
+    description: "Anyone can watch this shared Deriv demo. It scans volatility, metals, FX pairs and BTC/ETH on nine charts. Practice funds only. If you want your own demo, use the partner link and referral code on this page."
   },
   "/tools": {
     title: "Welcome to your free trading tools.",

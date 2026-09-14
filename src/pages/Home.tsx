@@ -18,7 +18,7 @@ export function Home() {
     <>
       <Seo
         title={`${affiliateConfig.brandName} | Watch a live Deriv demo`}
-        description="Watch Apex RSI Eclipse: a shared Deriv demo scanning volatility markets plus gold and silver on nine timeframes. Practice funds only."
+        description="Watch Apex RSI Eclipse: a shared Deriv demo scanning volatility, metals, FX pairs and BTC/ETH on nine timeframes. Practice funds only."
         image="https://iederees-create.github.io/deriv-affiliate-launchpad-template/og-rsi-eclipse.svg"
         imageAlt="Apex RSI Eclipse live practice desk"
         jsonLd={{
@@ -60,7 +60,7 @@ export function Home() {
         <SectionHeader
           eyebrow="Live now"
           title="Shared RSI Eclipse practice desk"
-          text="No login needed. Volatility markets plus gold and silver, nine charts, RSI 20/80. Demo wallet and trades update as they happen."
+          text="No login needed. Volatility, metals, FX pairs and BTC/ETH, nine charts, RSI 20/80. Demo wallet and trades update as they happen."
         />
         <PublicLiveBoard />
       </section>
