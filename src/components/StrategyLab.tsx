@@ -17,7 +17,7 @@ export function StrategyLab() {
   const [symbol, setSymbol] = useState('1HZ75V');
   const [durationTicks, setDurationTicks] = useState(5);
   const [lookback, setLookback] = useState(3);
-  const [stake, setStake] = useState(0.35);
+  const [stake, setStake] = useState(1);
   const [scriptFilename, setScriptFilename] = useState('');
   const [scriptText, setScriptText] = useState('');
 

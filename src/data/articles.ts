@@ -18,7 +18,7 @@ export const articles: Article[] = [
       {
         heading: "The board is a scan, not a salary screenshot",
         body: [
-          "The live desk on this site is a shared Deriv demo. Anyone can watch it without a login. The wallet is practice money. The trades are rise/fall options at a 0.35 stake. If someone quotes those numbers as income, they misread the page.",
+          "The live desk on this site is a shared Deriv demo. Anyone can watch it without a login. The wallet is practice money. The trades are rise/fall options at a $1 stake. If someone quotes those numbers as income, they misread the page.",
           "The current rule is called Apex RSI Eclipse. It is mean-reversion, not momentum. Wilder RSI(14) on the 5-minute, 15-minute, 30-minute, 1-hour, 4-hour and daily charts. Buy when RSI drops below 20. Sell when RSI rises above 80. The fastest ready chart on the first ready market wins. One contract at a time. Expiry follows the chart that signalled.",
           "Watch it here: https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab . Partner link and referral code sit on that page because this is an independent partner desk, not an official Deriv website, not a signal room, and not financial advice."
         ]
@@ -51,14 +51,14 @@ export const articles: Article[] = [
         heading: "RSI 20/80 is a stretch meter, not a crystal ball",
         body: [
           "RSI(14) asks a narrow question: of the last fourteen closes, how much of the movement was up versus down. Below 20, recent bars were mostly down. Above 80, mostly up. The desk bets that an extreme stretch on a synthetic index often gives some of that move back before expiry.",
-          "It often does not. Mean reversion loses when the stretch continues. That is why the stake stays at 0.35 and why there is still only one contract. A public desk that sizes up after a loss is a tutorial in how accounts die.",
+          "It often does not. Mean reversion loses when the stretch continues. That is why the stake stays at $1 and why there is still only one contract. A public desk that sizes up after a loss is a tutorial in how accounts die.",
           "The MT5 pack that downline members can download still uses a 1,000-point stop and a 25,000-point target on a CFD chart. Rise/fall options on the website cannot attach those stops. The website uses time. The EA uses price. They will not take the same trade at the same second, and they should not be compared as if they did."
         ]
       },
       {
         heading: "How to read a finished trade",
         body: [
-          "Up means a CALL: the desk thought the market would finish higher than the entry tick when the contract expired. Down means a PUT. Won and lost are practice dollars. A typical win on this stake pays about 0.31. A loss costs 0.35. Break-even is roughly 53 percent. Anything near a coin flip is not an edge.",
+          "Up means a CALL: the desk thought the market would finish higher than the entry tick when the contract expired. Down means a PUT. Won and lost are practice dollars. A $1 stake loses $1 when wrong. A win pays a bit less than $1, so you still need more than half the trades to come out ahead. Anything near a coin flip is not an edge.",
           "The tape of short bars under the wallet is the recent closed sample, in order. Teal is a win. Copper is a loss. It is there so a visitor can see streaks without opening a spreadsheet.",
           "If the board says it is taking a short break, that is the three-loss pause. It is a rule, not a bug. Revenge trades after the third loser are how a 2 percent day becomes an 8 percent day."
         ]
