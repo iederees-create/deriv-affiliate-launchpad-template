@@ -64,7 +64,8 @@ function eventCopy(event: { type: string; message: string }) {
   return event.message;
 }
 
-function tradeHint(trade: { contractType: string; symbol: string }, events: Array<{ message: string }>) {
+function tradeHint(trade: { contractType: string; symbol: string; timeframe?: string }, events: Array<{ message: string }>) {
+  if (trade.timeframe) return `${marketLabel(trade.symbol)} · ${TIMEFRAME_SHORT[trade.timeframe] || trade.timeframe}`;
   const match = events.map((event) => parseOpenedEvent(event.message)).find((parsed) => parsed && parsed.symbol === trade.symbol && parsed.side === trade.contractType);
   if (!match) return marketLabel(trade.symbol);
   return `${marketLabel(match.symbol)} · ${TIMEFRAME_SHORT[match.timeframe] || match.timeframe}`;
@@ -128,10 +129,10 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
           </span>
           <h3>{strategy?.title || 'Apex RSI Eclipse'}</h3>
           <p>
-            One public demo watching <strong>{scanned.length} volatility markets</strong> on
+            One public demo watching <strong>{scanned.length} markets</strong> on
             {' '}<strong>{timeframes.map((id) => TIMEFRAME_SHORT[id] || id).join(', ')}</strong> charts.
             RSI({period}) below {oversold} tries up. RSI above {overbought} tries down. Fastest ready chart wins.
-            One contract at a time. Demo funds only.
+            At most one open contract per market. Demo funds only. Historical testing has not established a profitable edge.
           </p>
         </div>
         <ShareBar url={SHARE_URL} title={SHARE_TITLE} text={SHARE_TEXT} label="Share the desk" />

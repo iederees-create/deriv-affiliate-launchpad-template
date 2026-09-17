@@ -64,7 +64,7 @@ export type LabBoard = {
     isVirtual: boolean;
   } | null;
   strategy: LabStrategy | null;
-  trades: Array<{ id: number; contractType: string; symbol: string; stake: number; profit: number; status: string; openedAt: string; closedAt?: string; timeframe?: string }>;
+  trades: Array<{ id: number; contractType: string; symbol: string; stake: number; profit: number; status: string; openedAt: string; closedAt?: string; timeframe?: string; signalStrategy?: string; signalRsi?: number | null; duration?: number | null; durationUnit?: string }>;
   events: Array<{ id: number; type: string; message: string; createdAt: string }>;
   queue: LabStrategy[];
   strategies?: LabStrategy[];
