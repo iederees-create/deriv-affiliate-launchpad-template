@@ -48,5 +48,10 @@ describe('live board helpers', () => {
       timeframe: 'M5',
       symbol: '1HZ75V',
     });
+    expect(parseOpenedEvent('Opened PUT from M15 Eclipse Guard on frxEURUSD at stake 0.50 (15m).')).toEqual({
+      side: 'PUT',
+      timeframe: 'M15',
+      symbol: 'FRXEURUSD',
+    });
   });
 });

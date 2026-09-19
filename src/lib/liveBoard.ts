@@ -167,7 +167,7 @@ export function hottestMarket(
   return best ? best.symbol : null;
 }
 
-const OPENED = /Opened (CALL|PUT) from ([A-Z0-9]+) RSI on ([A-Z0-9_]+)/i;
+const OPENED = /Opened (CALL|PUT) from ([A-Z0-9]+) .+? on ([A-Z0-9_]+)/i;
 
 export function parseOpenedEvent(message: string): { side: 'CALL' | 'PUT'; timeframe: string; symbol: string } | null {
   const match = String(message || '').match(OPENED);

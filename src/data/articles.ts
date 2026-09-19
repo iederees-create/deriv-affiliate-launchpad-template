@@ -19,7 +19,7 @@ export const articles: Article[] = [
         heading: "The board is a scan, not a salary screenshot",
         body: [
           "The live desk on this site is a shared Deriv demo. Anyone can watch it without a login. The wallet is practice money. The trades are rise/fall options at a $1 stake. If someone quotes those numbers as income, they misread the page.",
-          "The current rule is called Apex RSI Eclipse. It is mean-reversion, not momentum. Wilder RSI(14) on the 5-minute, 15-minute, 30-minute, 1-hour, 4-hour and daily charts. Buy when RSI drops below 20. Sell when RSI rises above 80. The fastest ready chart on the first ready market wins. One contract at a time. Expiry follows the chart that signalled.",
+          "The current rule is called Apex Eclipse Guard. It is still mean-reversion, not momentum, but it no longer trades the first RSI 20/80 cross. Wilder RSI(14) must already be extreme and then turn: CALL only after RSI was at or below 20 and ticks up with a higher close; PUT only after RSI was at or above 80 and ticks down with a lower close. Extra gates: last-bar range versus recent average, a slower chart that is not in a washout, only 5-minute through 30-minute signal charts, and the highest-score setup wins. Expiry is never shorter than the chart that signalled. Practice funds only. This is not a 90% win-rate claim.",
           "Watch it here: https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab . Partner link and referral code sit on that page because this is an independent partner desk, not an official Deriv website, not a signal room, and not financial advice."
         ]
       },

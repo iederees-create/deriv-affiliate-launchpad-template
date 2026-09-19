@@ -21,8 +21,8 @@ import {
 } from '../lib/liveBoard';
 
 const SHARE_URL = 'https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab';
-const SHARE_TITLE = 'Watch Apex RSI Eclipse — a live Deriv practice desk';
-const SHARE_TEXT = 'Volatility, metals, FX pairs, BTC/ETH and stock indices on nine charts. RSI 20/80. Demo funds only.';
+const SHARE_TITLE = 'Watch Apex Eclipse Guard — a live Deriv practice desk';
+const SHARE_TEXT = 'RSI must already be extreme and then turn. Bounce candle, range filter, slower-chart check. Demo funds only.';
 
 function money(value: number | null | undefined) {
   const n = Number(value);
@@ -127,7 +127,7 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
           <span className="status-pill">
             {live ? (board?.paused ? 'Short break · practice run still on' : 'Live practice run') : 'Waiting to start'}
           </span>
-          <h3>{strategy?.title || 'Apex RSI Eclipse'}</h3>
+          <h3>{strategy?.title || 'Apex Eclipse Guard'}</h3>
           <p>
             One public demo watching <strong>{scanned.length} markets</strong> on
             {' '}<strong>{timeframes.map((id) => TIMEFRAME_SHORT[id] || id).join(', ')}</strong> charts.
