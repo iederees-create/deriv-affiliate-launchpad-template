@@ -53,5 +53,10 @@ describe('live board helpers', () => {
       timeframe: 'M15',
       symbol: 'FRXEURUSD',
     });
+    expect(parseOpenedEvent('Opened CALL from M10 Eclipse Call Guard on R_25 at stake 0.35 (15m).')).toEqual({
+      side: 'CALL',
+      timeframe: 'M10',
+      symbol: 'R_25',
+    });
   });
 });

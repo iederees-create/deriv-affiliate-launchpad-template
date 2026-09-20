@@ -18,7 +18,7 @@ export function Home() {
     <>
       <Seo
         title={`${affiliateConfig.brandName} | Watch a live Deriv demo`}
-        description="Watch Apex Eclipse Guard: a shared Deriv demo that only trades when RSI is extreme and then turns, with extra filters. Practice funds only."
+        description="Watch Apex Eclipse Call Guard: a shared Deriv demo that only takes CALL mean-reversion on volatility indices. Practice funds only. Not a 90% win-rate claim."
         image="https://iederees-create.github.io/deriv-affiliate-launchpad-template/og-rsi-eclipse.svg"
         imageAlt="Apex RSI Eclipse live practice desk"
         jsonLd={{
@@ -32,7 +32,7 @@ export function Home() {
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">Independent partner desk · Iederees Francis</p>
-          <h1>Watch Eclipse Guard live. Then open your own Deriv demo.</h1>
+          <h1>Watch Eclipse Call Guard live. Then open your own Deriv demo.</h1>
           <p>
             This is not the broker. I may earn a commission if you sign up through my link.
             The test below uses demo funds only. Trading involves risk. Not financial advice.
@@ -59,8 +59,8 @@ export function Home() {
       <section className="section">
         <SectionHeader
           eyebrow="Live now"
-          title="Shared Eclipse Guard practice desk"
-          text="No login needed. Trades only when RSI is already extreme and then turns, with a bounce candle, range filter, and a slower-chart check. Demo wallet and trades update as they happen."
+          title="Shared Eclipse Call Guard practice desk"
+          text="No login needed. CALL only on volatility indices, after RSI is already oversold and then turns. No PUT book, no FX/metals, no 5-minute entries, and no 06:00–12:00 UTC window. Demo wallet and trades update as they happen. Not a 90% win-rate claim."
         />
         <PublicLiveBoard />
       </section>
