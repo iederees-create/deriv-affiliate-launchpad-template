@@ -242,7 +242,7 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
         <>
           {board?.recap ? (
             <div className="lab-recap">
-              <p className="eyebrow">This week</p>
+              <p className="eyebrow">Live demo</p>
               <h3>{board.recap.headline}</h3>
               <p>{board.recap.body}</p>
             </div>
@@ -266,7 +266,7 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
           <div className="lab-wallet">
             <div><span>Practice wallet at start</span><strong>{walletStart != null ? `$${money(walletStart)}` : '—'}</strong></div>
             <div><span>Practice wallet now</span><strong>{walletNow != null ? `$${money(walletNow)}` : '—'}</strong></div>
-            <div><span>Made this week</span><strong className={pnl >= 0 ? 'is-up' : 'is-down'}>{pnl >= 0 ? '+' : ''}${money(pnl)}</strong></div>
+            <div><span>Net P/L since start</span><strong className={pnl >= 0 ? 'is-up' : 'is-down'}>{pnl >= 0 ? '+' : ''}${money(pnl)}</strong></div>
             <div><span>Return</span><strong className={(percent || 0) >= 0 ? 'is-up' : 'is-down'}>{percent == null ? '—' : `${percent >= 0 ? '+' : ''}${percent}%`}</strong></div>
           </div>
           <div className="lab-stats">
@@ -275,7 +275,7 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
             <div><span>Won / lost</span><strong>{run?.winCount ?? 0} / {run?.lossCount ?? 0}</strong></div>
             <div><span>Win rate</span><strong>{run?.winRate ?? 0}%</strong></div>
             <div><span>Stake</span><strong>${money(strategy?.effectiveStake ?? strategy?.stake)}</strong></div>
-            <div><span>Runs until</span><strong>{when(run?.scheduledEndAt)}</strong></div>
+            <div><span>Schedule</span><strong>{run?.scheduledEndAt ? when(run.scheduledEndAt) : "Continuous"}</strong></div>
           </div>
           <div className="win-tape" aria-label="Recent wins and losses">
             {closed.slice(0, 24).map((trade) => (
