@@ -18,7 +18,7 @@ export function Lab() {
         <p className="eyebrow">Open to everyone</p>
         <h1>Watch the Eclipse Call Guard desk</h1>
         <p className="text-muted-foreground" style={{ maxWidth: '42rem', margin: '12px 0 16px' }}>
-          You do not need an account to watch. The live book is CALL-only on volatility indices (R_ and 1-second). Not Boom, Crash, Step, FX, metals, crypto or stock indices. Signal charts: 10m, 15m and 30m. The desk sits out 06:00–12:00 UTC. Demo funds only. Partner link {affiliateConfig.primaryAffiliateLink} · referral {affiliateConfig.referralCode}.
+          You do not need an account to watch. The live book is CALL-only on volatility indices (R_ and 1-second). Not Boom, Crash, Step, FX, metals, crypto or stock indices. Signal charts: 10m, 15m and 30m. The desk sits out 06:00–12:00 UTC and opens at most one qualifying demo trade per rolling hour, with a 12-trade and $10 loss limit over 24 hours. Demo funds only. Partner link {affiliateConfig.primaryAffiliateLink} · referral {affiliateConfig.referralCode}.
         </p>
         <div className="page-share">
           <ShareBar
