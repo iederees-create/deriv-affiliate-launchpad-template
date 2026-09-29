@@ -21,8 +21,8 @@ import {
 } from '../lib/liveBoard';
 
 const SHARE_URL = 'https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab';
-const SHARE_TITLE = 'Watch Apex Eclipse Call Guard — a live Deriv practice desk';
-const SHARE_TEXT = 'RSI must already be extreme and then turn. Bounce candle, range filter, slower-chart check. Demo funds only.';
+const SHARE_TITLE = 'Watch Apex Call Pulse — a live Deriv practice desk';
+const SHARE_TEXT = 'CALL-only: RSI turns up from 38 with a green close on 5m–15m. Demo funds only. Not an 80% win-rate claim.';
 
 function money(value: number | null | undefined) {
   const n = Number(value);
@@ -127,12 +127,12 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
           <span className="status-pill">
             {live ? (board?.paused ? 'Short break · practice run still on' : 'Live practice run') : 'Waiting to start'}
           </span>
-          <h3>{strategy?.title || 'Apex Eclipse Call Guard'}</h3>
+          <h3>{strategy?.title || 'Apex Call Pulse'}</h3>
           <p>
-            One public demo watching <strong>{scanned.length} markets</strong> on
+            One public demo watching <strong>{scanned.length} volatility markets</strong> on
             {' '}<strong>{timeframes.map((id) => TIMEFRAME_SHORT[id] || id).join(', ')}</strong> charts.
-            RSI({period}) below {oversold} tries up. RSI above {overbought} tries down. Fastest ready chart wins.
-            At most one open contract per market. Demo funds only. Historical testing has not established a profitable edge.
+            CALL only: RSI({period}) at or below {oversold} that turns up with a green close, still cheap.
+            PUT is off. Up to four contracts on different markets. Demo funds only. Not an 80% win-rate claim.
           </p>
         </div>
         <ShareBar url={SHARE_URL} title={SHARE_TITLE} text={SHARE_TEXT} label="Share the desk" />

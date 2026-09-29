@@ -40,7 +40,7 @@ const pageNarrations: Record<string, { title: string; description: string; secti
     description: "You are in the right place to learn the basics without pressure. Explore each topic at your own pace, understand the risks, and build confidence before opening or funding any account."
   },
   "/lab": {
-    title: "Welcome to the Eclipse Call Guard desk.",
+    title: "Welcome to the Call Pulse desk.",
     description: "Anyone can watch this shared Deriv demo. It takes CALL-only mean-reversion on volatility indices. Practice funds only. If you want your own demo, use the partner link and referral code on this page."
   },
   "/tools": {
