@@ -9,22 +9,22 @@ export function Lab() {
     <>
       <Seo
         title={`Live RSI Eclipse desk | ${affiliateConfig.brandName}`}
-        description="Watch a shared Deriv demo scan volatility indices. Call Pulse opens CALL when RSI turns up from oversold on 5m–15m charts. Practice funds only. Not an 80% win-rate claim."
+        description="Watch a shared Deriv demo scan volatility indices. Call Pulse Select opens CALL when RSI turns up from oversold on 5m–15m, still ≤32. $0.35 ordinary, $2 on deeper RSI. Practice funds only. Not an 80% win-rate claim."
         path="/lab"
         image="https://iederees-create.github.io/deriv-affiliate-launchpad-template/og-rsi-eclipse.svg"
         imageAlt="Apex RSI Eclipse live practice desk across six timeframes"
       />
       <section className="section">
         <p className="eyebrow">Open to everyone</p>
-        <h1>Watch the Call Pulse desk</h1>
+        <h1>Watch the Call Pulse Select desk</h1>
         <p className="text-muted-foreground" style={{ maxWidth: '42rem', margin: '12px 0 16px' }}>
-          You do not need an account to watch. CALL-only on volatility indices (R_ and 1-second). Not Boom, Crash, Step, FX, metals, crypto or stock indices. Signal charts: 5m, 10m and 15m. RSI turns up from 38 with a green close. Up to four open contracts. Demo funds only. Partner link {affiliateConfig.primaryAffiliateLink} · referral {affiliateConfig.referralCode}.
+          You do not need an account to watch. CALL-only on volatility indices (R_ and 1-second). Not Boom, Crash, Step, FX, metals, crypto or stock indices. Signal charts: 5m, 10m and 15m. RSI turns up from 38 with a green close, still at or below 32. Ordinary demo stake $0.35; $2 only when RSI is still at or below 28. Demo funds only. Partner link {affiliateConfig.primaryAffiliateLink} · referral {affiliateConfig.referralCode}.
         </p>
         <div className="page-share">
           <ShareBar
             url="https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab"
-            title="Watch Apex Call Pulse — a live Deriv practice desk"
-            text="CALL-only volatility recovery on 5m–15m. Demo funds only. Not an 80% win-rate claim."
+            title="Watch Apex Call Pulse Select — a live Deriv practice desk"
+            text="CALL-only volatility recovery on 5m–15m. $0.35 ordinary, $2 on deeper RSI. Demo funds only. Not an 80% win-rate claim."
           />
         </div>
         <PublicLiveBoard />

@@ -21,8 +21,8 @@ import {
 } from '../lib/liveBoard';
 
 const SHARE_URL = 'https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab';
-const SHARE_TITLE = 'Watch Apex Call Pulse — a live Deriv practice desk';
-const SHARE_TEXT = 'CALL-only: RSI turns up from 38 with a green close on 5m–15m. Demo funds only. Not an 80% win-rate claim.';
+const SHARE_TITLE = 'Watch Apex Call Pulse Select — a live Deriv practice desk';
+const SHARE_TEXT = 'CALL-only: RSI turns up from 38, still ≤32. $0.35 ordinary, $2 when RSI is still ≤28. Demo funds only. Not an 80% win-rate claim.';
 
 function money(value: number | null | undefined) {
   const n = Number(value);
@@ -127,12 +127,13 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
           <span className="status-pill">
             {live ? (board?.paused ? 'Short break · practice run still on' : 'Live practice run') : 'Waiting to start'}
           </span>
-          <h3>{strategy?.title || 'Apex Call Pulse'}</h3>
+          <h3>{strategy?.title || 'Apex Call Pulse Select'}</h3>
           <p>
             One public demo watching <strong>{scanned.length} volatility markets</strong> on
             {' '}<strong>{timeframes.map((id) => TIMEFRAME_SHORT[id] || id).join(', ')}</strong> charts.
-            CALL only: RSI({period}) at or below {oversold} that turns up with a green close, still cheap.
-            PUT is off. Up to four contracts on different markets. Demo funds only. Not an 80% win-rate claim.
+            CALL only: RSI({period}) at or below {oversold} that turns up with a green close, still at or below {strategy?.rsiCallStillCheap ?? 32}.
+            PUT is off. ${strategy?.smallStake ?? 0.35} ordinary stake, ${strategy?.highStake ?? 2} when RSI is still ≤{strategy?.rsiHighStake ?? 28}.
+            Demo funds only. Not an 80% win-rate claim.
           </p>
         </div>
         <ShareBar url={SHARE_URL} title={SHARE_TITLE} text={SHARE_TEXT} label="Share the desk" />

@@ -18,7 +18,7 @@ export function Home() {
     <>
       <Seo
         title={`${affiliateConfig.brandName} | Watch a live Deriv demo`}
-        description="Watch Apex Call Pulse: a shared Deriv demo that takes CALL recoveries on volatility 5m–15m charts. Practice funds only. Not an 80% win-rate claim."
+        description="Watch Apex Call Pulse Select: a shared Deriv demo that takes CALL recoveries on volatility 5m–15m charts. $0.35 ordinary, $2 on deeper RSI. Practice funds only. Not an 80% win-rate claim."
         image="https://iederees-create.github.io/deriv-affiliate-launchpad-template/og-rsi-eclipse.svg"
         imageAlt="Apex RSI Eclipse live practice desk"
         jsonLd={{
@@ -32,7 +32,7 @@ export function Home() {
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">Independent partner desk · Iederees Francis</p>
-          <h1>Watch Call Pulse live. Then open your own Deriv demo.</h1>
+          <h1>Watch Call Pulse Select live. Then open your own Deriv demo.</h1>
           <p>
             This is not the broker. I may earn a commission if you sign up through my link.
             The test below uses demo funds only. Trading involves risk. Not financial advice.
@@ -59,8 +59,8 @@ export function Home() {
       <section className="section">
         <SectionHeader
           eyebrow="Live now"
-          title="Shared Call Pulse practice desk"
-          text="No login needed. CALL only on volatility indices, after RSI is already oversold and then turns. No PUT book, no FX/metals, no 5-minute entries, and no 06:00–12:00 UTC window. Demo wallet and trades update as they happen. Not a 90% win-rate claim."
+          title="Shared Call Pulse Select practice desk"
+          text="No login needed. CALL only on volatility indices, after RSI turns up from 38 and is still at or below 32. Ordinary demo stake $0.35; $2 only when RSI is still at or below 28. No PUT book, no FX or metals. Demo wallet and trades update as they happen. Not an 80% win-rate claim."
         />
         <PublicLiveBoard />
       </section>

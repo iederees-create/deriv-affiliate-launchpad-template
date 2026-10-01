@@ -18,8 +18,8 @@ export const articles: Article[] = [
       {
         heading: "The board is a scan, not a salary screenshot",
         body: [
-          "The live desk on this site is a shared Deriv demo. Anyone can watch it without a login. The wallet is practice money. The trades are rise/fall options at a $1 stake. If someone quotes those numbers as income, they misread the page.",
-          "The current rule is called Apex Call Pulse. CALL only: RSI(14) at or below 38 that turns up with a green close, still at or below 45. PUT is off because the 140-trade RSI-cross book paid 39.7% on PUTs. Call Guard before it was so tight the live desk printed no trades. Charts: 5m, 10m, 15m. Volatility only. Up to four contracts on different markets. $1 demo stake. Practice funds only. This is not an 80% win-rate claim.",
+          "The live desk on this site is a shared Deriv demo. Anyone can watch it without a login. The wallet is practice money. The trades are rise/fall options. Ordinary tickets are $0.35. A $2 ticket only opens when RSI is still at or below 28 after the bounce. If someone quotes those numbers as income, they misread the page.",
+          "The current rule is called Apex Call Pulse Select. CALL only: RSI(14) at or below 38 that turns up with a green close, still at or below 32. PUT is off because the 140-trade RSI-cross book paid 39.7% on PUTs. Live Call Pulse before this ran 25 trades at 40% and −$2.15; the shallow RSI 32–45 slice paid 33%, and a random $5 overlay on that book would have lost more. Charts: 5m, 10m, 15m. Volatility only. Practice funds only. This is not an 80% win-rate claim.",
           "Watch it here: https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab . Partner link and referral code sit on that page because this is an independent partner desk, not an official Deriv website, not a signal room, and not financial advice."
         ]
       },
@@ -51,14 +51,14 @@ export const articles: Article[] = [
         heading: "RSI 20/80 is a stretch meter, not a crystal ball",
         body: [
           "RSI(14) asks a narrow question: of the last fourteen closes, how much of the movement was up versus down. Below 20, recent bars were mostly down. Above 80, mostly up. The desk bets that an extreme stretch on a synthetic index often gives some of that move back before expiry.",
-          "It often does not. Mean reversion loses when the stretch continues. That is why the stake stays at $1 and why there is still only one contract. A public desk that sizes up after a loss is a tutorial in how accounts die.",
+          "It often does not. Mean reversion loses when the stretch continues. That is why most tickets stay at $0.35, and why the $2 size is tied to a deeper RSI reading rather than a random pick or a double-after-loss martingale. A public desk that sizes up after a loss is a tutorial in how accounts die.",
           "The MT5 pack that downline members can download still uses a 1,000-point stop and a 25,000-point target on a CFD chart. Rise/fall options on the website cannot attach those stops. The website uses time. The EA uses price. They will not take the same trade at the same second, and they should not be compared as if they did."
         ]
       },
       {
         heading: "How to read a finished trade",
         body: [
-          "Up means a CALL: the desk thought the market would finish higher than the entry tick when the contract expired. Down means a PUT. Won and lost are practice dollars. A $1 stake loses $1 when wrong. A win pays a bit less than $1, so you still need more than half the trades to come out ahead. Anything near a coin flip is not an edge.",
+          "Up means a CALL: the desk thought the market would finish higher than the entry tick when the contract expired. Down means a PUT. Won and lost are practice dollars. A $0.35 stake loses $0.35 when wrong; a $2 stake loses $2. A win pays a bit less than the stake, so you still need more than about 53% of trades to come out ahead. Anything near a coin flip is not an edge.",
           "The tape of short bars under the wallet is the recent closed sample, in order. Teal is a win. Copper is a loss. It is there so a visitor can see streaks without opening a spreadsheet.",
           "If the board says it is taking a short break, that is the three-loss pause. It is a rule, not a bug. Revenge trades after the third loser are how a 2 percent day becomes an 8 percent day."
         ]

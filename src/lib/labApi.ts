@@ -29,6 +29,11 @@ export type LabStrategy = {
   rsiPeriod?: number;
   rsiOversold?: number;
   rsiOverbought?: number;
+  rsiCallStillCheap?: number;
+  rsiHighStake?: number;
+  smallStake?: number;
+  highStake?: number;
+  stakeMode?: string;
   rsi?: number | null;
   rsiByTimeframe?: Record<string, number | null> | null;
   stopLossPoints?: number;
