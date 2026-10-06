@@ -2,6 +2,7 @@ import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { ShieldCheck } from "lucide-react";
 import { affiliateConfig } from "../config/affiliateConfig";
 import { ArticleNarrator } from "./ArticleNarrator";
+import { RelayBar } from "./RelayBar";
 import { useAuth } from "./AuthProvider";
 import { isAdminUser } from "../lib/admin";
 
@@ -126,6 +127,7 @@ export function Layout() {
           ) : null}
         </nav>
       </header>
+      <RelayBar />
       <main>
         {narration ? (
           <div className="page-narrator-wrap">
