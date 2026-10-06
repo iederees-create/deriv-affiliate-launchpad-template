@@ -10,6 +10,51 @@ export type Article = {
 
 export const articles: Article[] = [
   {
+    slug: "public-61-trade-demo-book-53-percent-bar",
+    title: "A Public 61-Trade Demo Book, and Why 53% Is the Real Bar for Rise/Fall",
+    description:
+      "A watch-only Deriv practice desk with every demo fill on the page. 61 CALL trades, 54.1%, +$13.53. Rise/fall break-even sits near 53%. Education, not a signal.",
+    date: "2026-10-06",
+    sections: [
+      {
+        heading: "The desk is public. The book is the argument.",
+        body: [
+          "I put a Deriv practice desk on the public internet. You do not log in to watch it. Every demo fill is on the page. This is education. It is not a signal.",
+          "The live book, still running as of 6 October 2026: 61 CALL trades, 33 wins, 28 losses, 54.1%, realized +$13.53 on demo. The $2 slice — RSI still at or under 28 — is 26 trades, 69.2%, +$15.88. The $0.35 ordinary pulses — RSI 28 to 32 — are 35 trades, 42.9%, −$2.35.",
+          "Watch it here: https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab"
+        ]
+      },
+      {
+        heading: "A win pays less than the stake",
+        body: [
+          "A winning rise/fall option pays less than the stake you put up. Break-even sits near 53%. An 80% win-rate claim does not survive that payout. A demo book that prints 54% can still leak if the cheap pulses keep firing.",
+          "That is why M5 only fires when RSI is still at or under 28, and why the $2 size is tied to that deeper reading rather than a random pick or a double-after-loss martingale."
+        ]
+      },
+      {
+        heading: "What the desk actually does",
+        body: [
+          "CALL-only on Deriv volatility indexes. RSI recovery. M5 only fires when RSI is still at or under 28. M10 and M15 still take a cheaper pulse up to 32. One trade per hour. Rolling cap of 12 trades or −$10 per 24 hours.",
+          "I tightened M5 after the cheap 5-minute pulses leaked. The public board is the proof, not a slogan."
+        ]
+      },
+      {
+        heading: "Tools that still work if you never open an account",
+        body: [
+          "Stake planner. Daily loss limiter. 20-trade sample. Drawdown recovery. Losing-streak survival. Session clock. Sit-out gate. Sample expectancy. They run in the browser. They do not place trades.",
+          "Use the tools: https://iederees-create.github.io/deriv-affiliate-launchpad-template/tools — Practice kit: https://iederees-create.github.io/deriv-affiliate-launchpad-template/kit"
+        ]
+      },
+      {
+        heading: "How this desk gets paid",
+        body: [
+          "If you want a Deriv account after you have watched the book, the partner link is https://t.deriv.link?t=VQGBGPUYGJDZ and the referral code is 28EX72Q47LR4.",
+          "I partner with Deriv and may earn a commission if you register through that link. Trading involves risk. 18+ only. Demo figures only. Not financial advice. Not a signal. Cape Town operator. Numbers stay on the page."
+        ]
+      }
+    ]
+  },
+  {
     slug: "rsi-eclipse-across-volatility-charts",
     title: "How RSI Eclipse Reads 15 Volatility Markets Without Turning Into a Signal Room",
     description: "A public Deriv demo that scans 15 volatility indices on six timeframes. RSI 20/80, one contract, practice funds. How to read the board, why 5-minute-only was too slow, and what the numbers are not.",

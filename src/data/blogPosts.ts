@@ -8,6 +8,14 @@ export type BlogPost = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "A Public 61-Trade Demo Book, and Why 53% Is the Real Bar for Rise/Fall",
+    slug: "public-61-trade-demo-book-53-percent-bar",
+    excerpt:
+      "Live demo book: 61 CALL, 54.1%, +$13.53. A win pays less than the stake, so break-even sits near 53%. Watch the tape. The tools still work if you never sign up.",
+    date: "2026-10-06",
+    readTime: "6 min read"
+  },
+  {
     title: "How RSI Eclipse Reads 15 Volatility Markets Without Turning Into a Signal Room",
     slug: "rsi-eclipse-across-volatility-charts",
     excerpt:
