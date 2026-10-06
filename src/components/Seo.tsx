@@ -49,6 +49,16 @@ export function Seo({ title, description, path = "/", type = "website", image, i
     }
     canonical.href = canonicalUrl;
 
+    let rss = document.head.querySelector<HTMLLinkElement>('link[rel="alternate"][type="application/rss+xml"]');
+    if (!rss) {
+      rss = document.createElement("link");
+      rss.rel = "alternate";
+      rss.type = "application/rss+xml";
+      rss.title = "Apex Desk";
+      document.head.appendChild(rss);
+    }
+    rss.href = `${baseUrl}/rss.xml`;
+
     const id = "route-json-ld";
     document.getElementById(id)?.remove();
     if (jsonLd) {
