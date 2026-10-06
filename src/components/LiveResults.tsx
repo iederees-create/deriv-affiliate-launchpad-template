@@ -22,7 +22,7 @@ import {
 
 const SHARE_URL = 'https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab';
 const SHARE_TITLE = 'Watch Apex Call Pulse Select — a live Deriv practice desk';
-const SHARE_TEXT = 'CALL-only: RSI turns up from 38, still ≤32. $0.35 ordinary, $2 when RSI is still ≤28. Demo funds only. Not an 80% win-rate claim.';
+const SHARE_TEXT = 'CALL-only: RSI turns up from 38. M5 still ≤28 ($2). M10/M15 still ≤32 at $0.35. Demo funds only. Not an 80% win-rate claim.';
 
 function money(value: number | null | undefined) {
   const n = Number(value);
@@ -131,8 +131,10 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
           <p>
             One public demo watching <strong>{scanned.length} volatility markets</strong> on
             {' '}<strong>{timeframes.map((id) => TIMEFRAME_SHORT[id] || id).join(', ')}</strong> charts.
-            CALL only: RSI({period}) at or below {oversold} that turns up with a green close, still at or below {strategy?.rsiCallStillCheap ?? 32}.
-            PUT is off. ${strategy?.smallStake ?? 0.35} ordinary stake, ${strategy?.highStake ?? 2} when RSI is still ≤{strategy?.rsiHighStake ?? 28}.
+            CALL only: RSI({period}) at or below {oversold} that turns up with a green close.
+            5-minute charts still need RSI ≤{strategy?.rsiM5StillCheap ?? 28} (${strategy?.highStake ?? 2}).
+            10m and 15m still fire at or below {strategy?.rsiCallStillCheap ?? 32} (${strategy?.smallStake ?? 0.35}).
+            PUT is off. ${strategy?.highStake ?? 2} when RSI is still ≤{strategy?.rsiHighStake ?? 28}.
             Demo funds only. Not an 80% win-rate claim.
           </p>
         </div>

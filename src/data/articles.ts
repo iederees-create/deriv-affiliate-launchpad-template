@@ -19,7 +19,7 @@ export const articles: Article[] = [
         heading: "The board is a scan, not a salary screenshot",
         body: [
           "The live desk on this site is a shared Deriv demo. Anyone can watch it without a login. The wallet is practice money. The trades are rise/fall options. Ordinary tickets are $0.35. A $2 ticket only opens when RSI is still at or below 28 after the bounce. If someone quotes those numbers as income, they misread the page.",
-          "The current rule is called Apex Call Pulse Select. CALL only: RSI(14) at or below 38 that turns up with a green close, still at or below 32. PUT is off because the 140-trade RSI-cross book paid 39.7% on PUTs. Live Call Pulse before this ran 25 trades at 40% and −$2.15; the shallow RSI 32–45 slice paid 33%, and a random $5 overlay on that book would have lost more. Charts: 5m, 10m, 15m. Volatility only. Practice funds only. This is not an 80% win-rate claim.",
+          "The current rule is called Apex Call Pulse Select. CALL only: RSI(14) at or below 38 that turns up with a green close. 5-minute charts still need RSI at or below 28 and size at $2. 10m and 15m still fire at or below 32 at $0.35. PUT is off because the 140-trade RSI-cross book paid 39.7% on PUTs. Select run 29 made +$9.99 demo at 52.5%; the M5 $0.35 slice (RSI 28–32) paid 33.3%, which is why M5 tightened. Charts: 5m, 10m, 15m. Volatility only. Practice funds only. This is not an 80% win-rate claim.",
           "Watch it here: https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab . Partner link and referral code sit on that page because this is an independent partner desk, not an official Deriv website, not a signal room, and not financial advice."
         ]
       },

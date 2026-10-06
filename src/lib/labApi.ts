@@ -31,6 +31,7 @@ export type LabStrategy = {
   rsiOverbought?: number;
   rsiCallStillCheap?: number;
   rsiHighStake?: number;
+  rsiM5StillCheap?: number;
   smallStake?: number;
   highStake?: number;
   stakeMode?: string;
