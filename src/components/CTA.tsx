@@ -1,6 +1,7 @@
 import { ArrowRight, MessageCircle } from "lucide-react";
 import { affiliateConfig } from "../config/affiliateConfig";
 import { isAffiliateHref, unlockKit } from "../lib/kit";
+import { noteRelay } from "../lib/relay";
 
 type CTAProps = {
   href: string;
@@ -19,7 +20,13 @@ export function CTA({ href, children, variant = "primary", whatsapp = false }: C
       target={internal ? undefined : "_blank"}
       rel={internal ? undefined : "noreferrer"}
       onClick={() => {
-        if (affiliate) unlockKit();
+        if (affiliate) {
+          unlockKit();
+          noteRelay("demo_clicked");
+        }
+        if (whatsapp || href.includes("wa.me")) noteRelay("whatsapp_started");
+        if (href.includes("/kit")) noteRelay("kit_opened");
+        if (href.includes("/auth")) noteRelay("login_created");
       }}
     >
       {whatsapp ? <MessageCircle size={18} aria-hidden="true" /> : null}
