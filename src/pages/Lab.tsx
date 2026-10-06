@@ -24,7 +24,7 @@ export function Lab() {
           <ShareBar
             url="https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab"
             title="Watch Apex Call Pulse Select — a live Deriv practice desk"
-            text="CALL-only volatility recovery on 5m–15m. $0.35 ordinary, $2 on deeper RSI. Demo funds only. Not an 80% win-rate claim."
+            text="CALL-only: RSI turns up from 38. M5 still ≤28 ($2). M10/M15 still ≤32 at $0.35. Demo funds only. Not an 80% win-rate claim."
           />
         </div>
         <PublicLiveBoard />
