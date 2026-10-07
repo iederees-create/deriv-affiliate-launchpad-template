@@ -900,6 +900,13 @@ button.cta {
 .article .share-bar, .blog-share, .page-share { margin: 18px 0 8px; }
 .article .share-btn, .blog-share .share-btn, .page-share .share-btn { background: var(--surface); color: var(--text); border-color: var(--line); }
 .article .share-bar-label, .blog-share .share-bar-label, .page-share .share-bar-label { color: var(--muted); }
+.tv-desk { display: grid; gap: 12px; padding: 16px; border: 1px solid #2a3a55; border-radius: 16px; background: #152238; }
+.tv-desk-copy h4 { margin: 0 0 6px; }
+.tv-desk-copy p { margin: 0; font-size: 0.9rem; line-height: 1.55; }
+.tv-embed { width: 100%; overflow: hidden; border-radius: 12px; }
+.tv-desk-cta { margin: 0; font-size: 0.88rem; line-height: 1.55; }
+.tv-desk-cta a { color: #7dd3fc; }
+.tv-desk-fine { color: #8fa3c0; }
 @media (max-width: 1100px) {
   .eclipse-head, .eclipse-howto, .eclipse-scan-head { grid-template-columns: 1fr; display: grid; }
   .eclipse-gauge-grid { grid-template-columns: repeat(3, minmax(140px, 1fr)); }

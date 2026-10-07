@@ -1,11 +1,13 @@
 import { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import type { LabBoard } from '../lib/labApi';
 import { affiliateConfig } from '../config/affiliateConfig';
 import { StrategyDownload } from './StrategyDownload';
 import { useAuth } from './AuthProvider';
 import { ShareBar } from './ShareBar';
 import { RsiEclipse } from './RsiEclipse';
+import { TradingViewDeskCharts } from './TradingViewDeskCharts';
+import { tradingViewToDerivSymbol } from '../lib/tradingView';
 import {
   MARKET_ORDER,
   TIMEFRAME_ORDER,
@@ -97,8 +99,10 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
   const timeframes = strategy?.timeframes?.length ? strategy.timeframes : [...TIMEFRAME_ORDER];
   const rsiByMarket = strategy?.rsiByMarket || {};
   const defaultMarket = hottestMarket(strategy?.rsiByMarket, oversold, overbought) || strategy?.symbol || scanned[0] || '1HZ75V';
-  const [pinned, setPinned] = useState<string | null>(null);
-  const selected = pinned && rsiByMarket[pinned] ? pinned : defaultMarket;
+  const [searchParams] = useSearchParams();
+  const fromWidget = tradingViewToDerivSymbol(searchParams.get('tvwidgetsymbol'));
+  const [pinned, setPinned] = useState<string | null>(fromWidget);
+  const selected = pinned && (rsiByMarket[pinned] || scanned.includes(pinned)) ? pinned : defaultMarket;
   const selectedFrames = rsiByMarket[selected] || strategy?.rsiByTimeframe || {};
   const openedHint = events.map((event) => parseOpenedEvent(event.message)).find(Boolean) || null;
 
@@ -240,6 +244,12 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
           </table>
         </div>
       </section>
+
+      <TradingViewDeskCharts
+        selected={selected}
+        timeframe={open?.timeframe || openedHint?.timeframe || 'M5'}
+        scanned={scanned}
+      />
 
       {live ? (
         <>
