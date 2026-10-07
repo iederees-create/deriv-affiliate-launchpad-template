@@ -3,9 +3,11 @@ import {
   TRADINGVIEW_CHART_HOST,
   TRADINGVIEW_DERIV_CONNECT_URL,
   TRADINGVIEW_LAB_CHART_URL,
+  TRADINGVIEW_PARTNER_URL,
   derivToTradingViewSymbol,
   tapeSymbolsFor,
   tradingViewInterval,
+  tradingViewPartnerChartUrl,
 } from '../lib/tradingView';
 import { affiliateConfig } from '../config/affiliateConfig';
 import { marketLabel } from '../lib/liveBoard';
@@ -75,6 +77,14 @@ export function TradingViewDeskCharts({ selected, timeframe, scanned }: Props) {
       ) : null}
 
       <p className="tv-desk-cta">
+        <a
+          href={chartSymbol ? tradingViewPartnerChartUrl(chartSymbol) : TRADINGVIEW_PARTNER_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Open this chart on TradingView
+        </a>
+        {' · '}
         <a href={TRADINGVIEW_DERIV_CONNECT_URL} target="_blank" rel="noopener noreferrer">
           Connect a Deriv account on TradingView
         </a>
@@ -85,8 +95,8 @@ export function TradingViewDeskCharts({ selected, timeframe, scanned }: Props) {
         {' · '}
         <a href={TRADINGVIEW_LAB_CHART_URL}>Stay on this desk</a>
         <span className="tv-desk-fine">
-          {' '}Widget data is TradingView’s. I partner with Deriv and may earn a commission. 18+ only. Demo
-          figures on this page. Not a signal.
+          {' '}Widget data is TradingView’s. I partner with Deriv and TradingView and may earn a commission.
+          18+ only. Demo figures on this page. Not a signal.
         </span>
       </p>
     </section>

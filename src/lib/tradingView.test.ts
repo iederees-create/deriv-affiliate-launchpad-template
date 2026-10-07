@@ -1,8 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import {
+  TRADINGVIEW_AFFILIATE_ID,
+  TRADINGVIEW_PARTNER_URL,
   derivToTradingViewSymbol,
   tapeSymbolsFor,
   tradingViewInterval,
+  tradingViewPartnerChartUrl,
   tradingViewToDerivSymbol,
 } from './tradingView';
 
@@ -33,5 +36,15 @@ describe('TradingView Deriv symbols', () => {
       { proName: 'DERIV:VOLATILITY_75_1S_INDEX', title: 'Volatility 75 (1s)' },
       { proName: 'DERIV:VOLATILITY_10_INDEX', title: 'Volatility 10' },
     ]);
+  });
+
+  it('stamps the partner id onto TradingView chart links from the desk', () => {
+    expect(TRADINGVIEW_AFFILIATE_ID).toBe('1171949');
+    expect(TRADINGVIEW_PARTNER_URL).toContain('aff_id=1171949');
+    expect(TRADINGVIEW_PARTNER_URL).toContain('aff_sub=apexdesk');
+    expect(TRADINGVIEW_PARTNER_URL).toContain('source=lab');
+    const chart = tradingViewPartnerChartUrl('DERIV:VOLATILITY_75_1S_INDEX');
+    expect(chart).toContain('symbol=DERIV%3AVOLATILITY_75_1S_INDEX');
+    expect(chart).toContain('aff_id=1171949');
   });
 });

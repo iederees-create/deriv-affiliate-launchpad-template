@@ -6,6 +6,20 @@ export const TRADINGVIEW_LAB_CHART_URL =
   'https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab';
 export const TRADINGVIEW_DERIV_CONNECT_URL =
   'https://deriv.com/trading-platforms/tradingview?t=VQGBGPUYGJDZ';
+/** TradingView Partner Program — iedereesfrancis, affiliate id 1171949. */
+export const TRADINGVIEW_AFFILIATE_ID = '1171949';
+export const TRADINGVIEW_PARTNER_URL =
+  'https://www.tradingview.com/?aff_id=1171949&aff_sub=apexdesk&source=lab';
+
+export function tradingViewPartnerChartUrl(symbol: string): string {
+  const params = new URLSearchParams({
+    symbol,
+    aff_id: TRADINGVIEW_AFFILIATE_ID,
+    aff_sub: 'apexdesk',
+    source: 'lab',
+  });
+  return `${TRADINGVIEW_CHART_HOST}/chart/?${params.toString()}`;
+}
 
 const ONE_SEC = /^1HZ(\d+)V$/i;
 const CLASSIC = /^R_(\d+)$/i;

@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { TRADINGVIEW_PARTNER_URL } from '../lib/tradingView';
 
 type Props = {
   src: string;
@@ -24,8 +25,17 @@ export function TradingViewEmbed({ src, config, height, label }: Props) {
     script.type = 'text/javascript';
     script.async = true;
     script.text = json;
+    const credit = document.createElement('div');
+    credit.className = 'tradingview-widget-copyright';
+    const creditLink = document.createElement('a');
+    creditLink.href = TRADINGVIEW_PARTNER_URL;
+    creditLink.rel = 'noopener noreferrer nofollow';
+    creditLink.target = '_blank';
+    creditLink.textContent = 'Track all markets on TradingView';
+    credit.appendChild(creditLink);
     host.appendChild(widget);
     host.appendChild(script);
+    host.appendChild(credit);
     return () => {
       host.innerHTML = '';
     };

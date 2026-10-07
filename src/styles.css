@@ -904,6 +904,8 @@ button.cta {
 .tv-desk-copy h4 { margin: 0 0 6px; }
 .tv-desk-copy p { margin: 0; font-size: 0.9rem; line-height: 1.55; }
 .tv-embed { width: 100%; overflow: hidden; border-radius: 12px; }
+.tradingview-widget-copyright { padding: 6px 4px 0; font-size: 0.75rem; }
+.tradingview-widget-copyright a { color: #8fa3c0; }
 .tv-desk-cta { margin: 0; font-size: 0.88rem; line-height: 1.55; }
 .tv-desk-cta a { color: #7dd3fc; }
 .tv-desk-fine { color: #8fa3c0; }
