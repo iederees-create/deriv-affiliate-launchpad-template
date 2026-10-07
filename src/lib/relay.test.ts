@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { PolicyError, decide, parseCampaignContext, recordEvent } from "./relay";
+import { PolicyError, decide, parseCampaignContext, partnerCampaignUrl, recordEvent, startUrl } from "./relay";
 
 describe("launchpad relay", () => {
   it("keeps documented campaign params and drops the rest", () => {
@@ -35,11 +35,27 @@ describe("launchpad relay", () => {
     expect(decide(parseCampaignContext(""), again).href).toBe("/kit");
   });
 
-  it("hands a demo click to the VIP step and keeps the referral code visible", () => {
+  it("keeps a demo click on the Deriv signup link and shows the referral code", () => {
     const events = recordEvent([], "marketing", "demo_clicked", { content: "yt-short" });
-    const decision = decide(parseCampaignContext("?utm_source=social&utm_content=yt-short"), events);
+    const decision = decide(parseCampaignContext("?utm_source=social&utm_medium=youtube&utm_content=yt-short"), events);
     expect(decision.segment).toBe("mql");
     expect(decision.journey).toBe("sales_handoff");
+    expect(decision.external).toBe(true);
+    expect(decision.href).toContain("t.deriv.link");
+    expect(decision.href).toContain("utm_content=yt-short");
     expect(decision.headline).toContain("28EX72Q47LR4");
+  });
+
+  it("stamps campaign params onto the partner cookie link", () => {
+    const href = partnerCampaignUrl("tt-bio", "tiktok");
+    expect(href).toContain("t.deriv.link");
+    expect(href).toContain("t=VQGBGPUYGJDZ");
+    expect(href).toContain("utm_medium=tiktok");
+    expect(href).toContain("utm_content=tt-bio");
+  });
+
+  it("builds a one-click start page for bios and pins", () => {
+    expect(startUrl("pin", "pinterest")).toContain("/start.html?");
+    expect(startUrl("pin", "pinterest")).toContain("utm_medium=pinterest");
   });
 });

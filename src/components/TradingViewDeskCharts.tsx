@@ -9,7 +9,7 @@ import {
   tradingViewInterval,
   tradingViewPartnerChartUrl,
 } from '../lib/tradingView';
-import { affiliateConfig } from '../config/affiliateConfig';
+import { partnerCampaignUrl } from '../lib/relay';
 import { marketLabel } from '../lib/liveBoard';
 
 type Props = {
@@ -89,7 +89,7 @@ export function TradingViewDeskCharts({ selected, timeframe, scanned }: Props) {
           Connect a Deriv account on TradingView
         </a>
         {' · '}
-        <a href={affiliateConfig.primaryAffiliateLink} target="_blank" rel="noopener noreferrer">
+        <a href={partnerCampaignUrl("tv-widget", "site")} target="_blank" rel="noopener noreferrer">
           Open a Deriv demo
         </a>
         {' · '}

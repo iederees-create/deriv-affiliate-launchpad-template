@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
 import { affiliateConfig } from '../config/affiliateConfig';
+import { partnerCampaignUrl } from '../lib/relay';
 
 export function ExitIntent() {
   const [show, setShow] = useState(false);
@@ -27,7 +28,7 @@ export function ExitIntent() {
         <p className="eyebrow">Before you go</p>
         <h2 id="exit-title">The practice run is still on this page.</h2>
         <p>It uses Deriv demo funds, not cash. If you want your own practice account, use this partner link. Referral code {affiliateConfig.referralCode}.</p>
-        <a className="cta cta-primary" href={affiliateConfig.demoAccountLink} target="_blank" rel="noreferrer">Open a free Deriv demo</a>
+        <a className="cta cta-primary" href={partnerCampaignUrl("exit", "site")} target="_blank" rel="noreferrer">Open a free Deriv demo</a>
         <button type="button" className="text-link" onClick={() => setShow(false)}>Stay and watch</button>
       </div>
     </div>

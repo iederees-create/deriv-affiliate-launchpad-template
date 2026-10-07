@@ -3,7 +3,7 @@ import { Download, LockOpen } from "lucide-react";
 import { CTA } from "../components/CTA";
 import { DisclosureBand, SectionHeader } from "../components/Section";
 import { Seo } from "../components/Seo";
-import { affiliateConfig } from "../config/affiliateConfig";
+import { partnerCampaignUrl } from "../lib/relay";
 import { isKitUnlocked, kitFiles, unlockKit } from "../lib/kit";
 
 const publicKit = `${import.meta.env.BASE_URL}kit`;
@@ -46,7 +46,7 @@ export function Kit() {
         />
         {!unlocked ? (
           <div className="cta-row">
-            <CTA href={affiliateConfig.demoAccountLink}>Open Deriv demo and unlock</CTA>
+            <CTA href={partnerCampaignUrl("kit", "site")}>Open Deriv demo and unlock</CTA>
             <button type="button" className="cta cta-ghost" onClick={() => { unlockKit(); setUnlocked(true); }}>
               <LockOpen size={18} aria-hidden="true" />
               <span>I already signed up through this page</span>

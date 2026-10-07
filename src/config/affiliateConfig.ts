@@ -3,9 +3,9 @@ export const affiliateConfig = {
   productName: "Apex Trade Network",
   affiliateOwnerName: "Iederees Francis",
   primaryAffiliateLink: "https://t.deriv.link?t=VQGBGPUYGJDZ",
-  demoAccountLink: "https://t.deriv.link?t=VQGBGPUYGJDZ",
-  liveAccountLink: "https://t.deriv.link?t=VQGBGPUYGJDZ",
-  partnerProgrammeLink: "https://t.deriv.link?t=VQGBGPUYGJDZ",
+  demoAccountLink: "https://t.deriv.link?t=VQGBGPUYGJDZ&utm_source=social&utm_medium=site&utm_campaign=call-pulse&utm_content=cta",
+  liveAccountLink: "https://t.deriv.link?t=VQGBGPUYGJDZ&utm_source=social&utm_medium=site&utm_campaign=call-pulse&utm_content=live",
+  partnerProgrammeLink: "https://t.deriv.link?t=VQGBGPUYGJDZ&utm_source=social&utm_medium=site&utm_campaign=call-pulse&utm_content=partner",
   referralCode: "28EX72Q47LR4",
   derivAppId: 1089, // Replace with your app_id from https://api.deriv.com (API management). 1089 is Deriv’s public test id.
   managedStrategy: {
@@ -24,10 +24,10 @@ export const affiliateConfig = {
   riskDisclaimer:
     "Trading involves risk. CFDs and other leveraged products can result in losses greater than the initial amount committed. This website is educational and promotional, not financial advice.",
   socialLinks: {
-    youtube: "https://youtube.com/channel/uc3cd_ossaxmwdtvfvxgxwgw",
-    instagram: "https://instagram.com/nextgenerationwebdevs",
-    x: "https://x.com/nextgenwebdevs",
-    linkedin: "https://www.linkedin.com/in/iederees-francis-936717392/"
+    youtube: "",
+    instagram: "",
+    x: "",
+    linkedin: "https://www.linkedin.com/in/iederees-francis-973879228/"
   },
   themeColours: {
     background: "#08111f",

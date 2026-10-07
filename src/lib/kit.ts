@@ -21,6 +21,8 @@ export function isAffiliateHref(href: string): boolean {
   return (
     href.includes("track.deriv.com") ||
     href.includes("t.deriv.link") ||
+    href.includes("hub.deriv.com") ||
+    href.includes("tradershub") ||
     href.includes("home.deriv.com/dashboard")
   );
 }

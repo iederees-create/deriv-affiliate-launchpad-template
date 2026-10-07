@@ -1,6 +1,7 @@
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { ShieldCheck } from "lucide-react";
 import { affiliateConfig } from "../config/affiliateConfig";
+import { partnerCampaignUrl } from "../lib/relay";
 import { ArticleNarrator } from "./ArticleNarrator";
 import { RelayBar } from "./RelayBar";
 import { useAuth } from "./AuthProvider";
@@ -125,6 +126,9 @@ export function Layout() {
               Admin
             </NavLink>
           ) : null}
+          <a className="cta cta-primary header-demo" href={partnerCampaignUrl("nav", "site")} target="_blank" rel="noreferrer">
+            Open demo
+          </a>
         </nav>
       </header>
       <RelayBar />
@@ -147,14 +151,16 @@ export function Layout() {
           <Link to="/risk-disclosure">Risk disclosure</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/lab">Live practice test</Link>
-          <a href={affiliateConfig.primaryAffiliateLink} target="_blank" rel="noreferrer">Open Deriv demo</a>
+          <a href={partnerCampaignUrl("footer", "site")} target="_blank" rel="noreferrer">Open Deriv demo</a>
           <span>Referral code {affiliateConfig.referralCode}</span>
           <a href={affiliateConfig.socialLinks.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-          <a href={affiliateConfig.socialLinks.x} target="_blank" rel="noreferrer">X</a>
-          <a href={affiliateConfig.socialLinks.instagram} target="_blank" rel="noreferrer">Instagram</a>
-          <a href={affiliateConfig.socialLinks.youtube} target="_blank" rel="noreferrer">YouTube</a>
         </div>
       </footer>
+      <div className="signup-dock">
+        <a className="cta cta-primary" href={partnerCampaignUrl("dock", "site")} target="_blank" rel="noreferrer">
+          Open a free Deriv demo
+        </a>
+      </div>
     </div>
   );
 }

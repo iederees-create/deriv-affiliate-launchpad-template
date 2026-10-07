@@ -82,11 +82,11 @@ export function decide(context: CampaignContext, events: RelayEvent[], loggedIn 
     return {
       segment,
       journey: "sales_handoff",
-      creative: "vip-followup",
-      cta: "Open the VIP area",
-      href: "/members",
-      headline: `Partner link is ready. Referral code ${REFERRAL}. Next is the VIP area, not another intro.`,
-      external: false
+      creative: "finish-signup",
+      cta: "Finish the Deriv signup",
+      href: partnerCampaignUrl(context.content || "return", context.medium || "site"),
+      headline: `The cookie only counts if signup finishes on Deriv. Referral code ${REFERRAL}. Demo first. 18+ only.`,
+      external: true
     };
   }
   if (segment === "engaged") {
@@ -133,6 +133,26 @@ export function campaignUrl(content: string, medium: string, experiment = "contr
   return `${SITE}/lab?${params.toString()}`;
 }
 
+export function partnerCampaignUrl(content: string, medium: string, experiment = "control"): string {
+  const url = new URL(PARTNER);
+  url.searchParams.set("utm_source", medium === "cpc" ? "paid" : "social");
+  url.searchParams.set("utm_medium", medium);
+  url.searchParams.set("utm_campaign", "call-pulse");
+  url.searchParams.set("utm_content", content);
+  url.searchParams.set("exp", experiment);
+  return url.toString();
+}
+
+export function startUrl(content: string, medium: string): string {
+  const params = new URLSearchParams({
+    utm_source: medium === "cpc" ? "paid" : "social",
+    utm_medium: medium,
+    utm_campaign: "call-pulse",
+    utm_content: content
+  });
+  return `${SITE}/start.html?${params.toString()}`;
+}
+
 export function noteRelay(type: string, props?: Record<string, string>) {
   if (typeof window === "undefined") return;
   try {
@@ -148,8 +168,11 @@ export function noteRelay(type: string, props?: Record<string, string>) {
 }
 
 export const campaignLinks = [
-  ["YouTube short", campaignUrl("yt-short", "youtube")],
-  ["X desk post", campaignUrl("x-desk", "x")],
-  ["WhatsApp status", campaignUrl("wa-status", "whatsapp")],
-  ["Bold headline test", campaignUrl("yt-short", "youtube", "bold")]
+  ["TikTok bio (partner cookie)", partnerCampaignUrl("tt-bio", "tiktok")],
+  ["Pinterest pin dest", partnerCampaignUrl("pin", "pinterest")],
+  ["WhatsApp", partnerCampaignUrl("wa", "whatsapp")],
+  ["TradingView", partnerCampaignUrl("tv", "tradingview")],
+  ["LinkedIn trader", partnerCampaignUrl("li", "linkedin")],
+  ["One-click start page", startUrl("start", "social")],
+  ["Watch the desk first", campaignUrl("lab", "site")]
 ] as const;

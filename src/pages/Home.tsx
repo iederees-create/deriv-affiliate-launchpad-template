@@ -3,14 +3,15 @@ import { CTA, WhatsAppCTA } from "../components/CTA";
 import { DisclosureBand, Card, SectionHeader } from "../components/Section";
 import { Seo } from "../components/Seo";
 import { affiliateConfig, whatsappUrl } from "../config/affiliateConfig";
+import { partnerCampaignUrl } from "../lib/relay";
 import { PublicLiveBoard } from "../components/PublicLiveBoard";
 import { ExitIntent } from "../components/ExitIntent";
 
 const path = [
   ["Watch", "Stay on this page. The board is a Deriv demo, not cash."],
-  ["Open a demo", `Use the partner link. Referral code ${affiliateConfig.referralCode}.`],
+  ["Open a demo", `Click the partner link on this page. Referral code ${affiliateConfig.referralCode}.`],
   ["Practise 14 days", "Journal the trades. Do not skip to live money."],
-  ["Join VIP", "Sign in here if you want the written rules and planning tools."]
+  ["Tell me", "WhatsApp once the demo is open. I cannot see Deriv signups from this site."]
 ] as const;
 
 export function Home() {
@@ -20,7 +21,7 @@ export function Home() {
         title={`${affiliateConfig.brandName} | Watch a live Deriv demo`}
         description="Watch Apex Call Pulse Select: a shared Deriv demo that takes CALL recoveries on volatility 5m–15m charts. 5m still ≤28 at $3; 10m/15m still ≤32 at $0.35. Practice funds only. Not an 80% win-rate claim."
         image="https://iederees-create.github.io/deriv-affiliate-launchpad-template/og-rsi-eclipse.svg"
-        imageAlt="Apex RSI Eclipse live practice desk"
+        imageAlt="Apex Call Pulse Select live practice desk"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "WebSite",
@@ -38,8 +39,8 @@ export function Home() {
             The test below uses demo funds only. Trading involves risk. Not financial advice.
           </p>
           <div className="cta-row">
-            <CTA href={affiliateConfig.demoAccountLink}>Open a free Deriv demo</CTA>
-            <a className="text-link" href={whatsappUrl("Hi Iederees, I watched the RSI Eclipse practice desk and opened a demo through your link.")}>Message me on WhatsApp</a>
+            <CTA href={partnerCampaignUrl("home", "site")}>Open a free Deriv demo</CTA>
+            <a className="text-link" href={whatsappUrl("Hi Iederees, I watched Call Pulse Select and opened a Deriv demo through your partner link.")}>Message me on WhatsApp</a>
           </div>
           <p className="fine-print">Partner link {affiliateConfig.primaryAffiliateLink} · Referral code {affiliateConfig.referralCode}</p>
         </div>
@@ -49,9 +50,6 @@ export function Home() {
           <p>Cape Town. I built this desk so people can see a real demo before anyone asks them to deposit.</p>
           <div className="cta-row">
             <a className="text-link" href={affiliateConfig.socialLinks.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
-            <a className="text-link" href={affiliateConfig.socialLinks.x} target="_blank" rel="noreferrer">X</a>
-            <a className="text-link" href={affiliateConfig.socialLinks.instagram} target="_blank" rel="noreferrer">Instagram</a>
-            <a className="text-link" href={affiliateConfig.socialLinks.youtube} target="_blank" rel="noreferrer">YouTube</a>
           </div>
         </div>
       </section>
@@ -75,8 +73,8 @@ export function Home() {
           ))}
         </div>
         <div className="cta-row" style={{ marginTop: 24 }}>
-          <CTA href="/deriv-affiliate-launchpad-template/kit">Open the 14-day demo plan</CTA>
-          <CTA href="/deriv-affiliate-launchpad-template/auth" variant="secondary">Create a free site login</CTA>
+          <CTA href={partnerCampaignUrl("home-path", "site")}>Open the same markets on your demo</CTA>
+          <CTA href="/deriv-affiliate-launchpad-template/kit" variant="secondary">Open the 14-day demo plan</CTA>
         </div>
       </section>
       <section className="section">

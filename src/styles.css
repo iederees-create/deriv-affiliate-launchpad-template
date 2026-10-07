@@ -30,6 +30,17 @@ a {
   min-height: 100vh;
 }
 
+.header-demo {
+  width: auto;
+  min-height: 38px;
+  padding: 8px 12px;
+  white-space: nowrap;
+}
+
+.signup-dock {
+  display: none;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -728,6 +739,20 @@ button.cta {
 }
 
 @media (max-width: 620px) {
+  .signup-dock {
+    display: block;
+    position: sticky;
+    bottom: 0;
+    z-index: 20;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.96);
+    border-top: 1px solid var(--line);
+  }
+
+  .header-demo {
+    display: none;
+  }
+
   .site-header {
     padding: 14px 18px;
   }
