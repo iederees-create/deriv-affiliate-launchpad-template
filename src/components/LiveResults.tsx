@@ -138,7 +138,7 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
             CALL only: RSI({period}) at or below {oversold} that turns up with a green close.
             5-minute charts still need RSI ≤{strategy?.rsiM5StillCheap ?? 28} (${strategy?.highStake ?? 2}).
             10m and 15m still fire at or below {strategy?.rsiCallStillCheap ?? 32} (${strategy?.smallStake ?? 0.35}).
-            PUT is off. ${strategy?.highStake ?? 2} when RSI is still ≤{strategy?.rsiHighStake ?? 28}.
+            PUT is off. ${strategy?.highStake ?? 2} when RSI is still ≤{strategy?.rsiHighStake ?? 28} on 5m and 15m. 10m stays ${strategy?.smallStake ?? 0.35}.
             Demo funds only. Not an 80% win-rate claim.
           </p>
         </div>
