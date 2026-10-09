@@ -869,6 +869,11 @@ button.cta {
 .scan-cell.is-near-buy .scan-dot { background: #7ec8c0; }
 .scan-cell.is-near-sell { color: #e7b8a8; }
 .scan-cell.is-near-sell .scan-dot { background: #d4a190; }
+.lab-score { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 0 0 18px; }
+.lab-score article { padding: 14px 16px; border: 1px solid #3d5278; border-radius: 14px; background: #101a2c; color: #e8eef8; }
+.lab-score h4 { margin: 0 0 6px; font-size: 0.92rem; }
+.lab-score p { margin: 0; font-size: 0.88rem; line-height: 1.5; color: #c5d2e6; }
+@media (max-width: 900px) { .lab-score { grid-template-columns: 1fr; } }
 .eclipse-open { display: flex; flex-wrap: wrap; gap: 10px 16px; align-items: center; padding: 14px 16px; border-radius: 14px; border: 1px dashed #e8b86d; background: rgba(232, 184, 109, 0.08); }
 .eclipse-open strong { font-size: 1.2rem; color: #f4f1ea; }
 .eclipse-open p { margin: 0; }

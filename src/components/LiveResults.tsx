@@ -24,7 +24,7 @@ import {
 
 const SHARE_URL = 'https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab';
 const SHARE_TITLE = 'Watch Apex Call Pulse Select — a live Deriv practice desk';
-const SHARE_TEXT = 'CALL-only: RSI turns up from 38. M5 still ≤28 ($3). M10/M15 still ≤32 at $0.35. Demo funds only. Not an 80% win-rate claim.';
+const SHARE_TEXT = 'CALL-only: RSI turns up from 38. M5/M15 still ≤28 ($4). 10m stays $0.35. Classic Vol 25/50 sit out. Demo funds only. Not an 80% win-rate claim.';
 
 function money(value: number | null | undefined) {
   const n = Number(value);
@@ -73,6 +73,13 @@ function tradeHint(trade: { contractType: string; symbol: string; timeframe?: st
   return `${marketLabel(match.symbol)} · ${TIMEFRAME_SHORT[match.timeframe] || match.timeframe}`;
 }
 
+function breakEvenPct(trades: Array<{ profit: number; stake: number; status: string }>) {
+  const wins = trades.filter((trade) => trade.status === 'closed' && Number(trade.profit) > 0 && Number(trade.stake) > 0);
+  if (!wins.length) return 53;
+  const avg = wins.reduce((sum, trade) => sum + Number(trade.profit) / Number(trade.stake), 0) / wins.length;
+  return Math.round((100 / (1 + avg)) * 10) / 10;
+}
+
 export function LiveResults({ board }: { board: LabBoard | null }) {
   const live = Boolean(board?.live && board.strategy);
   const run = board?.run;
@@ -105,6 +112,9 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
   const selected = pinned && (rsiByMarket[pinned] || scanned.includes(pinned)) ? pinned : defaultMarket;
   const selectedFrames = rsiByMarket[selected] || strategy?.rsiByTimeframe || {};
   const openedHint = events.map((event) => parseOpenedEvent(event.message)).find(Boolean) || null;
+  const bar = breakEvenPct(closed);
+  const high = strategy?.highStake ?? 4;
+  const small = strategy?.smallStake ?? 0.35;
 
   const scanSummary = useMemo(() => {
     let ready = 0;
@@ -136,10 +146,10 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
             One public demo watching <strong>{scanned.length} volatility markets</strong> on
             {' '}<strong>{timeframes.map((id) => TIMEFRAME_SHORT[id] || id).join(', ')}</strong> charts.
             CALL only: RSI({period}) at or below {oversold} that turns up with a green close.
-            5-minute charts still need RSI ≤{strategy?.rsiM5StillCheap ?? 28} (${strategy?.highStake ?? 2}).
+            5-minute charts still need RSI ≤{strategy?.rsiM5StillCheap ?? 28} (${strategy?.highStake ?? 4}).
             10m and 15m still fire at or below {strategy?.rsiCallStillCheap ?? 32} (${strategy?.smallStake ?? 0.35}).
-            PUT is off. ${strategy?.highStake ?? 2} when RSI is still ≤{strategy?.rsiHighStake ?? 28} on 5m and 15m. 10m stays ${strategy?.smallStake ?? 0.35}.
-            Demo funds only. Not an 80% win-rate claim.
+            PUT is off. ${strategy?.highStake ?? 4} when RSI is still ≤{strategy?.rsiHighStake ?? 28} on 5m and 15m. 10m stays ${strategy?.smallStake ?? 0.35}.
+            Classic Volatility 25 and 50 sit out. Demo funds only. Not an 80% win-rate claim.
           </p>
         </div>
         <ShareBar url={SHARE_URL} title={SHARE_TITLE} text={SHARE_TEXT} label="Share the desk" />
@@ -149,7 +159,7 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
         <article>
           <span>01</span>
           <h4>What you are looking at</h4>
-          <p>A shared Deriv demo. The wallet is practice money. Nothing here spends cash or places a trade on your account.</p>
+          <p>A shared Deriv demo testing Call Pulse Select. The wallet is practice money. Nothing here spends cash or places a trade on your account.</p>
         </article>
         <article>
           <span>02</span>
@@ -160,6 +170,27 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
           <span>03</span>
           <h4>How to read a cell</h4>
           <p>Each cell is one market on one chart. Teal = buy zone. Copper = sell zone. Grey = waiting. Tap a row to park the gauges on that market.</p>
+        </article>
+      </div>
+
+      <div className="lab-score" aria-label="How this live test is scored">
+        <article>
+          <h4>Score vs the bar</h4>
+          <p>
+            {run?.winCount ?? 0} of {run?.tradeCount ?? 0} finished CALL ({run?.winRate ?? 0}%).
+            Rise/fall break-even on this book is about {bar}%. Above that bar the demo grows.
+          </p>
+        </article>
+        <article>
+          <h4>How size is chosen</h4>
+          <p>
+            ${money(small)} on an ordinary pulse. ${money(high)} only when 5m or 15m RSI is still ≤{strategy?.rsiHighStake ?? 28}.
+            10m stays ${money(small)} even on a deep reading.
+          </p>
+        </article>
+        <article>
+          <h4>What sits out</h4>
+          <p>Classic Volatility 25 and 50. Boom, Crash, Step, FX, metals, crypto and stock indices stay off this scan.</p>
         </article>
       </div>
 
@@ -286,8 +317,8 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
             <div><span>Latest price</span><strong>{run?.lastTick ?? '—'}</strong></div>
             <div><span>Finished trades</span><strong>{run?.tradeCount ?? 0}</strong></div>
             <div><span>Won / lost</span><strong>{run?.winCount ?? 0} / {run?.lossCount ?? 0}</strong></div>
-            <div><span>Win rate</span><strong>{run?.winRate ?? 0}%</strong></div>
-            <div><span>Stake</span><strong>${money(strategy?.effectiveStake ?? strategy?.stake)}</strong></div>
+            <div><span>Win rate vs {bar}% bar</span><strong>{run?.winRate ?? 0}%</strong></div>
+            <div><span>Stake</span><strong>${money(small)} / ${money(high)}</strong></div>
             <div><span>Schedule</span><strong>{run?.scheduledEndAt ? when(run.scheduledEndAt) : "Continuous"}</strong></div>
           </div>
           <div className="win-tape" aria-label="Recent wins and losses">
