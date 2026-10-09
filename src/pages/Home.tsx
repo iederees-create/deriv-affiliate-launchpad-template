@@ -2,7 +2,7 @@ import { BookOpen, MessageCircle, ShieldCheck } from "lucide-react";
 import { CTA, WhatsAppCTA } from "../components/CTA";
 import { DisclosureBand, Card, SectionHeader } from "../components/Section";
 import { Seo } from "../components/Seo";
-import { affiliateConfig, whatsappUrl } from "../config/affiliateConfig";
+import { affiliateConfig, filledSocialLinks, whatsappUrl } from "../config/affiliateConfig";
 import { partnerCampaignUrl } from "../lib/relay";
 import { PublicLiveBoard } from "../components/PublicLiveBoard";
 import { ExitIntent } from "../components/ExitIntent";
@@ -47,9 +47,11 @@ export function Home() {
         <div className="hero-panel founder-card">
           <p className="eyebrow">Who runs this</p>
           <h2>{affiliateConfig.affiliateOwnerName}</h2>
-          <p>Cape Town. I built this desk so people can see a real demo before anyone asks them to deposit.</p>
+          <p>Cape Town. I built this desk so people can see a real demo before anyone asks them to deposit. Tape clips live on TikTok @tradegrurufx.</p>
           <div className="cta-row">
-            <a className="text-link" href={affiliateConfig.socialLinks.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+            {filledSocialLinks().map((item) => (
+              <a key={item.key} className="text-link" href={item.href} target="_blank" rel="noreferrer">{item.label}</a>
+            ))}
           </div>
         </div>
       </section>

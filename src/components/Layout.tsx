@@ -1,6 +1,6 @@
 import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { ShieldCheck } from "lucide-react";
-import { affiliateConfig } from "../config/affiliateConfig";
+import { affiliateConfig, filledSocialLinks } from "../config/affiliateConfig";
 import { partnerCampaignUrl } from "../lib/relay";
 import { ArticleNarrator } from "./ArticleNarrator";
 import { RelayBar } from "./RelayBar";
@@ -153,7 +153,9 @@ export function Layout() {
           <Link to="/lab">Live practice test</Link>
           <a href={partnerCampaignUrl("footer", "site")} target="_blank" rel="noreferrer">Open Deriv demo</a>
           <span>Referral code {affiliateConfig.referralCode}</span>
-          <a href={affiliateConfig.socialLinks.linkedin} target="_blank" rel="noreferrer">LinkedIn</a>
+          {filledSocialLinks().map((item) => (
+            <a key={item.key} href={item.href} target="_blank" rel="noreferrer">{item.label}</a>
+          ))}
         </div>
       </footer>
       <div className="signup-dock">

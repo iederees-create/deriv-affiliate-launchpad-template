@@ -24,10 +24,17 @@ export const affiliateConfig = {
   riskDisclaimer:
     "Trading involves risk. CFDs and other leveraged products can result in losses greater than the initial amount committed. This website is educational and promotional, not financial advice.",
   socialLinks: {
+    tiktok: "https://www.tiktok.com/@tradegrurufx",
+    linkedin: "https://www.linkedin.com/in/iederees-francis-973879228/",
     youtube: "",
     instagram: "",
-    x: "",
-    linkedin: "https://www.linkedin.com/in/iederees-francis-973879228/"
+    x: ""
+  },
+  sitWithMe: {
+    priceLabel: "R1,800",
+    durationMinutes: 60,
+    whatsappMessage:
+      "Hi Iederees, I want the 60-minute sit-with-you walkthrough of the 14-day demo plan for R1,800. I will open a tagged Deriv demo. You do not place live trades for me."
   },
   themeColours: {
     background: "#08111f",
@@ -39,6 +46,24 @@ export const affiliateConfig = {
 } as const;
 
 export type AffiliateConfig = typeof affiliateConfig;
+
+const socialLinkLabels: Record<keyof typeof affiliateConfig.socialLinks, string> = {
+  tiktok: "TikTok",
+  linkedin: "LinkedIn",
+  youtube: "YouTube",
+  instagram: "Instagram",
+  x: "X"
+};
+
+export function filledSocialLinks() {
+  return (Object.keys(affiliateConfig.socialLinks) as Array<keyof typeof affiliateConfig.socialLinks>)
+    .filter((key) => affiliateConfig.socialLinks[key])
+    .map((key) => ({
+      key,
+      label: socialLinkLabels[key],
+      href: affiliateConfig.socialLinks[key]
+    }));
+}
 
 export function whatsappUrl(message: string) {
   const number = affiliateConfig.whatsappNumber.replace(/\D/g, "");

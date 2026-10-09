@@ -597,6 +597,21 @@ button.cta {
   margin-bottom: 4px;
 }
 
+.sit-with-me {
+  max-width: 720px;
+}
+
+.sit-with-me ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.sit-with-me .cta-row {
+  margin-top: 20px;
+}
+
 @media (max-width: 900px) {
   .site-header,
   .hero,

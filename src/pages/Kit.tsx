@@ -3,6 +3,7 @@ import { Download, LockOpen } from "lucide-react";
 import { CTA } from "../components/CTA";
 import { DisclosureBand, SectionHeader } from "../components/Section";
 import { Seo } from "../components/Seo";
+import { affiliateConfig, whatsappUrl } from "../config/affiliateConfig";
 import { partnerCampaignUrl } from "../lib/relay";
 import { isKitUnlocked, kitFiles, unlockKit } from "../lib/kit";
 
@@ -70,6 +71,26 @@ export function Kit() {
             )}
           </article>
         ))}
+      </section>
+      <section className="section sit-with-me">
+        <SectionHeader
+          eyebrow="Sit with me"
+          title={`60 minutes on WhatsApp · ${affiliateConfig.sitWithMe.priceLabel}`}
+          text="I walk the 14-day demo plan, the stake planner, the daily stop, and the public tape with you. You keep the demo. I do not place live trades."
+        />
+        <ul>
+          <li>Open a tagged Deriv demo first so the partner cookie holds. Referral {affiliateConfig.referralCode}.</li>
+          <li>We stay on practice funds for the hour. This is a walkthrough, not a signal call.</li>
+          <li>18+. Trading involves risk. I may earn a commission if you later become a Deriv client through my link.</li>
+        </ul>
+        <div className="cta-row">
+          <CTA href={whatsappUrl(affiliateConfig.sitWithMe.whatsappMessage)} whatsapp>
+            Book {affiliateConfig.sitWithMe.priceLabel} on WhatsApp
+          </CTA>
+          <CTA href={partnerCampaignUrl("kit-session", "site")} variant="secondary">
+            Open a tagged Deriv demo
+          </CTA>
+        </div>
       </section>
     </>
   );
