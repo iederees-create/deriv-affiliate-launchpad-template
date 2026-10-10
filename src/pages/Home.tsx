@@ -19,9 +19,9 @@ export function Home() {
     <>
       <Seo
         title={`${affiliateConfig.brandName} | Watch a live Deriv demo`}
-        description="Watch Apex Call Pulse Select: a shared Deriv demo that takes CALL recoveries on volatility 5m–15m charts. 5m/15m still ≤28 at $4; 10m stays $0.35. Practice funds only. Not an 80% win-rate claim."
+        description="Watch Apex Chart Select: a shared Deriv demo that takes CALL recoveries on selected volatility charts. $0.35 default; $1 on R_10 15m and 1HZ25V 10m. Practice funds only. Not an 80% win-rate claim."
         image="https://iederees-create.github.io/deriv-affiliate-launchpad-template/og-rsi-eclipse.svg"
-        imageAlt="Apex Call Pulse Select live practice desk"
+        imageAlt="Apex Chart Select live practice desk"
         jsonLd={{
           "@context": "https://schema.org",
           "@type": "WebSite",
@@ -33,14 +33,14 @@ export function Home() {
       <section className="hero">
         <div className="hero-copy">
           <p className="eyebrow">Independent partner desk · Iederees Francis</p>
-          <h1>Watch Call Pulse Select live. Then open your own Deriv demo.</h1>
+          <h1>Watch Chart Select live. Then open your own Deriv demo.</h1>
           <p>
             This is not the broker. I may earn a commission if you sign up through my link.
             The test below uses demo funds only. Trading involves risk. Not financial advice.
           </p>
           <div className="cta-row">
             <CTA href={partnerCampaignUrl("home", "site")}>Open a free Deriv demo</CTA>
-            <a className="text-link" href={whatsappUrl("Hi Iederees, I watched Call Pulse Select and opened a Deriv demo through your partner link.")}>Message me on WhatsApp</a>
+            <a className="text-link" href={whatsappUrl("Hi Iederees, I watched Chart Select and opened a Deriv demo through your partner link.")}>Message me on WhatsApp</a>
           </div>
           <p className="fine-print">Partner link {affiliateConfig.primaryAffiliateLink} · Referral code {affiliateConfig.referralCode}</p>
         </div>
@@ -59,8 +59,8 @@ export function Home() {
       <section className="section">
         <SectionHeader
           eyebrow="Live now"
-          title="Shared Call Pulse Select practice desk"
-          text="No login needed. CALL only on volatility indices, after RSI turns up from 38. 5m and 15m still need RSI at or below 28 ($4). 10m stays $0.35. Classic Volatility 25 and 50 sit out. No PUT book, no FX or metals. Demo wallet and trades update as they happen. Not an 80% win-rate claim."
+          title="Shared Chart Select practice desk"
+          text="No login needed. CALL Pulse on selected volatility charts after RSI turns up from 38. $0.35 default; $1 only on R_10 15m and 1HZ25V 10m from a 90-day replay. Drain markets sit out. No PUT book, no FX or metals. Demo wallet and trades update as they happen. Not an 80% win-rate claim."
         />
         <PublicLiveBoard />
       </section>

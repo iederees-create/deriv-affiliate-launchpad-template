@@ -23,8 +23,8 @@ import {
 } from '../lib/liveBoard';
 
 const SHARE_URL = 'https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab';
-const SHARE_TITLE = 'Watch Apex Call Pulse Select — a live Deriv practice desk';
-const SHARE_TEXT = 'CALL-only: RSI turns up from 38. M5/M15 still ≤28 ($4). 10m stays $0.35. Classic Vol 25/50 sit out. Demo funds only. Not an 80% win-rate claim.';
+const SHARE_TITLE = 'Watch Apex Chart Select — a live Deriv practice desk';
+const SHARE_TEXT = 'CALL-only Pulse on selected volatility charts. $0.35 default; $1 on R_10 15m and 1HZ25V 10m from a 90-day replay. Demo funds only. Not an 80% win-rate claim.';
 
 function money(value: number | null | undefined) {
   const n = Number(value);
@@ -113,7 +113,7 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
   const selectedFrames = rsiByMarket[selected] || strategy?.rsiByTimeframe || {};
   const openedHint = events.map((event) => parseOpenedEvent(event.message)).find(Boolean) || null;
   const bar = breakEvenPct(closed);
-  const high = strategy?.highStake ?? 4;
+  const high = strategy?.highStake ?? 1;
   const small = strategy?.smallStake ?? 0.35;
 
   const scanSummary = useMemo(() => {
@@ -141,7 +141,7 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
           <span className="status-pill">
             {live ? (board?.paused ? 'Short break · practice run still on' : 'Live practice run') : 'Waiting to start'}
           </span>
-          <h3>{strategy?.title || 'Apex Call Pulse Select'}</h3>
+          <h3>{strategy?.title || 'Apex Chart Select'}</h3>
           <p>
             One public demo watching <strong>{scanned.length} volatility markets</strong> on
             {' '}<strong>{timeframes.map((id) => TIMEFRAME_SHORT[id] || id).join(', ')}</strong> charts.
@@ -159,7 +159,7 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
         <article>
           <span>01</span>
           <h4>What you are looking at</h4>
-          <p>A shared Deriv demo testing Call Pulse Select. The wallet is practice money. Nothing here spends cash or places a trade on your account.</p>
+          <p>A shared Deriv demo testing Chart Select. The wallet is practice money. Nothing here spends cash or places a trade on your account.</p>
         </article>
         <article>
           <span>02</span>
@@ -184,13 +184,12 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
         <article>
           <h4>How size is chosen</h4>
           <p>
-            ${money(small)} on an ordinary pulse. ${money(high)} only when 5m or 15m RSI is still ≤{strategy?.rsiHighStake ?? 28}.
-            10m stays ${money(small)} even on a deep reading.
+            {strategy?.stakeMode || `${money(small)} default. ${money(high)} only on R_10 15m and 1HZ25V 10m from a 90-day replay. RSI ≤28 is not a size trigger.`}
           </p>
         </article>
         <article>
           <h4>What sits out</h4>
-          <p>Classic Volatility 25 and 50. Boom, Crash, Step, FX, metals, crypto and stock indices stay off this scan.</p>
+          <p>R_25, R_50, 1HZ15V, 1HZ30V, 1HZ50V, 1HZ150V, 1HZ250V. Boom, Crash, Step, FX, metals, crypto and stock indices stay off this scan.</p>
         </article>
       </div>
 

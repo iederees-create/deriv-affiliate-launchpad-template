@@ -42,8 +42,8 @@ const pageNarrations: Record<string, { title: string; description: string; secti
     description: "You are in the right place to learn the basics without pressure. Explore each topic at your own pace, understand the risks, and build confidence before opening or funding any account."
   },
   "/lab": {
-    title: "Welcome to the Call Pulse Select desk.",
-    description: "Anyone can watch this shared Deriv demo. It takes CALL-only mean-reversion on volatility indices, $0.35 ordinary and $4 on deeper 5m/15m RSI. Practice funds only. If you want your own demo, use the partner link and referral code on this page."
+    title: "Welcome to the Chart Select desk.",
+    description: "Anyone can watch this shared Deriv demo. It takes CALL Pulse on selected volatility charts, $0.35 default and $1 on two 90-day replay lanes. Practice funds only. If you want your own demo, use the partner link and referral code on this page."
   },
   "/tools": {
     title: "Welcome to your free trading tools.",
