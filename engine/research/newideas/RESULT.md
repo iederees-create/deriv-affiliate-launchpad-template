@@ -8,12 +8,12 @@ was tuned and nothing was changed after any stage. Research only, not financial 
 | N1 gold-asia-session (buy gold 00:00, close 07:00 UTC) | -0.024 | +0.022 | 503 | +0.038 | includes zero | +0.033 | no evidence of edge |
 | N2 fx-local-hours (six session legs, pooled) | +0.001 | +0.010 | 3,037 | -0.045 | n/a (negative) | -0.057 | no evidence of edge |
 
-R is measured against a 3 x ATR stop, so these are small numbers: +0.038 R on N1 is a few cents per ounce.
+R is measured against a 3 x ATR stop. The N1 out-of-sample interval is -0.022 to +0.099 R.
 
 - N1 failed four checks: the interval includes zero, in-sample was negative, a shift of the session by one or
   two hours gave a negative or zero result on in-sample plus validation, and it did not beat simply holding
-  gold for the rest of the day in every segment. Its out-of-sample gain is what any long gold position earned
-  in 2025.
+  gold for the rest of the day in every segment. Holding gold for the rest of the day was also positive
+  out-of-sample (+0.021 R), in a period when gold rose.
 - N2 was flat for eight years and negative out-of-sample (-0.04 R in 2025, -0.06 R in 2026). At 1% risk per
   trade its out-of-sample trades give a median 78% drawdown.
 - Older data (2009-2016, different feed, context only): the gold Asia-session effect was there (+0.023 R,
