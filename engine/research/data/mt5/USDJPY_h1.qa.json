@@ -1,0 +1,141 @@
+{
+ "source": "Deriv MT5 terminal export (DerivSVG-Server), H1",
+ "timezone": "server time = UTC, bars from 2017-01-01 only",
+ "duplicateInputRows": 0,
+ "inputRows": 100000,
+ "droppedBefore2017": 39101,
+ "bars": 60898,
+ "first": "2017-01-01T22:00:00Z",
+ "last": "2026-10-13T12:00:00Z",
+ "barsPerYear": {
+  "2017": 6222,
+  "2018": 6238,
+  "2019": 6215,
+  "2020": 6233,
+  "2021": 6240,
+  "2022": 6214,
+  "2023": 6215,
+  "2024": 6241,
+  "2025": 6216,
+  "2026": 4864
+ },
+ "badCandles": 0,
+ "flatCandles": 36,
+ "offHourStamps": 0,
+ "saturdayBars": 0,
+ "sundayBars": 1317,
+ "weekendGaps": 505,
+ "weekdayGapCount": 20,
+ "weekdayGapHoursHistogram": {
+  "2.0": 2,
+  "3.0": 2,
+  "5.0": 1,
+  "9.0": 1,
+  "23.0": 1,
+  "24.0": 3,
+  "25.0": 3,
+  "26.0": 1,
+  "27.0": 1,
+  "72.0": 2,
+  "73.0": 2,
+  "75.0": 1
+ },
+ "weekdayGapsOver4h": [
+  {
+   "after": "2017-12-25T09:00:00Z",
+   "next": "2017-12-25T18:00:00Z",
+   "hours": 9.0,
+   "weekday": "Mon"
+  },
+  {
+   "after": "2017-12-31T22:00:00Z",
+   "next": "2018-01-01T21:00:00Z",
+   "hours": 23.0,
+   "weekday": "Sun"
+  },
+  {
+   "after": "2018-12-24T22:00:00Z",
+   "next": "2018-12-26T00:00:00Z",
+   "hours": 26.0,
+   "weekday": "Mon"
+  },
+  {
+   "after": "2018-12-31T21:00:00Z",
+   "next": "2019-01-02T00:00:00Z",
+   "hours": 27.0,
+   "weekday": "Mon"
+  },
+  {
+   "after": "2019-12-24T22:00:00Z",
+   "next": "2019-12-25T22:00:00Z",
+   "hours": 24.0,
+   "weekday": "Tue"
+  },
+  {
+   "after": "2019-12-31T22:00:00Z",
+   "next": "2020-01-01T22:00:00Z",
+   "hours": 24.0,
+   "weekday": "Tue"
+  },
+  {
+   "after": "2020-06-24T06:00:00Z",
+   "next": "2020-06-24T11:00:00Z",
+   "hours": 5.0,
+   "weekday": "Wed"
+  },
+  {
+   "after": "2020-12-24T22:00:00Z",
+   "next": "2020-12-27T22:00:00Z",
+   "hours": 72.0,
+   "weekday": "Thu"
+  },
+  {
+   "after": "2020-12-31T22:00:00Z",
+   "next": "2021-01-03T22:00:00Z",
+   "hours": 72.0,
+   "weekday": "Thu"
+  },
+  {
+   "after": "2022-12-23T21:00:00Z",
+   "next": "2022-12-27T00:00:00Z",
+   "hours": 75.0,
+   "weekday": "Fri"
+  },
+  {
+   "after": "2023-12-22T21:00:00Z",
+   "next": "2023-12-25T22:00:00Z",
+   "hours": 73.0,
+   "weekday": "Fri"
+  },
+  {
+   "after": "2023-12-29T21:00:00Z",
+   "next": "2024-01-01T22:00:00Z",
+   "hours": 73.0,
+   "weekday": "Fri"
+  },
+  {
+   "after": "2024-12-24T21:00:00Z",
+   "next": "2024-12-25T22:00:00Z",
+   "hours": 25.0,
+   "weekday": "Tue"
+  },
+  {
+   "after": "2024-12-31T22:00:00Z",
+   "next": "2025-01-01T22:00:00Z",
+   "hours": 24.0,
+   "weekday": "Tue"
+  },
+  {
+   "after": "2025-12-24T21:00:00Z",
+   "next": "2025-12-25T22:00:00Z",
+   "hours": 25.0,
+   "weekday": "Wed"
+  },
+  {
+   "after": "2025-12-31T21:00:00Z",
+   "next": "2026-01-01T22:00:00Z",
+   "hours": 25.0,
+   "weekday": "Wed"
+  }
+ ]
+}

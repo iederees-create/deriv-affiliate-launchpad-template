@@ -11,10 +11,15 @@
   dukascopy : native monthly H1 BID and ASK candles, already UTC. Flat zero-volume placeholders that
               Dukascopy writes for closed-market hours are dropped. ASK - BID opens give an hourly spread sample.
 
+  mt5       : H1 bars exported from the Deriv MT5 terminal by mt5/ExportH1.mq5 (server time = UTC). Only bars
+              from 2017-01-01 are kept: before that the forex history is one hour off UTC for part of each
+              year (measured against histdata and Dukascopy, see DATA.md). The last exported bar is dropped
+              because it was still forming.
+
 Bars are built only from rows that exist. Hours with no data are left out, never filled. Every gap that is
 not a normal weekend is listed in the QA file so it can be checked against holidays.
 
-  python3 engine/research/build-h1.py [--sources histdata,dukascopy]
+  python3 engine/research/build-h1.py [--sources mt5,histdata,dukascopy]
 """
 from __future__ import annotations
 
@@ -41,6 +46,7 @@ DUKASCOPY_DIVISORS = {"XAUUSD": 1e3, "EURUSD": 1e5, "GBPUSD": 1e5, "USDJPY": 1e3
 DUKASCOPY_RECORD = struct.Struct(">5If")
 PRICE_DECIMALS = {"XAUUSD": 3, "EURUSD": 5, "GBPUSD": 5, "USDJPY": 3}
 MAX_LISTED_GAPS = 400
+MT5_TRUSTED_FROM = "2017.01.01"
 UTC = dt.timezone.utc
 
 
@@ -124,6 +130,22 @@ def dukascopy_h1(symbol: str, side: str):
     return rows, {"duplicateInputRows": duplicates, "inputRows": len(rows) + placeholders, "closedMarketPlaceholdersDropped": placeholders}
 
 
+def mt5_h1(symbol: str):
+    path = DATA_DIR / "mt5" / "raw" / f"{symbol}_H1.csv"
+    with path.open() as handle:
+        exported = list(csv.DictReader(handle))
+    rows = []
+    for record in exported[:-1]:  # the final bar was still forming at export time
+        if record["time"] < MT5_TRUSTED_FROM:
+            continue
+        moment = dt.datetime.strptime(record["time"], "%Y.%m.%d %H:%M").replace(tzinfo=UTC)
+        rows.append((int(moment.timestamp()), *(float(record[key]) for key in ("open", "high", "low", "close"))))
+    epochs = [row[0] for row in rows]
+    if epochs != sorted(set(epochs)):
+        raise ValueError(f"{path} has duplicate or out-of-order bars")
+    return rows, {"duplicateInputRows": 0, "inputRows": len(exported), "droppedBefore2017": len(exported) - 1 - len(rows)}
+
+
 def quality(rows) -> dict:
     epochs = [r[0] for r in rows]
     bad = sum(1 for _, o, h, l, c in rows if not (l > 0 and h >= max(o, c) and l <= min(o, c)))
@@ -183,11 +205,15 @@ def summarise(label: str, report: dict) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--sources", default="histdata,dukascopy")
+    parser.add_argument("--sources", default="mt5,histdata,dukascopy")
     args = parser.parse_args()
     sources = args.sources.split(",")
 
     for symbol in SYMBOLS:
+        if "mt5" in sources and (DATA_DIR / "mt5" / "raw" / f"{symbol}_H1.csv").is_file():
+            rows, extra = mt5_h1(symbol)
+            extra = {"source": "Deriv MT5 terminal export (DerivSVG-Server), H1", "timezone": "server time = UTC, bars from 2017-01-01 only", **extra}
+            summarise(f"mt5 {symbol}", write_outputs("mt5", symbol, symbol, rows, extra))
         if "histdata" in sources and (DATA_DIR / "histdata" / "raw" / symbol).is_dir():
             rows, extra = histdata_h1(symbol)
             extra = {"source": "histdata.com 1-minute BID bars", "timezone": "converted to UTC by a measured rule: New York local time before 2019, UTC-5/UTC-4 on European summer-time dates from 2019", **extra}

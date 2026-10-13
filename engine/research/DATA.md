@@ -15,7 +15,15 @@ It described a Dukascopy dataset that was never saved.
 | histdata.com 1-minute BID bars | works; all years downloaded, 0 failures |
 | Dukascopy `datafeed.dukascopy.com` H1 BID/ASK | mostly 503 "No server is available" or timeouts on 2026-10-13; a few months per 10 minutes get through |
 | Stooq, Yahoo Finance | blocked (Grok's attempt; not re-tested) |
-| MT5 terminal history on this computer | present under `~/.mt5` (Deriv gold 2016-2026, FX 2023-2026) but not exported: that needs the terminal to be started, which logs in to the account |
+| MT5 terminal history on this computer | exported with the owner's permission by a read-only script (Dataset D) |
+
+## Which dataset to use
+
+1. **Dataset D (Deriv MT5, 2017-01 to 2026-10)** is the primary series: it is the feed that would be traded,
+   it is complete, and it carries a per-bar spread reading.
+2. **Dataset B (histdata, 2006 to 2016 for forex, 2009-03 to 2016 for gold)** extends the history backwards
+   with an independent feed. Do not use its 2023 data.
+3. Dataset A (Deriv API, last 12 months) is what the hourly paper engine sees. Use it to compare with the paper record.
 
 ## Dataset A: Deriv public API (the feed the paper engine uses)
 
@@ -74,6 +82,36 @@ on the Friday-close pattern, which holds in 92-100% of weeks in every year excep
 - Gold has no bars on Good Fridays; that is the market being closed.
 - This is a BID-only feed from a different liquidity source than Deriv MT5. It carries no spread information.
 
+## Dataset D: Deriv MT5 terminal export
+
+- `mt5/ExportH1.mq5` (no trading functions) was run once on 2026-10-13 by starting the terminal with a start-up
+  config; the terminal closed itself afterwards. The terminal log shows no trade lines for that session.
+- Server `DerivSVG-Server`, server time minus GMT = 0 seconds. Raw files: `data/mt5/raw/{SYMBOL}_H1.csv`
+  (`time,open,high,low,close,tick_volume,spread_points`) and `info.txt` (digits, point, current spread, swaps).
+- Raw range: gold 2016-12-15 to 2026-10-13 (57,435 bars; the server has nothing earlier). Forex 2010-09 to
+  2026-10-13, cut at the terminal's 100,000-bar limit.
+- Built by `build-h1.py` into `data/mt5/{SYMBOL}_h1.csv`, **from 2017-01-01 only**, last (forming) bar dropped:
+
+| Symbol | H1 bars | First (UTC) | Last (UTC) |
+| --- | --- | --- | --- |
+| XAUUSD | 57,409 | 2017-01-19T07:00Z | 2026-10-13T12:00Z |
+| EURUSD | 60,910 | 2017-01-02T06:00Z | 2026-10-13T12:00Z |
+| GBPUSD | 60,909 | 2017-01-01T22:00Z | 2026-10-13T12:00Z |
+| USDJPY | 60,898 | 2017-01-01T22:00Z | 2026-10-13T12:00Z |
+
+- Why 2017: matched month by month against histdata, the MT5 forex history is on UTC from 2017-01 (EURUSD) or
+  2016-11 (GBPUSD, USDJPY) onward, but before that it is one hour off for about half of every year. January
+  2014 EURUSD against Dukascopy UTC candles confirms the MT5 history is the one that is off (MT5 bars are
+  stamped one hour early; histdata matches at 0h). Gold matches at 0h for every month from 2017-01.
+- Quality from 2017: no duplicates, no impossible candles, no Saturday bars. About 6,215-6,255 forex bars in
+  every full year including 2023. Forex weekday gaps over 4 hours outside Christmas/New Year: 2020-06-24
+  (5 hours) and 2023-12-22 (a long Christmas weekend). Gold gaps are the daily one-hour break, Good Fridays
+  and US-holiday early closes; gold has no bars from 2016-12-16 to 2017-01-19.
+- Against Dataset A over the last year: median close difference 0.15-0.27 bp. The two are not identical bar
+  for bar, and MT5 has Sunday-evening bars (reopen about 21:00-22:00 UTC) while the API feed restarts Monday
+  00:00 UTC. So the paper engine and an MT5 chart do not see exactly the same candles.
+- Against Dataset B from 2017: median close difference 0.1-0.3 bp for forex, 0.5-1.1 bp for gold.
+
 ## Dataset C: Dukascopy native H1 BID/ASK (incomplete)
 
 - Download: `duka-download.py` -> `data/dukascopy/raw/{SYMBOL}/{SIDE}_{YYYY}_{MM}.bi5`, state per month in `raw/status.json`.
@@ -90,4 +128,5 @@ node    engine/research/fetch-h1.mjs            # Dataset A
 python3 engine/research/histdata-download.py    # Dataset B raw (resumable)
 python3 engine/research/duka-download.py        # Dataset C raw (resumable; exits 1 while months are failing)
 python3 engine/research/build-h1.py             # raw caches -> H1 CSV + QA JSON
+# Dataset D raw: compile engine/research/mt5/ExportH1.mq5 in MetaEditor, run it in MT5, copy MQL5/Files/research/* to data/mt5/raw/
 ```

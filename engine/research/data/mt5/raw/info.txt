@@ -1,0 +1,71 @@
+terminal	server	DerivSVG-Server
+terminal	account_type	ACCOUNT_TRADE_MODE_REAL
+terminal	connected	0
+terminal	server_minus_gmt_seconds	0
+terminal	server_time	2026.10.13 13:30:56
+terminal	max_bars_in_chart	100000
+XAUUSD	bars	57435
+XAUUSD	first	2016.12.15 02:00
+XAUUSD	last	2026.10.13 13:00
+XAUUSD	server_first_date	2016.12.15 00:00
+XAUUSD	digits	2
+XAUUSD	point	0.01
+XAUUSD	spread_points_now	16
+XAUUSD	spread_floating	1
+XAUUSD	contract_size	100.00
+XAUUSD	swap_mode	SYMBOL_SWAP_MODE_POINTS
+XAUUSD	swap_long	-45.0000
+XAUUSD	swap_short	20.0000
+XAUUSD	swap_triple_day	WEDNESDAY
+XAUUSD	volume_min	0.01
+XAUUSD	stops_level_points	20
+XAUUSD	path	Metals\XAUUSD
+EURUSD	bars	100000
+EURUSD	first	2010.09.10 06:00
+EURUSD	last	2026.10.13 13:00
+EURUSD	server_first_date	1971.01.03 00:00
+EURUSD	digits	5
+EURUSD	point	0.00001
+EURUSD	spread_points_now	11
+EURUSD	spread_floating	1
+EURUSD	contract_size	100000.00
+EURUSD	swap_mode	SYMBOL_SWAP_MODE_POINTS
+EURUSD	swap_long	-11.4200
+EURUSD	swap_short	2.6600
+EURUSD	swap_triple_day	WEDNESDAY
+EURUSD	volume_min	0.01
+EURUSD	stops_level_points	20
+EURUSD	path	Forex Major\EURUSD
+GBPUSD	bars	100000
+GBPUSD	first	2010.09.08 22:00
+GBPUSD	last	2026.10.13 13:00
+GBPUSD	server_first_date	1993.05.11 00:00
+GBPUSD	digits	5
+GBPUSD	point	0.00001
+GBPUSD	spread_points_now	12
+GBPUSD	spread_floating	1
+GBPUSD	contract_size	100000.00
+GBPUSD	swap_mode	SYMBOL_SWAP_MODE_POINTS
+GBPUSD	swap_long	-5.4300
+GBPUSD	swap_short	-4.1300
+GBPUSD	swap_triple_day	WEDNESDAY
+GBPUSD	volume_min	0.01
+GBPUSD	stops_level_points	20
+GBPUSD	path	Forex Major\GBPUSD
+USDJPY	bars	100000
+USDJPY	first	2010.09.08 18:00
+USDJPY	last	2026.10.13 13:00
+USDJPY	server_first_date	1971.01.03 00:00
+USDJPY	digits	3
+USDJPY	point	0.001
+USDJPY	spread_points_now	15
+USDJPY	spread_floating	1
+USDJPY	contract_size	100000.00
+USDJPY	swap_mode	SYMBOL_SWAP_MODE_POINTS
+USDJPY	swap_long	9.9500
+USDJPY	swap_short	-21.9800
+USDJPY	swap_triple_day	WEDNESDAY
+USDJPY	volume_min	0.01
+USDJPY	stops_level_points	20
+USDJPY	path	Forex Major\USDJPY
+terminal	symbols_exported	4
