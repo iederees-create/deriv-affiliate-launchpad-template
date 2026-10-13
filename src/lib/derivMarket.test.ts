@@ -3,7 +3,7 @@ import { derivSocketUrl, parseHistoryMessage, parseTickMessage } from "./derivMa
 
 describe("deriv market client", () => {
   it("builds the documented websocket url", () => {
-    expect(derivSocketUrl(1089)).toBe("wss://ws.derivws.com/websockets/v3?app_id=1089");
+    expect(derivSocketUrl(1089)).toBe("wss://api.derivws.com/trading/v1/options/ws/public?app_id=1089");
   });
 
   it("rejects a missing app id", () => {
