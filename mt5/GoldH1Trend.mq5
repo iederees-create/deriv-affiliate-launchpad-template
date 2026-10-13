@@ -12,11 +12,17 @@
 //| stop on every order, a daily closed-loss limit, a spread filter  |
 //| and a margin check. No martingale, no grid, no averaging down.   |
 //|                                                                  |
-//| NOT COMPILED OR BACKTESTED BY ITS AUTHOR YET. Compile it in      |
-//| MetaEditor, read the compiler output, then test on demo first.   |
+//| v1.10: ATR is Wilder's smoothed ATR, the same formula as the      |
+//| paper engine (v1.00 used MT5's simple-average iATR). An entry the |
+//| broker refuses because the market is closed is retried when       |
+//| trading reopens instead of being dropped.                         |
+//|                                                                  |
+//| Compiles with 0 errors. Strategy Tester runs are recorded in      |
+//| engine/research/LIVE-AND-MT5.md. Tests found no evidence of an    |
+//| edge for this strategy. Demo first.                               |
 //+------------------------------------------------------------------+
 #property copyright "Iederees Francis"
-#property version   "1.00"
+#property version   "1.10"
 #property description "Gold H1 trend-following EA. Fixed % risk, hard stops, no martingale."
 
 #include <Trade/Trade.mqh>
@@ -44,8 +50,19 @@ CTrade   g_trade;
 int      g_hFast  = INVALID_HANDLE;
 int      g_hSlow  = INVALID_HANDLE;
 int      g_hTrend = INVALID_HANDLE;
-int      g_hATR   = INVALID_HANDLE;
 datetime g_lastBar = 0;
+
+// An entry waiting to be sent. Set when a signal fires; cleared when the order is placed, fails for a reason
+// other than a closed market, or grows too old.
+int      g_pendingSignal   = 0;
+double   g_pendingStopDist = 0.0;
+datetime g_pendingBar      = 0;
+datetime g_lastAttempt     = 0;
+
+#define ATR_HISTORY_BARS      300   // closed candles fed to the Wilder ATR so its starting value has faded
+#define PENDING_MAX_BARS      3     // give up on a waiting entry after this many H1 candles
+#define RETRY_PAUSE_SECONDS   60    // minimum gap between attempts to send a waiting entry
+#define H1_SECONDS            3600
 
 //+------------------------------------------------------------------+
 int OnInit()
@@ -79,9 +96,7 @@ int OnInit()
    g_hFast  = iMA(_Symbol, PERIOD_H1, InpFastEMA,  0, MODE_EMA, PRICE_CLOSE);
    g_hSlow  = iMA(_Symbol, PERIOD_H1, InpSlowEMA,  0, MODE_EMA, PRICE_CLOSE);
    g_hTrend = iMA(_Symbol, PERIOD_H1, InpTrendEMA, 0, MODE_EMA, PRICE_CLOSE);
-   g_hATR   = iATR(_Symbol, PERIOD_H1, InpATRPeriod);
-   if(g_hFast == INVALID_HANDLE || g_hSlow == INVALID_HANDLE ||
-      g_hTrend == INVALID_HANDLE || g_hATR == INVALID_HANDLE)
+   if(g_hFast == INVALID_HANDLE || g_hSlow == INVALID_HANDLE || g_hTrend == INVALID_HANDLE)
      {
       Print("Failed to create indicator handles. Error: ", GetLastError());
       return(INIT_FAILED);
@@ -98,33 +113,135 @@ void OnDeinit(const int reason)
    if(g_hFast  != INVALID_HANDLE) IndicatorRelease(g_hFast);
    if(g_hSlow  != INVALID_HANDLE) IndicatorRelease(g_hSlow);
    if(g_hTrend != INVALID_HANDLE) IndicatorRelease(g_hTrend);
-   if(g_hATR   != INVALID_HANDLE) IndicatorRelease(g_hATR);
   }
 
 //+------------------------------------------------------------------+
 void OnTick()
   {
-   // Evaluate once per new H1 candle, on closed-candle data only.
    datetime barTime = iTime(_Symbol, PERIOD_H1, 0);
-   if(barTime == 0 || barTime == g_lastBar)
+   if(barTime == 0)
       return;
-   g_lastBar = barTime;
 
+   // Evaluate once per new H1 candle, on closed-candle data only.
+   if(barTime != g_lastBar)
+     {
+      g_lastBar = barTime;
+      CheckForSignal(barTime);
+     }
+
+   if(g_pendingSignal != 0)
+      TryPendingEntry(barTime);
+  }
+
+//+------------------------------------------------------------------+
+//| Queue an entry if the candle that just closed gave a signal.      |
+//+------------------------------------------------------------------+
+void CheckForSignal(const datetime barTime)
+  {
    if(HasOpenPosition())
+     {
+      g_pendingSignal = 0;
       return;
+     }
    if(DailyLossLimitHit())
      {
       Print("Daily closed-loss limit reached. No new trades today.");
+      g_pendingSignal = 0;
       return;
      }
-   if(SpreadTooWide())
-      return;
 
    int signal = GetSignal();
    if(signal == 0)
       return;
 
-   OpenTrade(signal);
+   double atr = WilderATR();
+   if(atr <= 0.0)
+      return;
+
+   g_pendingSignal   = signal;
+   g_pendingStopDist = atr * InpATRStopMult;
+   g_pendingBar      = barTime;
+   g_lastAttempt     = 0;
+  }
+
+//+------------------------------------------------------------------+
+//| Send the waiting entry once trading is open and the spread is     |
+//| acceptable. Keeps waiting through a closed market.                |
+//+------------------------------------------------------------------+
+void TryPendingEntry(const datetime barTime)
+  {
+   if(HasOpenPosition())
+     {
+      g_pendingSignal = 0;
+      return;
+     }
+   if(barTime - g_pendingBar >= PENDING_MAX_BARS * H1_SECONDS)
+     {
+      Print("Waiting entry is too old. Dropped.");
+      g_pendingSignal = 0;
+      return;
+     }
+   datetime now = TimeCurrent();
+   if(g_lastAttempt != 0 && now - g_lastAttempt < RETRY_PAUSE_SECONDS)
+      return;
+   if(!TradeSessionOpen(now))
+      return;
+   g_lastAttempt = now;
+   if(SpreadTooWide())
+      return;
+
+   uint retcode = OpenTrade(g_pendingSignal, g_pendingStopDist);
+   if(retcode == TRADE_RETCODE_MARKET_CLOSED)
+      return; // keep waiting; the session table and the server disagreed
+   g_pendingSignal = 0;
+  }
+
+//+------------------------------------------------------------------+
+//| True if the broker's trade sessions for this symbol include now.  |
+//+------------------------------------------------------------------+
+bool TradeSessionOpen(const datetime now)
+  {
+   MqlDateTime dt;
+   TimeToStruct(now, dt);
+   uint secondsToday = (uint)(dt.hour * 3600 + dt.min * 60 + dt.sec);
+   datetime from, to;
+   for(uint i = 0; SymbolInfoSessionTrade(_Symbol, (ENUM_DAY_OF_WEEK)dt.day_of_week, i, from, to); i++)
+     {
+      if(secondsToday >= (uint)from && secondsToday < (uint)to)
+         return(true);
+     }
+   return(false);
+  }
+
+//+------------------------------------------------------------------+
+//| Wilder's ATR on closed H1 candles: the first value is the plain   |
+//| average of the first InpATRPeriod true ranges, then each new true |
+//| range is blended in with weight 1/period. Returns 0 if history is |
+//| too short.                                                        |
+//+------------------------------------------------------------------+
+double WilderATR()
+  {
+   MqlRates rates[];
+   int wanted = ATR_HISTORY_BARS + InpATRPeriod + 1;
+   int count  = CopyRates(_Symbol, PERIOD_H1, 1, wanted, rates); // index 0 is the oldest candle
+   if(count < 2 * InpATRPeriod + 1)
+      return(0.0);
+
+   double sum = 0.0;
+   for(int i = 1; i <= InpATRPeriod; i++)
+      sum += TrueRange(rates, i);
+   double atr = sum / InpATRPeriod;
+   for(int i = InpATRPeriod + 1; i < count; i++)
+      atr = (atr * (InpATRPeriod - 1) + TrueRange(rates, i)) / InpATRPeriod;
+   return(atr);
+  }
+
+//+------------------------------------------------------------------+
+double TrueRange(const MqlRates &rates[], const int i)
+  {
+   double prevClose = rates[i - 1].close;
+   return(MathMax(rates[i].high - rates[i].low,
+                  MathMax(MathAbs(rates[i].high - prevClose), MathAbs(rates[i].low - prevClose))));
   }
 
 //+------------------------------------------------------------------+
@@ -154,26 +271,22 @@ int GetSignal()
   }
 
 //+------------------------------------------------------------------+
-void OpenTrade(const int signal)
+//| Returns the trade server's return code, or 0 if no order was sent.|
+//+------------------------------------------------------------------+
+uint OpenTrade(const int signal, const double stopDist)
   {
-   double atr[];
-   ArraySetAsSeries(atr, true);
-   if(CopyBuffer(g_hATR, 0, 1, 1, atr) != 1 || atr[0] <= 0.0)
-      return;
-
-   double stopDist = atr[0] * InpATRStopMult;
-   double tpDist   = stopDist * InpRewardRisk;
+   double tpDist = stopDist * InpRewardRisk;
 
    long stopsLevel = SymbolInfoInteger(_Symbol, SYMBOL_TRADE_STOPS_LEVEL);
    if(stopDist / _Point < (double)stopsLevel)
      {
       Print("Stop distance is inside the broker's minimum stop level. Skipping.");
-      return;
+      return(0);
      }
 
    MqlTick tick;
    if(!SymbolInfoTick(_Symbol, tick))
-      return;
+      return(0);
 
    int    digits = (int)SymbolInfoInteger(_Symbol, SYMBOL_DIGITS);
    bool   isBuy  = (signal > 0);
@@ -183,14 +296,15 @@ void OpenTrade(const int signal)
 
    double lots = LotsForRisk(stopDist);
    if(lots <= 0.0)
-      return;
+      return(0);
    if(!MarginOK(isBuy ? ORDER_TYPE_BUY : ORDER_TYPE_SELL, lots, price))
-      return;
+      return(0);
 
    bool ok = isBuy ? g_trade.Buy(lots,  _Symbol, 0.0, sl, tp, InpComment)
                    : g_trade.Sell(lots, _Symbol, 0.0, sl, tp, InpComment);
    if(!ok)
       PrintFormat("Order failed. Retcode %u (%s)", g_trade.ResultRetcode(), g_trade.ResultRetcodeDescription());
+   return(g_trade.ResultRetcode());
   }
 
 //+------------------------------------------------------------------+

@@ -74,12 +74,38 @@ One year and 63 trades is far too few to say the EA is worse than the engine; th
 
 Across the matched trades the EA averaged 0.046 R per trade less than the engine.
 
-### Proposed (not applied)
+## EA v1.10: both defects fixed and re-tested
 
-- EA: if an order is refused because the market is closed, try again on the next tick or next candle; and
-  decide which ATR is "the rule" so the EA and the engine use the same one. Both are changes to a published
-  strategy and need a version bump.
-- Site wording: the EA's header still says "NOT COMPILED OR BACKTESTED BY ITS AUTHOR YET". It has now been
-  compiled and run once in the tester, and that run lost 6.95%. Also, the reversion strategy's page note says
-  "the target is usually closer than the stop"; in the backtests its average win is about 2 R, so the target
-  is usually further away than the stop.
+Changed in `mt5/GoldH1Trend.mq5` (version 1.00 to 1.10). The engine and its frozen rules were not touched.
+
+- **ATR:** the EA now computes Wilder's smoothed ATR on the last 300 closed candles, the same formula as the
+  engine, instead of MT5's simple-average `iATR`.
+- **Closed market:** a signal is now queued. The EA sends it only when the symbol's trade session is open and
+  the spread is inside the limit, retries at most once a minute, and drops it after three H1 candles.
+- Compiled: 0 errors, 0 warnings. Same Strategy Tester settings and period as above. Journal:
+  `mt5/tester/GoldH1Trend-v1.10-2025-10-13_2026-10-12.journal.log`.
+
+| | Trades | Win rate | Expectancy R | Total R | Profit factor | Max drawdown R | Final balance |
+|---|---|---|---|---|---|---|---|
+| EA v1.00 | 63 | 30.2% | -0.106 | -6.71 | 0.85 | 8.7 | 93,048.95 |
+| EA v1.10 | 69 | 33.3% | -0.036 | -2.45 | 0.95 | 9.0 | 96,890.43 |
+| Engine, same period | 68 | 33.8% | 0.003 | 0.21 | 1.00 | 7.6 | n/a |
+
+- No order was refused for a closed market (three were in v1.00).
+- 66 EA trades match an engine trade in the same hour and direction, and all 66 end the same way. The mean
+  difference on matched trades fell from -0.046 R to -0.003 R.
+- The two signals that fired at the daily break (2025-12-10 and 2026-01-08, 21:00) were entered at 23:01 when
+  trading reopened. The engine books both at the 21:00 candle open, a price nobody could trade at, and counts
+  both as winners; in the tester one won and one lost. This is a small optimism in the engine at the daily
+  break (an addition to AUDIT.md: entries are not checked against trading hours).
+- The third EA-only trade was still open when the test ended.
+- Worst stop fill was 19.08 beyond the stop on a gap; the median was 0.06.
+
+The fixed EA still lost 3.1% over the year. The fixes make it faithful to the tested rules; they do not give
+the rules an edge.
+
+### Still proposed (not applied)
+
+- Site wording: the reversion strategy's page note says "the target is usually closer than the stop"; in the
+  backtests its average win is about 2 R, so the target is usually further away than the stop.
+- Engine: skip or delay entries on candles where the symbol cannot be traded (needs a rule decision).
