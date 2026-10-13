@@ -19,6 +19,9 @@ export function Strategies() {
           text="A strategy is only called tested once it has a public record that includes the losses. Until then the page says so."
         />
         <p className="fine-print">{affiliateConfig.disclosureText}</p>
+        <p>
+          <Link className="text-link" to="/strategies/backtest-results">See how the paper strategies did in backtests on unseen data</Link>
+        </p>
         <div className="card-grid">
           {strategies.map((item) => (
             <article className="card" key={item.slug}>

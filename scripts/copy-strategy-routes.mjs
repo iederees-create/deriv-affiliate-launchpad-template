@@ -12,7 +12,7 @@ if (!fs.existsSync(index)) {
   process.exit(1);
 }
 
-const targets = ["strategies", ...strategies.map((item) => path.join("strategies", item.slug))];
+const targets = ["strategies", path.join("strategies", "backtest-results"), ...strategies.map((item) => path.join("strategies", item.slug))];
 for (const target of targets) {
   const dir = path.join(dist, target);
   fs.mkdirSync(dir, { recursive: true });
