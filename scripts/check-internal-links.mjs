@@ -26,6 +26,7 @@ const requiredPaths = [
   "/desk",
   "/kit",
   "/strategies",
+  "/strategies/backtest-results",
   "/blog",
   "/blog/demo-first-14-day-plan",
   "/risk-disclosure",

@@ -1,0 +1,524 @@
+{
+ "stage": "VAL",
+ "ideas": [
+  {
+   "key": "N1 gold-asia-session",
+   "segments": {
+    "IS": {
+     "trades": 1381,
+     "wins": 650,
+     "losses": 731,
+     "winRate": 47.1,
+     "avgWinR": 0.359,
+     "avgLossR": -0.365,
+     "expectancyR": -0.024,
+     "profitFactor": 0.88,
+     "totalR": -33.17,
+     "maxDrawdownR": 37.87,
+     "longestLosingStreak": 10,
+     "ciLow": -0.05232440260680677,
+     "ciHigh": 0.004386676321506161,
+     "stopShare": 0.04561911658218682
+    },
+    "VAL": {
+     "trades": 503,
+     "wins": 247,
+     "losses": 256,
+     "winRate": 49.1,
+     "avgWinR": 0.383,
+     "avgLossR": -0.326,
+     "expectancyR": 0.022,
+     "profitFactor": 1.13,
+     "totalR": 11.03,
+     "maxDrawdownR": 9.87,
+     "longestLosingStreak": 7,
+     "ciLow": -0.022371769383697823,
+     "ciHigh": 0.06681709741550698,
+     "stopShare": 0.03578528827037773
+    }
+   },
+   "twice": {
+    "IS": -0.042,
+    "VAL": 0.009
+   },
+   "legs": {},
+   "years": {
+    "2017": {
+     "trades": 132,
+     "expectancyR": -0.008,
+     "totalR": -1.01
+    },
+    "2018": {
+     "trades": 255,
+     "expectancyR": -0.091,
+     "totalR": -23.2
+    },
+    "2019": {
+     "trades": 257,
+     "expectancyR": -0.011,
+     "totalR": -2.91
+    },
+    "2020": {
+     "trades": 257,
+     "expectancyR": -0.014,
+     "totalR": -3.57
+    },
+    "2021": {
+     "trades": 256,
+     "expectancyR": 0.029,
+     "totalR": 7.51
+    },
+    "2022": {
+     "trades": 257,
+     "expectancyR": -0.031,
+     "totalR": -7.88
+    },
+    "2023": {
+     "trades": 256,
+     "expectancyR": 0.001,
+     "totalR": 0.14
+    },
+    "2024": {
+     "trades": 214,
+     "expectancyR": 0.041,
+     "totalR": 8.77
+    }
+   }
+  },
+  {
+   "key": "N2 fx-local-hours",
+   "segments": {
+    "IS": {
+     "trades": 9106,
+     "wins": 4347,
+     "losses": 4759,
+     "winRate": 47.7,
+     "avgWinR": 0.576,
+     "avgLossR": -0.524,
+     "expectancyR": 0.001,
+     "profitFactor": 1,
+     "totalR": 9.91,
+     "maxDrawdownR": 127.13,
+     "longestLosingStreak": 18,
+     "ciLow": -0.015582363276960219,
+     "ciHigh": 0.018134746321107034,
+     "stopShare": 0.1595651218976499
+    },
+    "VAL": {
+     "trades": 3047,
+     "wins": 1475,
+     "losses": 1572,
+     "winRate": 48.4,
+     "avgWinR": 0.591,
+     "avgLossR": -0.535,
+     "expectancyR": 0.01,
+     "profitFactor": 1.04,
+     "totalR": 30.07,
+     "maxDrawdownR": 37.82,
+     "longestLosingStreak": 14,
+     "ciLow": -0.020255989497866785,
+     "ciHigh": 0.040535280603872625,
+     "stopShare": 0.1598293403347555
+    }
+   },
+   "twice": {
+    "IS": -0.01,
+    "VAL": 0
+   },
+   "legs": {
+    "eurusd-europe-short": {
+     "IS": {
+      "trades": 1521,
+      "wins": 740,
+      "losses": 781,
+      "winRate": 48.7,
+      "avgWinR": 0.814,
+      "avgLossR": -0.746,
+      "expectancyR": 0.013,
+      "profitFactor": 1.04,
+      "totalR": 20.44,
+      "maxDrawdownR": 34.28,
+      "longestLosingStreak": 10,
+      "ciLow": -0.04100525969756739,
+      "ciHigh": 0.06721893491124235,
+      "stopShare": 0.3096646942800789
+     },
+     "VAL": {
+      "trades": 508,
+      "wins": 238,
+      "losses": 270,
+      "winRate": 46.9,
+      "avgWinR": 0.93,
+      "avgLossR": -0.762,
+      "expectancyR": 0.031,
+      "profitFactor": 1.08,
+      "totalR": 15.63,
+      "maxDrawdownR": 11.11,
+      "longestLosingStreak": 7,
+      "ciLow": -0.0673681102362205,
+      "ciHigh": 0.13263385826771643,
+      "stopShare": 0.32677165354330706
+     }
+    },
+    "eurusd-us-long": {
+     "IS": {
+      "trades": 1521,
+      "wins": 723,
+      "losses": 798,
+      "winRate": 47.5,
+      "avgWinR": 0.403,
+      "avgLossR": -0.377,
+      "expectancyR": -0.006,
+      "profitFactor": 0.97,
+      "totalR": -9.66,
+      "maxDrawdownR": 34.36,
+      "longestLosingStreak": 10,
+      "ciLow": -0.03576923076923078,
+      "ciHigh": 0.02348915187376723,
+      "stopShare": 0.05982905982905983
+     },
+     "VAL": {
+      "trades": 508,
+      "wins": 260,
+      "losses": 248,
+      "winRate": 51.2,
+      "avgWinR": 0.386,
+      "avgLossR": -0.372,
+      "expectancyR": 0.016,
+      "profitFactor": 1.09,
+      "totalR": 8.03,
+      "maxDrawdownR": 5.25,
+      "longestLosingStreak": 8,
+      "ciLow": -0.03523425196850391,
+      "ciHigh": 0.06670472440944877,
+      "stopShare": 0.04921259842519685
+     }
+    },
+    "gbpusd-europe-short": {
+     "IS": {
+      "trades": 1522,
+      "wins": 718,
+      "losses": 804,
+      "winRate": 47.2,
+      "avgWinR": 0.879,
+      "avgLossR": -0.741,
+      "expectancyR": 0.024,
+      "profitFactor": 1.06,
+      "totalR": 35.9,
+      "maxDrawdownR": 23.92,
+      "longestLosingStreak": 10,
+      "ciLow": -0.03160446780551906,
+      "ciHigh": 0.08021090670170816,
+      "stopShare": 0.3147174770039422
+     },
+     "VAL": {
+      "trades": 508,
+      "wins": 235,
+      "losses": 273,
+      "winRate": 46.3,
+      "avgWinR": 0.831,
+      "avgLossR": -0.708,
+      "expectancyR": 0.004,
+      "profitFactor": 1.01,
+      "totalR": 2.21,
+      "maxDrawdownR": 19.37,
+      "longestLosingStreak": 12,
+      "ciLow": -0.08771653543307091,
+      "ciHigh": 0.09637007874015752,
+      "stopShare": 0.3051181102362205
+     }
+    },
+    "gbpusd-us-long": {
+     "IS": {
+      "trades": 1521,
+      "wins": 753,
+      "losses": 768,
+      "winRate": 49.5,
+      "avgWinR": 0.352,
+      "avgLossR": -0.353,
+      "expectancyR": -0.004,
+      "profitFactor": 0.98,
+      "totalR": -6.51,
+      "maxDrawdownR": 29.12,
+      "longestLosingStreak": 8,
+      "ciLow": -0.030792899408284065,
+      "ciHigh": 0.02267389875082178,
+      "stopShare": 0.042077580539119
+     },
+     "VAL": {
+      "trades": 508,
+      "wins": 279,
+      "losses": 229,
+      "winRate": 54.9,
+      "avgWinR": 0.372,
+      "avgLossR": -0.382,
+      "expectancyR": 0.032,
+      "profitFactor": 1.19,
+      "totalR": 16.28,
+      "maxDrawdownR": 6.47,
+      "longestLosingStreak": 5,
+      "ciLow": -0.016614173228346452,
+      "ciHigh": 0.08007874015748023,
+      "stopShare": 0.03937007874015748
+     }
+    },
+    "usdjpy-tokyo-long": {
+     "IS": {
+      "trades": 1500,
+      "wins": 716,
+      "losses": 784,
+      "winRate": 47.7,
+      "avgWinR": 0.406,
+      "avgLossR": -0.41,
+      "expectancyR": -0.02,
+      "profitFactor": 0.9,
+      "totalR": -30.75,
+      "maxDrawdownR": 57.66,
+      "longestLosingStreak": 15,
+      "ciLow": -0.05199266666666661,
+      "ciHigh": 0.010581333333333368,
+      "stopShare": 0.08666666666666667
+     },
+     "VAL": {
+      "trades": 507,
+      "wins": 256,
+      "losses": 251,
+      "winRate": 50.5,
+      "avgWinR": 0.459,
+      "avgLossR": -0.425,
+      "expectancyR": 0.021,
+      "profitFactor": 1.1,
+      "totalR": 10.84,
+      "maxDrawdownR": 10.15,
+      "longestLosingStreak": 7,
+      "ciLow": -0.03694082840236684,
+      "ciHigh": 0.08202958579881656,
+      "stopShare": 0.09270216962524655
+     }
+    },
+    "usdjpy-us-short": {
+     "IS": {
+      "trades": 1521,
+      "wins": 697,
+      "losses": 824,
+      "winRate": 45.8,
+      "avgWinR": 0.606,
+      "avgLossR": -0.512,
+      "expectancyR": 0,
+      "profitFactor": 1,
+      "totalR": 0.49,
+      "maxDrawdownR": 31.88,
+      "longestLosingStreak": 13,
+      "ciLow": -0.041877712031558205,
+      "ciHigh": 0.044301775147929066,
+      "stopShare": 0.1433267587113741
+     },
+     "VAL": {
+      "trades": 508,
+      "wins": 207,
+      "losses": 301,
+      "winRate": 40.7,
+      "avgWinR": 0.64,
+      "avgLossR": -0.517,
+      "expectancyR": -0.045,
+      "profitFactor": 0.85,
+      "totalR": -22.92,
+      "maxDrawdownR": 27.98,
+      "longestLosingStreak": 9,
+      "ciLow": -0.11967913385826763,
+      "ciHigh": 0.0344153543307087,
+      "stopShare": 0.14566929133858267
+     }
+    }
+   },
+   "years": {
+    "2017": {
+     "trades": 1532,
+     "expectancyR": 0.022,
+     "totalR": 34.22
+    },
+    "2018": {
+     "trades": 1552,
+     "expectancyR": -0.012,
+     "totalR": -17.87
+    },
+    "2019": {
+     "trades": 1553,
+     "expectancyR": 0,
+     "totalR": 0.05
+    },
+    "2020": {
+     "trades": 1559,
+     "expectancyR": -0.045,
+     "totalR": -69.64
+    },
+    "2021": {
+     "trades": 1560,
+     "expectancyR": 0.013,
+     "totalR": 20.48
+    },
+    "2022": {
+     "trades": 1553,
+     "expectancyR": 0.014,
+     "totalR": 21.27
+    },
+    "2023": {
+     "trades": 1554,
+     "expectancyR": 0.036,
+     "totalR": 56.58
+    },
+    "2024": {
+     "trades": 1290,
+     "expectancyR": -0.004,
+     "totalR": -5.11
+    }
+   }
+  },
+  {
+   "key": "gold rest-of-day (comparison)",
+   "segments": {
+    "IS": {
+     "trades": 1501,
+     "wins": 686,
+     "losses": 815,
+     "winRate": 45.7,
+     "avgWinR": 0.877,
+     "avgLossR": -0.752,
+     "expectancyR": -0.007,
+     "profitFactor": 0.98,
+     "totalR": -11.18,
+     "maxDrawdownR": 57.7,
+     "longestLosingStreak": 11,
+     "ciLow": -0.066385742838108,
+     "ciHigh": 0.05044903397734837,
+     "stopShare": 0.34443704197201863
+    },
+    "VAL": {
+     "trades": 505,
+     "wins": 228,
+     "losses": 277,
+     "winRate": 45.1,
+     "avgWinR": 0.974,
+     "avgLossR": -0.757,
+     "expectancyR": 0.025,
+     "profitFactor": 1.06,
+     "totalR": 12.53,
+     "maxDrawdownR": 29.47,
+     "longestLosingStreak": 10,
+     "ciLow": -0.08045742574257429,
+     "ciHigh": 0.13630495049504945,
+     "stopShare": 0.3564356435643564
+    }
+   },
+   "twice": {
+    "IS": -0.029,
+    "VAL": 0.011
+   },
+   "legs": {},
+   "years": {
+    "2017": {
+     "trades": 244,
+     "expectancyR": 0.011,
+     "totalR": 2.57
+    },
+    "2018": {
+     "trades": 258,
+     "expectancyR": -0.056,
+     "totalR": -14.53
+    },
+    "2019": {
+     "trades": 258,
+     "expectancyR": 0.067,
+     "totalR": 17.37
+    },
+    "2020": {
+     "trades": 259,
+     "expectancyR": 0.083,
+     "totalR": 21.57
+    },
+    "2021": {
+     "trades": 258,
+     "expectancyR": -0.131,
+     "totalR": -33.69
+    },
+    "2022": {
+     "trades": 258,
+     "expectancyR": -0.015,
+     "totalR": -3.91
+    },
+    "2023": {
+     "trades": 257,
+     "expectancyR": -0.023,
+     "totalR": -5.89
+    },
+    "2024": {
+     "trades": 214,
+     "expectancyR": 0.083,
+     "totalR": 17.85
+    }
+   }
+  }
+ ],
+ "shift": {
+  "N1 gold-asia-session": [
+   -0.009,
+   -0.012,
+   0.001
+  ],
+  "N2 fx-local-hours": [
+   0.01,
+   0.003,
+   -0.005
+  ]
+ },
+ "older": {
+  "N1 gold-asia-session": {
+   "trades": 2010,
+   "wins": 1077,
+   "losses": 933,
+   "winRate": 53.6,
+   "avgWinR": 0.35,
+   "avgLossR": -0.355,
+   "expectancyR": 0.023,
+   "profitFactor": 1.14,
+   "totalR": 45.6,
+   "maxDrawdownR": 16.23,
+   "longestLosingStreak": 9,
+   "ciLow": -0.0009393034825870735,
+   "ciHigh": 0.04637810945273638,
+   "stopShare": 0.050746268656716415
+  },
+  "N2 fx-local-hours": {
+   "trades": 17083,
+   "wins": 8293,
+   "losses": 8790,
+   "winRate": 48.5,
+   "avgWinR": 0.562,
+   "avgLossR": -0.512,
+   "expectancyR": 0.009,
+   "profitFactor": 1.04,
+   "totalR": 161.25,
+   "maxDrawdownR": 89.5,
+   "longestLosingStreak": 21,
+   "ciLow": -0.003161564128080584,
+   "ciHigh": 0.02199367792542323,
+   "stopShare": 0.15518351577591757
+  },
+  "gold rest-of-day (comparison)": {
+   "trades": 2014,
+   "wins": 840,
+   "losses": 1174,
+   "winRate": 41.7,
+   "avgWinR": 0.899,
+   "avgLossR": -0.783,
+   "expectancyR": -0.082,
+   "profitFactor": 0.82,
+   "totalR": -164.75,
+   "maxDrawdownR": 164.75,
+   "longestLosingStreak": 19,
+   "ciLow": -0.1322393247269113,
+   "ciHigh": -0.031025819265144066,
+   "stopShare": 0.39473684210526316
+  }
+ }
+}

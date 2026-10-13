@@ -1,0 +1,80 @@
+{
+  "testedOn": "2026-10-13",
+  "data": "Deriv MT5 hourly candles, January 2017 to October 2026",
+  "unseenWindow": "29 October 2024 to 13 October 2026",
+  "costs": "Spread measured on a Deriv MT5 account, plus overnight swap where a trade is held overnight",
+  "rows": [
+    {
+      "slug": "gold-h1-trend",
+      "name": "Gold H1 Trend",
+      "kind": "Paper strategy",
+      "trades": 120,
+      "expectancyR": 0.006,
+      "interval": "-0.25 to +0.26",
+      "profitFactor": 1.01,
+      "verdict": "inconclusive",
+      "note": "Zero within noise. Over all ten years it ended where it started, after deep drawdowns."
+    },
+    {
+      "slug": "gold-london-breakout",
+      "name": "Gold London Breakout",
+      "kind": "Paper strategy",
+      "trades": 189,
+      "expectancyR": 0.04,
+      "interval": "-0.09 to +0.17",
+      "profitFactor": 1.11,
+      "verdict": "inconclusive",
+      "note": "Zero within noise. Flat or slightly negative in the seven years before the unseen window."
+    },
+    {
+      "slug": "forex-breakout-retest",
+      "name": "Forex Breakout and Retest",
+      "kind": "Paper strategy",
+      "trades": 1033,
+      "expectancyR": -0.11,
+      "interval": "-0.20 to -0.03",
+      "profitFactor": 0.85,
+      "verdict": "no evidence of edge",
+      "note": "Lost on all three pairs, in almost every year, and at every nearby setting tried."
+    },
+    {
+      "slug": "forex-rsi-bollinger-reversion",
+      "name": "Forex RSI/Bollinger Reversion",
+      "kind": "Paper strategy",
+      "trades": 167,
+      "expectancyR": -0.297,
+      "interval": "-0.50 to -0.09",
+      "profitFactor": 0.62,
+      "verdict": "no evidence of edge",
+      "note": "Win rate was below the one-in-three it needs to break even."
+    },
+    {
+      "slug": null,
+      "name": "Gold Asia session (research idea)",
+      "kind": "New idea, not a published strategy",
+      "trades": 503,
+      "expectancyR": 0.038,
+      "interval": "-0.02 to +0.10",
+      "profitFactor": 1.17,
+      "verdict": "no evidence of edge",
+      "note": "Positive only while gold itself was rising, negative in the earlier years, and gone when the session is moved by an hour."
+    },
+    {
+      "slug": null,
+      "name": "Forex local-hours (research idea)",
+      "kind": "New idea, not a published strategy",
+      "trades": 3037,
+      "expectancyR": -0.045,
+      "interval": "-0.07 to -0.02",
+      "profitFactor": 0.84,
+      "verdict": "no evidence of edge",
+      "note": "Flat for eight years, then negative in 2025 and 2026."
+    }
+  ],
+  "alsoTested": [
+    {
+      "name": "Monthly trend following (research idea)",
+      "summary": "Long whatever rose over the past 12 months, short whatever fell, across gold and three currency pairs, rebalanced monthly. Published in 2012, so it was judged on 2013 to 2026 only. It made about +0.14% a month before costs and +0.01% a month after Deriv's overnight swap, with a 26% drawdown, and lost money in the first half of that period. Verdict: no evidence of edge."
+    }
+  ]
+}
