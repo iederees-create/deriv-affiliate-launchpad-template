@@ -11,6 +11,7 @@ const navItems = [
   ["/tools", "Tools"],
   ["/desk", "Desk"],
   ["/lab", "Live test"],
+  ["/strategies", "Strategies"],
   ["/kit", "Free kit"],
   ["/learn", "Learn"],
   ["/blog", "Blog"],
@@ -151,6 +152,7 @@ export function Layout() {
           <Link to="/risk-disclosure">Risk disclosure</Link>
           <Link to="/contact">Contact</Link>
           <Link to="/lab">Live practice test</Link>
+          <Link to="/strategies">Strategies</Link>
           <a href={partnerCampaignUrl("footer", "site")} target="_blank" rel="noreferrer">Open Deriv demo</a>
           <span>Referral code {affiliateConfig.referralCode}</span>
           {filledSocialLinks().map((item) => (

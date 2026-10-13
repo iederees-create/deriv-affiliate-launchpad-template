@@ -19,6 +19,8 @@ import { Tools } from "./pages/Tools";
 import { Desk } from "./pages/Desk";
 import { Lab } from "./pages/Lab";
 import { Kit } from "./pages/Kit";
+import { Strategies } from "./pages/Strategies";
+import { StrategyPage } from "./pages/Strategy";
 import { Auth } from "./pages/Auth";
 import { MembersDashboard } from "./pages/MembersDashboard";
 import { RequireAuth } from "./components/RequireAuth";
@@ -43,6 +45,8 @@ const router = createBrowserRouter(
         { path: "desk", element: <Desk /> },
         { path: "lab", element: <Lab /> },
         { path: "kit", element: <Kit /> },
+        { path: "strategies", element: <Strategies /> },
+        { path: "strategies/:slug", element: <StrategyPage /> },
         { path: "blog", element: <Blog /> },
         { path: "blog/winning-strategies-deriv-synthetic-indices", element: <LongArticle /> },
         { path: "blog/deriv-vs-traditional-forex-brokers", element: <ArticleDerivVsForex /> },

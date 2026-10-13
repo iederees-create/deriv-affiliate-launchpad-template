@@ -1,0 +1,65 @@
+[
+  {
+    "slug": "chart-select-call-pulse",
+    "name": "Chart Select (CALL Pulse)",
+    "status": "demo-forward-test",
+    "market": "Selected Deriv volatility indices, rise/fall",
+    "timeframe": "Chart timeframe chosen per market",
+    "summary": "A CALL-only rise/fall pulse that runs on a shared Deriv demo account. You can watch every trade, win or lose, on the live board.",
+    "rule": [
+      "Scan selected volatility charts for RSI(14) at or below 38.",
+      "Enter a CALL only when RSI turns up and the candle closes green.",
+      "Default demo stake is $0.35; $1 only on 1HZ25V 10m.",
+      "Markets that drained the demo book are sat out. No PUT book."
+    ],
+    "risk": {
+      "perTrade": "Fixed small demo stake on every trade.",
+      "stop": "Each rise/fall contract has a fixed stake, so the most one trade can lose is that stake.",
+      "dailyStop": "Practice funds only. No real money is traded on this desk."
+    },
+    "breakEvenNote": "A winning rise/fall contract pays less than the stake it risks, so the break-even win rate sits around 53-56%. Win rate alone says nothing until you compare it with that bar.",
+    "record": {
+      "kind": "lab-board",
+      "label": "Live demo board",
+      "url": "/lab",
+      "minimumTrades": 100
+    },
+    "limits": [
+      "The timeframes per market were picked from a 90-day replay. That is in-sample, so the live board is the real test, not the replay.",
+      "Demo fills are not real fills. Live results can differ.",
+      "A positive demo run does not mean you will make money with real funds."
+    ],
+    "updated": "2026-10-13"
+  },
+  {
+    "slug": "gold-h1-trend",
+    "name": "Gold H1 Trend",
+    "status": "building",
+    "market": "XAUUSD (gold) on Deriv MT5",
+    "timeframe": "H1",
+    "summary": "A simple trend-following Expert Advisor for gold on the H1 chart. It is being built and tested in the open. There are no results yet.",
+    "rule": [
+      "Trade only in the direction of the 200 EMA.",
+      "Enter when the 20 EMA crosses the 50 EMA on a closed H1 candle.",
+      "Stop-loss at 2x ATR(14). Take-profit at 2x the stop distance.",
+      "One position at a time. No martingale, no grid, no averaging down."
+    ],
+    "risk": {
+      "perTrade": "1% of account balance risked per trade, sized from the stop distance.",
+      "stop": "Every trade has a hard stop-loss placed with the order.",
+      "dailyStop": "No new trades once the day's closed losses reach 3% of balance."
+    },
+    "breakEvenNote": "With a 2:1 reward-to-risk target the strategy needs to win roughly one trade in three to break even before costs. Spread and slippage on gold push that bar higher.",
+    "record": {
+      "kind": "none",
+      "label": "No record yet",
+      "minimumTrades": 100
+    },
+    "limits": [
+      "No backtest or forward-test results have been published. Nothing on this page is a performance claim.",
+      "Trend-following strategies lose often in ranging markets. Expect long losing streaks.",
+      "Backtests on gold are sensitive to spread, slippage and data quality."
+    ],
+    "updated": "2026-10-13"
+  }
+]

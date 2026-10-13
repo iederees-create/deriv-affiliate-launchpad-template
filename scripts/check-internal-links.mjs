@@ -25,11 +25,15 @@ const requiredPaths = [
   "/tools",
   "/desk",
   "/kit",
+  "/strategies",
   "/blog",
   "/blog/demo-first-14-day-plan",
   "/risk-disclosure",
   "/contact"
 ];
+
+const strategies = JSON.parse(fs.readFileSync(path.resolve("src/data/strategies.json"), "utf8"));
+for (const item of strategies) requiredPaths.push(`/strategies/${item.slug}`);
 
 const missing = requiredPaths.filter((route) => {
   const url = `https://iederees-create.github.io/deriv-affiliate-launchpad-template${route === "/" ? "/" : route}`;
