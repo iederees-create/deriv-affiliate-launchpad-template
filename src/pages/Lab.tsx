@@ -1,6 +1,8 @@
 import { Seo } from '../components/Seo';
 import { DisclosureBand } from '../components/Section';
 import { PublicLiveBoard } from '../components/PublicLiveBoard';
+import { StrategyGrid } from '../components/StrategyGrid';
+import { SectionHeader } from '../components/Section';
 import { ShareBar } from '../components/ShareBar';
 import { CTA } from '../components/CTA';
 import { affiliateConfig } from '../config/affiliateConfig';
@@ -32,7 +34,18 @@ export function Lab() {
             text="CALL Pulse on selected volatility charts. $0.35 default; $1 on 1HZ25V 10m. Demo funds only. Not an 80% win-rate claim."
           />
         </div>
-        <PublicLiveBoard />
+        <div style={{ margin: '28px 0 8px' }}>
+          <SectionHeader
+            eyebrow="All live tests"
+            title="Every strategy, tested in public"
+            text="Chart Select runs on a real Deriv demo account. The other four are paper tests: simulated on live Deriv candle prices every hour with assumed spreads, and every trade is published, losses included. Fewer than 100 trades is too few to judge."
+          />
+          <StrategyGrid />
+        </div>
+        <div id="live-board" style={{ marginTop: 32 }}>
+          <p className="eyebrow">Chart Select live board</p>
+          <PublicLiveBoard />
+        </div>
       </section>
       <DisclosureBand />
     </>

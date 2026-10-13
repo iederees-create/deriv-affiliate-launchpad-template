@@ -37,7 +37,18 @@ describe("strategy pages", () => {
     for (const item of strategies) {
       if (item.status === "building") expect(item.record.kind).toBe("none");
       else expect(item.record.kind, item.slug).not.toBe("none");
+      if (item.status === "paper-test") expect(item.record.kind, item.slug).toBe("paper");
       if (item.record.kind === "external") expect(item.record.url, item.slug).toMatch(/^https:\/\//);
+    }
+  });
+
+  it("asks for at least 100 trades before a record can be judged", () => {
+    for (const item of strategies) expect(item.record.minimumTrades, item.slug).toBeGreaterThanOrEqual(100);
+  });
+
+  it("never describes a simulated record as live or real-money", () => {
+    for (const item of strategies.filter((s) => s.record.kind === "paper")) {
+      expect(allText(item.limits).join(" "), item.slug).toMatch(/simulated|paper/i);
     }
   });
 

@@ -34,10 +34,10 @@
   {
     "slug": "gold-h1-trend",
     "name": "Gold H1 Trend",
-    "status": "building",
-    "market": "XAUUSD (gold) on Deriv MT5",
+    "status": "paper-test",
+    "market": "XAUUSD (gold)",
     "timeframe": "H1",
-    "summary": "A simple trend-following Expert Advisor for gold on the H1 chart. It is being built and tested in the open. There are no results yet.",
+    "summary": "A simple trend-following strategy for gold on the H1 chart. It is paper-tested live on this site: every simulated trade, win or lose, is published.",
     "rule": [
       "Trade only in the direction of the 200 EMA.",
       "Enter when the 20 EMA crosses the 50 EMA on a closed H1 candle.",
@@ -45,20 +45,118 @@
       "One position at a time. No martingale, no grid, no averaging down."
     ],
     "risk": {
-      "perTrade": "1% of account balance risked per trade, sized from the stop distance.",
-      "stop": "Every trade has a hard stop-loss placed with the order.",
-      "dailyStop": "No new trades once the day's closed losses reach 3% of balance."
+      "perTrade": "Results are measured in R (1R is the distance from entry to stop). The MT5 version risks 1% of balance per trade.",
+      "stop": "Every trade has a hard stop-loss at 2x ATR.",
+      "dailyStop": "The MT5 version stops after a 3% daily closed loss. The paper test does not model a daily limit."
     },
     "breakEvenNote": "With a 2:1 reward-to-risk target the strategy needs to win roughly one trade in three to break even before costs. Spread and slippage on gold push that bar higher.",
     "record": {
-      "kind": "none",
-      "label": "No record yet",
+      "kind": "paper",
+      "label": "Live paper record",
       "minimumTrades": 100
     },
     "limits": [
-      "No backtest or forward-test results have been published. Nothing on this page is a performance claim.",
+      "The record is simulated on candle data with an assumed spread. No MT5 or live-account record exists yet.",
       "Trend-following strategies lose often in ranging markets. Expect long losing streaks.",
-      "Backtests on gold are sensitive to spread, slippage and data quality."
+      "Results only mean something after at least 100 trades, which can take many months at this strategy's pace."
+    ],
+    "updated": "2026-10-13"
+  },
+  {
+    "slug": "gold-london-breakout",
+    "name": "Gold London Breakout",
+    "status": "paper-test",
+    "market": "XAUUSD (gold)",
+    "timeframe": "H1",
+    "summary": "Trades the break of the Asian-session range on gold during the London morning. Paper-tested live, with every simulated trade published.",
+    "rule": [
+      "Mark the high and low of the 00:00-07:00 UTC session.",
+      "Skip the day if that range is narrower than 0.5x or wider than 3x ATR(14).",
+      "Enter when an H1 candle opening between 07:00 and 10:00 UTC closes beyond the range: long above the high, short below the low.",
+      "Stop-loss at the other side of the range. Take-profit at 1.5x the stop distance.",
+      "Close any open trade at 20:00 UTC. One trade per day."
+    ],
+    "risk": {
+      "perTrade": "Results are measured in R (1R is the distance from entry to stop). Size any real trade so that 1R is a small fixed share of your balance.",
+      "stop": "Every trade has a hard stop-loss at the opposite side of the range.",
+      "dailyStop": "One trade per day at most. No other daily limit is modelled."
+    },
+    "breakEvenNote": "With a 1.5:1 reward-to-risk target the strategy needs to win about 40% of trades to break even, before spread.",
+    "record": {
+      "kind": "paper",
+      "label": "Live paper record",
+      "minimumTrades": 100
+    },
+    "limits": [
+      "False breakouts are common at the London open.",
+      "Gold spreads widen around news, so the assumed spread may be too low at the moments this strategy trades.",
+      "Fixed UTC session times ignore daylight-saving shifts in when London opens.",
+      "The record is simulated on candle data. Real fills will differ."
+    ],
+    "updated": "2026-10-13"
+  },
+  {
+    "slug": "forex-breakout-retest",
+    "name": "Forex Breakout and Retest",
+    "status": "paper-test",
+    "market": "EUR/USD, GBP/USD, USD/JPY",
+    "timeframe": "H1",
+    "summary": "Waits for a 20-candle breakout, then only enters if price retests the broken level and holds. Paper-tested live on three major pairs.",
+    "rule": [
+      "A breakout is an H1 candle that closes beyond the high (or low) of the previous 20 candles.",
+      "Within the next 5 candles, enter only if price pulls back to within 0.25 ATR of the broken level and closes back on the breakout side.",
+      "Trade only in the direction of the 100 EMA.",
+      "Stop-loss 0.5 ATR beyond the retest extreme or the level. Take-profit at 2x the stop distance.",
+      "Each breakout is traded at most once."
+    ],
+    "risk": {
+      "perTrade": "Results are measured in R (1R is the distance from entry to stop). Size any real trade so that 1R is a small fixed share of your balance.",
+      "stop": "Every trade has a hard stop-loss.",
+      "dailyStop": "No daily limit is modelled in the paper test. Add one if you ever trade it for real."
+    },
+    "breakEvenNote": "With a 2:1 reward-to-risk target the strategy needs to win roughly one trade in three to break even, and spread costs raise that bar.",
+    "record": {
+      "kind": "paper",
+      "label": "Live paper record",
+      "minimumTrades": 100
+    },
+    "limits": [
+      "Breakout strategies lose often in choppy, ranging markets.",
+      "The three pairs often move together, so their trades are not fully independent.",
+      "The record is simulated on candle data with assumed spreads. Real fills, slippage and requotes will be worse.",
+      "The rules were fixed before any results and not tuned on data. Any change starts a new record."
+    ],
+    "updated": "2026-10-13"
+  },
+  {
+    "slug": "forex-rsi-bollinger-reversion",
+    "name": "Forex RSI/Bollinger Reversion",
+    "status": "paper-test",
+    "market": "EUR/USD, GBP/USD, USD/JPY",
+    "timeframe": "H1",
+    "summary": "Fades stretched moves back toward the average, only when the market is not trending. Paper-tested live on three major pairs.",
+    "rule": [
+      "Only trade when ADX(14) is below 20, meaning the market is not trending.",
+      "Buy when an H1 candle closes below the lower Bollinger Band (20, 2) with RSI(14) under 30. Sell on the mirror image above the upper band with RSI above 70.",
+      "The target is the middle band (the 20-candle average) at the time of the signal.",
+      "Stop-loss at 1.5x ATR(14) from entry."
+    ],
+    "risk": {
+      "perTrade": "Results are measured in R (1R is the distance from entry to stop). Size any real trade so that 1R is a small fixed share of your balance.",
+      "stop": "Every trade has a hard stop-loss at 1.5x ATR.",
+      "dailyStop": "No daily limit is modelled in the paper test. Add one if you ever trade it for real."
+    },
+    "breakEvenNote": "The target is usually closer than the stop, so this style needs a high win rate to break even. One full-size loss can erase several small wins.",
+    "record": {
+      "kind": "paper",
+      "label": "Live paper record",
+      "minimumTrades": 100
+    },
+    "limits": [
+      "Mean reversion works until a trend starts. A strong breakout can produce a run of full-size losses.",
+      "It trades rarely, so a meaningful sample can take a year or more.",
+      "The record is simulated on candle data with assumed spreads. Real fills will differ.",
+      "The rules were fixed before any results and not tuned on data. Any change starts a new record."
     ],
     "updated": "2026-10-13"
   }

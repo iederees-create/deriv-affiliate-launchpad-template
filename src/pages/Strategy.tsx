@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { CTA } from "../components/CTA";
+import { PaperRecord } from "../components/PaperRecord";
 import { PublicLiveBoard } from "../components/PublicLiveBoard";
 import { DisclosureBand, SectionHeader } from "../components/Section";
 import { Seo } from "../components/Seo";
@@ -11,6 +12,9 @@ const BASE = "/deriv-affiliate-launchpad-template";
 
 function RecordPanel({ strategy }: { strategy: Strategy }) {
   const { record } = strategy;
+  if (record.kind === "paper") {
+    return <PaperRecord slug={strategy.slug} minimumTrades={record.minimumTrades} />;
+  }
   if (record.kind === "lab-board") {
     return (
       <>

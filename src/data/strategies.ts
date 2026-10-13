@@ -1,7 +1,7 @@
 import raw from "./strategies.json";
 
-export type StrategyStatus = "building" | "demo-forward-test" | "live-small" | "retired";
-export type RecordKind = "none" | "lab-board" | "external";
+export type StrategyStatus = "building" | "paper-test" | "demo-forward-test" | "live-small" | "retired";
+export type RecordKind = "none" | "paper" | "lab-board" | "external";
 
 export type Strategy = {
   slug: string;
@@ -22,6 +22,7 @@ export const strategies = raw as Strategy[];
 
 export const statusLabels: Record<StrategyStatus, string> = {
   building: "In development - no results yet",
+  "paper-test": "Paper-testing live (simulated)",
   "demo-forward-test": "Live on demo",
   "live-small": "Live, small size",
   retired: "Retired"

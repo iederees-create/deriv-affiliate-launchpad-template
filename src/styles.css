@@ -1024,3 +1024,28 @@ button.cta {
   font-size: 0.78rem;
   margin-bottom: 2px;
 }
+
+/* Paper-test records */
+.paper-table-wrap {
+  overflow-x: auto;
+  margin-top: 12px;
+}
+
+.paper-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.paper-table th,
+.paper-table td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.paper-table th {
+  color: var(--muted);
+  font-weight: 600;
+}
