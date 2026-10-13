@@ -64,7 +64,7 @@ export const articles: Article[] = [
         heading: "The board is a scan, not a salary screenshot",
         body: [
           "The live desk on this site is a shared Deriv demo. Anyone can watch it without a login. The wallet is practice money. The trades are rise/fall options. Ordinary tickets are $0.35. A $2 ticket only opens when RSI is still at or below 28 after the bounce. If someone quotes those numbers as income, they misread the page.",
-          "The current rule is called Apex Chart Select. CALL Pulse on selected volatility charts: RSI(14) at or below 38 that turns up with a green close. $0.35 default. $1 only on R_10 15m and 1HZ25V 10m — those two lanes cleared 54% in both halves of a 90-day candle replay. RSI ≤28 is not a $4 trigger; 2,171 deep pulses paid 49.7% on that replay and the live $4 book went 1/3. Expiry matches the signalling chart. Sit-out: R_25, R_50, 1HZ15V, 1HZ30V, 1HZ50V, 1HZ150V, 1HZ250V. PUT is off. Practice funds only. This is not an 80% win-rate claim.",
+          "The current rule is called Apex Chart Select. CALL Pulse on selected volatility charts: RSI(14) at or below 38 that turns up with a green close. $0.35 default. $1 only on 1HZ25V 10m. R_10 15m stays $0.35 after the live $1 book went 2/6. RSI ≤28 is not a $4 trigger. Prefers the signalling-chart expiry; 15m only if Deriv rejects 5m/10m. Sit-out: R_25, R_50, 1HZ15V, 1HZ30V, 1HZ50V, 1HZ150V, 1HZ250V. PUT is off. Practice funds only. This is not an 80% win-rate claim.",
           "Watch it here: https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab . Partner link and referral code sit on that page because this is an independent partner desk, not an official Deriv website, not a signal room, and not financial advice."
         ]
       },

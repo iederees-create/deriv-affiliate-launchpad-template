@@ -24,7 +24,7 @@ import {
 
 const SHARE_URL = 'https://iederees-create.github.io/deriv-affiliate-launchpad-template/lab';
 const SHARE_TITLE = 'Watch Apex Chart Select — a live Deriv practice desk';
-const SHARE_TEXT = 'CALL-only Pulse on selected volatility charts. $0.35 default; $1 on R_10 15m and 1HZ25V 10m from a 90-day replay. Demo funds only. Not an 80% win-rate claim.';
+const SHARE_TEXT = 'CALL-only Pulse on selected volatility charts. $0.35 default; $1 on 1HZ25V 10m. Demo funds only. Not an 80% win-rate claim.';
 
 function money(value: number | null | undefined) {
   const n = Number(value);
@@ -184,7 +184,7 @@ export function LiveResults({ board }: { board: LabBoard | null }) {
         <article>
           <h4>How size is chosen</h4>
           <p>
-            {strategy?.stakeMode || `${money(small)} default. ${money(high)} only on R_10 15m and 1HZ25V 10m from a 90-day replay. RSI ≤28 is not a size trigger.`}
+            {strategy?.stakeMode || `${money(small)} default. ${money(high)} only on 1HZ25V 10m. RSI ≤28 is not a size trigger.`}
           </p>
         </article>
         <article>

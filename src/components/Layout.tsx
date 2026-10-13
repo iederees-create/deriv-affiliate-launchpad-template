@@ -43,7 +43,7 @@ const pageNarrations: Record<string, { title: string; description: string; secti
   },
   "/lab": {
     title: "Welcome to the Chart Select desk.",
-    description: "Anyone can watch this shared Deriv demo. It takes CALL Pulse on selected volatility charts, $0.35 default and $1 on two 90-day replay lanes. Practice funds only. If you want your own demo, use the partner link and referral code on this page."
+    description: "Anyone can watch this shared Deriv demo. It takes CALL Pulse on selected volatility charts, $0.35 default and $1 on 1HZ25V 10m. Practice funds only. If you want your own demo, use the partner link and referral code on this page."
   },
   "/tools": {
     title: "Welcome to your free trading tools.",

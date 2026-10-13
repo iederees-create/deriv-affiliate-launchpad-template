@@ -19,7 +19,7 @@ export function Home() {
     <>
       <Seo
         title={`${affiliateConfig.brandName} | Watch a live Deriv demo`}
-        description="Watch Apex Chart Select: a shared Deriv demo that takes CALL recoveries on selected volatility charts. $0.35 default; $1 on R_10 15m and 1HZ25V 10m. Practice funds only. Not an 80% win-rate claim."
+        description="Watch Apex Chart Select: a shared Deriv demo that takes CALL recoveries on selected volatility charts. $0.35 default; $1 on 1HZ25V 10m. Practice funds only. Not an 80% win-rate claim."
         image="https://iederees-create.github.io/deriv-affiliate-launchpad-template/og-rsi-eclipse.svg"
         imageAlt="Apex Chart Select live practice desk"
         jsonLd={{
@@ -60,7 +60,7 @@ export function Home() {
         <SectionHeader
           eyebrow="Live now"
           title="Shared Chart Select practice desk"
-          text="No login needed. CALL Pulse on selected volatility charts after RSI turns up from 38. $0.35 default; $1 only on R_10 15m and 1HZ25V 10m from a 90-day replay. Drain markets sit out. No PUT book, no FX or metals. Demo wallet and trades update as they happen. Not an 80% win-rate claim."
+          text="No login needed. CALL Pulse on selected volatility charts after RSI turns up from 38. $0.35 default; $1 only on 1HZ25V 10m. Drain markets sit out. No PUT book, no FX or metals. Demo wallet and trades update as they happen. Not an 80% win-rate claim."
         />
         <PublicLiveBoard />
       </section>
