@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "slug": "forex-rsi-bollinger-reversion",
+  "name": "Forex RSI/Bollinger Reversion",
+  "rulesVersion": 1,
+  "startedAt": "2026-10-13T17:18:40.914Z",
+  "lastRunAt": "2026-10-13T17:18:40.914Z",
+  "assumptions": {
+    "spread": {
+      "frxEURUSD": 0.00012,
+      "frxGBPUSD": 0.00016,
+      "frxUSDJPY": 0.016
+    },
+    "maxCostR": 0.25,
+    "entry": "Open of the candle after the signal candle",
+    "note": "Simulated on candle data. Spread costs are assumed, not measured. Real fills will differ."
+  },
+  "symbols": {
+    "frxEURUSD": {
+      "lastProcessed": 1791907200,
+      "pending": null,
+      "open": null,
+      "ctx": {}
+    },
+    "frxGBPUSD": {
+      "lastProcessed": 1791907200,
+      "pending": null,
+      "open": null,
+      "ctx": {}
+    },
+    "frxUSDJPY": {
+      "lastProcessed": 1791907200,
+      "pending": null,
+      "open": null,
+      "ctx": {}
+    }
+  },
+  "skipped": {
+    "cost": 0,
+    "invalid": 0
+  },
+  "trades": [],
+  "stats": {
+    "trades": 0,
+    "wins": 0,
+    "losses": 0,
+    "winRate": null,
+    "avgWinR": null,
+    "avgLossR": null,
+    "expectancyR": null,
+    "profitFactor": null,
+    "totalR": 0,
+    "maxDrawdownR": 0,
+    "longestLosingStreak": 0
+  }
+}

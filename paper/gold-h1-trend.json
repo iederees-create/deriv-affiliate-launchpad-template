@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "slug": "gold-h1-trend",
+  "name": "Gold H1 Trend",
+  "rulesVersion": 1,
+  "startedAt": "2026-10-13T17:18:40.914Z",
+  "lastRunAt": "2026-10-13T17:18:40.914Z",
+  "assumptions": {
+    "spread": {
+      "frxXAUUSD": 0.35
+    },
+    "maxCostR": 0.25,
+    "entry": "Open of the candle after the signal candle",
+    "note": "Simulated on candle data. Spread costs are assumed, not measured. Real fills will differ."
+  },
+  "symbols": {
+    "frxXAUUSD": {
+      "lastProcessed": 1791907200,
+      "pending": null,
+      "open": null,
+      "ctx": {}
+    }
+  },
+  "skipped": {
+    "cost": 0,
+    "invalid": 0
+  },
+  "trades": [],
+  "stats": {
+    "trades": 0,
+    "wins": 0,
+    "losses": 0,
+    "winRate": null,
+    "avgWinR": null,
+    "avgLossR": null,
+    "expectancyR": null,
+    "profitFactor": null,
+    "totalR": 0,
+    "maxDrawdownR": 0,
+    "longestLosingStreak": 0
+  }
+}
