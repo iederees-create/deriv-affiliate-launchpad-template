@@ -70,5 +70,11 @@
       "verdict": "no evidence of edge",
       "note": "Flat for eight years, then negative in 2025 and 2026."
     }
+  ],
+  "alsoTested": [
+    {
+      "name": "Monthly trend following (research idea)",
+      "summary": "Long whatever rose over the past 12 months, short whatever fell, across gold and three currency pairs, rebalanced monthly. Published in 2012, so it was judged on 2013 to 2026 only. It made about +0.14% a month before costs and +0.01% a month after Deriv's overnight swap, with a 26% drawdown, and lost money in the first half of that period. Verdict: no evidence of edge."
+    }
   ]
 }

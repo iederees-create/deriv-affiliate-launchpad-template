@@ -20,7 +20,13 @@ R is measured against a 3 x ATR stop. The N1 out-of-sample interval is -0.022 to
   while rest-of-day gold lost 0.082 R). It has not been there since 2017. A published effect that has stopped
   working is a common outcome.
 
-Tested so far in this repo: six strategy ideas, none with an edge. Each further idea tested on the same data
+A third idea, N3 time-series momentum (12-month trend following, monthly, four instruments), was tested
+afterwards under its own protocol (`tsmom/PROTOCOL.md`, result in `tsmom/RESULT.md`). Judged on 2013-2026, the
+years after the rule was published: +0.14% a month before costs, +0.01% after spread and swap, interval
+-0.36% to +0.38%, negative in the first half. No evidence of edge; Deriv's overnight swap takes what little
+there is.
+
+Tested so far in this repo: seven strategy ideas, none with an edge. Each further idea tested on the same data
 raises the chance that one passes by luck, so any future round should use a stricter bar and a forward paper
 record before anything else.
 

@@ -20,6 +20,7 @@ export type BacktestResultsData = {
   unseenWindow: string;
   costs: string;
   rows: BacktestRow[];
+  alsoTested: { name: string; summary: string }[];
 };
 
 export const backtestResults = data as BacktestResultsData;

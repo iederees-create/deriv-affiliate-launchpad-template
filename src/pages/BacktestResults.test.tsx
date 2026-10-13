@@ -17,7 +17,8 @@ describe("backtest results page", () => {
       expect(html).toContain(row.name);
       expect(["no evidence of edge", "inconclusive"]).toContain(row.verdict);
     }
-    expect(html).toContain("None of the six");
+    expect(html).toContain("None showed an edge");
+    for (const item of backtestResults.alsoTested) expect(html).toContain(item.name);
     expect(html).not.toMatch(/guaranteed|% accurate|proven profitable/i);
   });
 

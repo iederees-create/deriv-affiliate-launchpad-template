@@ -9,18 +9,19 @@ const REPO_RESEARCH_URL = "https://github.com/iederees-create/deriv-affiliate-la
 const formatR = (value: number) => `${value > 0 ? "+" : ""}${value.toFixed(3)} R`;
 
 export function BacktestResults() {
-  const { rows, data, unseenWindow, costs, testedOn } = backtestResults;
+  const { rows, alsoTested, data, unseenWindow, costs, testedOn } = backtestResults;
+  const ideaCount = rows.length + alsoTested.length;
   return (
     <>
       <Seo
         title={`Backtest results | ${affiliateConfig.brandName}`}
-        description="Six trading ideas tested on data they had never seen, with real costs. None showed an edge. Method and numbers published. Not financial advice."
+        description="Trading ideas tested on data they had never seen, with real costs. None showed an edge. Method and numbers published. Not financial advice."
         path="/strategies/backtest-results"
       />
       <section className="section">
         <SectionHeader
           eyebrow="Backtest results"
-          title="Six ideas tested. None of the six showed an edge."
+          title={`${ideaCount} ideas tested. None showed an edge.`}
           text="These are the results I would rather not have. They are published because a record that hides the losers is worthless."
         />
         <p className="fine-print">{affiliateConfig.disclosureText}</p>
@@ -64,6 +65,11 @@ export function BacktestResults() {
           includes zero, the result cannot be told apart from luck. Profit factor is total wins divided by total
           losses; below 1 is a loss.
         </p>
+        {alsoTested.map((item) => (
+          <p key={item.name}>
+            <strong>{item.name}.</strong> {item.summary}
+          </p>
+        ))}
       </section>
 
       <section className="section">
