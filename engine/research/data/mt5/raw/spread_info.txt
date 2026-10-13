@@ -1,0 +1,24 @@
+terminal	server	DerivSVG-Server
+terminal	lookback_days	120
+terminal	weighting	time each quote was live, capped at 60 s per quote
+XAUUSD	point	0.01
+XAUUSD	ticks	35745229
+XAUUSD	days_with_ticks	103
+XAUUSD	first_tick	2026.06.15 00:00:00
+XAUUSD	last_tick	2026.10.12 23:59:59
+EURUSD	point	0.00001
+EURUSD	ticks	14861956
+EURUSD	days_with_ticks	103
+EURUSD	first_tick	2026.06.15 00:00:05
+EURUSD	last_tick	2026.10.12 23:59:59
+GBPUSD	point	0.00001
+GBPUSD	ticks	22224744
+GBPUSD	days_with_ticks	103
+GBPUSD	first_tick	2026.06.15 00:00:00
+GBPUSD	last_tick	2026.10.12 23:59:58
+USDJPY	point	0.001
+USDJPY	ticks	20530838
+USDJPY	days_with_ticks	103
+USDJPY	first_tick	2026.06.15 00:00:05
+USDJPY	last_tick	2026.10.12 23:59:46
+terminal	symbols_measured	4
