@@ -10,7 +10,10 @@ export const BEGINNER_SYMBOLS = ["R_10", "R_25", "R_50", "R_75", "R_100", "BOOM5
 
 export type BeginnerSymbol = (typeof BEGINNER_SYMBOLS)[number];
 
-export function derivSocketUrl(appId: number, endpoint = "wss://ws.derivws.com/websockets/v3"): string {
+// The older wss://ws.derivws.com/websockets/v3 address stopped answering (HTTP 520) in October 2026.
+export const DERIV_ENDPOINT = "wss://api.derivws.com/trading/v1/options/ws/public";
+
+export function derivSocketUrl(appId: number, endpoint = DERIV_ENDPOINT): string {
   if (!Number.isInteger(appId) || appId <= 0) {
     throw new Error("Deriv app_id must be a positive integer from api.deriv.com.");
   }

@@ -237,7 +237,7 @@ describe("Deriv data", () => {
       send(msg) {
         const req = JSON.parse(msg);
         sent.push(req);
-        queueMicrotask(() => this.emit("message", { data: JSON.stringify({ req_id: req.req_id, candles: [{ epoch: 20, open: 1, high: 1, low: 1, close: 1 }, { epoch: 10, open: 1, high: 1, low: 1, close: 1 }] }) }));
+        queueMicrotask(() => this.emit("message", { data: JSON.stringify({ req_id: req.req_id, candles: [{ epoch: 7200, open: 1, high: 1, low: 1, close: 1 }, { epoch: 3600, open: 1, high: 1, low: 1, close: 1 }] }) }));
       }
       close() {
         this.emit("close");
@@ -245,9 +245,70 @@ describe("Deriv data", () => {
     }
     const map = await fetchCandlesMany([{ symbol: "frxXAUUSD", granularity: 3600, count: 500 }, { symbol: "frxEURUSD", granularity: 3600 }], { WebSocketImpl: FakeWS });
     expect(FakeWS.url).toContain("app_id=1089");
-    expect(sent.map((s) => s.ticks_history)).toEqual(["frxXAUUSD", "frxEURUSD"]);
+    expect(FakeWS.url).toContain("wss://api.derivws.com/trading/v1/options/ws/public");
+    expect(sent.filter((s) => s.end === "latest").map((s) => s.ticks_history)).toEqual(["frxXAUUSD", "frxEURUSD"]);
     expect(sent[0]).toMatchObject({ style: "candles", granularity: 3600, end: "latest" });
-    expect(map.get("frxXAUUSD:3600").map((x) => x.epoch)).toEqual([10, 20]);
+    expect(map.get("frxXAUUSD:3600").map((x) => x.epoch)).toEqual([3600, 7200]);
+  });
+
+  it("pages backwards until it has the candles asked for, and drops partial page-boundary candles", async () => {
+    const H = 3600;
+    const bar = (epoch) => ({ epoch, open: 1, high: 1, low: 1, close: 1 });
+    const sent = [];
+    class FakeWS {
+      constructor() {
+        this.l = {};
+        queueMicrotask(() => this.emit("open"));
+      }
+      addEventListener(t, f) {
+        (this.l[t] ||= []).push(f);
+      }
+      emit(t, e = {}) {
+        (this.l[t] || []).forEach((f) => f(e));
+      }
+      send(msg) {
+        const req = JSON.parse(msg);
+        sent.push(req);
+        // Like the real API: each reply covers a fixed time span, not `count` candles, and its first candle
+        // is a partial one stamped off the hour.
+        const newest = req.end === "latest" ? 10 * H : Math.floor(req.end / H) * H;
+        const candles = newest >= 2 * H ? [bar(newest - H - 13), bar(newest - H), bar(newest)] : [];
+        queueMicrotask(() => this.emit("message", { data: JSON.stringify({ req_id: req.req_id, candles }) }));
+      }
+      close() {
+        this.emit("close");
+      }
+    }
+    const map = await fetchCandlesMany([{ symbol: "frxEURUSD", granularity: H, count: 5 }], { WebSocketImpl: FakeWS });
+    expect(map.get(`frxEURUSD:${H}`).map((x) => x.epoch / H)).toEqual([6, 7, 8, 9, 10]);
+    expect(sent[1]).toMatchObject({ ticks_history: "frxEURUSD", end: 9 * H - 14 });
+    expect(sent.length).toBe(3);
+  });
+
+  it("returns what exists when history runs out before the count is reached", async () => {
+    const H = 3600;
+    class FakeWS {
+      constructor() {
+        this.l = {};
+        queueMicrotask(() => this.emit("open"));
+      }
+      addEventListener(t, f) {
+        (this.l[t] ||= []).push(f);
+      }
+      emit(t, e = {}) {
+        (this.l[t] || []).forEach((f) => f(e));
+      }
+      send(msg) {
+        const req = JSON.parse(msg);
+        const candles = [{ epoch: H, open: 1, high: 1, low: 1, close: 1 }, { epoch: 2 * H, open: 1, high: 1, low: 1, close: 1 }];
+        queueMicrotask(() => this.emit("message", { data: JSON.stringify({ req_id: req.req_id, candles }) }));
+      }
+      close() {
+        this.emit("close");
+      }
+    }
+    const map = await fetchCandlesMany([{ symbol: "frxEURUSD", granularity: H, count: 500 }], { WebSocketImpl: FakeWS });
+    expect(map.get(`frxEURUSD:${H}`).map((x) => x.epoch / H)).toEqual([1, 2]);
   });
 });
 

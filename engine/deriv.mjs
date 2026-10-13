@@ -1,7 +1,13 @@
 // Fetch candle history from Deriv's public WebSocket API (no login or token needed for market data).
 // Uses the WebSocket built into Node 22+. Pass `WebSocketImpl` to inject a fake in tests.
 
-export const DERIV_ENDPOINT = "wss://ws.derivws.com/websockets/v3";
+// The older wss://ws.derivws.com/websockets/v3 address stopped answering (HTTP 520) in October 2026.
+// Set DERIV_ENDPOINT to use a different one.
+export const DERIV_ENDPOINT = globalThis.process?.env?.DERIV_ENDPOINT || "wss://api.derivws.com/trading/v1/options/ws/public";
+
+// One reply covers a fixed time span (about 340 hourly candles), not `count` candles, so older pages are
+// requested until `count` is reached or history runs out.
+const MAX_PAGES = 8;
 
 export function parseCandles(body) {
   if (body?.error) throw new Error(`Deriv error: ${body.error.message || body.error.code}`);
@@ -31,6 +37,18 @@ export function fetchCandlesMany(requests, { appId = 1089, endpoint = DERIV_ENDP
     results.failures = [];
     const responded = new Set();
     const byReq = new Map();
+    const sendPage = (reqId, r, end) =>
+      socket.send(
+        JSON.stringify({
+          ticks_history: r.symbol,
+          adjust_start_time: 1,
+          count: r.count ?? 500,
+          end,
+          granularity: r.granularity,
+          style: "candles",
+          req_id: reqId
+        })
+      );
     const socket = new WebSocketImpl(`${endpoint}?app_id=${appId}`);
     let done = false;
     const finish = (err) => {
@@ -51,32 +69,36 @@ export function fetchCandlesMany(requests, { appId = 1089, endpoint = DERIV_ENDP
     socket.addEventListener("open", () => {
       requests.forEach((r, idx) => {
         const reqId = idx + 1;
-        byReq.set(reqId, r);
-        socket.send(
-          JSON.stringify({
-            ticks_history: r.symbol,
-            adjust_start_time: 1,
-            count: r.count ?? 500,
-            end: "latest",
-            granularity: r.granularity,
-            style: "candles",
-            req_id: reqId
-          })
-        );
+        byReq.set(reqId, { r, byEpoch: new Map(), pages: 0 });
+        sendPage(reqId, r, "latest");
       });
     });
     socket.addEventListener("message", (event) => {
       try {
         const body = JSON.parse(typeof event.data === "string" ? event.data : String(event.data));
-        const r = byReq.get(body.req_id);
-        if (!r) return;
-        responded.add(body.req_id);
+        const state = byReq.get(body.req_id);
+        if (!state || responded.has(body.req_id)) return;
+        const { r, byEpoch } = state;
+        const wanted = r.count ?? 500;
         try {
-          results.set(`${r.symbol}:${r.granularity}`, parseCandles(body));
+          const page = parseCandles(body);
+          const before = byEpoch.size;
+          // The first candle of a reply is a partial one stamped off the boundary; the full candle for that
+          // period arrives with the next older page.
+          for (const c of page) if (c.epoch % r.granularity === 0) byEpoch.set(c.epoch, c);
+          state.pages++;
+          const gotNew = byEpoch.size > before;
+          if (byEpoch.size < wanted && gotNew && state.pages < MAX_PAGES) {
+            sendPage(body.req_id, r, page[0].epoch - 1);
+            return;
+          }
+          const candles = [...byEpoch.values()].sort((x, y) => x.epoch - y.epoch).slice(-wanted);
+          results.set(`${r.symbol}:${r.granularity}`, candles);
         } catch (err) {
           // One bad symbol must not take the others down. Report it and carry on.
           results.failures.push(`${r.symbol}: ${err instanceof Error ? err.message : String(err)}`);
         }
+        responded.add(body.req_id);
         if (responded.size === requests.length) finish();
       } catch (err) {
         finish(err instanceof Error ? err : new Error(String(err)));

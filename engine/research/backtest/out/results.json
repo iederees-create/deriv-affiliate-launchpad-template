@@ -1,0 +1,1524 @@
+{
+ "generatedFor": "IS+VAL only",
+ "units": [
+  {
+   "slug": "gold-h1-trend",
+   "symbol": "frxXAUUSD",
+   "segments": {
+    "IS": {
+     "trades": 361,
+     "wins": 123,
+     "losses": 238,
+     "winRate": 34.1,
+     "avgWinR": 1.977,
+     "avgLossR": -1.05,
+     "expectancyR": -0.019,
+     "profitFactor": 0.97,
+     "totalR": -6.72,
+     "maxDrawdownR": 48.07,
+     "longestLosingStreak": 13,
+     "ciLow": -0.16424182855502922,
+     "ciHigh": 0.13377137530732305
+    },
+    "VAL": {
+     "trades": 117,
+     "wins": 44,
+     "losses": 73,
+     "winRate": 37.6,
+     "avgWinR": 1.953,
+     "avgLossR": -1.018,
+     "expectancyR": 0.099,
+     "profitFactor": 1.16,
+     "totalR": 11.64,
+     "maxDrawdownR": 9.16,
+     "longestLosingStreak": 8,
+     "ciLow": -0.15966784453370012,
+     "ciHigh": 0.35872688473089304
+    }
+   },
+   "scenarios": {
+    "IS": {
+     "1x-noswap": 0.012,
+     "1x": -0.019,
+     "1.5x": -0.036,
+     "2x": -0.051,
+     "default": -0.054,
+     "avgNights": 1.3185595567867037
+    },
+    "VAL": {
+     "1x-noswap": 0.119,
+     "1x": 0.099,
+     "1.5x": 0.085,
+     "2x": 0.081,
+     "default": 0.08,
+     "avgNights": 1.264957264957265
+    }
+   },
+   "years": {
+    "2017": {
+     "trades": 52,
+     "expectancyR": 0.199,
+     "totalR": 10.37
+    },
+    "2018": {
+     "trades": 73,
+     "expectancyR": -0.188,
+     "totalR": -13.76
+    },
+    "2019": {
+     "trades": 66,
+     "expectancyR": -0.269,
+     "totalR": -17.78
+    },
+    "2020": {
+     "trades": 55,
+     "expectancyR": -0.051,
+     "totalR": -2.81
+    },
+    "2021": {
+     "trades": 62,
+     "expectancyR": 0.076,
+     "totalR": 4.69
+    },
+    "2022": {
+     "trades": 65,
+     "expectancyR": 0.14,
+     "totalR": 9.09
+    },
+    "2023": {
+     "trades": 57,
+     "expectancyR": 0.293,
+     "totalR": 16.71
+    },
+    "2024": {
+     "trades": 48,
+     "expectancyR": -0.033,
+     "totalR": -1.6
+    }
+   }
+  },
+  {
+   "slug": "gold-london-breakout",
+   "symbol": "frxXAUUSD",
+   "segments": {
+    "IS": {
+     "trades": 800,
+     "wins": 359,
+     "losses": 441,
+     "winRate": 44.9,
+     "avgWinR": 0.961,
+     "avgLossR": -0.783,
+     "expectancyR": 0,
+     "profitFactor": 1,
+     "totalR": -0.27,
+     "maxDrawdownR": 30.97,
+     "longestLosingStreak": 10,
+     "ciLow": -0.06737335620488895,
+     "ciHigh": 0.06802531098243567
+    },
+    "VAL": {
+     "trades": 277,
+     "wins": 114,
+     "losses": 163,
+     "winRate": 41.2,
+     "avgWinR": 1.091,
+     "avgLossR": -0.809,
+     "expectancyR": -0.027,
+     "profitFactor": 0.94,
+     "totalR": -7.48,
+     "maxDrawdownR": 21.35,
+     "longestLosingStreak": 9,
+     "ciLow": -0.14782429718999957,
+     "ciHigh": 0.09569435000337853
+    }
+   },
+   "scenarios": {
+    "IS": {
+     "1x-noswap": 0,
+     "1x": 0,
+     "1.5x": -0.013,
+     "2x": -0.023,
+     "default": -0.025,
+     "avgNights": 0.015
+    },
+    "VAL": {
+     "1x-noswap": -0.027,
+     "1x": -0.027,
+     "1.5x": -0.051,
+     "2x": -0.059,
+     "default": -0.06,
+     "avgNights": 0.021660649819494584
+    }
+   },
+   "years": {
+    "2017": {
+     "trades": 123,
+     "expectancyR": -0.066,
+     "totalR": -8.16
+    },
+    "2018": {
+     "trades": 144,
+     "expectancyR": 0.012,
+     "totalR": 1.71
+    },
+    "2019": {
+     "trades": 131,
+     "expectancyR": -0.05,
+     "totalR": -6.53
+    },
+    "2020": {
+     "trades": 125,
+     "expectancyR": -0.04,
+     "totalR": -5
+    },
+    "2021": {
+     "trades": 132,
+     "expectancyR": -0.003,
+     "totalR": -0.34
+    },
+    "2022": {
+     "trades": 163,
+     "expectancyR": 0.114,
+     "totalR": 18.58
+    },
+    "2023": {
+     "trades": 140,
+     "expectancyR": -0.029,
+     "totalR": -4.06
+    },
+    "2024": {
+     "trades": 119,
+     "expectancyR": -0.033,
+     "totalR": -3.94
+    }
+   }
+  },
+  {
+   "slug": "forex-breakout-retest",
+   "symbol": "frxEURUSD",
+   "segments": {
+    "IS": {
+     "trades": 1063,
+     "wins": 341,
+     "losses": 722,
+     "winRate": 32.1,
+     "avgWinR": 1.972,
+     "avgLossR": -1.027,
+     "expectancyR": -0.065,
+     "profitFactor": 0.91,
+     "totalR": -68.75,
+     "maxDrawdownR": 81.38,
+     "longestLosingStreak": 18,
+     "ciLow": -0.1478293897218665,
+     "ciHigh": 0.021209808784740592
+    },
+    "VAL": {
+     "trades": 352,
+     "wins": 106,
+     "losses": 246,
+     "winRate": 30.1,
+     "avgWinR": 1.966,
+     "avgLossR": -1.029,
+     "expectancyR": -0.127,
+     "profitFactor": 0.82,
+     "totalR": -44.79,
+     "maxDrawdownR": 54.67,
+     "longestLosingStreak": 18,
+     "ciLow": -0.26576038292222703,
+     "ciHigh": 0.01960055349012775
+    }
+   },
+   "scenarios": {
+    "IS": {
+     "1x-noswap": -0.052,
+     "1x": -0.065,
+     "1.5x": -0.076,
+     "2x": -0.09,
+     "default": -0.117,
+     "avgNights": 0.6952022577610536
+    },
+    "VAL": {
+     "1x-noswap": -0.111,
+     "1x": -0.127,
+     "1.5x": -0.146,
+     "2x": -0.15,
+     "default": -0.173,
+     "avgNights": 0.8721590909090909
+    }
+   },
+   "years": {
+    "2017": {
+     "trades": 174,
+     "expectancyR": -0.1,
+     "totalR": -17.46
+    },
+    "2018": {
+     "trades": 199,
+     "expectancyR": -0.014,
+     "totalR": -2.71
+    },
+    "2019": {
+     "trades": 161,
+     "expectancyR": -0.225,
+     "totalR": -36.21
+    },
+    "2020": {
+     "trades": 189,
+     "expectancyR": 0.066,
+     "totalR": 12.45
+    },
+    "2021": {
+     "trades": 177,
+     "expectancyR": -0.083,
+     "totalR": -14.73
+    },
+    "2022": {
+     "trades": 180,
+     "expectancyR": -0.087,
+     "totalR": -15.62
+    },
+    "2023": {
+     "trades": 189,
+     "expectancyR": -0.123,
+     "totalR": -23.27
+    },
+    "2024": {
+     "trades": 146,
+     "expectancyR": -0.11,
+     "totalR": -16
+    }
+   }
+  },
+  {
+   "slug": "forex-breakout-retest",
+   "symbol": "frxGBPUSD",
+   "segments": {
+    "IS": {
+     "trades": 1096,
+     "wins": 345,
+     "losses": 751,
+     "winRate": 31.5,
+     "avgWinR": 1.979,
+     "avgLossR": -1.021,
+     "expectancyR": -0.076,
+     "profitFactor": 0.89,
+     "totalR": -83.82,
+     "maxDrawdownR": 105.97,
+     "longestLosingStreak": 15,
+     "ciLow": -0.16117441104979618,
+     "ciHigh": 0.00655927216725929
+    },
+    "VAL": {
+     "trades": 335,
+     "wins": 103,
+     "losses": 232,
+     "winRate": 30.7,
+     "avgWinR": 1.97,
+     "avgLossR": -1.026,
+     "expectancyR": -0.105,
+     "profitFactor": 0.85,
+     "totalR": -35.08,
+     "maxDrawdownR": 57.11,
+     "longestLosingStreak": 18,
+     "ciLow": -0.24799451799834032,
+     "ciHigh": 0.04919412075342679
+    }
+   },
+   "scenarios": {
+    "IS": {
+     "1x-noswap": -0.066,
+     "1x": -0.076,
+     "1.5x": -0.083,
+     "2x": -0.094,
+     "default": -0.135,
+     "avgNights": 0.708941605839416
+    },
+    "VAL": {
+     "1x-noswap": -0.092,
+     "1x": -0.105,
+     "1.5x": -0.129,
+     "2x": -0.143,
+     "default": -0.161,
+     "avgNights": 0.826865671641791
+    }
+   },
+   "years": {
+    "2017": {
+     "trades": 155,
+     "expectancyR": 0.001,
+     "totalR": 0.2
+    },
+    "2018": {
+     "trades": 190,
+     "expectancyR": -0.084,
+     "totalR": -15.87
+    },
+    "2019": {
+     "trades": 164,
+     "expectancyR": -0.147,
+     "totalR": -24.16
+    },
+    "2020": {
+     "trades": 197,
+     "expectancyR": -0.074,
+     "totalR": -14.54
+    },
+    "2021": {
+     "trades": 207,
+     "expectancyR": -0.097,
+     "totalR": -20.03
+    },
+    "2022": {
+     "trades": 203,
+     "expectancyR": -0.072,
+     "totalR": -14.68
+    },
+    "2023": {
+     "trades": 186,
+     "expectancyR": -0.087,
+     "totalR": -16.25
+    },
+    "2024": {
+     "trades": 129,
+     "expectancyR": -0.105,
+     "totalR": -13.58
+    }
+   }
+  },
+  {
+   "slug": "forex-breakout-retest",
+   "symbol": "frxUSDJPY",
+   "segments": {
+    "IS": {
+     "trades": 1087,
+     "wins": 362,
+     "losses": 725,
+     "winRate": 33.3,
+     "avgWinR": 1.971,
+     "avgLossR": -1.029,
+     "expectancyR": -0.03,
+     "profitFactor": 0.96,
+     "totalR": -32.5,
+     "maxDrawdownR": 81.56,
+     "longestLosingStreak": 14,
+     "ciLow": -0.1128280234495112,
+     "ciHigh": 0.05440706659560272
+    },
+    "VAL": {
+     "trades": 363,
+     "wins": 112,
+     "losses": 251,
+     "winRate": 30.9,
+     "avgWinR": 2,
+     "avgLossR": -1.019,
+     "expectancyR": -0.087,
+     "profitFactor": 0.88,
+     "totalR": -31.63,
+     "maxDrawdownR": 53.44,
+     "longestLosingStreak": 19,
+     "ciLow": -0.2290942137250258,
+     "ciHigh": 0.06263866486208494
+    }
+   },
+   "scenarios": {
+    "IS": {
+     "1x-noswap": -0.018,
+     "1x": -0.03,
+     "1.5x": -0.048,
+     "2x": -0.066,
+     "default": -0.093,
+     "avgNights": 0.6752529898804048
+    },
+    "VAL": {
+     "1x-noswap": -0.09,
+     "1x": -0.087,
+     "1.5x": -0.097,
+     "2x": -0.102,
+     "default": -0.123,
+     "avgNights": 0.790633608815427
+    }
+   },
+   "years": {
+    "2017": {
+     "trades": 183,
+     "expectancyR": -0.045,
+     "totalR": -8.26
+    },
+    "2018": {
+     "trades": 179,
+     "expectancyR": -0.042,
+     "totalR": -7.46
+    },
+    "2019": {
+     "trades": 172,
+     "expectancyR": -0.099,
+     "totalR": -17.04
+    },
+    "2020": {
+     "trades": 180,
+     "expectancyR": -0.032,
+     "totalR": -5.83
+    },
+    "2021": {
+     "trades": 196,
+     "expectancyR": -0.108,
+     "totalR": -21.24
+    },
+    "2022": {
+     "trades": 203,
+     "expectancyR": 0.15,
+     "totalR": 30.53
+    },
+    "2023": {
+     "trades": 184,
+     "expectancyR": -0.183,
+     "totalR": -33.58
+    },
+    "2024": {
+     "trades": 153,
+     "expectancyR": -0.008,
+     "totalR": -1.26
+    }
+   }
+  },
+  {
+   "slug": "forex-breakout-retest",
+   "symbol": "pooled",
+   "segments": {
+    "IS": {
+     "trades": 3246,
+     "wins": 1048,
+     "losses": 2198,
+     "winRate": 32.3,
+     "avgWinR": 1.974,
+     "avgLossR": -1.025,
+     "expectancyR": -0.057,
+     "profitFactor": 0.92,
+     "totalR": -185.08,
+     "maxDrawdownR": 220.55,
+     "longestLosingStreak": 22,
+     "ciLow": -0.10434056742014731,
+     "ciHigh": -0.008619247844844123
+    },
+    "VAL": {
+     "trades": 1050,
+     "wins": 321,
+     "losses": 729,
+     "winRate": 30.6,
+     "avgWinR": 1.979,
+     "avgLossR": -1.024,
+     "expectancyR": -0.106,
+     "profitFactor": 0.85,
+     "totalR": -111.5,
+     "maxDrawdownR": 157.4,
+     "longestLosingStreak": 20,
+     "ciLow": -0.18896181866467293,
+     "ciHigh": -0.02056507082958892
+    }
+   },
+   "scenarios": {
+    "IS": {
+     "1x-noswap": -0.045,
+     "1x": -0.057,
+     "1.5x": -0.069,
+     "2x": -0.083,
+     "default": -0.115,
+     "avgNights": 0.6931608133086876
+    },
+    "VAL": {
+     "1x-noswap": -0.098,
+     "1x": -0.106,
+     "1.5x": -0.124,
+     "2x": -0.131,
+     "default": -0.152,
+     "avgNights": 0.8295238095238096
+    }
+   },
+   "years": {
+    "2017": {
+     "trades": 512,
+     "expectancyR": -0.05,
+     "totalR": -25.51
+    },
+    "2018": {
+     "trades": 568,
+     "expectancyR": -0.046,
+     "totalR": -26.04
+    },
+    "2019": {
+     "trades": 497,
+     "expectancyR": -0.156,
+     "totalR": -77.41
+    },
+    "2020": {
+     "trades": 566,
+     "expectancyR": -0.014,
+     "totalR": -7.92
+    },
+    "2021": {
+     "trades": 580,
+     "expectancyR": -0.097,
+     "totalR": -55.99
+    },
+    "2022": {
+     "trades": 586,
+     "expectancyR": 0,
+     "totalR": 0.24
+    },
+    "2023": {
+     "trades": 559,
+     "expectancyR": -0.131,
+     "totalR": -73.1
+    },
+    "2024": {
+     "trades": 428,
+     "expectancyR": -0.072,
+     "totalR": -30.85
+    }
+   }
+  },
+  {
+   "slug": "forex-rsi-bollinger-reversion",
+   "symbol": "frxEURUSD",
+   "segments": {
+    "IS": {
+     "trades": 170,
+     "wins": 52,
+     "losses": 118,
+     "winRate": 30.6,
+     "avgWinR": 2.027,
+     "avgLossR": -1.019,
+     "expectancyR": -0.087,
+     "profitFactor": 0.88,
+     "totalR": -14.8,
+     "maxDrawdownR": 37.05,
+     "longestLosingStreak": 12,
+     "ciLow": -0.2959218975911441,
+     "ciHigh": 0.1332488495137489
+    },
+    "VAL": {
+     "trades": 60,
+     "wins": 16,
+     "losses": 44,
+     "winRate": 26.7,
+     "avgWinR": 2.097,
+     "avgLossR": -1.016,
+     "expectancyR": -0.186,
+     "profitFactor": 0.75,
+     "totalR": -11.14,
+     "maxDrawdownR": 19.38,
+     "longestLosingStreak": 9,
+     "ciLow": -0.520263852877184,
+     "ciHigh": 0.17312258827293156
+    }
+   },
+   "scenarios": {
+    "IS": {
+     "1x-noswap": -0.075,
+     "1x": -0.087,
+     "1.5x": -0.094,
+     "2x": -0.1,
+     "default": -0.113,
+     "avgNights": 0.7588235294117647
+    },
+    "VAL": {
+     "1x-noswap": -0.17,
+     "1x": -0.186,
+     "1.5x": -0.193,
+     "2x": -0.2,
+     "default": -0.229,
+     "avgNights": 0.6666666666666666
+    }
+   },
+   "years": {
+    "2017": {
+     "trades": 31,
+     "expectancyR": -0.066,
+     "totalR": -2.05
+    },
+    "2018": {
+     "trades": 25,
+     "expectancyR": -0.592,
+     "totalR": -14.81
+    },
+    "2019": {
+     "trades": 31,
+     "expectancyR": -0.124,
+     "totalR": -3.86
+    },
+    "2020": {
+     "trades": 35,
+     "expectancyR": -0.176,
+     "totalR": -6.16
+    },
+    "2021": {
+     "trades": 20,
+     "expectancyR": 0.003,
+     "totalR": 0.06
+    },
+    "2022": {
+     "trades": 30,
+     "expectancyR": 0.334,
+     "totalR": 10.01
+    },
+    "2023": {
+     "trades": 25,
+     "expectancyR": -0.317,
+     "totalR": -7.93
+    },
+    "2024": {
+     "trades": 33,
+     "expectancyR": -0.037,
+     "totalR": -1.21
+    }
+   }
+  },
+  {
+   "slug": "forex-rsi-bollinger-reversion",
+   "symbol": "frxGBPUSD",
+   "segments": {
+    "IS": {
+     "trades": 149,
+     "wins": 54,
+     "losses": 95,
+     "winRate": 36.2,
+     "avgWinR": 1.879,
+     "avgLossR": -1.018,
+     "expectancyR": 0.032,
+     "profitFactor": 1.05,
+     "totalR": 4.78,
+     "maxDrawdownR": 10.71,
+     "longestLosingStreak": 6,
+     "ciLow": -0.1942208852833403,
+     "ciHigh": 0.2609097486694576
+    },
+    "VAL": {
+     "trades": 69,
+     "wins": 31,
+     "losses": 38,
+     "winRate": 44.9,
+     "avgWinR": 2.088,
+     "avgLossR": -1.018,
+     "expectancyR": 0.377,
+     "profitFactor": 1.67,
+     "totalR": 26.04,
+     "maxDrawdownR": 6.91,
+     "longestLosingStreak": 5,
+     "ciLow": 0.011517672685640565,
+     "ciHigh": 0.7645049285632474
+    }
+   },
+   "scenarios": {
+    "IS": {
+     "1x-noswap": 0.043,
+     "1x": 0.032,
+     "1.5x": 0.004,
+     "2x": -0.001,
+     "default": -0.054,
+     "avgNights": 0.7651006711409396
+    },
+    "VAL": {
+     "1x-noswap": 0.39,
+     "1x": 0.377,
+     "1.5x": 0.347,
+     "2x": 0.34,
+     "default": 0.322,
+     "avgNights": 0.7391304347826086
+    }
+   },
+   "years": {
+    "2017": {
+     "trades": 19,
+     "expectancyR": -0.066,
+     "totalR": -1.26
+    },
+    "2018": {
+     "trades": 24,
+     "expectancyR": 0.286,
+     "totalR": 6.87
+    },
+    "2019": {
+     "trades": 38,
+     "expectancyR": 0.15,
+     "totalR": 5.71
+    },
+    "2020": {
+     "trades": 29,
+     "expectancyR": 0.117,
+     "totalR": 3.39
+    },
+    "2021": {
+     "trades": 17,
+     "expectancyR": -0.16,
+     "totalR": -2.72
+    },
+    "2022": {
+     "trades": 24,
+     "expectancyR": -0.114,
+     "totalR": -2.75
+    },
+    "2023": {
+     "trades": 30,
+     "expectancyR": 0.081,
+     "totalR": 2.43
+    },
+    "2024": {
+     "trades": 37,
+     "expectancyR": 0.518,
+     "totalR": 19.16
+    }
+   }
+  },
+  {
+   "slug": "forex-rsi-bollinger-reversion",
+   "symbol": "frxUSDJPY",
+   "segments": {
+    "IS": {
+     "trades": 182,
+     "wins": 60,
+     "losses": 122,
+     "winRate": 33,
+     "avgWinR": 2.003,
+     "avgLossR": -1.066,
+     "expectancyR": -0.054,
+     "profitFactor": 0.92,
+     "totalR": -9.85,
+     "maxDrawdownR": 15.07,
+     "longestLosingStreak": 11,
+     "ciLow": -0.2618099701962685,
+     "ciHigh": 0.1610378405299016
+    },
+    "VAL": {
+     "trades": 74,
+     "wins": 21,
+     "losses": 53,
+     "winRate": 28.4,
+     "avgWinR": 1.882,
+     "avgLossR": -1.038,
+     "expectancyR": -0.209,
+     "profitFactor": 0.72,
+     "totalR": -15.49,
+     "maxDrawdownR": 22.3,
+     "longestLosingStreak": 7,
+     "ciLow": -0.506204276402291,
+     "ciHigh": 0.09429386254208305
+    }
+   },
+   "scenarios": {
+    "IS": {
+     "1x-noswap": -0.022,
+     "1x": -0.054,
+     "1.5x": -0.081,
+     "2x": -0.091,
+     "default": -0.118,
+     "avgNights": 0.7032967032967034
+    },
+    "VAL": {
+     "1x-noswap": -0.18,
+     "1x": -0.209,
+     "1.5x": -0.215,
+     "2x": -0.221,
+     "default": -0.245,
+     "avgNights": 0.6891891891891891
+    }
+   },
+   "years": {
+    "2017": {
+     "trades": 28,
+     "expectancyR": -0.027,
+     "totalR": -0.75
+    },
+    "2018": {
+     "trades": 22,
+     "expectancyR": -0.466,
+     "totalR": -10.25
+    },
+    "2019": {
+     "trades": 32,
+     "expectancyR": 0.203,
+     "totalR": 6.5
+    },
+    "2020": {
+     "trades": 30,
+     "expectancyR": -0.013,
+     "totalR": -0.38
+    },
+    "2021": {
+     "trades": 35,
+     "expectancyR": 0.138,
+     "totalR": 4.84
+    },
+    "2022": {
+     "trades": 39,
+     "expectancyR": -0.224,
+     "totalR": -8.72
+    },
+    "2023": {
+     "trades": 33,
+     "expectancyR": -0.342,
+     "totalR": -11.28
+    },
+    "2024": {
+     "trades": 37,
+     "expectancyR": -0.143,
+     "totalR": -5.3
+    }
+   }
+  },
+  {
+   "slug": "forex-rsi-bollinger-reversion",
+   "symbol": "pooled",
+   "segments": {
+    "IS": {
+     "trades": 501,
+     "wins": 166,
+     "losses": 335,
+     "winRate": 33.1,
+     "avgWinR": 1.97,
+     "avgLossR": -1.036,
+     "expectancyR": -0.04,
+     "profitFactor": 0.94,
+     "totalR": -19.87,
+     "maxDrawdownR": 30.73,
+     "longestLosingStreak": 11,
+     "ciLow": -0.16338085962545726,
+     "ciHigh": 0.08934332814710383
+    },
+    "VAL": {
+     "trades": 203,
+     "wins": 68,
+     "losses": 135,
+     "winRate": 33.5,
+     "avgWinR": 2.026,
+     "avgLossR": -1.025,
+     "expectancyR": -0.003,
+     "profitFactor": 1,
+     "totalR": -0.59,
+     "maxDrawdownR": 23.69,
+     "longestLosingStreak": 8,
+     "ciLow": -0.20156511610293765,
+     "ciHigh": 0.2026458213038271
+    }
+   },
+   "scenarios": {
+    "IS": {
+     "1x-noswap": -0.021,
+     "1x": -0.04,
+     "1.5x": -0.06,
+     "2x": -0.067,
+     "default": -0.097,
+     "avgNights": 0.7405189620758483
+    },
+    "VAL": {
+     "1x-noswap": 0.017,
+     "1x": -0.003,
+     "1.5x": -0.016,
+     "2x": -0.022,
+     "default": -0.047,
+     "avgNights": 0.6995073891625616
+    }
+   },
+   "years": {
+    "2017": {
+     "trades": 78,
+     "expectancyR": -0.052,
+     "totalR": -4.06
+    },
+    "2018": {
+     "trades": 71,
+     "expectancyR": -0.256,
+     "totalR": -18.18
+    },
+    "2019": {
+     "trades": 101,
+     "expectancyR": 0.083,
+     "totalR": 8.35
+    },
+    "2020": {
+     "trades": 94,
+     "expectancyR": -0.034,
+     "totalR": -3.15
+    },
+    "2021": {
+     "trades": 72,
+     "expectancyR": 0.03,
+     "totalR": 2.17
+    },
+    "2022": {
+     "trades": 93,
+     "expectancyR": -0.016,
+     "totalR": -1.45
+    },
+    "2023": {
+     "trades": 88,
+     "expectancyR": -0.191,
+     "totalR": -16.78
+    },
+    "2024": {
+     "trades": 107,
+     "expectancyR": 0.118,
+     "totalR": 12.65
+    }
+   }
+  }
+ ],
+ "older": [
+  {
+   "slug": "gold-h1-trend",
+   "symbol": "frxXAUUSD",
+   "from": "2009-03-16",
+   "to": "2017-01-01",
+   "stats": {
+    "trades": 471,
+    "wins": 179,
+    "losses": 292,
+    "winRate": 38,
+    "avgWinR": 1.965,
+    "avgLossR": -1.037,
+    "expectancyR": 0.104,
+    "profitFactor": 1.16,
+    "totalR": 48.83,
+    "maxDrawdownR": 28.27,
+    "longestLosingStreak": 12,
+    "ciLow": -0.023970494558139682,
+    "ciHigh": 0.23466773173680863
+   }
+  },
+  {
+   "slug": "gold-london-breakout",
+   "symbol": "frxXAUUSD",
+   "from": "2009-03-16",
+   "to": "2017-01-01",
+   "stats": {
+    "trades": 1131,
+    "wins": 478,
+    "losses": 653,
+    "winRate": 42.3,
+    "avgWinR": 1.025,
+    "avgLossR": -0.807,
+    "expectancyR": -0.033,
+    "profitFactor": 0.93,
+    "totalR": -36.84,
+    "maxDrawdownR": 54.55,
+    "longestLosingStreak": 16,
+    "ciLow": -0.091393307869673,
+    "ciHigh": 0.027554223156372733
+   }
+  },
+  {
+   "slug": "forex-breakout-retest",
+   "symbol": "frxEURUSD",
+   "from": "2006-01-01",
+   "to": "2017-01-01",
+   "stats": {
+    "trades": 1849,
+    "wins": 606,
+    "losses": 1243,
+    "winRate": 32.8,
+    "avgWinR": 1.995,
+    "avgLossR": -1.018,
+    "expectancyR": -0.031,
+    "profitFactor": 0.96,
+    "totalR": -56.6,
+    "maxDrawdownR": 85.51,
+    "longestLosingStreak": 15,
+    "ciLow": -0.09513103431602983,
+    "ciHigh": 0.03444608102335126
+   }
+  },
+  {
+   "slug": "forex-breakout-retest",
+   "symbol": "frxGBPUSD",
+   "from": "2006-01-01",
+   "to": "2017-01-01",
+   "stats": {
+    "trades": 1905,
+    "wins": 616,
+    "losses": 1289,
+    "winRate": 32.3,
+    "avgWinR": 1.991,
+    "avgLossR": -1.019,
+    "expectancyR": -0.046,
+    "profitFactor": 0.93,
+    "totalR": -87.49,
+    "maxDrawdownR": 117.29,
+    "longestLosingStreak": 17,
+    "ciLow": -0.11016473024942991,
+    "ciHigh": 0.01773527027452941
+   }
+  },
+  {
+   "slug": "forex-breakout-retest",
+   "symbol": "frxUSDJPY",
+   "from": "2006-01-01",
+   "to": "2017-01-01",
+   "stats": {
+    "trades": 1811,
+    "wins": 585,
+    "losses": 1226,
+    "winRate": 32.3,
+    "avgWinR": 1.993,
+    "avgLossR": -1.038,
+    "expectancyR": -0.059,
+    "profitFactor": 0.92,
+    "totalR": -106.34,
+    "maxDrawdownR": 118.12,
+    "longestLosingStreak": 15,
+    "ciLow": -0.12527138502713325,
+    "ciHigh": 0.008305806670111368
+   }
+  },
+  {
+   "slug": "forex-breakout-retest",
+   "symbol": "pooled",
+   "stats": {
+    "trades": 5565,
+    "wins": 1807,
+    "losses": 3758,
+    "winRate": 32.5,
+    "avgWinR": 1.993,
+    "avgLossR": -1.025,
+    "expectancyR": -0.045,
+    "profitFactor": 0.93,
+    "totalR": -250.43,
+    "maxDrawdownR": 268.42,
+    "longestLosingStreak": 20,
+    "ciLow": -0.08262984653697035,
+    "ciHigh": -0.007583618404427539
+   }
+  },
+  {
+   "slug": "forex-rsi-bollinger-reversion",
+   "symbol": "frxEURUSD",
+   "from": "2006-01-01",
+   "to": "2017-01-01",
+   "stats": {
+    "trades": 287,
+    "wins": 94,
+    "losses": 193,
+    "winRate": 32.8,
+    "avgWinR": 2.047,
+    "avgLossR": -1.03,
+    "expectancyR": -0.022,
+    "profitFactor": 0.97,
+    "totalR": -6.31,
+    "maxDrawdownR": 30.22,
+    "longestLosingStreak": 12,
+    "ciLow": -0.1904159390367341,
+    "ciHigh": 0.15250527239539335
+   }
+  },
+  {
+   "slug": "forex-rsi-bollinger-reversion",
+   "symbol": "frxGBPUSD",
+   "from": "2006-01-01",
+   "to": "2017-01-01",
+   "stats": {
+    "trades": 305,
+    "wins": 93,
+    "losses": 212,
+    "winRate": 30.5,
+    "avgWinR": 1.938,
+    "avgLossR": -1.033,
+    "expectancyR": -0.127,
+    "profitFactor": 0.82,
+    "totalR": -38.86,
+    "maxDrawdownR": 56.56,
+    "longestLosingStreak": 9,
+    "ciLow": -0.28300728618429705,
+    "ciHigh": 0.02988797872101665
+   }
+  },
+  {
+   "slug": "forex-rsi-bollinger-reversion",
+   "symbol": "frxUSDJPY",
+   "from": "2006-01-01",
+   "to": "2017-01-01",
+   "stats": {
+    "trades": 274,
+    "wins": 93,
+    "losses": 181,
+    "winRate": 33.9,
+    "avgWinR": 1.939,
+    "avgLossR": -1.039,
+    "expectancyR": -0.028,
+    "profitFactor": 0.96,
+    "totalR": -7.64,
+    "maxDrawdownR": 24.42,
+    "longestLosingStreak": 9,
+    "ciLow": -0.19748797654093564,
+    "ciHigh": 0.14374031890552033
+   }
+  },
+  {
+   "slug": "forex-rsi-bollinger-reversion",
+   "symbol": "pooled",
+   "stats": {
+    "trades": 866,
+    "wins": 280,
+    "losses": 586,
+    "winRate": 32.3,
+    "avgWinR": 1.975,
+    "avgLossR": -1.034,
+    "expectancyR": -0.061,
+    "profitFactor": 0.91,
+    "totalR": -52.81,
+    "maxDrawdownR": 77.99,
+    "longestLosingStreak": 18,
+    "ciLow": -0.15787272962761734,
+    "ciHigh": 0.03590005388531439
+   }
+  }
+ ],
+ "sensitivity": {
+  "gold-h1-trend": {
+   "rows": [
+    {
+     "label": "frozen rules",
+     "trades": 478,
+     "expectancyR": 0.01,
+     "profitFactor": 1.02,
+     "totalR": 4.91
+    },
+    {
+     "label": "fast=15",
+     "trades": 536,
+     "expectancyR": -0.057,
+     "profitFactor": 0.92,
+     "totalR": -30.32
+    },
+    {
+     "label": "fast=25",
+     "trades": 467,
+     "expectancyR": -0.038,
+     "profitFactor": 0.94,
+     "totalR": -17.98
+    },
+    {
+     "label": "slow=40",
+     "trades": 523,
+     "expectancyR": -0.014,
+     "profitFactor": 0.98,
+     "totalR": -7.19
+    },
+    {
+     "label": "slow=60",
+     "trades": 460,
+     "expectancyR": 0.009,
+     "profitFactor": 1.01,
+     "totalR": 4.13
+    },
+    {
+     "label": "trend=150",
+     "trades": 511,
+     "expectancyR": 0.013,
+     "profitFactor": 1.02,
+     "totalR": 6.44
+    },
+    {
+     "label": "trend=250",
+     "trades": 447,
+     "expectancyR": 0,
+     "profitFactor": 1,
+     "totalR": -0.16
+    },
+    {
+     "label": "atrMult=1.5",
+     "trades": 538,
+     "expectancyR": -0.004,
+     "profitFactor": 0.99,
+     "totalR": -2.13
+    },
+    {
+     "label": "atrMult=2.5",
+     "trades": 403,
+     "expectancyR": 0.055,
+     "profitFactor": 1.08,
+     "totalR": 22.14
+    },
+    {
+     "label": "rr=1.5",
+     "trades": 501,
+     "expectancyR": -0.017,
+     "profitFactor": 0.97,
+     "totalR": -8.48
+    },
+    {
+     "label": "rr=2.5",
+     "trades": 463,
+     "expectancyR": 0.046,
+     "profitFactor": 1.06,
+     "totalR": 21.17
+    }
+   ],
+   "positiveShare": 0.4
+  },
+  "gold-london-breakout": {
+   "rows": [
+    {
+     "label": "frozen rules",
+     "trades": 1077,
+     "expectancyR": -0.007,
+     "profitFactor": 0.98,
+     "totalR": -7.75
+    },
+    {
+     "label": "firstHour=6, lastHour=9, rangeEndHour=5",
+     "trades": 1276,
+     "expectancyR": -0.014,
+     "profitFactor": 0.97,
+     "totalR": -18.42
+    },
+    {
+     "label": "firstHour=8, lastHour=11, rangeEndHour=7",
+     "trades": 893,
+     "expectancyR": 0.001,
+     "profitFactor": 1,
+     "totalR": 0.89
+    },
+    {
+     "label": "londonClock=true",
+     "trades": 1019,
+     "expectancyR": 0.008,
+     "profitFactor": 1.02,
+     "totalR": 7.99
+    },
+    {
+     "label": "lastHour=9",
+     "trades": 944,
+     "expectancyR": -0.01,
+     "profitFactor": 0.98,
+     "totalR": -9.74
+    },
+    {
+     "label": "lastHour=11",
+     "trades": 1191,
+     "expectancyR": -0.015,
+     "profitFactor": 0.97,
+     "totalR": -17.78
+    },
+    {
+     "label": "rr=1",
+     "trades": 1077,
+     "expectancyR": -0.01,
+     "profitFactor": 0.97,
+     "totalR": -11.04
+    },
+    {
+     "label": "rr=2",
+     "trades": 1077,
+     "expectancyR": 0.023,
+     "profitFactor": 1.05,
+     "totalR": 24.65
+    },
+    {
+     "label": "exitHour=18",
+     "trades": 1077,
+     "expectancyR": -0.017,
+     "profitFactor": 0.96,
+     "totalR": -18.34
+    },
+    {
+     "label": "exitHour=22",
+     "trades": 1077,
+     "expectancyR": -0.011,
+     "profitFactor": 0.98,
+     "totalR": -11.59
+    },
+    {
+     "label": "minWidth=0.25",
+     "trades": 1077,
+     "expectancyR": -0.007,
+     "profitFactor": 0.98,
+     "totalR": -7.75
+    },
+    {
+     "label": "minWidth=0.75",
+     "trades": 1077,
+     "expectancyR": -0.007,
+     "profitFactor": 0.98,
+     "totalR": -7.75
+    },
+    {
+     "label": "maxWidth=2",
+     "trades": 604,
+     "expectancyR": 0.007,
+     "profitFactor": 1.01,
+     "totalR": 3.94
+    },
+    {
+     "label": "maxWidth=4",
+     "trades": 1188,
+     "expectancyR": -0.004,
+     "profitFactor": 0.99,
+     "totalR": -5.05
+    }
+   ],
+   "positiveShare": 0.3076923076923077
+  },
+  "forex-breakout-retest": {
+   "rows": [
+    {
+     "label": "frozen rules",
+     "trades": 4296,
+     "expectancyR": -0.069,
+     "profitFactor": 0.9,
+     "totalR": -296.58
+    },
+    {
+     "label": "lookback=15",
+     "trades": 4764,
+     "expectancyR": -0.064,
+     "profitFactor": 0.91,
+     "totalR": -304.4
+    },
+    {
+     "label": "lookback=25",
+     "trades": 3910,
+     "expectancyR": -0.089,
+     "profitFactor": 0.87,
+     "totalR": -349.3
+    },
+    {
+     "label": "trend=80",
+     "trades": 4462,
+     "expectancyR": -0.074,
+     "profitFactor": 0.89,
+     "totalR": -332.27
+    },
+    {
+     "label": "trend=120",
+     "trades": 4163,
+     "expectancyR": -0.069,
+     "profitFactor": 0.9,
+     "totalR": -288.07
+    },
+    {
+     "label": "tolerance=0.15",
+     "trades": 4002,
+     "expectancyR": -0.073,
+     "profitFactor": 0.9,
+     "totalR": -291.57
+    },
+    {
+     "label": "tolerance=0.35",
+     "trades": 4390,
+     "expectancyR": -0.057,
+     "profitFactor": 0.92,
+     "totalR": -248.95
+    },
+    {
+     "label": "buffer=0.25",
+     "trades": 4656,
+     "expectancyR": -0.095,
+     "profitFactor": 0.87,
+     "totalR": -440.67
+    },
+    {
+     "label": "buffer=0.75",
+     "trades": 3951,
+     "expectancyR": -0.036,
+     "profitFactor": 0.95,
+     "totalR": -143.86
+    },
+    {
+     "label": "rr=1.5",
+     "trades": 4741,
+     "expectancyR": -0.073,
+     "profitFactor": 0.88,
+     "totalR": -347.01
+    },
+    {
+     "label": "rr=2.5",
+     "trades": 3935,
+     "expectancyR": -0.059,
+     "profitFactor": 0.92,
+     "totalR": -233.31
+    }
+   ],
+   "positiveShare": 0
+  },
+  "forex-rsi-bollinger-reversion": {
+   "rows": [
+    {
+     "label": "frozen rules",
+     "trades": 704,
+     "expectancyR": -0.029,
+     "profitFactor": 0.96,
+     "totalR": -20.46
+    },
+    {
+     "label": "period=15",
+     "trades": 683,
+     "expectancyR": -0.036,
+     "profitFactor": 0.95,
+     "totalR": -24.38
+    },
+    {
+     "label": "period=25",
+     "trades": 708,
+     "expectancyR": -0.014,
+     "profitFactor": 0.98,
+     "totalR": -10.04
+    },
+    {
+     "label": "width=1.75",
+     "trades": 726,
+     "expectancyR": -0.041,
+     "profitFactor": 0.94,
+     "totalR": -29.7
+    },
+    {
+     "label": "width=2.25",
+     "trades": 663,
+     "expectancyR": -0.036,
+     "profitFactor": 0.95,
+     "totalR": -24.14
+    },
+    {
+     "label": "rsiLow=25",
+     "trades": 177,
+     "expectancyR": -0.004,
+     "profitFactor": 0.99,
+     "totalR": -0.78
+    },
+    {
+     "label": "rsiLow=35",
+     "trades": 1821,
+     "expectancyR": -0.1,
+     "profitFactor": 0.85,
+     "totalR": -182.7
+    },
+    {
+     "label": "adxMax=15",
+     "trades": 121,
+     "expectancyR": 0.021,
+     "profitFactor": 1.03,
+     "totalR": 2.49
+    },
+    {
+     "label": "adxMax=25",
+     "trades": 1577,
+     "expectancyR": -0.052,
+     "profitFactor": 0.93,
+     "totalR": -81.48
+    },
+    {
+     "label": "atrMult=1",
+     "trades": 772,
+     "expectancyR": -0.036,
+     "profitFactor": 0.95,
+     "totalR": -27.55
+    },
+    {
+     "label": "atrMult=2",
+     "trades": 675,
+     "expectancyR": -0.031,
+     "profitFactor": 0.95,
+     "totalR": -20.77
+    }
+   ],
+   "positiveShare": 0.1
+  }
+ }
+}

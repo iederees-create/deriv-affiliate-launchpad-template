@@ -12,7 +12,7 @@
     ],
     "live": {
       "provider": "Deriv WebSocket",
-      "endpoint": "wss://ws.derivws.com/websockets/v3",
+      "endpoint": "wss://api.derivws.com/trading/v1/options/ws/public",
       "auth": "none for ticks",
       "app_id_docs": "https://api.deriv.com"
     }

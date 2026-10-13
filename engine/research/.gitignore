@@ -1,0 +1,5 @@
+data/dukascopy/raw/
+data/histdata/raw/
+# third-party market data is not redistributed in this repo; rebuild it with the scripts in DATA.md
+data/**/*.csv
+__pycache__/
