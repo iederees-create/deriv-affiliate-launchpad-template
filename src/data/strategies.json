@@ -146,7 +146,7 @@
       "stop": "Every trade has a hard stop-loss at 1.5x ATR.",
       "dailyStop": "No daily limit is modelled in the paper test. Add one if you ever trade it for real."
     },
-    "breakEvenNote": "The target is usually closer than the stop, so this style needs a high win rate to break even. One full-size loss can erase several small wins.",
+    "breakEvenNote": "In backtests on 2017 to 2026 Deriv data the target was usually about twice as far from entry as the stop, so the break-even win rate is about one trade in three. The backtested win rate was 31%, just under that bar, and the strategy lost money after costs.",
     "record": {
       "kind": "paper",
       "label": "Live paper record",
