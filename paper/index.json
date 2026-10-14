@@ -1,31 +1,25 @@
 {
-  "updatedAt": "2026-10-14T10:04:39.816Z",
+  "updatedAt": "2026-10-14T15:03:24.931Z",
   "strategies": [
     {
       "slug": "gold-h1-trend",
       "name": "Gold H1 Trend",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-14T10:04:39.816Z",
+      "lastRunAt": "2026-10-14T15:03:24.931Z",
       "symbols": [
         "frxXAUUSD"
       ],
-      "open": [
-        {
-          "symbol": "frxXAUUSD",
-          "side": "sell",
-          "entryTime": 1791914400
-        }
-      ],
+      "open": [],
       "stats": {
-        "trades": 0,
-        "wins": 0,
+        "trades": 1,
+        "wins": 1,
         "losses": 0,
-        "winRate": null,
-        "avgWinR": null,
+        "winRate": 100,
+        "avgWinR": 1.992,
         "avgLossR": null,
-        "expectancyR": null,
+        "expectancyR": 1.992,
         "profitFactor": null,
-        "totalR": 0,
+        "totalR": 1.99,
         "maxDrawdownR": 0,
         "longestLosingStreak": 0
       }
@@ -34,27 +28,21 @@
       "slug": "gold-london-breakout",
       "name": "Gold London Breakout",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-14T10:04:39.816Z",
+      "lastRunAt": "2026-10-14T15:03:24.931Z",
       "symbols": [
         "frxXAUUSD"
       ],
-      "open": [
-        {
-          "symbol": "frxXAUUSD",
-          "side": "sell",
-          "entryTime": 1791968400
-        }
-      ],
+      "open": [],
       "stats": {
-        "trades": 0,
-        "wins": 0,
+        "trades": 1,
+        "wins": 1,
         "losses": 0,
-        "winRate": null,
-        "avgWinR": null,
+        "winRate": 100,
+        "avgWinR": 1.494,
         "avgLossR": null,
-        "expectancyR": null,
+        "expectancyR": 1.494,
         "profitFactor": null,
-        "totalR": 0,
+        "totalR": 1.49,
         "maxDrawdownR": 0,
         "longestLosingStreak": 0
       }
@@ -63,38 +51,32 @@
       "slug": "forex-breakout-retest",
       "name": "Forex Breakout and Retest",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-14T10:04:39.816Z",
+      "lastRunAt": "2026-10-14T15:03:24.931Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
         "frxUSDJPY"
       ],
-      "open": [
-        {
-          "symbol": "frxGBPUSD",
-          "side": "buy",
-          "entryTime": 1791943200
-        }
-      ],
+      "open": [],
       "stats": {
-        "trades": 1,
+        "trades": 2,
         "wins": 0,
-        "losses": 1,
+        "losses": 2,
         "winRate": 0,
         "avgWinR": null,
-        "avgLossR": -1.063,
-        "expectancyR": -1.063,
+        "avgLossR": -1.061,
+        "expectancyR": -1.061,
         "profitFactor": 0,
-        "totalR": -1.06,
-        "maxDrawdownR": 1.06,
-        "longestLosingStreak": 1
+        "totalR": -2.12,
+        "maxDrawdownR": 2.12,
+        "longestLosingStreak": 2
       }
     },
     {
       "slug": "forex-rsi-bollinger-reversion",
       "name": "Forex RSI/Bollinger Reversion",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-14T10:04:39.816Z",
+      "lastRunAt": "2026-10-14T15:03:24.931Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
