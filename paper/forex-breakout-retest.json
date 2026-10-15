@@ -4,7 +4,7 @@
   "name": "Forex Breakout and Retest",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-10-15T09:47:56.001Z",
+  "lastRunAt": "2026-10-15T14:54:29.419Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
@@ -17,7 +17,7 @@
   },
   "symbols": {
     "frxEURUSD": {
-      "lastProcessed": 1792051200,
+      "lastProcessed": 1792069200,
       "pending": null,
       "open": null,
       "ctx": {
@@ -25,7 +25,7 @@
       }
     },
     "frxGBPUSD": {
-      "lastProcessed": 1792051200,
+      "lastProcessed": 1792069200,
       "pending": null,
       "open": null,
       "ctx": {
@@ -33,20 +33,9 @@
       }
     },
     "frxUSDJPY": {
-      "lastProcessed": 1792051200,
+      "lastProcessed": 1792069200,
       "pending": null,
-      "open": {
-        "side": "sell",
-        "signalTime": 1792022400,
-        "entryTime": 1792026000,
-        "entry": 157.883,
-        "sl": 158.13551,
-        "tp": 157.37798,
-        "risk": 0.25251,
-        "timeExitHour": null,
-        "entryDay": 20741,
-        "tag": "retest-hold-down"
-      },
+      "open": null,
       "ctx": {
         "lastBreakoutTime": 1792018800
       }
@@ -116,19 +105,34 @@
       "exit": 1.3166,
       "exitReason": "sl",
       "r": -1.075
+    },
+    {
+      "id": 5,
+      "symbol": "frxUSDJPY",
+      "side": "sell",
+      "tag": "retest-hold-down",
+      "signalTime": 1792022400,
+      "entryTime": 1792026000,
+      "entry": 157.883,
+      "sl": 158.13551,
+      "tp": 157.37798,
+      "exitTime": 1792065600,
+      "exit": 158.14351,
+      "exitReason": "sl",
+      "r": -1.032
     }
   ],
   "stats": {
-    "trades": 4,
+    "trades": 5,
     "wins": 0,
-    "losses": 4,
+    "losses": 5,
     "winRate": 0,
     "avgWinR": null,
-    "avgLossR": -1.06,
-    "expectancyR": -1.06,
+    "avgLossR": -1.054,
+    "expectancyR": -1.054,
     "profitFactor": 0,
-    "totalR": -4.24,
-    "maxDrawdownR": 4.24,
-    "longestLosingStreak": 4
+    "totalR": -5.27,
+    "maxDrawdownR": 5.27,
+    "longestLosingStreak": 5
   }
 }
