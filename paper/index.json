@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-10-16T07:03:48.271Z",
+  "updatedAt": "2026-10-16T12:19:32.622Z",
   "strategies": [
     {
       "slug": "gold-h1-trend",
       "name": "Gold H1 Trend",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-16T07:03:48.271Z",
+      "lastRunAt": "2026-10-16T12:19:32.622Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -28,11 +28,17 @@
       "slug": "gold-london-breakout",
       "name": "Gold London Breakout",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-16T07:03:48.271Z",
+      "lastRunAt": "2026-10-16T12:19:32.622Z",
       "symbols": [
         "frxXAUUSD"
       ],
-      "open": [],
+      "open": [
+        {
+          "symbol": "frxXAUUSD",
+          "side": "buy",
+          "entryTime": 1792137600
+        }
+      ],
       "stats": {
         "trades": 1,
         "wins": 1,
@@ -51,7 +57,7 @@
       "slug": "forex-breakout-retest",
       "name": "Forex Breakout and Retest",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-16T07:03:48.271Z",
+      "lastRunAt": "2026-10-16T12:19:32.622Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
@@ -82,31 +88,25 @@
       "slug": "forex-rsi-bollinger-reversion",
       "name": "Forex RSI/Bollinger Reversion",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-16T07:03:48.271Z",
+      "lastRunAt": "2026-10-16T12:19:32.622Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
         "frxUSDJPY"
       ],
-      "open": [
-        {
-          "symbol": "frxGBPUSD",
-          "side": "sell",
-          "entryTime": 1792123200
-        }
-      ],
+      "open": [],
       "stats": {
-        "trades": 0,
+        "trades": 1,
         "wins": 0,
-        "losses": 0,
-        "winRate": null,
+        "losses": 1,
+        "winRate": 0,
         "avgWinR": null,
-        "avgLossR": null,
-        "expectancyR": null,
-        "profitFactor": null,
-        "totalR": 0,
-        "maxDrawdownR": 0,
-        "longestLosingStreak": 0
+        "avgLossR": -1.04,
+        "expectancyR": -1.04,
+        "profitFactor": 0,
+        "totalR": -1.04,
+        "maxDrawdownR": 1.04,
+        "longestLosingStreak": 1
       }
     }
   ]
