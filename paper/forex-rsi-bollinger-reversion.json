@@ -4,7 +4,7 @@
   "name": "Forex RSI/Bollinger Reversion",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-10-18T18:01:29.753Z",
+  "lastRunAt": "2026-10-18T20:33:15.194Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
