@@ -4,7 +4,7 @@
   "name": "Gold H1 Trend",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-10-19T15:31:37.141Z",
+  "lastRunAt": "2026-10-19T20:59:44.818Z",
   "assumptions": {
     "spread": {
       "frxXAUUSD": 0.35
@@ -15,9 +15,20 @@
   },
   "symbols": {
     "frxXAUUSD": {
-      "lastProcessed": 1792418400,
+      "lastProcessed": 1792436400,
       "pending": null,
-      "open": null,
+      "open": {
+        "side": "sell",
+        "signalTime": 1792425600,
+        "entryTime": 1792429200,
+        "entry": 4140.905,
+        "sl": 4166.7603,
+        "tp": 4089.19439,
+        "risk": 25.8553,
+        "timeExitHour": null,
+        "entryDay": 20745,
+        "tag": "ema-cross-down"
+      },
       "ctx": {}
     }
   },
