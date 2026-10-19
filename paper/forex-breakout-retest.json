@@ -4,7 +4,7 @@
   "name": "Forex Breakout and Retest",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-10-19T07:40:46.008Z",
+  "lastRunAt": "2026-10-19T15:31:37.141Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
@@ -17,15 +17,15 @@
   },
   "symbols": {
     "frxEURUSD": {
-      "lastProcessed": 1792389600,
+      "lastProcessed": 1792418400,
       "pending": null,
       "open": null,
       "ctx": {
-        "lastBreakoutTime": 1791982800
+        "lastBreakoutTime": 1792393200
       }
     },
     "frxGBPUSD": {
-      "lastProcessed": 1792389600,
+      "lastProcessed": 1792418400,
       "pending": null,
       "open": null,
       "ctx": {
@@ -33,11 +33,22 @@
       }
     },
     "frxUSDJPY": {
-      "lastProcessed": 1792389600,
+      "lastProcessed": 1792418400,
       "pending": null,
-      "open": null,
+      "open": {
+        "side": "buy",
+        "signalTime": 1792414800,
+        "entryTime": 1792418400,
+        "entry": 158.354,
+        "sl": 158.19369,
+        "tp": 158.67462,
+        "risk": 0.16031,
+        "timeExitHour": null,
+        "entryDay": 20745,
+        "tag": "retest-hold-up"
+      },
       "ctx": {
-        "lastBreakoutTime": 1792018800
+        "lastBreakoutTime": 1792411200
       }
     }
   },
@@ -150,19 +161,34 @@
       "exit": 1.33407,
       "exitReason": "sl",
       "r": -1.065
+    },
+    {
+      "id": 8,
+      "symbol": "frxEURUSD",
+      "side": "sell",
+      "tag": "retest-hold-down",
+      "signalTime": 1792400400,
+      "entryTime": 1792404000,
+      "entry": 1.12062,
+      "sl": 1.1225,
+      "tp": 1.11686,
+      "exitTime": 1792407600,
+      "exit": 1.12256,
+      "exitReason": "sl",
+      "r": -1.032
     }
   ],
   "stats": {
-    "trades": 7,
+    "trades": 8,
     "wins": 1,
-    "losses": 6,
-    "winRate": 14.3,
+    "losses": 7,
+    "winRate": 12.5,
     "avgWinR": 1.973,
-    "avgLossR": -1.056,
-    "expectancyR": -0.623,
-    "profitFactor": 0.31,
-    "totalR": -4.36,
-    "maxDrawdownR": 5.27,
+    "avgLossR": -1.053,
+    "expectancyR": -0.675,
+    "profitFactor": 0.27,
+    "totalR": -5.4,
+    "maxDrawdownR": 5.4,
     "longestLosingStreak": 5
   }
 }
