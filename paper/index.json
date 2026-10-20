@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-10-20T00:15:40.340Z",
+  "updatedAt": "2026-10-20T05:56:13.068Z",
   "strategies": [
     {
       "slug": "gold-h1-trend",
       "name": "Gold H1 Trend",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-20T00:15:40.340Z",
+      "lastRunAt": "2026-10-20T05:56:13.068Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -34,7 +34,7 @@
       "slug": "gold-london-breakout",
       "name": "Gold London Breakout",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-20T00:15:40.340Z",
+      "lastRunAt": "2026-10-20T05:56:13.068Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -57,30 +57,24 @@
       "slug": "forex-breakout-retest",
       "name": "Forex Breakout and Retest",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-20T00:15:40.340Z",
+      "lastRunAt": "2026-10-20T05:56:13.068Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
         "frxUSDJPY"
       ],
-      "open": [
-        {
-          "symbol": "frxUSDJPY",
-          "side": "buy",
-          "entryTime": 1792418400
-        }
-      ],
+      "open": [],
       "stats": {
-        "trades": 8,
+        "trades": 9,
         "wins": 1,
-        "losses": 7,
-        "winRate": 12.5,
+        "losses": 8,
+        "winRate": 11.1,
         "avgWinR": 1.973,
-        "avgLossR": -1.053,
-        "expectancyR": -0.675,
-        "profitFactor": 0.27,
-        "totalR": -5.4,
-        "maxDrawdownR": 5.4,
+        "avgLossR": -1.052,
+        "expectancyR": -0.716,
+        "profitFactor": 0.23,
+        "totalR": -6.45,
+        "maxDrawdownR": 6.45,
         "longestLosingStreak": 5
       }
     },
@@ -88,7 +82,7 @@
       "slug": "forex-rsi-bollinger-reversion",
       "name": "Forex RSI/Bollinger Reversion",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-20T00:15:40.340Z",
+      "lastRunAt": "2026-10-20T05:56:13.068Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
