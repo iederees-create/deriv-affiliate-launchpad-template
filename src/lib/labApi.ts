@@ -103,6 +103,45 @@ export async function fetchLabBoard(): Promise<LabBoard> {
   return parse(res);
 }
 
+export type NewsSitoutWindow = {
+  title: string;
+  country: string;
+  impact: string;
+  eventAt: string;
+  eventAtSast: string;
+  sitFrom: string;
+  sitUntil: string;
+  sitFromSast: string;
+  sitUntilSast: string;
+  status: 'live' | 'upcoming' | 'past';
+  forecast: string;
+  previous: string;
+};
+
+export type NewsSitoutBoard = {
+  ok: boolean;
+  appliesTo: string;
+  error?: string;
+  disclaimer: string;
+  timezone: string;
+  sitMinutes: number;
+  countries: string[];
+  source: { name: string; credit: string; url: string; exportUrl: string };
+  fetchedAt: string | null;
+  cached: boolean;
+  stale: boolean;
+  fxSitOutNow: boolean;
+  next: NewsSitoutWindow | null;
+  live: NewsSitoutWindow[];
+  upcoming: NewsSitoutWindow[];
+  windows: NewsSitoutWindow[];
+};
+
+export async function fetchNewsSitout(): Promise<NewsSitoutBoard> {
+  const res = await fetch(`${LAB_API_BASE}/api/lab/news-sitout`);
+  return parse(res);
+}
+
 export async function submitLabStrategy(token: string, body: {
   title: string;
   description: string;

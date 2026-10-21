@@ -597,6 +597,37 @@ button.cta {
   margin-bottom: 4px;
 }
 
+.news-sitout-list {
+  list-style: none;
+  margin: 12px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.news-sitout-list li {
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+}
+
+.news-sitout-list strong {
+  display: block;
+  font-size: 0.98rem;
+}
+
+.news-sitout-list .when {
+  margin: 4px 0 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.news-sitout-list .live-flag {
+  color: var(--primary);
+}
+
 .sit-with-me {
   max-width: 720px;
 }
