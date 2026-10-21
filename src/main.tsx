@@ -16,6 +16,7 @@ import { RiskDisclosure } from "./pages/RiskDisclosure";
 import { Contact } from "./pages/Contact";
 import { Article } from "./pages/Article";
 import { Tools } from "./pages/Tools";
+import { EccToolsCostAudit } from "./pages/EccToolsCostAudit";
 import { Desk } from "./pages/Desk";
 import { Lab } from "./pages/Lab";
 import { Kit } from "./pages/Kit";
@@ -43,6 +44,7 @@ const router = createBrowserRouter(
         { path: "platforms", element: <Platforms /> },
         { path: "learn", element: <Learn /> },
         { path: "tools", element: <Tools /> },
+        { path: "ecc-tools-cost-audit", element: <EccToolsCostAudit /> },
         { path: "desk", element: <Desk /> },
         { path: "lab", element: <Lab /> },
         { path: "kit", element: <Kit /> },

@@ -23,6 +23,7 @@ const requiredPaths = [
   "/platforms",
   "/learn",
   "/tools",
+  "/ecc-tools-cost-audit",
   "/desk",
   "/kit",
   "/strategies",

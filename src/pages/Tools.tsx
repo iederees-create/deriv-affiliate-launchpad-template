@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { CTA } from "../components/CTA";
+import { NewsSitoutCard } from "../components/NewsSitoutCard";
 import { DisclosureBand, SectionHeader } from "../components/Section";
 import { Seo } from "../components/Seo";
 import { affiliateConfig } from "../config/affiliateConfig";
-import { fetchNewsSitout, type NewsSitoutBoard } from "../lib/labApi";
 
 function money(value: number): string {
   if (!Number.isFinite(value)) return "—";
@@ -46,37 +46,12 @@ export function Tools() {
     setup: false,
     revenge: false
   });
-  const [news, setNews] = useState<NewsSitoutBoard | null>(null);
-  const [newsError, setNewsError] = useState("");
-  const [newsDesk, setNewsDesk] = useState<"synthetics" | "fx" | null>(null);
 
   useEffect(() => {
     if (sessionStarted === null) return;
     const id = window.setInterval(() => setNow(Date.now()), 1000);
     return () => window.clearInterval(id);
   }, [sessionStarted]);
-
-  useEffect(() => {
-    let cancelled = false;
-    const load = () => {
-      fetchNewsSitout()
-        .then((board) => {
-          if (cancelled) return;
-          setNews(board);
-          setNewsError(board.ok ? "" : "Calendar unavailable. If you trade FX, skip red-folder minutes without the feed.");
-        })
-        .catch(() => {
-          if (cancelled) return;
-          setNewsError("Calendar unavailable. If you trade FX, skip red-folder minutes without the feed.");
-        });
-    };
-    load();
-    const id = window.setInterval(load, 60_000);
-    return () => {
-      cancelled = true;
-      window.clearInterval(id);
-    };
-  }, []);
 
   const math = useMemo(() => {
     const account = Math.max(0, Number(balance) || 0);
@@ -248,107 +223,7 @@ export function Tools() {
             <p className="muted">{math.gateYes ? "The gate is a filter, not permission to size up." : "A no is cheaper than a revenge contract."}</p>
           </div>
         </article>
-        <article className="tool-card" id="news-sitout">
-          <SectionHeader
-            title="FX news sit-out (not for Volatility Indices)"
-            text="High-impact USD, EUR, GBP, and ZAR prints. Sit out 15 minutes before through 15 minutes after. Synthetic volatility charts ignore this calendar."
-          />
-          {!news && !newsError ? <p className="muted">Loading this week's windows...</p> : null}
-          {newsError ? <p className="muted">{newsError}</p> : null}
-          {news && news.ok ? (
-            <>
-              <div className={`result-stack ${news.fxSitOutNow ? "result-stop" : ""}`}>
-                <p>
-                  {news.fxSitOutNow
-                    ? "FX sit-out window is live"
-                    : news.next
-                      ? "Next high-impact window"
-                      : "No high-impact USD / EUR / GBP / ZAR left this week"}
-                </p>
-                <strong>{news.next ? `${news.next.country} ${news.next.title}` : "Clear"}</strong>
-                <p className="muted">
-                  {news.next
-                    ? `${news.next.sitFromSast} – ${news.next.sitUntilSast}`
-                    : "If a red folder appears later, refresh. Times can move."}
-                </p>
-              </div>
-              <div className="cta-row">
-                <button
-                  type="button"
-                  className={newsDesk === "synthetics" ? "cta" : "cta cta-ghost"}
-                  onClick={() => setNewsDesk("synthetics")}
-                >
-                  I trade synthetics — this does not apply.
-                </button>
-                <button
-                  type="button"
-                  className={newsDesk === "fx" ? "cta" : "cta cta-secondary"}
-                  onClick={() => setNewsDesk("fx")}
-                >
-                  I trade FX — sit out this window.
-                </button>
-              </div>
-              {newsDesk === "synthetics" ? (
-                <p className="muted">
-                  Volatility Indices are independent of NFP, CPI, and FOMC. The live Chart Select desk does not use this calendar.
-                </p>
-              ) : null}
-              {newsDesk === "fx" ? (
-                <ul className="news-sitout-list">
-                  {news.windows.length === 0 ? (
-                    <li>
-                      <strong>No remaining High windows this week</strong>
-                      <p className="when">Sitting out still works on your own session clock.</p>
-                    </li>
-                  ) : (
-                    news.windows.map((row) => (
-                      <li key={`${row.country}-${row.eventAt}-${row.title}`}>
-                        <strong>
-                          {row.status === "live" ? <span className="live-flag">Live sit-out · </span> : null}
-                          {row.country} {row.title}
-                        </strong>
-                        <p className="when">{row.sitFromSast} – {row.sitUntilSast}</p>
-                      </li>
-                    ))
-                  )}
-                </ul>
-              ) : null}
-              <p className="muted">
-                Source: <a href={news.source.url} rel="noopener noreferrer" target="_blank">Forex Factory</a> public weekly export.
-                {news.stale ? " Feed is stale; last good cache is showing." : ""} Educational only — not a trade signal.
-              </p>
-            </>
-          ) : newsError ? (
-            <>
-              <div className="cta-row">
-                <button
-                  type="button"
-                  className={newsDesk === "synthetics" ? "cta" : "cta cta-ghost"}
-                  onClick={() => setNewsDesk("synthetics")}
-                >
-                  I trade synthetics — this does not apply.
-                </button>
-                <button
-                  type="button"
-                  className={newsDesk === "fx" ? "cta" : "cta cta-secondary"}
-                  onClick={() => setNewsDesk("fx")}
-                >
-                  I trade FX — sit out this window.
-                </button>
-              </div>
-              {newsDesk === "synthetics" ? (
-                <p className="muted">
-                  Volatility Indices are independent of NFP, CPI, and FOMC. The live Chart Select desk does not use this calendar.
-                </p>
-              ) : null}
-              {newsDesk === "fx" ? (
-                <p className="muted">
-                  Sit out 15 minutes before through 15 minutes after High-impact USD, EUR, GBP, and ZAR prints. Check Forex Factory by hand until the feed returns.
-                </p>
-              ) : null}
-            </>
-          ) : null}
-        </article>
+        <NewsSitoutCard />
         <article className="tool-card" id="expectancy">
           <SectionHeader title="Sample expectancy" text="Win rate without the average win and loss in R is a vanity number." />
           <label className="field">

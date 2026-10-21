@@ -50,6 +50,10 @@ const pageNarrations: Record<string, { title: string; description: string; secti
     title: "Welcome to your free trading tools.",
     description: "These simple calculators and planning aids are here to help you slow down, think clearly, and manage risk more carefully. Everything works in your browser, and no login is needed."
   },
+  "/ecc-tools-cost-audit": {
+    title: "Welcome to the FX news sit-out clock.",
+    description: "This page is the red-folder sit-out window for FX desks, not a billing audit. High-impact USD, EUR, GBP, and ZAR prints. Volatility Indices ignore this calendar. Sitting out is a valid session."
+  },
   "/kit": {
     title: "Welcome to your free planning kit.",
     description: "Inside you will find practical checklists, a journal, and a demo plan designed to make your learning journey calmer and more organised. These are educational tools, not a promise of profit."
