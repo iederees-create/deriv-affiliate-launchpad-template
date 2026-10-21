@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-10-21T10:02:28.282Z",
+  "updatedAt": "2026-10-21T15:07:33.351Z",
   "strategies": [
     {
       "slug": "gold-h1-trend",
       "name": "Gold H1 Trend",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-21T10:02:28.282Z",
+      "lastRunAt": "2026-10-21T15:07:33.351Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -34,7 +34,7 @@
       "slug": "gold-london-breakout",
       "name": "Gold London Breakout",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-21T10:02:28.282Z",
+      "lastRunAt": "2026-10-21T15:07:33.351Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -57,7 +57,7 @@
       "slug": "forex-breakout-retest",
       "name": "Forex Breakout and Retest",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-21T10:02:28.282Z",
+      "lastRunAt": "2026-10-21T15:07:33.351Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
@@ -65,15 +65,15 @@
       ],
       "open": [],
       "stats": {
-        "trades": 10,
+        "trades": 11,
         "wins": 2,
-        "losses": 8,
-        "winRate": 20,
+        "losses": 9,
+        "winRate": 18.2,
         "avgWinR": 1.962,
         "avgLossR": -1.052,
-        "expectancyR": -0.45,
-        "profitFactor": 0.47,
-        "totalR": -4.5,
+        "expectancyR": -0.504,
+        "profitFactor": 0.41,
+        "totalR": -5.54,
         "maxDrawdownR": 6.45,
         "longestLosingStreak": 5
       }
@@ -82,7 +82,7 @@
       "slug": "forex-rsi-bollinger-reversion",
       "name": "Forex RSI/Bollinger Reversion",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-21T10:02:28.282Z",
+      "lastRunAt": "2026-10-21T15:07:33.351Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
