@@ -4,7 +4,7 @@
   "name": "Forex Breakout and Retest",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-10-22T15:09:17.591Z",
+  "lastRunAt": "2026-10-22T19:59:31.398Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
@@ -17,26 +17,15 @@
   },
   "symbols": {
     "frxEURUSD": {
-      "lastProcessed": 1792677600,
+      "lastProcessed": 1792692000,
       "pending": null,
-      "open": {
-        "side": "sell",
-        "signalTime": 1792666800,
-        "entryTime": 1792670400,
-        "entry": 1.1198,
-        "sl": 1.1222,
-        "tp": 1.115,
-        "risk": 0.0024,
-        "timeExitHour": null,
-        "entryDay": 20748,
-        "tag": "retest-hold-down"
-      },
+      "open": null,
       "ctx": {
         "lastBreakoutTime": 1792663200
       }
     },
     "frxGBPUSD": {
-      "lastProcessed": 1792677600,
+      "lastProcessed": 1792692000,
       "pending": null,
       "open": null,
       "ctx": {
@@ -44,7 +33,7 @@
       }
     },
     "frxUSDJPY": {
-      "lastProcessed": 1792677600,
+      "lastProcessed": 1792692000,
       "pending": null,
       "open": null,
       "ctx": {
@@ -251,18 +240,33 @@
       "exit": 156.77912,
       "exitReason": "tp",
       "r": 1.965
+    },
+    {
+      "id": 14,
+      "symbol": "frxEURUSD",
+      "side": "sell",
+      "tag": "retest-hold-down",
+      "signalTime": 1792666800,
+      "entryTime": 1792670400,
+      "entry": 1.1198,
+      "sl": 1.1222,
+      "tp": 1.115,
+      "exitTime": 1792684800,
+      "exit": 1.12226,
+      "exitReason": "sl",
+      "r": -1.025
     }
   ],
   "stats": {
-    "trades": 13,
+    "trades": 14,
     "wins": 3,
-    "losses": 10,
-    "winRate": 23.1,
+    "losses": 11,
+    "winRate": 21.4,
     "avgWinR": 1.963,
-    "avgLossR": -1.055,
-    "expectancyR": -0.358,
-    "profitFactor": 0.56,
-    "totalR": -4.66,
+    "avgLossR": -1.052,
+    "expectancyR": -0.406,
+    "profitFactor": 0.51,
+    "totalR": -5.68,
     "maxDrawdownR": 6.62,
     "longestLosingStreak": 5
   }
