@@ -4,7 +4,7 @@
   "name": "Forex RSI/Bollinger Reversion",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-10-26T12:48:55.885Z",
+  "lastRunAt": "2026-10-26T19:11:48.302Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
@@ -17,30 +17,30 @@
   },
   "symbols": {
     "frxEURUSD": {
-      "lastProcessed": 1793012400,
-      "pending": null,
-      "open": null,
-      "ctx": {}
-    },
-    "frxGBPUSD": {
-      "lastProcessed": 1793012400,
+      "lastProcessed": 1793037600,
       "pending": null,
       "open": {
         "side": "buy",
-        "signalTime": 1793001600,
-        "entryTime": 1793005200,
-        "entry": 1.33474,
-        "sl": 1.33311,
-        "tp": 1.33738,
-        "risk": 0.00163,
+        "signalTime": 1793019600,
+        "entryTime": 1793023200,
+        "entry": 1.11752,
+        "sl": 1.11603,
+        "tp": 1.12043,
+        "risk": 0.00149,
         "timeExitHour": null,
         "entryDay": 20752,
         "tag": "lower-band-oversold"
       },
       "ctx": {}
     },
+    "frxGBPUSD": {
+      "lastProcessed": 1793037600,
+      "pending": null,
+      "open": null,
+      "ctx": {}
+    },
     "frxUSDJPY": {
-      "lastProcessed": 1793012400,
+      "lastProcessed": 1793037600,
       "pending": null,
       "open": null,
       "ctx": {}
@@ -80,19 +80,34 @@
       "exit": 157.08763,
       "exitReason": "sl",
       "r": -1.033
+    },
+    {
+      "id": 3,
+      "symbol": "frxGBPUSD",
+      "side": "buy",
+      "tag": "lower-band-oversold",
+      "signalTime": 1793001600,
+      "entryTime": 1793005200,
+      "entry": 1.33474,
+      "sl": 1.33311,
+      "tp": 1.33738,
+      "exitTime": 1793019600,
+      "exit": 1.33303,
+      "exitReason": "sl",
+      "r": -1.049
     }
   ],
   "stats": {
-    "trades": 2,
+    "trades": 3,
     "wins": 0,
-    "losses": 2,
+    "losses": 3,
     "winRate": 0,
     "avgWinR": null,
-    "avgLossR": -1.036,
-    "expectancyR": -1.036,
+    "avgLossR": -1.041,
+    "expectancyR": -1.041,
     "profitFactor": 0,
-    "totalR": -2.07,
-    "maxDrawdownR": 2.07,
-    "longestLosingStreak": 2
+    "totalR": -3.12,
+    "maxDrawdownR": 3.12,
+    "longestLosingStreak": 3
   }
 }
