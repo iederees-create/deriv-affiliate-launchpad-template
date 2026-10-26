@@ -4,7 +4,7 @@
   "name": "Gold H1 Trend",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-10-26T06:02:04.129Z",
+  "lastRunAt": "2026-10-26T12:48:55.885Z",
   "assumptions": {
     "spread": {
       "frxXAUUSD": 0.35
@@ -15,7 +15,7 @@
   },
   "symbols": {
     "frxXAUUSD": {
-      "lastProcessed": 1792990800,
+      "lastProcessed": 1793012400,
       "pending": null,
       "open": null,
       "ctx": {}
