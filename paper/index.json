@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-10-28T08:19:40.302Z",
+  "updatedAt": "2026-10-28T15:56:24.853Z",
   "strategies": [
     {
       "slug": "gold-h1-trend",
       "name": "Gold H1 Trend",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-28T08:19:40.302Z",
+      "lastRunAt": "2026-10-28T15:56:24.853Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -28,7 +28,7 @@
       "slug": "gold-london-breakout",
       "name": "Gold London Breakout",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-28T08:19:40.302Z",
+      "lastRunAt": "2026-10-28T15:56:24.853Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -51,34 +51,23 @@
       "slug": "forex-breakout-retest",
       "name": "Forex Breakout and Retest",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-28T08:19:40.302Z",
+      "lastRunAt": "2026-10-28T15:56:24.853Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
         "frxUSDJPY"
       ],
-      "open": [
-        {
-          "symbol": "frxEURUSD",
-          "side": "sell",
-          "entryTime": 1793170800
-        },
-        {
-          "symbol": "frxGBPUSD",
-          "side": "sell",
-          "entryTime": 1793167200
-        }
-      ],
+      "open": [],
       "stats": {
-        "trades": 22,
+        "trades": 24,
         "wins": 9,
-        "losses": 13,
-        "winRate": 40.9,
+        "losses": 15,
+        "winRate": 37.5,
         "avgWinR": 1.947,
         "avgLossR": -1.056,
-        "expectancyR": 0.173,
-        "profitFactor": 1.28,
-        "totalR": 3.8,
+        "expectancyR": 0.07,
+        "profitFactor": 1.11,
+        "totalR": 1.68,
         "maxDrawdownR": 7.84,
         "longestLosingStreak": 5
       }
@@ -87,7 +76,7 @@
       "slug": "forex-rsi-bollinger-reversion",
       "name": "Forex RSI/Bollinger Reversion",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-10-28T08:19:40.302Z",
+      "lastRunAt": "2026-10-28T15:56:24.853Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
