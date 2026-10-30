@@ -4,7 +4,7 @@
   "name": "Forex Breakout and Retest",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-10-30T00:50:15.626Z",
+  "lastRunAt": "2026-10-30T14:01:24.323Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
@@ -17,49 +17,27 @@
   },
   "symbols": {
     "frxEURUSD": {
-      "lastProcessed": 1793314800,
-      "pending": null,
-      "open": {
-        "side": "buy",
-        "signalTime": 1793307600,
-        "entryTime": 1793311200,
-        "entry": 1.118,
-        "sl": 1.11657,
-        "tp": 1.12087,
-        "risk": 0.00143,
-        "timeExitHour": null,
-        "entryDay": 20755,
-        "tag": "retest-hold-up"
-      },
-      "ctx": {
-        "lastBreakoutTime": 1793304000
-      }
-    },
-    "frxGBPUSD": {
-      "lastProcessed": 1793314800,
-      "pending": null,
-      "open": {
-        "side": "buy",
-        "signalTime": 1793289600,
-        "entryTime": 1793293200,
-        "entry": 1.33687,
-        "sl": 1.33497,
-        "tp": 1.34067,
-        "risk": 0.0019,
-        "timeExitHour": null,
-        "entryDay": 20755,
-        "tag": "retest-hold-up"
-      },
-      "ctx": {
-        "lastBreakoutTime": 1793286000
-      }
-    },
-    "frxUSDJPY": {
-      "lastProcessed": 1793314800,
+      "lastProcessed": 1793365200,
       "pending": null,
       "open": null,
       "ctx": {
-        "lastBreakoutTime": 1793196000
+        "lastBreakoutTime": 1793318400
+      }
+    },
+    "frxGBPUSD": {
+      "lastProcessed": 1793365200,
+      "pending": null,
+      "open": null,
+      "ctx": {
+        "lastBreakoutTime": 1793347200
+      }
+    },
+    "frxUSDJPY": {
+      "lastProcessed": 1793365200,
+      "pending": null,
+      "open": null,
+      "ctx": {
+        "lastBreakoutTime": 1793318400
       }
     }
   },
@@ -442,18 +420,108 @@
       "exit": 158.06237,
       "exitReason": "sl",
       "r": -1.046
+    },
+    {
+      "id": 26,
+      "symbol": "frxEURUSD",
+      "side": "buy",
+      "tag": "retest-hold-up",
+      "signalTime": 1793307600,
+      "entryTime": 1793311200,
+      "entry": 1.118,
+      "sl": 1.11657,
+      "tp": 1.12087,
+      "exitTime": 1793322000,
+      "exit": 1.12081,
+      "exitReason": "tp",
+      "r": 1.965
+    },
+    {
+      "id": 27,
+      "symbol": "frxEURUSD",
+      "side": "buy",
+      "tag": "retest-hold-up",
+      "signalTime": 1793322000,
+      "entryTime": 1793325600,
+      "entry": 1.11948,
+      "sl": 1.11846,
+      "tp": 1.12152,
+      "exitTime": 1793336400,
+      "exit": 1.1184,
+      "exitReason": "sl",
+      "r": -1.059
+    },
+    {
+      "id": 28,
+      "symbol": "frxGBPUSD",
+      "side": "buy",
+      "tag": "retest-hold-up",
+      "signalTime": 1793289600,
+      "entryTime": 1793293200,
+      "entry": 1.33687,
+      "sl": 1.33497,
+      "tp": 1.34067,
+      "exitTime": 1793322000,
+      "exit": 1.34059,
+      "exitReason": "tp",
+      "r": 1.958
+    },
+    {
+      "id": 29,
+      "symbol": "frxGBPUSD",
+      "side": "buy",
+      "tag": "retest-hold-up",
+      "signalTime": 1793322000,
+      "entryTime": 1793325600,
+      "entry": 1.33939,
+      "sl": 1.3381,
+      "tp": 1.34196,
+      "exitTime": 1793336400,
+      "exit": 1.33802,
+      "exitReason": "sl",
+      "r": -1.062
+    },
+    {
+      "id": 30,
+      "symbol": "frxGBPUSD",
+      "side": "buy",
+      "tag": "retest-hold-up",
+      "signalTime": 1793350800,
+      "entryTime": 1793354400,
+      "entry": 1.34298,
+      "sl": 1.3403,
+      "tp": 1.34835,
+      "exitTime": 1793361600,
+      "exit": 1.34022,
+      "exitReason": "sl",
+      "r": -1.03
+    },
+    {
+      "id": 31,
+      "symbol": "frxUSDJPY",
+      "side": "sell",
+      "tag": "retest-hold-down",
+      "signalTime": 1793325600,
+      "entryTime": 1793329200,
+      "entry": 157.573,
+      "sl": 157.70209,
+      "tp": 157.31481,
+      "exitTime": 1793329200,
+      "exit": 157.32281,
+      "exitReason": "tp",
+      "r": 1.938
     }
   ],
   "stats": {
-    "trades": 25,
-    "wins": 9,
-    "losses": 16,
-    "winRate": 36,
-    "avgWinR": 1.947,
+    "trades": 31,
+    "wins": 12,
+    "losses": 19,
+    "winRate": 38.7,
+    "avgWinR": 1.949,
     "avgLossR": -1.055,
-    "expectancyR": 0.025,
-    "profitFactor": 1.04,
-    "totalR": 0.64,
+    "expectancyR": 0.108,
+    "profitFactor": 1.17,
+    "totalR": 3.35,
     "maxDrawdownR": 7.84,
     "longestLosingStreak": 5
   }
