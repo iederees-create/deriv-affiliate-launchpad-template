@@ -4,7 +4,7 @@
   "name": "Gold London Breakout",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-10-30T14:01:24.323Z",
+  "lastRunAt": "2026-10-30T19:13:50.184Z",
   "assumptions": {
     "spread": {
       "frxXAUUSD": 0.35
@@ -15,20 +15,9 @@
   },
   "symbols": {
     "frxXAUUSD": {
-      "lastProcessed": 1793365200,
+      "lastProcessed": 1793383200,
       "pending": null,
-      "open": {
-        "side": "sell",
-        "signalTime": 1793343600,
-        "entryTime": 1793347200,
-        "entry": 3974.965,
-        "sl": 4018.77,
-        "tp": 3909.2575,
-        "risk": 43.805,
-        "timeExitHour": 20,
-        "entryDay": 20756,
-        "tag": "asian-low-break"
-      },
+      "open": null,
       "ctx": {
         "lastTradeDay": 20756
       }
@@ -98,18 +87,33 @@
       "exit": 4025.455,
       "exitReason": "sl",
       "r": -1.006
+    },
+    {
+      "id": 5,
+      "symbol": "frxXAUUSD",
+      "side": "sell",
+      "tag": "asian-low-break",
+      "signalTime": 1793343600,
+      "entryTime": 1793347200,
+      "entry": 3974.965,
+      "sl": 4018.77,
+      "tp": 3909.2575,
+      "exitTime": 1793368800,
+      "exit": 3909.4325,
+      "exitReason": "tp",
+      "r": 1.496
     }
   ],
   "stats": {
-    "trades": 4,
-    "wins": 1,
+    "trades": 5,
+    "wins": 2,
     "losses": 3,
-    "winRate": 25,
-    "avgWinR": 1.494,
+    "winRate": 40,
+    "avgWinR": 1.495,
     "avgLossR": -0.826,
-    "expectancyR": -0.246,
-    "profitFactor": 0.6,
-    "totalR": -0.98,
+    "expectancyR": 0.102,
+    "profitFactor": 1.21,
+    "totalR": 0.51,
     "maxDrawdownR": 2.48,
     "longestLosingStreak": 3
   }

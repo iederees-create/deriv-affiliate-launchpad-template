@@ -4,7 +4,7 @@
   "name": "Forex Breakout and Retest",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-10-30T14:01:24.323Z",
+  "lastRunAt": "2026-10-30T19:13:50.184Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
@@ -17,15 +17,15 @@
   },
   "symbols": {
     "frxEURUSD": {
-      "lastProcessed": 1793365200,
+      "lastProcessed": 1793383200,
       "pending": null,
       "open": null,
       "ctx": {
-        "lastBreakoutTime": 1793318400
+        "lastBreakoutTime": 1793365200
       }
     },
     "frxGBPUSD": {
-      "lastProcessed": 1793365200,
+      "lastProcessed": 1793383200,
       "pending": null,
       "open": null,
       "ctx": {
@@ -33,7 +33,7 @@
       }
     },
     "frxUSDJPY": {
-      "lastProcessed": 1793365200,
+      "lastProcessed": 1793383200,
       "pending": null,
       "open": null,
       "ctx": {
@@ -510,18 +510,33 @@
       "exit": 157.32281,
       "exitReason": "tp",
       "r": 1.938
+    },
+    {
+      "id": 32,
+      "symbol": "frxEURUSD",
+      "side": "sell",
+      "tag": "retest-hold-down",
+      "signalTime": 1793368800,
+      "entryTime": 1793372400,
+      "entry": 1.11556,
+      "sl": 1.11688,
+      "tp": 1.11293,
+      "exitTime": 1793376000,
+      "exit": 1.11694,
+      "exitReason": "sl",
+      "r": -1.045
     }
   ],
   "stats": {
-    "trades": 31,
+    "trades": 32,
     "wins": 12,
-    "losses": 19,
-    "winRate": 38.7,
+    "losses": 20,
+    "winRate": 37.5,
     "avgWinR": 1.949,
-    "avgLossR": -1.055,
-    "expectancyR": 0.108,
-    "profitFactor": 1.17,
-    "totalR": 3.35,
+    "avgLossR": -1.054,
+    "expectancyR": 0.072,
+    "profitFactor": 1.11,
+    "totalR": 2.3,
     "maxDrawdownR": 7.84,
     "longestLosingStreak": 5
   }
