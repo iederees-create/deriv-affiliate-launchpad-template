@@ -4,7 +4,7 @@
   "name": "Forex RSI/Bollinger Reversion",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-11-03T15:00:09.151Z",
+  "lastRunAt": "2026-11-03T20:55:52.140Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
@@ -17,7 +17,7 @@
   },
   "symbols": {
     "frxEURUSD": {
-      "lastProcessed": 1793714400,
+      "lastProcessed": 1793732400,
       "pending": null,
       "open": {
         "side": "sell",
@@ -34,26 +34,21 @@
       "ctx": {}
     },
     "frxGBPUSD": {
-      "lastProcessed": 1793714400,
+      "lastProcessed": 1793732400,
       "pending": null,
       "open": null,
       "ctx": {}
     },
     "frxUSDJPY": {
-      "lastProcessed": 1793714400,
-      "pending": null,
-      "open": {
+      "lastProcessed": 1793732400,
+      "pending": {
         "side": "sell",
-        "signalTime": 1793703600,
-        "entryTime": 1793707200,
-        "entry": 158.235,
-        "sl": 158.4289,
-        "tp": 157.93325,
-        "risk": 0.1939,
-        "timeExitHour": null,
-        "entryDay": 20760,
-        "tag": "upper-band-overbought"
+        "slDistance": 0.2182187541649006,
+        "tpLevel": 158.15095000000014,
+        "tag": "upper-band-overbought",
+        "signalTime": 1793732400
       },
+      "open": null,
       "ctx": {}
     }
   },
@@ -136,19 +131,49 @@
       "exit": 1.34029,
       "exitReason": "sl",
       "r": -1.029
+    },
+    {
+      "id": 6,
+      "symbol": "frxUSDJPY",
+      "side": "sell",
+      "tag": "upper-band-overbought",
+      "signalTime": 1793703600,
+      "entryTime": 1793707200,
+      "entry": 158.235,
+      "sl": 158.4289,
+      "tp": 157.93325,
+      "exitTime": 1793718000,
+      "exit": 158.4369,
+      "exitReason": "sl",
+      "r": -1.041
+    },
+    {
+      "id": 7,
+      "symbol": "frxUSDJPY",
+      "side": "sell",
+      "tag": "upper-band-overbought",
+      "signalTime": 1793718000,
+      "entryTime": 1793721600,
+      "entry": 158.446,
+      "sl": 158.6755,
+      "tp": 158.0157,
+      "exitTime": 1793732400,
+      "exit": 158.6835,
+      "exitReason": "sl",
+      "r": -1.035
     }
   ],
   "stats": {
-    "trades": 5,
+    "trades": 7,
     "wins": 0,
-    "losses": 5,
+    "losses": 7,
     "winRate": 0,
     "avgWinR": null,
     "avgLossR": -1.038,
     "expectancyR": -1.038,
     "profitFactor": 0,
-    "totalR": -5.19,
-    "maxDrawdownR": 5.19,
-    "longestLosingStreak": 5
+    "totalR": -7.27,
+    "maxDrawdownR": 7.27,
+    "longestLosingStreak": 7
   }
 }
