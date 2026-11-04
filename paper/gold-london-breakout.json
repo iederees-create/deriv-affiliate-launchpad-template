@@ -4,7 +4,7 @@
   "name": "Gold London Breakout",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-11-04T17:07:17.004Z",
+  "lastRunAt": "2026-11-04T23:34:51.755Z",
   "assumptions": {
     "spread": {
       "frxXAUUSD": 0.35
@@ -15,7 +15,7 @@
   },
   "symbols": {
     "frxXAUUSD": {
-      "lastProcessed": 1793808000,
+      "lastProcessed": 1793826000,
       "pending": null,
       "open": null,
       "ctx": {
