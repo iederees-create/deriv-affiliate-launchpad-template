@@ -4,7 +4,7 @@
   "name": "Forex RSI/Bollinger Reversion",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-11-04T01:15:14.178Z",
+  "lastRunAt": "2026-11-04T09:00:15.153Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
@@ -17,43 +17,32 @@
   },
   "symbols": {
     "frxEURUSD": {
-      "lastProcessed": 1793750400,
+      "lastProcessed": 1793779200,
       "pending": null,
       "open": {
         "side": "sell",
-        "signalTime": 1793606400,
-        "entryTime": 1793610000,
-        "entry": 1.12216,
-        "sl": 1.12418,
-        "tp": 1.11745,
-        "risk": 0.00202,
+        "signalTime": 1793754000,
+        "entryTime": 1793757600,
+        "entry": 1.12399,
+        "sl": 1.12617,
+        "tp": 1.11955,
+        "risk": 0.00218,
         "timeExitHour": null,
-        "entryDay": 20759,
+        "entryDay": 20761,
         "tag": "upper-band-overbought"
       },
       "ctx": {}
     },
     "frxGBPUSD": {
-      "lastProcessed": 1793750400,
+      "lastProcessed": 1793779200,
       "pending": null,
       "open": null,
       "ctx": {}
     },
     "frxUSDJPY": {
-      "lastProcessed": 1793750400,
+      "lastProcessed": 1793779200,
       "pending": null,
-      "open": {
-        "side": "sell",
-        "signalTime": 1793732400,
-        "entryTime": 1793736000,
-        "entry": 158.723,
-        "sl": 158.94122,
-        "tp": 158.15095,
-        "risk": 0.21822,
-        "timeExitHour": null,
-        "entryDay": 20760,
-        "tag": "upper-band-overbought"
-      },
+      "open": null,
       "ctx": {}
     }
   },
@@ -166,19 +155,49 @@
       "exit": 158.6835,
       "exitReason": "sl",
       "r": -1.035
+    },
+    {
+      "id": 8,
+      "symbol": "frxEURUSD",
+      "side": "sell",
+      "tag": "upper-band-overbought",
+      "signalTime": 1793606400,
+      "entryTime": 1793610000,
+      "entry": 1.12216,
+      "sl": 1.12418,
+      "tp": 1.11745,
+      "exitTime": 1793754000,
+      "exit": 1.12424,
+      "exitReason": "sl",
+      "r": -1.03
+    },
+    {
+      "id": 9,
+      "symbol": "frxUSDJPY",
+      "side": "sell",
+      "tag": "upper-band-overbought",
+      "signalTime": 1793732400,
+      "entryTime": 1793736000,
+      "entry": 158.723,
+      "sl": 158.94122,
+      "tp": 158.15095,
+      "exitTime": 1793754000,
+      "exit": 158.15895,
+      "exitReason": "tp",
+      "r": 2.585
     }
   ],
   "stats": {
-    "trades": 7,
-    "wins": 0,
-    "losses": 7,
-    "winRate": 0,
-    "avgWinR": null,
-    "avgLossR": -1.038,
-    "expectancyR": -1.038,
-    "profitFactor": 0,
-    "totalR": -7.27,
-    "maxDrawdownR": 7.27,
-    "longestLosingStreak": 7
+    "trades": 9,
+    "wins": 1,
+    "losses": 8,
+    "winRate": 11.1,
+    "avgWinR": 2.585,
+    "avgLossR": -1.037,
+    "expectancyR": -0.635,
+    "profitFactor": 0.31,
+    "totalR": -5.71,
+    "maxDrawdownR": 8.3,
+    "longestLosingStreak": 8
   }
 }
