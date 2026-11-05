@@ -4,7 +4,7 @@
   "name": "Gold H1 Trend",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-11-04T23:34:51.755Z",
+  "lastRunAt": "2026-11-05T06:32:19.860Z",
   "assumptions": {
     "spread": {
       "frxXAUUSD": 0.35
@@ -15,20 +15,9 @@
   },
   "symbols": {
     "frxXAUUSD": {
-      "lastProcessed": 1793826000,
+      "lastProcessed": 1793854800,
       "pending": null,
-      "open": {
-        "side": "buy",
-        "signalTime": 1793768400,
-        "entryTime": 1793772000,
-        "entry": 3998.035,
-        "sl": 3957.51201,
-        "tp": 4079.08097,
-        "risk": 40.52299,
-        "timeExitHour": null,
-        "entryDay": 20761,
-        "tag": "ema-cross-up"
-      },
+      "open": null,
       "ctx": {}
     }
   },
@@ -81,18 +70,33 @@
       "exit": 3964.17269,
       "exitReason": "tp",
       "r": 1.995
+    },
+    {
+      "id": 4,
+      "symbol": "frxXAUUSD",
+      "side": "buy",
+      "tag": "ema-cross-up",
+      "signalTime": 1793768400,
+      "entryTime": 1793772000,
+      "entry": 3998.035,
+      "sl": 3957.51201,
+      "tp": 4079.08097,
+      "exitTime": 1793836800,
+      "exit": 4078.90597,
+      "exitReason": "tp",
+      "r": 1.996
     }
   ],
   "stats": {
-    "trades": 3,
-    "wins": 3,
+    "trades": 4,
+    "wins": 4,
     "losses": 0,
     "winRate": 100,
-    "avgWinR": 1.993,
+    "avgWinR": 1.994,
     "avgLossR": null,
-    "expectancyR": 1.993,
+    "expectancyR": 1.994,
     "profitFactor": null,
-    "totalR": 5.98,
+    "totalR": 7.98,
     "maxDrawdownR": 0,
     "longestLosingStreak": 0
   }
