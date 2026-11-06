@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-06T02:16:58.416Z",
+  "updatedAt": "2026-11-06T10:42:46.066Z",
   "strategies": [
     {
       "slug": "gold-h1-trend",
       "name": "Gold H1 Trend",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-06T02:16:58.416Z",
+      "lastRunAt": "2026-11-06T10:42:46.066Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -28,7 +28,7 @@
       "slug": "gold-london-breakout",
       "name": "Gold London Breakout",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-06T02:16:58.416Z",
+      "lastRunAt": "2026-11-06T10:42:46.066Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -51,7 +51,7 @@
       "slug": "forex-breakout-retest",
       "name": "Forex Breakout and Retest",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-06T02:16:58.416Z",
+      "lastRunAt": "2026-11-06T10:42:46.066Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
@@ -59,21 +59,21 @@
       ],
       "open": [
         {
-          "symbol": "frxGBPUSD",
-          "side": "buy",
-          "entryTime": 1793757600
+          "symbol": "frxEURUSD",
+          "side": "sell",
+          "entryTime": 1793955600
         }
       ],
       "stats": {
-        "trades": 39,
-        "wins": 15,
-        "losses": 24,
-        "winRate": 38.5,
+        "trades": 41,
+        "wins": 16,
+        "losses": 25,
+        "winRate": 39,
         "avgWinR": 1.952,
-        "avgLossR": -1.05,
-        "expectancyR": 0.104,
-        "profitFactor": 1.16,
-        "totalR": 4.06,
+        "avgLossR": -1.049,
+        "expectancyR": 0.122,
+        "profitFactor": 1.19,
+        "totalR": 5,
         "maxDrawdownR": 7.84,
         "longestLosingStreak": 5
       }
@@ -82,7 +82,7 @@
       "slug": "forex-rsi-bollinger-reversion",
       "name": "Forex RSI/Bollinger Reversion",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-06T02:16:58.416Z",
+      "lastRunAt": "2026-11-06T10:42:46.066Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
@@ -90,15 +90,15 @@
       ],
       "open": [],
       "stats": {
-        "trades": 10,
+        "trades": 11,
         "wins": 1,
-        "losses": 9,
-        "winRate": 10,
+        "losses": 10,
+        "winRate": 9.1,
         "avgWinR": 2.585,
         "avgLossR": -1.036,
-        "expectancyR": -0.674,
-        "profitFactor": 0.28,
-        "totalR": -6.74,
+        "expectancyR": -0.707,
+        "profitFactor": 0.25,
+        "totalR": -7.78,
         "maxDrawdownR": 8.3,
         "longestLosingStreak": 8
       }
