@@ -5,7 +5,11 @@ export const affiliateConfig = {
   primaryAffiliateLink: "https://t.deriv.link?t=VQGBGPUYGJDZ",
   demoAccountLink: "https://t.deriv.link?t=VQGBGPUYGJDZ&utm_source=social&utm_medium=site&utm_campaign=call-pulse&utm_content=cta",
   liveAccountLink: "https://t.deriv.link?t=VQGBGPUYGJDZ&utm_source=social&utm_medium=site&utm_campaign=call-pulse&utm_content=live",
-  partnerProgrammeLink: "https://t.deriv.link?t=VQGBGPUYGJDZ&utm_source=social&utm_medium=site&utm_campaign=call-pulse&utm_content=partner",
+  // Master Partner (sub-partner recruiting) link. Partner CTAs only. Never use for client/demo CTAs.
+  partnerProgrammeLink: "https://t.deriv.link?t=CJPM6RJH7U55",
+  masterPartnerLink: "https://t.deriv.link?t=CJPM6RJH7U55",
+  masterPartnerCode: "PY57FVFTTZGU",
+  telegramGroupPath: "/deriv-affiliate-launchpad-template/members",
   referralCode: "28EX72Q47LR4",
   derivAppId: 1089, // Replace with your app_id from https://api.deriv.com (API management). 1089 is Deriv’s public test id.
   managedStrategy: {
