@@ -82,7 +82,7 @@ export function Partners() {
       <section className="section">
         <SectionHeader eyebrow="What Apex provides" title="Support, not slogans" />
         <div className="card-grid">
-          <Card icon={LayoutTemplate} title="Chart Select demo desk">A public, demo-funds-only live desk and weekly demo challenge you can share.</Card>
+          <Card icon={LayoutTemplate} title="Chart Select demo desk">A public, demo-funds-only live desk with a 24/7 live demo challenge and Sunday recaps you can share.</Card>
           <Card icon={Megaphone} title="Post templates">Ready-made captions and image ideas with disclosures built in.</Card>
           <Card icon={BookOpen} title="Launchpad + education">This site, the free kit, tools and lessons for your audience.</Card>
           <Card icon={MessageCircle} title="Telegram community">Access to the demo-updates Telegram group via the VIP area.</Card>
@@ -96,7 +96,7 @@ export function Partners() {
         </div>
         <div className="cta-row" style={{ marginTop: 24 }}>
           <CTA href={affiliateConfig.masterPartnerLink}>Become a partner</CTA>
-          <CTA href="/deriv-affiliate-launchpad-template/weekly-challenge" variant="secondary">See the weekly demo challenge</CTA>
+          <CTA href="/deriv-affiliate-launchpad-template/weekly-challenge" variant="secondary">See the live demo challenge</CTA>
         </div>
       </section>
       <section className="disclosure-band" aria-label="Important disclosures">

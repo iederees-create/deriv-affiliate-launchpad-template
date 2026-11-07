@@ -81,9 +81,9 @@ export function Home() {
       </section>
       <section className="section">
         <SectionHeader
-          eyebrow="Weekly Demo Challenge"
-          title="One Chart Select demo session a week. Every trade posted, losses too."
-          text="Demo funds only. Results are shared in the Telegram group. No profit claims, and past demo results do not predict future results."
+          eyebrow="Live Demo Desk Challenge"
+          title="The Chart Select demo desk runs 24/7. Every trade visible, losses too."
+          text="Watch live, no login. Every Sunday a weekly recap posts every trade with the start and end demo balance in the Telegram group. Demo funds only. No profit claims; past demo results do not predict future results."
         />
         <div className="cta-row">
           <CTA href="/deriv-affiliate-launchpad-template/weekly-challenge">See how the challenge works</CTA>
