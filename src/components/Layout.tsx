@@ -13,6 +13,8 @@ const navItems = [
   ["/lab", "Live test"],
   ["/strategies", "Strategies"],
   ["/kit", "Free kit"],
+  ["/weekly-challenge", "Weekly challenge"],
+  ["/partners", "Partners"],
   ["/learn", "Learn"],
   ["/blog", "Blog"],
   ["/platforms", "Platforms"],

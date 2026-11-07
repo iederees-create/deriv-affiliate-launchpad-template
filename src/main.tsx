@@ -4,6 +4,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Layout } from "./components/Layout";
 import { Home } from "./pages/Home";
 import { HowItWorks } from "./pages/HowItWorks";
+import { Partners } from "./pages/Partners";
+import { WeeklyChallenge } from "./pages/WeeklyChallenge";
 import { PartnerProgramme } from "./pages/PartnerProgramme";
 import { Platforms } from "./pages/Platforms";
 import { Learn } from "./pages/Learn";
@@ -41,6 +43,8 @@ const router = createBrowserRouter(
         { index: true, element: <Home /> },
         { path: "how-it-works", element: <HowItWorks /> },
         { path: "partner-programme", element: <PartnerProgramme /> },
+        { path: "partners", element: <Partners /> },
+        { path: "weekly-challenge", element: <WeeklyChallenge /> },
         { path: "platforms", element: <Platforms /> },
         { path: "learn", element: <Learn /> },
         { path: "tools", element: <Tools /> },

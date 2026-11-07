@@ -81,6 +81,28 @@ export function Home() {
       </section>
       <section className="section">
         <SectionHeader
+          eyebrow="Weekly Demo Challenge"
+          title="One Chart Select demo session a week. Every trade posted, losses too."
+          text="Demo funds only. Results are shared in the Telegram group. No profit claims, and past demo results do not predict future results."
+        />
+        <div className="cta-row">
+          <CTA href="/deriv-affiliate-launchpad-template/weekly-challenge">See how the challenge works</CTA>
+          <CTA href={affiliateConfig.demoAccountLink} variant="secondary">Try your own free demo</CTA>
+        </div>
+      </section>
+      <section className="section cta-panel">
+        <div>
+          <p className="eyebrow">For educators, creators and community owners</p>
+          <h2>Become a partner in the Apex network</h2>
+          <p>Sign up through my Master Partner link, get your own Deriv Partner Hub, and use ready-made demo and education content. Deriv sets and pays commissions; no income is guaranteed.</p>
+          <div className="cta-row">
+            <CTA href="/deriv-affiliate-launchpad-template/partners">Become a partner</CTA>
+            <CTA href={affiliateConfig.masterPartnerLink} variant="ghost">Partner sign-up link</CTA>
+          </div>
+        </div>
+      </section>
+      <section className="section">
+        <SectionHeader
           eyebrow="Free toolkit"
           title="Calculators before you fund anything"
           text="Stake planner, daily stop, and a journal. They do not place trades."
