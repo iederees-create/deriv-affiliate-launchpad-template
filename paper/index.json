@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-09T06:06:30.200Z",
+  "updatedAt": "2026-11-09T16:06:57.276Z",
   "strategies": [
     {
       "slug": "gold-h1-trend",
       "name": "Gold H1 Trend",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-09T06:06:30.200Z",
+      "lastRunAt": "2026-11-09T16:06:57.276Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -28,7 +28,7 @@
       "slug": "gold-london-breakout",
       "name": "Gold London Breakout",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-09T06:06:30.200Z",
+      "lastRunAt": "2026-11-09T16:06:57.276Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -51,7 +51,7 @@
       "slug": "forex-breakout-retest",
       "name": "Forex Breakout and Retest",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-09T06:06:30.200Z",
+      "lastRunAt": "2026-11-09T16:06:57.276Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
@@ -60,20 +60,20 @@
       "open": [
         {
           "symbol": "frxGBPUSD",
-          "side": "sell",
-          "entryTime": 1793980800
+          "side": "buy",
+          "entryTime": 1794218400
         }
       ],
       "stats": {
-        "trades": 43,
+        "trades": 44,
         "wins": 17,
-        "losses": 26,
-        "winRate": 39.5,
+        "losses": 27,
+        "winRate": 38.6,
         "avgWinR": 1.953,
-        "avgLossR": -1.049,
-        "expectancyR": 0.138,
-        "profitFactor": 1.22,
-        "totalR": 5.93,
+        "avgLossR": -1.048,
+        "expectancyR": 0.112,
+        "profitFactor": 1.17,
+        "totalR": 4.91,
         "maxDrawdownR": 7.84,
         "longestLosingStreak": 5
       }
@@ -82,7 +82,7 @@
       "slug": "forex-rsi-bollinger-reversion",
       "name": "Forex RSI/Bollinger Reversion",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-09T06:06:30.200Z",
+      "lastRunAt": "2026-11-09T16:06:57.276Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
