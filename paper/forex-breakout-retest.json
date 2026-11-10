@@ -4,7 +4,7 @@
   "name": "Forex Breakout and Retest",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-11-10T16:58:54.599Z",
+  "lastRunAt": "2026-11-10T22:18:24.804Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
@@ -17,21 +17,26 @@
   },
   "symbols": {
     "frxEURUSD": {
-      "lastProcessed": 1794322800,
-      "pending": {
+      "lastProcessed": 1794344400,
+      "pending": null,
+      "open": {
         "side": "sell",
-        "slLevel": 1.1190208525423055,
-        "rr": 2,
-        "tag": "retest-hold-down",
-        "signalTime": 1794322800
+        "signalTime": 1794322800,
+        "entryTime": 1794326400,
+        "entry": 1.11592,
+        "sl": 1.11902,
+        "tp": 1.10972,
+        "risk": 0.0031,
+        "timeExitHour": null,
+        "entryDay": 20767,
+        "tag": "retest-hold-down"
       },
-      "open": null,
       "ctx": {
         "lastBreakoutTime": 1794319200
       }
     },
     "frxGBPUSD": {
-      "lastProcessed": 1794322800,
+      "lastProcessed": 1794344400,
       "pending": null,
       "open": null,
       "ctx": {
@@ -39,15 +44,20 @@
       }
     },
     "frxUSDJPY": {
-      "lastProcessed": 1794322800,
-      "pending": {
+      "lastProcessed": 1794344400,
+      "pending": null,
+      "open": {
         "side": "buy",
-        "slLevel": 158.46503734156266,
-        "rr": 2,
-        "tag": "retest-hold-up",
-        "signalTime": 1794322800
+        "signalTime": 1794322800,
+        "entryTime": 1794326400,
+        "entry": 158.697,
+        "sl": 158.46504,
+        "tp": 159.16093,
+        "risk": 0.23196,
+        "timeExitHour": null,
+        "entryDay": 20767,
+        "tag": "retest-hold-up"
       },
-      "open": null,
       "ctx": {
         "lastBreakoutTime": 1794319200
       }
