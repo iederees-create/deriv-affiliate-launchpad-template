@@ -4,7 +4,7 @@
   "name": "Forex RSI/Bollinger Reversion",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-11-10T22:18:24.804Z",
+  "lastRunAt": "2026-11-11T02:44:13.061Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
@@ -17,32 +17,21 @@
   },
   "symbols": {
     "frxEURUSD": {
-      "lastProcessed": 1794344400,
+      "lastProcessed": 1794358800,
       "pending": null,
       "open": null,
       "ctx": {}
     },
     "frxGBPUSD": {
-      "lastProcessed": 1794344400,
+      "lastProcessed": 1794358800,
       "pending": null,
       "open": null,
       "ctx": {}
     },
     "frxUSDJPY": {
-      "lastProcessed": 1794344400,
+      "lastProcessed": 1794358800,
       "pending": null,
-      "open": {
-        "side": "sell",
-        "signalTime": 1794319200,
-        "entryTime": 1794322800,
-        "entry": 158.672,
-        "sl": 158.92238,
-        "tp": 158.0693,
-        "risk": 0.25038,
-        "timeExitHour": null,
-        "entryDay": 20767,
-        "tag": "upper-band-overbought"
-      },
+      "open": null,
       "ctx": {}
     }
   },
@@ -215,19 +204,34 @@
       "exit": 1.33934,
       "exitReason": "sl",
       "r": -1.038
+    },
+    {
+      "id": 12,
+      "symbol": "frxUSDJPY",
+      "side": "sell",
+      "tag": "upper-band-overbought",
+      "signalTime": 1794319200,
+      "entryTime": 1794322800,
+      "entry": 158.672,
+      "sl": 158.92238,
+      "tp": 158.0693,
+      "exitTime": 1794358800,
+      "exit": 158.93038,
+      "exitReason": "sl",
+      "r": -1.032
     }
   ],
   "stats": {
-    "trades": 11,
+    "trades": 12,
     "wins": 1,
-    "losses": 10,
-    "winRate": 9.1,
+    "losses": 11,
+    "winRate": 8.3,
     "avgWinR": 2.585,
     "avgLossR": -1.036,
-    "expectancyR": -0.707,
-    "profitFactor": 0.25,
-    "totalR": -7.78,
-    "maxDrawdownR": 8.3,
+    "expectancyR": -0.734,
+    "profitFactor": 0.23,
+    "totalR": -8.81,
+    "maxDrawdownR": 8.81,
     "longestLosingStreak": 8
   }
 }
