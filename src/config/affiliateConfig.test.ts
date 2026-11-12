@@ -20,7 +20,7 @@ describe("affiliate public surfaces", () => {
 
   it("builds a WhatsApp deep link with the sit-with-you message", () => {
     const href = whatsappUrl(affiliateConfig.sitWithMe.whatsappMessage);
-    expect(href).toContain("wa.me/27629494708");
+    expect(href).toContain("wa.me/27762851980");
     expect(href).toContain(encodeURIComponent(affiliateConfig.sitWithMe.whatsappMessage));
   });
 });
