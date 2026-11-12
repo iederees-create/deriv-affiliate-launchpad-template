@@ -21,7 +21,7 @@ export const affiliateConfig = {
     consentVersion: "apex-managed-strategy-v1.0-2026-08-24"
   },
   learnBasicsLink: "/deriv-affiliate-launchpad-template/learn",
-  whatsappNumber: "+27629494708",
+  whatsappNumber: "+27762851980",
   email: "iedereesfrancis@gmail.com",
   disclosureText:
     "Affiliate disclosure: this site is independently run by Iederees Francis. I may earn a commission if you register, deposit, trade, or join a partner programme through the links on this site.",
