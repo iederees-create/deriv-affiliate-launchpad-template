@@ -140,7 +140,7 @@ This is educational setup help only:
 No signals, managed accounts or profit promises. There is no requirement to deposit or trade.
 
 Message me “DEMO PLAN” on WhatsApp:
-https://wa.me/27629494708
+https://wa.me/27762851980
 
 [Add compliance footer.]
 
