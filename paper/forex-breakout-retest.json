@@ -4,7 +4,7 @@
   "name": "Forex Breakout and Retest",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-11-12T09:42:42.341Z",
+  "lastRunAt": "2026-11-12T18:11:22.131Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
@@ -17,7 +17,7 @@
   },
   "symbols": {
     "frxEURUSD": {
-      "lastProcessed": 1794470400,
+      "lastProcessed": 1794502800,
       "pending": null,
       "open": null,
       "ctx": {
@@ -25,15 +25,26 @@
       }
     },
     "frxGBPUSD": {
-      "lastProcessed": 1794470400,
+      "lastProcessed": 1794502800,
       "pending": null,
-      "open": null,
+      "open": {
+        "side": "sell",
+        "signalTime": 1794495600,
+        "entryTime": 1794499200,
+        "entry": 1.32368,
+        "sl": 1.32574,
+        "tp": 1.31956,
+        "risk": 0.00206,
+        "timeExitHour": null,
+        "entryDay": 20769,
+        "tag": "retest-hold-down"
+      },
       "ctx": {
-        "lastBreakoutTime": 1794448800
+        "lastBreakoutTime": 1794492000
       }
     },
     "frxUSDJPY": {
-      "lastProcessed": 1794470400,
+      "lastProcessed": 1794502800,
       "pending": null,
       "open": {
         "side": "buy",
