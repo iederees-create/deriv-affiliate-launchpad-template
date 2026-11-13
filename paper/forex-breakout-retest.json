@@ -4,7 +4,7 @@
   "name": "Forex Breakout and Retest",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-11-13T00:10:55.978Z",
+  "lastRunAt": "2026-11-13T07:49:55.091Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
@@ -17,26 +17,15 @@
   },
   "symbols": {
     "frxEURUSD": {
-      "lastProcessed": 1794524400,
+      "lastProcessed": 1794549600,
       "pending": null,
-      "open": {
-        "side": "sell",
-        "signalTime": 1794506400,
-        "entryTime": 1794510000,
-        "entry": 1.10504,
-        "sl": 1.10617,
-        "tp": 1.10278,
-        "risk": 0.00113,
-        "timeExitHour": null,
-        "entryDay": 20769,
-        "tag": "retest-hold-down"
-      },
+      "open": null,
       "ctx": {
         "lastBreakoutTime": 1794502800
       }
     },
     "frxGBPUSD": {
-      "lastProcessed": 1794524400,
+      "lastProcessed": 1794549600,
       "pending": null,
       "open": {
         "side": "sell",
@@ -55,7 +44,7 @@
       }
     },
     "frxUSDJPY": {
-      "lastProcessed": 1794524400,
+      "lastProcessed": 1794549600,
       "pending": null,
       "open": {
         "side": "buy",
@@ -858,18 +847,33 @@
       "exit": 1.3272,
       "exitReason": "sl",
       "r": -1.067
+    },
+    {
+      "id": 53,
+      "symbol": "frxEURUSD",
+      "side": "sell",
+      "tag": "retest-hold-down",
+      "signalTime": 1794506400,
+      "entryTime": 1794510000,
+      "entry": 1.10504,
+      "sl": 1.10617,
+      "tp": 1.10278,
+      "exitTime": 1794531600,
+      "exit": 1.10623,
+      "exitReason": "sl",
+      "r": -1.053
     }
   ],
   "stats": {
-    "trades": 52,
+    "trades": 53,
     "wins": 22,
-    "losses": 30,
-    "winRate": 42.3,
+    "losses": 31,
+    "winRate": 41.5,
     "avgWinR": 1.953,
     "avgLossR": -1.049,
-    "expectancyR": 0.221,
-    "profitFactor": 1.37,
-    "totalR": 11.51,
+    "expectancyR": 0.197,
+    "profitFactor": 1.32,
+    "totalR": 10.46,
     "maxDrawdownR": 7.84,
     "longestLosingStreak": 5
   }
