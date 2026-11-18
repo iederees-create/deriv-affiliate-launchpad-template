@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-18T13:50:03.927Z",
+  "updatedAt": "2026-11-18T21:50:19.898Z",
   "strategies": [
     {
       "slug": "gold-h1-trend",
       "name": "Gold H1 Trend",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-18T13:50:03.927Z",
+      "lastRunAt": "2026-11-18T21:50:19.898Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -28,7 +28,7 @@
       "slug": "gold-london-breakout",
       "name": "Gold London Breakout",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-18T13:50:03.927Z",
+      "lastRunAt": "2026-11-18T21:50:19.898Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -51,7 +51,7 @@
       "slug": "forex-breakout-retest",
       "name": "Forex Breakout and Retest",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-18T13:50:03.927Z",
+      "lastRunAt": "2026-11-18T21:50:19.898Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
@@ -82,30 +82,24 @@
       "slug": "forex-rsi-bollinger-reversion",
       "name": "Forex RSI/Bollinger Reversion",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-18T13:50:03.927Z",
+      "lastRunAt": "2026-11-18T21:50:19.898Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
         "frxUSDJPY"
       ],
-      "open": [
-        {
-          "symbol": "frxGBPUSD",
-          "side": "buy",
-          "entryTime": 1794992400
-        }
-      ],
+      "open": [],
       "stats": {
-        "trades": 12,
+        "trades": 13,
         "wins": 1,
-        "losses": 11,
-        "winRate": 8.3,
+        "losses": 12,
+        "winRate": 7.7,
         "avgWinR": 2.585,
-        "avgLossR": -1.036,
-        "expectancyR": -0.734,
-        "profitFactor": 0.23,
-        "totalR": -8.81,
-        "maxDrawdownR": 8.81,
+        "avgLossR": -1.037,
+        "expectancyR": -0.758,
+        "profitFactor": 0.21,
+        "totalR": -9.85,
+        "maxDrawdownR": 9.85,
         "longestLosingStreak": 8
       }
     }
