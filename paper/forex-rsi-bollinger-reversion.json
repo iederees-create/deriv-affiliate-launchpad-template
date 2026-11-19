@@ -4,7 +4,7 @@
   "name": "Forex RSI/Bollinger Reversion",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-11-19T03:14:15.983Z",
+  "lastRunAt": "2026-11-19T12:52:07.464Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
@@ -17,21 +17,32 @@
   },
   "symbols": {
     "frxEURUSD": {
-      "lastProcessed": 1795053600,
+      "lastProcessed": 1795086000,
       "pending": null,
       "open": null,
       "ctx": {}
     },
     "frxGBPUSD": {
-      "lastProcessed": 1795053600,
+      "lastProcessed": 1795086000,
       "pending": null,
       "open": null,
       "ctx": {}
     },
     "frxUSDJPY": {
-      "lastProcessed": 1795053600,
+      "lastProcessed": 1795086000,
       "pending": null,
-      "open": null,
+      "open": {
+        "side": "sell",
+        "signalTime": 1795075200,
+        "entryTime": 1795078800,
+        "entry": 159.749,
+        "sl": 159.94945,
+        "tp": 159.43095,
+        "risk": 0.20045,
+        "timeExitHour": null,
+        "entryDay": 20776,
+        "tag": "upper-band-overbought"
+      },
       "ctx": {}
     }
   },
