@@ -4,7 +4,7 @@
   "name": "Forex Breakout and Retest",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-11-19T12:52:07.464Z",
+  "lastRunAt": "2026-11-19T21:24:34.316Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
@@ -17,7 +17,7 @@
   },
   "symbols": {
     "frxEURUSD": {
-      "lastProcessed": 1795086000,
+      "lastProcessed": 1795118400,
       "pending": null,
       "open": null,
       "ctx": {
@@ -25,26 +25,15 @@
       }
     },
     "frxGBPUSD": {
-      "lastProcessed": 1795086000,
+      "lastProcessed": 1795118400,
       "pending": null,
-      "open": {
-        "side": "sell",
-        "signalTime": 1794988800,
-        "entryTime": 1794992400,
-        "entry": 1.31531,
-        "sl": 1.31824,
-        "tp": 1.30945,
-        "risk": 0.00293,
-        "timeExitHour": null,
-        "entryDay": 20775,
-        "tag": "retest-hold-down"
-      },
+      "open": null,
       "ctx": {
         "lastBreakoutTime": 1794985200
       }
     },
     "frxUSDJPY": {
-      "lastProcessed": 1795086000,
+      "lastProcessed": 1795118400,
       "pending": null,
       "open": {
         "side": "buy",
@@ -952,18 +941,33 @@
       "exit": 159.36175,
       "exitReason": "sl",
       "r": -1.04
+    },
+    {
+      "id": 60,
+      "symbol": "frxGBPUSD",
+      "side": "sell",
+      "tag": "retest-hold-down",
+      "signalTime": 1794988800,
+      "entryTime": 1794992400,
+      "entry": 1.31531,
+      "sl": 1.31824,
+      "tp": 1.30945,
+      "exitTime": 1795114800,
+      "exit": 1.30953,
+      "exitReason": "tp",
+      "r": 1.973
     }
   ],
   "stats": {
-    "trades": 59,
-    "wins": 25,
+    "trades": 60,
+    "wins": 26,
     "losses": 34,
-    "winRate": 42.4,
-    "avgWinR": 1.953,
+    "winRate": 43.3,
+    "avgWinR": 1.954,
     "avgLossR": -1.047,
-    "expectancyR": 0.224,
-    "profitFactor": 1.37,
-    "totalR": 13.22,
+    "expectancyR": 0.253,
+    "profitFactor": 1.43,
+    "totalR": 15.19,
     "maxDrawdownR": 7.84,
     "longestLosingStreak": 5
   }
