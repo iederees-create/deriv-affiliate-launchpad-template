@@ -4,7 +4,7 @@
   "name": "Forex Breakout and Retest",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-11-20T03:01:37.769Z",
+  "lastRunAt": "2026-11-20T11:23:43.109Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
@@ -17,7 +17,7 @@
   },
   "symbols": {
     "frxEURUSD": {
-      "lastProcessed": 1795140000,
+      "lastProcessed": 1795168800,
       "pending": null,
       "open": null,
       "ctx": {
@@ -25,41 +25,25 @@
       }
     },
     "frxGBPUSD": {
-      "lastProcessed": 1795140000,
+      "lastProcessed": 1795168800,
       "pending": null,
-      "open": {
-        "side": "sell",
-        "signalTime": 1795125600,
-        "entryTime": 1795129200,
-        "entry": 1.30899,
-        "sl": 1.31101,
-        "tp": 1.30495,
-        "risk": 0.00202,
-        "timeExitHour": null,
-        "entryDay": 20776,
-        "tag": "retest-hold-down"
-      },
+      "open": null,
       "ctx": {
         "lastBreakoutTime": 1795122000
       }
     },
     "frxUSDJPY": {
-      "lastProcessed": 1795140000,
-      "pending": null,
-      "open": {
+      "lastProcessed": 1795168800,
+      "pending": {
         "side": "sell",
-        "signalTime": 1795136400,
-        "entryTime": 1795140000,
-        "entry": 159.329,
-        "sl": 159.55773,
-        "tp": 158.87154,
-        "risk": 0.22873,
-        "timeExitHour": null,
-        "entryDay": 20777,
-        "tag": "retest-hold-down"
+        "slLevel": 159.08053139674797,
+        "rr": 2,
+        "tag": "retest-hold-down",
+        "signalTime": 1795168800
       },
+      "open": null,
       "ctx": {
-        "lastBreakoutTime": 1795132800
+        "lastBreakoutTime": 1795165200
       }
     }
   },
@@ -982,18 +966,48 @@
       "exit": 159.37682,
       "exitReason": "sl",
       "r": -1.037
+    },
+    {
+      "id": 62,
+      "symbol": "frxGBPUSD",
+      "side": "sell",
+      "tag": "retest-hold-down",
+      "signalTime": 1795125600,
+      "entryTime": 1795129200,
+      "entry": 1.30899,
+      "sl": 1.31101,
+      "tp": 1.30495,
+      "exitTime": 1795154400,
+      "exit": 1.31109,
+      "exitReason": "sl",
+      "r": -1.04
+    },
+    {
+      "id": 63,
+      "symbol": "frxUSDJPY",
+      "side": "sell",
+      "tag": "retest-hold-down",
+      "signalTime": 1795136400,
+      "entryTime": 1795140000,
+      "entry": 159.329,
+      "sl": 159.55773,
+      "tp": 158.87154,
+      "exitTime": 1795165200,
+      "exit": 158.87954,
+      "exitReason": "tp",
+      "r": 1.965
     }
   ],
   "stats": {
-    "trades": 61,
-    "wins": 26,
-    "losses": 35,
-    "winRate": 42.6,
+    "trades": 63,
+    "wins": 27,
+    "losses": 36,
+    "winRate": 42.9,
     "avgWinR": 1.954,
     "avgLossR": -1.047,
-    "expectancyR": 0.232,
-    "profitFactor": 1.39,
-    "totalR": 14.16,
+    "expectancyR": 0.239,
+    "profitFactor": 1.4,
+    "totalR": 15.08,
     "maxDrawdownR": 7.84,
     "longestLosingStreak": 5
   }
