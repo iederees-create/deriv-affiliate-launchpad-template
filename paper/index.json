@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-19T21:24:34.316Z",
+  "updatedAt": "2026-11-20T03:01:37.769Z",
   "strategies": [
     {
       "slug": "gold-h1-trend",
       "name": "Gold H1 Trend",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-19T21:24:34.316Z",
+      "lastRunAt": "2026-11-20T03:01:37.769Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -28,7 +28,7 @@
       "slug": "gold-london-breakout",
       "name": "Gold London Breakout",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-19T21:24:34.316Z",
+      "lastRunAt": "2026-11-20T03:01:37.769Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -51,7 +51,7 @@
       "slug": "forex-breakout-retest",
       "name": "Forex Breakout and Retest",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-19T21:24:34.316Z",
+      "lastRunAt": "2026-11-20T03:01:37.769Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
@@ -59,21 +59,26 @@
       ],
       "open": [
         {
+          "symbol": "frxGBPUSD",
+          "side": "sell",
+          "entryTime": 1795129200
+        },
+        {
           "symbol": "frxUSDJPY",
-          "side": "buy",
-          "entryTime": 1795060800
+          "side": "sell",
+          "entryTime": 1795140000
         }
       ],
       "stats": {
-        "trades": 60,
+        "trades": 61,
         "wins": 26,
-        "losses": 34,
-        "winRate": 43.3,
+        "losses": 35,
+        "winRate": 42.6,
         "avgWinR": 1.954,
         "avgLossR": -1.047,
-        "expectancyR": 0.253,
-        "profitFactor": 1.43,
-        "totalR": 15.19,
+        "expectancyR": 0.232,
+        "profitFactor": 1.39,
+        "totalR": 14.16,
         "maxDrawdownR": 7.84,
         "longestLosingStreak": 5
       }
@@ -82,7 +87,7 @@
       "slug": "forex-rsi-bollinger-reversion",
       "name": "Forex RSI/Bollinger Reversion",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-19T21:24:34.316Z",
+      "lastRunAt": "2026-11-20T03:01:37.769Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
