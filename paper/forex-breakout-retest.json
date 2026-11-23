@@ -4,7 +4,7 @@
   "name": "Forex Breakout and Retest",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-11-22T19:28:20.997Z",
+  "lastRunAt": "2026-11-23T00:45:58.313Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
