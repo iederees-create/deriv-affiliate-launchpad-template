@@ -4,7 +4,7 @@
   "name": "Forex Breakout and Retest",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-11-24T05:55:49.379Z",
+  "lastRunAt": "2026-11-24T17:31:08.271Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
@@ -17,34 +17,45 @@
   },
   "symbols": {
     "frxEURUSD": {
-      "lastProcessed": 1795492800,
+      "lastProcessed": 1795536000,
       "pending": null,
-      "open": null,
+      "open": {
+        "side": "buy",
+        "signalTime": 1795525200,
+        "entryTime": 1795528800,
+        "entry": 1.09657,
+        "sl": 1.09478,
+        "tp": 1.10016,
+        "risk": 0.00179,
+        "timeExitHour": null,
+        "entryDay": 20781,
+        "tag": "retest-hold-up"
+      },
       "ctx": {
-        "lastBreakoutTime": 1795446000
+        "lastBreakoutTime": 1795521600
       }
     },
     "frxGBPUSD": {
-      "lastProcessed": 1795492800,
+      "lastProcessed": 1795536000,
       "pending": null,
       "open": {
-        "side": "sell",
-        "signalTime": 1795446000,
-        "entryTime": 1795449600,
-        "entry": 1.30177,
-        "sl": 1.30614,
-        "tp": 1.29303,
-        "risk": 0.00437,
+        "side": "buy",
+        "signalTime": 1795528800,
+        "entryTime": 1795532400,
+        "entry": 1.31151,
+        "sl": 1.30839,
+        "tp": 1.31776,
+        "risk": 0.00312,
         "timeExitHour": null,
-        "entryDay": 20780,
-        "tag": "retest-hold-down"
+        "entryDay": 20781,
+        "tag": "retest-hold-up"
       },
       "ctx": {
-        "lastBreakoutTime": 1795442400
+        "lastBreakoutTime": 1795521600
       }
     },
     "frxUSDJPY": {
-      "lastProcessed": 1795492800,
+      "lastProcessed": 1795536000,
       "pending": null,
       "open": null,
       "ctx": {
@@ -1061,18 +1072,33 @@
       "exit": 1.09159,
       "exitReason": "sl",
       "r": -1.05
+    },
+    {
+      "id": 68,
+      "symbol": "frxGBPUSD",
+      "side": "sell",
+      "tag": "retest-hold-down",
+      "signalTime": 1795446000,
+      "entryTime": 1795449600,
+      "entry": 1.30177,
+      "sl": 1.30614,
+      "tp": 1.29303,
+      "exitTime": 1795510800,
+      "exit": 1.30622,
+      "exitReason": "sl",
+      "r": -1.018
     }
   ],
   "stats": {
-    "trades": 67,
+    "trades": 68,
     "wins": 28,
-    "losses": 39,
-    "winRate": 41.8,
+    "losses": 40,
+    "winRate": 41.2,
     "avgWinR": 1.955,
     "avgLossR": -1.046,
-    "expectancyR": 0.208,
-    "profitFactor": 1.34,
-    "totalR": 13.92,
+    "expectancyR": 0.19,
+    "profitFactor": 1.31,
+    "totalR": 12.9,
     "maxDrawdownR": 7.84,
     "longestLosingStreak": 5
   }
