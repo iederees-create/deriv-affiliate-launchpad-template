@@ -4,7 +4,7 @@
   "name": "Forex Breakout and Retest",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-11-23T21:13:41.131Z",
+  "lastRunAt": "2026-11-24T05:55:49.379Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
@@ -17,26 +17,15 @@
   },
   "symbols": {
     "frxEURUSD": {
-      "lastProcessed": 1795464000,
+      "lastProcessed": 1795492800,
       "pending": null,
-      "open": {
-        "side": "sell",
-        "signalTime": 1795460400,
-        "entryTime": 1795464000,
-        "entry": 1.09032,
-        "sl": 1.09153,
-        "tp": 1.0879,
-        "risk": 0.00121,
-        "timeExitHour": null,
-        "entryDay": 20780,
-        "tag": "retest-hold-down"
-      },
+      "open": null,
       "ctx": {
         "lastBreakoutTime": 1795446000
       }
     },
     "frxGBPUSD": {
-      "lastProcessed": 1795464000,
+      "lastProcessed": 1795492800,
       "pending": null,
       "open": {
         "side": "sell",
@@ -55,7 +44,7 @@
       }
     },
     "frxUSDJPY": {
-      "lastProcessed": 1795464000,
+      "lastProcessed": 1795492800,
       "pending": null,
       "open": null,
       "ctx": {
@@ -1057,18 +1046,33 @@
       "exit": 159.17175,
       "exitReason": "sl",
       "r": -1.031
+    },
+    {
+      "id": 67,
+      "symbol": "frxEURUSD",
+      "side": "sell",
+      "tag": "retest-hold-down",
+      "signalTime": 1795460400,
+      "entryTime": 1795464000,
+      "entry": 1.09032,
+      "sl": 1.09153,
+      "tp": 1.0879,
+      "exitTime": 1795482000,
+      "exit": 1.09159,
+      "exitReason": "sl",
+      "r": -1.05
     }
   ],
   "stats": {
-    "trades": 66,
+    "trades": 67,
     "wins": 28,
-    "losses": 38,
-    "winRate": 42.4,
+    "losses": 39,
+    "winRate": 41.8,
     "avgWinR": 1.955,
     "avgLossR": -1.046,
-    "expectancyR": 0.227,
-    "profitFactor": 1.38,
-    "totalR": 14.97,
+    "expectancyR": 0.208,
+    "profitFactor": 1.34,
+    "totalR": 13.92,
     "maxDrawdownR": 7.84,
     "longestLosingStreak": 5
   }

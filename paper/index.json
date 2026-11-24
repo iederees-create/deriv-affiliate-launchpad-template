@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-23T21:13:41.131Z",
+  "updatedAt": "2026-11-24T05:55:49.379Z",
   "strategies": [
     {
       "slug": "gold-h1-trend",
       "name": "Gold H1 Trend",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-23T21:13:41.131Z",
+      "lastRunAt": "2026-11-24T05:55:49.379Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -28,7 +28,7 @@
       "slug": "gold-london-breakout",
       "name": "Gold London Breakout",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-23T21:13:41.131Z",
+      "lastRunAt": "2026-11-24T05:55:49.379Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -51,7 +51,7 @@
       "slug": "forex-breakout-retest",
       "name": "Forex Breakout and Retest",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-23T21:13:41.131Z",
+      "lastRunAt": "2026-11-24T05:55:49.379Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
@@ -59,26 +59,21 @@
       ],
       "open": [
         {
-          "symbol": "frxEURUSD",
-          "side": "sell",
-          "entryTime": 1795464000
-        },
-        {
           "symbol": "frxGBPUSD",
           "side": "sell",
           "entryTime": 1795449600
         }
       ],
       "stats": {
-        "trades": 66,
+        "trades": 67,
         "wins": 28,
-        "losses": 38,
-        "winRate": 42.4,
+        "losses": 39,
+        "winRate": 41.8,
         "avgWinR": 1.955,
         "avgLossR": -1.046,
-        "expectancyR": 0.227,
-        "profitFactor": 1.38,
-        "totalR": 14.97,
+        "expectancyR": 0.208,
+        "profitFactor": 1.34,
+        "totalR": 13.92,
         "maxDrawdownR": 7.84,
         "longestLosingStreak": 5
       }
@@ -87,7 +82,7 @@
       "slug": "forex-rsi-bollinger-reversion",
       "name": "Forex RSI/Bollinger Reversion",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-23T21:13:41.131Z",
+      "lastRunAt": "2026-11-24T05:55:49.379Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
