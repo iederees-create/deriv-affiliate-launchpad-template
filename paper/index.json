@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-25T12:39:23.065Z",
+  "updatedAt": "2026-11-25T22:25:39.842Z",
   "strategies": [
     {
       "slug": "gold-h1-trend",
       "name": "Gold H1 Trend",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-25T12:39:23.065Z",
+      "lastRunAt": "2026-11-25T22:25:39.842Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -28,7 +28,7 @@
       "slug": "gold-london-breakout",
       "name": "Gold London Breakout",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-25T12:39:23.065Z",
+      "lastRunAt": "2026-11-25T22:25:39.842Z",
       "symbols": [
         "frxXAUUSD"
       ],
@@ -51,38 +51,55 @@
       "slug": "forex-breakout-retest",
       "name": "Forex Breakout and Retest",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-25T12:39:23.065Z",
+      "lastRunAt": "2026-11-25T22:25:39.842Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
         "frxUSDJPY"
       ],
-      "open": [],
+      "open": [
+        {
+          "symbol": "frxEURUSD",
+          "side": "buy",
+          "entryTime": 1795633200
+        },
+        {
+          "symbol": "frxGBPUSD",
+          "side": "buy",
+          "entryTime": 1795636800
+        }
+      ],
       "stats": {
-        "trades": 70,
+        "trades": 72,
         "wins": 28,
-        "losses": 42,
-        "winRate": 40,
+        "losses": 44,
+        "winRate": 38.9,
         "avgWinR": 1.955,
         "avgLossR": -1.045,
-        "expectancyR": 0.155,
-        "profitFactor": 1.25,
-        "totalR": 10.84,
+        "expectancyR": 0.122,
+        "profitFactor": 1.19,
+        "totalR": 8.76,
         "maxDrawdownR": 7.84,
-        "longestLosingStreak": 5
+        "longestLosingStreak": 7
       }
     },
     {
       "slug": "forex-rsi-bollinger-reversion",
       "name": "Forex RSI/Bollinger Reversion",
       "startedAt": "2026-10-13T17:18:40.914Z",
-      "lastRunAt": "2026-11-25T12:39:23.065Z",
+      "lastRunAt": "2026-11-25T22:25:39.842Z",
       "symbols": [
         "frxEURUSD",
         "frxGBPUSD",
         "frxUSDJPY"
       ],
-      "open": [],
+      "open": [
+        {
+          "symbol": "frxEURUSD",
+          "side": "sell",
+          "entryTime": 1795629600
+        }
+      ],
       "stats": {
         "trades": 14,
         "wins": 1,
