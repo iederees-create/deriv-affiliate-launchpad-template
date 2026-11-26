@@ -4,7 +4,7 @@
   "name": "Forex Breakout and Retest",
   "rulesVersion": 1,
   "startedAt": "2026-10-13T17:18:40.914Z",
-  "lastRunAt": "2026-11-25T22:25:39.842Z",
+  "lastRunAt": "2026-11-26T04:56:16.877Z",
   "assumptions": {
     "spread": {
       "frxEURUSD": 0.00012,
@@ -17,45 +17,23 @@
   },
   "symbols": {
     "frxEURUSD": {
-      "lastProcessed": 1795640400,
+      "lastProcessed": 1795662000,
       "pending": null,
-      "open": {
-        "side": "buy",
-        "signalTime": 1795629600,
-        "entryTime": 1795633200,
-        "entry": 1.09859,
-        "sl": 1.09722,
-        "tp": 1.10133,
-        "risk": 0.00137,
-        "timeExitHour": null,
-        "entryDay": 20782,
-        "tag": "retest-hold-up"
-      },
+      "open": null,
       "ctx": {
         "lastBreakoutTime": 1795626000
       }
     },
     "frxGBPUSD": {
-      "lastProcessed": 1795640400,
+      "lastProcessed": 1795662000,
       "pending": null,
-      "open": {
-        "side": "buy",
-        "signalTime": 1795633200,
-        "entryTime": 1795636800,
-        "entry": 1.31227,
-        "sl": 1.31131,
-        "tp": 1.3142,
-        "risk": 0.00096,
-        "timeExitHour": null,
-        "entryDay": 20782,
-        "tag": "retest-hold-up"
-      },
+      "open": null,
       "ctx": {
         "lastBreakoutTime": 1795629600
       }
     },
     "frxUSDJPY": {
-      "lastProcessed": 1795640400,
+      "lastProcessed": 1795662000,
       "pending": null,
       "open": null,
       "ctx": {
@@ -1147,19 +1125,49 @@
       "exit": 159.12018,
       "exitReason": "sl",
       "r": -1.039
+    },
+    {
+      "id": 73,
+      "symbol": "frxEURUSD",
+      "side": "buy",
+      "tag": "retest-hold-up",
+      "signalTime": 1795629600,
+      "entryTime": 1795633200,
+      "entry": 1.09859,
+      "sl": 1.09722,
+      "tp": 1.10133,
+      "exitTime": 1795647600,
+      "exit": 1.09716,
+      "exitReason": "sl",
+      "r": -1.044
+    },
+    {
+      "id": 74,
+      "symbol": "frxGBPUSD",
+      "side": "buy",
+      "tag": "retest-hold-up",
+      "signalTime": 1795633200,
+      "entryTime": 1795636800,
+      "entry": 1.31227,
+      "sl": 1.31131,
+      "tp": 1.3142,
+      "exitTime": 1795644000,
+      "exit": 1.31123,
+      "exitReason": "sl",
+      "r": -1.083
     }
   ],
   "stats": {
-    "trades": 72,
+    "trades": 74,
     "wins": 28,
-    "losses": 44,
-    "winRate": 38.9,
+    "losses": 46,
+    "winRate": 37.8,
     "avgWinR": 1.955,
-    "avgLossR": -1.045,
-    "expectancyR": 0.122,
-    "profitFactor": 1.19,
-    "totalR": 8.76,
-    "maxDrawdownR": 7.84,
-    "longestLosingStreak": 7
+    "avgLossR": -1.046,
+    "expectancyR": 0.09,
+    "profitFactor": 1.14,
+    "totalR": 6.63,
+    "maxDrawdownR": 9.37,
+    "longestLosingStreak": 9
   }
 }
